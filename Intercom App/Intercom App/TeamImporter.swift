@@ -12,13 +12,18 @@ class TeamImporter {
     
     static var teamMembers: [User] = []
     
-    var teamAPIURL = URL(string: "https://intercom-be.herokuapp.com/api/team")
+    var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/team")!
+    
     
     
     func fetchTeam(completion: @escaping (Error?) -> Void) {
         
-        URLSession.shared.dataTask(with: teamAPIURL!) { (data, urlResponse, error) in
-            
+        var request = URLRequest(url: teamBaseURL)
+
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+    
             if let teamError = error {
                 print("Error getting team members from API: \(teamError)")
                 
