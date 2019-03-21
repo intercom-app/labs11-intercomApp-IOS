@@ -46,6 +46,9 @@ class TeamImporter {
                 
                 let decodedTeam = try jsonDecoder.decode([User].self, from: teamData)
                 
+                print(teamData)
+                print(decodedTeam)
+                
                 TeamImporter.teamMembers = decodedTeam
                 
                 completion(nil)
