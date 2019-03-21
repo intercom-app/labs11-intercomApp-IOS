@@ -10,13 +10,15 @@ import Foundation
 
 class TeamImporter {
     
-    static var teamMembers: [User] = []
+    static let shared = TeamImporter()
+    
+    var tlvc: TeamListViewController?
+    
+    var teamMembers: [User] = []
     
     var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/team")!
     
-    
-    
-    func fetchTeam(completion: @escaping (Error?) -> Void) {
+    func fetchTeam() {
         
         var request = URLRequest(url: teamBaseURL)
 
@@ -27,8 +29,6 @@ class TeamImporter {
             if let teamError = error {
                 print("Error getting team members from API: \(teamError)")
                 
-            completion(error)
-                
             return
                 
             } //End of error handling.
@@ -37,7 +37,6 @@ class TeamImporter {
                 
                 print("Data was not recieved.")
                 
-                completion(error) //Implement the error message if we fail to get data.
                 return
             }
             
@@ -46,18 +45,17 @@ class TeamImporter {
                 
                 let decodedTeam = try jsonDecoder.decode([User].self, from: teamData)
                 
-                print(teamData)
-                print(decodedTeam)
+                self.teamMembers = decodedTeam
                 
-                TeamImporter.teamMembers = decodedTeam
+                //Reload the table with current data
+                DispatchQueue.main.async { self.tlvc!.tableView.reloadData() }
+
                 
-                completion(nil)
             }
             catch { //In case Decoding doesn't work.
                 
                 NSLog("Error: \(error.localizedDescription)")
                 
-                completion(error) //Show error message in Debugger log.
                 return
             }
         } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.

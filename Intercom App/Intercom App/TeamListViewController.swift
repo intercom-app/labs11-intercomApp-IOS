@@ -15,22 +15,29 @@ class TeamListViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tableView.reloadData()
+        TeamImporter.shared.tlvc = self
     }
     
     override func viewDidLoad() {
-        tableView.reloadData()
+        super.viewDidLoad()
+        
+        //Pull the information in the background of the main thread
+        DispatchQueue.main.async {
+            TeamImporter.shared.fetchTeam()
+        }
     }
-   
+    
+   //Tableview Datasource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TeamImporter.teamMembers.count
+        
+        return TeamImporter.shared.teamMembers.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "teammateCell", for: indexPath)
         
-        cell.textLabel?.text = TeamImporter.teamMembers[indexPath.row].name
+        cell.textLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].name
         
         return cell
     }
