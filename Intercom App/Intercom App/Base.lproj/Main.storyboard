@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G8m-v8-YHR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pnH-zc-HMf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Team List-->
         <scene sceneID="pyw-0u-mMN">
             <objects>
-                <tableViewController title="Team List" id="G8m-v8-YHR" customClass="TeamListViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TeamListViewController" title="Team List" id="G8m-v8-YHR" customClass="TeamListViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oWI-36-xCn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,10 +42,192 @@
                             <outlet property="delegate" destination="G8m-v8-YHR" id="exB-dl-xsj"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Zzv-FV-7JS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJ7-ai-gWI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-237" y="98"/>
+            <point key="canvasLocation" x="1300" y="80"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T0a-4R-bDd">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationStoryboardIdentification" automaticallyAdjustsScrollViewInsets="NO" id="QCp-hd-9e8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Div-Jj-46e">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G8m-v8-YHR" kind="relationship" relationship="rootViewController" id="KNU-nZ-aqP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mR9-8W-Q1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="80"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="kO4-wy-D8X">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewControllerIdentifier" id="pnH-zc-HMf" customClass="LoginViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="78N-7E-uYe"/>
+                        <viewControllerLayoutGuide type="bottom" id="s6W-yZ-EAe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="smh-h7-oDA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night-stars-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="jaR-8B-HhL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCk-gG-2tK" userLabel="LoginFormContainerView">
+                                <rect key="frame" x="36" y="152.5" width="304" height="133.5"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZi-YZ-5x7" userLabel="Username Text Field" customClass="LoginTextField" customModule="Intercom_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="264" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="wkd-P3-Om2"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vZF-lL-oVD" userLabel="Password Text Field" customClass="LoginTextField" customModule="Intercom_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="57" width="264" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="SfM-aJ-vf2"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XT-VT-AD0" customClass="LoginButton" customModule="Intercom_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="101" width="264" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hE5-nP-754"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="didTapLoginButton:" destination="pnH-zc-HMf" eventType="touchUpInside" id="CXD-58-1eh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fZi-YZ-5x7" firstAttribute="top" secondItem="QCk-gG-2tK" secondAttribute="top" constant="20" id="2Rb-AV-s3y"/>
+                                    <constraint firstItem="6XT-VT-AD0" firstAttribute="centerX" secondItem="QCk-gG-2tK" secondAttribute="centerX" id="4Kd-bO-ebx"/>
+                                    <constraint firstItem="6XT-VT-AD0" firstAttribute="top" secondItem="vZF-lL-oVD" secondAttribute="bottom" constant="14" id="A1g-bX-MfI"/>
+                                    <constraint firstItem="fZi-YZ-5x7" firstAttribute="leading" secondItem="QCk-gG-2tK" secondAttribute="leading" constant="20" id="DN4-0m-bxN" userLabel="Username Text Field.leading = leading + 40"/>
+                                    <constraint firstItem="6XT-VT-AD0" firstAttribute="width" secondItem="vZF-lL-oVD" secondAttribute="width" id="Jsf-yw-eJl"/>
+                                    <constraint firstItem="vZF-lL-oVD" firstAttribute="leading" secondItem="QCk-gG-2tK" secondAttribute="leading" constant="20" id="Z3B-Rv-gih"/>
+                                    <constraint firstItem="vZF-lL-oVD" firstAttribute="top" secondItem="fZi-YZ-5x7" secondAttribute="bottom" constant="7" id="aLL-aX-KpG"/>
+                                    <constraint firstAttribute="height" constant="133.5" id="k9q-BY-dRt"/>
+                                    <constraint firstAttribute="trailing" secondItem="fZi-YZ-5x7" secondAttribute="trailing" constant="20" id="oaW-nR-jWf"/>
+                                    <constraint firstAttribute="trailing" secondItem="vZF-lL-oVD" secondAttribute="trailing" constant="20" id="xqt-9i-TZd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaD-UE-It4" userLabel="SocialButtonsContainerView">
+                                <rect key="frame" x="87.5" y="321" width="200" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtJ-DW-zP7" userLabel="TwitterButton" customClass="TwitterLoginButton" customModule="Intercom_App" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="17" width="95" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="KBv-5f-Mec"/>
+                                            <constraint firstAttribute="width" constant="95" id="MG5-hD-DVI"/>
+                                        </constraints>
+                                        <state key="normal" image="twitter-icon"/>
+                                        <connections>
+                                            <action selector="didTapTwitterLoginButton:" destination="pnH-zc-HMf" eventType="touchUpInside" id="RHd-Xp-Gv6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxW-3P-tdW" userLabel="FacebookButton" customClass="FacebookLoginButton" customModule="Intercom_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="17" width="95" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hsp-cs-Ufs"/>
+                                            <constraint firstAttribute="width" constant="95" id="zxn-mr-ZfX"/>
+                                        </constraints>
+                                        <state key="normal" image="facebook-icon"/>
+                                        <connections>
+                                            <action selector="didTapFacebookLoginButton:" destination="pnH-zc-HMf" eventType="touchUpInside" id="nbE-aF-aSB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="3hh-Qv-HmK" userLabel="width = 140"/>
+                                    <constraint firstItem="wtJ-DW-zP7" firstAttribute="centerY" secondItem="OaD-UE-It4" secondAttribute="centerY" id="BIF-kB-b4l"/>
+                                    <constraint firstItem="wtJ-DW-zP7" firstAttribute="leading" secondItem="CxW-3P-tdW" secondAttribute="trailing" constant="10" id="QkM-fA-ICa"/>
+                                    <constraint firstItem="CxW-3P-tdW" firstAttribute="centerY" secondItem="OaD-UE-It4" secondAttribute="centerY" id="cNb-Xa-br2"/>
+                                    <constraint firstItem="CxW-3P-tdW" firstAttribute="leading" secondItem="OaD-UE-It4" secondAttribute="leading" id="lIb-A6-yxx"/>
+                                    <constraint firstAttribute="height" constant="64" id="rQo-0O-ipH"/>
+                                    <constraint firstItem="wtJ-DW-zP7" firstAttribute="leading" secondItem="CxW-3P-tdW" secondAttribute="trailing" constant="10" id="u7L-U8-IwV"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or connect with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REH-7u-3Hs" userLabel="ConectWithLabel">
+                                <rect key="frame" x="0.0" y="300" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ASv-r6-8pa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intercom App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkU-AN-hUK">
+                                <rect key="frame" x="0.0" y="103" width="375" height="42"/>
+                                <color key="tintColor" red="0.1215686275" green="0.29411764709999999" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="i7v-3n-TLG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jaR-8B-HhL" firstAttribute="centerY" secondItem="smh-h7-oDA" secondAttribute="centerY" id="3EN-7W-ggM"/>
+                            <constraint firstItem="REH-7u-3Hs" firstAttribute="width" secondItem="smh-h7-oDA" secondAttribute="width" id="3eq-dr-601"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QCk-gG-2tK" secondAttribute="trailing" constant="19" id="6VL-m2-jU3"/>
+                            <constraint firstItem="jaR-8B-HhL" firstAttribute="centerX" secondItem="smh-h7-oDA" secondAttribute="centerX" id="6hK-vs-KTa"/>
+                            <constraint firstItem="jaR-8B-HhL" firstAttribute="height" secondItem="smh-h7-oDA" secondAttribute="height" id="8BD-KQ-g5D"/>
+                            <constraint firstItem="REH-7u-3Hs" firstAttribute="centerX" secondItem="smh-h7-oDA" secondAttribute="centerX" id="8Uw-RD-VQ9"/>
+                            <constraint firstItem="jaR-8B-HhL" firstAttribute="width" secondItem="smh-h7-oDA" secondAttribute="width" id="GkL-kP-Wyp"/>
+                            <constraint firstItem="REH-7u-3Hs" firstAttribute="top" secondItem="QCk-gG-2tK" secondAttribute="bottom" multiplier="1.05" id="KUT-XG-jHi"/>
+                            <constraint firstItem="QCk-gG-2tK" firstAttribute="top" secondItem="EkU-AN-hUK" secondAttribute="bottom" multiplier="1.05" id="N5h-Zh-tZX"/>
+                            <constraint firstItem="OaD-UE-It4" firstAttribute="centerX" secondItem="smh-h7-oDA" secondAttribute="centerX" id="RDr-3j-3M3"/>
+                            <constraint firstItem="EkU-AN-hUK" firstAttribute="width" secondItem="smh-h7-oDA" secondAttribute="width" id="RSE-MI-3bi"/>
+                            <constraint firstItem="EkU-AN-hUK" firstAttribute="centerX" secondItem="smh-h7-oDA" secondAttribute="centerX" id="hG5-yn-KuT"/>
+                            <constraint firstItem="EkU-AN-hUK" firstAttribute="top" secondItem="78N-7E-uYe" secondAttribute="bottom" multiplier="4" constant="23" id="rI6-Xa-QwV"/>
+                            <constraint firstItem="QCk-gG-2tK" firstAttribute="leading" secondItem="smh-h7-oDA" secondAttribute="leadingMargin" constant="20" id="rPR-9G-0wd"/>
+                            <constraint firstItem="OaD-UE-It4" firstAttribute="top" secondItem="REH-7u-3Hs" secondAttribute="bottom" id="uxz-hY-MY8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CL6-Ny-AGv"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="vZF-lL-oVD" id="iJ5-wI-nip"/>
+                        <outlet property="usernameTextField" destination="fZi-YZ-5x7" id="dTq-Np-iq2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F77-QX-8Fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-201" y="80"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="facebook-icon" width="35" height="35"/>
+        <image name="night-stars-wallpaper" width="640" height="1136"/>
+        <image name="twitter-icon" width="35" height="35"/>
+    </resources>
 </document>
