@@ -10,8 +10,10 @@ import UIKit
 
 class TeamListViewController: UITableViewController {
     
-    //Overrides
+ 
+    let teamImporter = TeamImporter()
     
+       //Overrides
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -24,6 +26,7 @@ class TeamListViewController: UITableViewController {
         //Pull the information in the background of the main thread
         DispatchQueue.main.async {
             TeamImporter.shared.fetchTeam()
+
         }
     }
     
