@@ -10,8 +10,10 @@ import UIKit
 
 class TeamListViewController: UITableViewController {
     
-    //Overrides
+ 
+    let teamImporter = TeamImporter()
     
+       //Overrides
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -19,7 +21,12 @@ class TeamListViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        tableView.reloadData()
+        // added fetch request now you can see team users
+        teamImporter.fetchTeam { (nil) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
