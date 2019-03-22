@@ -10,9 +10,7 @@ import UIKit
 
 class TeamListViewController: UITableViewController {
     
- 
-    let teamImporter = TeamImporter()
-    
+     
        //Overrides
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,7 +39,7 @@ class TeamListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teammateCell", for: indexPath)
         
         cell.textLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].firstName
-        
+        cell.detailTextLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].lastName
         return cell
     }
     

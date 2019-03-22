@@ -3,7 +3,7 @@
 //  Intercom App
 //
 //  Created by Sergey Osipyan on 3/21/19.
-//  Copyright © 2019 Sergey Osipyan. All rights reserved.
+//  Copyright © 2019 Lambda School. All rights reserved.
 //
 
 
