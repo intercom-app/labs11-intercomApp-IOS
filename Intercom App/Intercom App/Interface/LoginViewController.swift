@@ -60,6 +60,14 @@ class LoginViewController: UIViewController {
 //            }
 //        })
     }
+    
+    @IBAction func didTapGoogleLoginButton(_ sender: GoogleLoginButton) {
+//        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance().uiDelegate = self
+//        GIDSignIn.sharedInstance().signIn()
+     
+    }
+    
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         usernameTextField.resignFirstResponder()
@@ -100,4 +108,38 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
+//    //MARK:Google SignIn Delegate
+//    func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+//        // myActivityIndicator.stopAnimating()
+//    }
+//
+//    // Present a view that prompts the user to sign in with Google
+//    func sign(_ signIn: GIDSignIn!,
+//              present viewController: UIViewController!) {
+//        self.present(viewController, animated: true, completion: nil)
+//    }
+//
+//    // Dismiss the "Sign in with Google" view
+//    func sign(_ signIn: GIDSignIn!,
+//              dismiss viewController: UIViewController!) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//
+//    //completed sign In
+//    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//
+//        if (error == nil) {
+//            // Perform any operations on signed in user here.
+//            let userId = user.userID                  // For client-side use only!
+//            let idToken = user.authentication.idToken // Safe to send to the server
+//            let fullName = user.profile.name
+//            let givenName = user.profile.givenName
+//            let familyName = user.profile.familyName
+//            let email = user.profile.email
+//            // ...
+//        } else {
+//            print("\(error.localizedDescription)")
+//        }
+//    }
+    
 }

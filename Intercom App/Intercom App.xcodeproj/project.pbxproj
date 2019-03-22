@@ -18,6 +18,7 @@
 		A52A8429224421DD009A6593 /* FacebookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8427224421DD009A6593 /* FacebookLoginButton.swift */; };
 		A52A842A224421DD009A6593 /* TwitterLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8428224421DD009A6593 /* TwitterLoginButton.swift */; };
 		A52A842C22442F13009A6593 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A842B22442F13009A6593 /* LoginViewController.swift */; };
+		A52A842E224459D7009A6593 /* GoogleLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A842D224459D7009A6593 /* GoogleLoginButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A52A8427224421DD009A6593 /* FacebookLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginButton.swift; sourceTree = "<group>"; };
 		A52A8428224421DD009A6593 /* TwitterLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLoginButton.swift; sourceTree = "<group>"; };
 		A52A842B22442F13009A6593 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A52A842D224459D7009A6593 /* GoogleLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				A52A842B22442F13009A6593 /* LoginViewController.swift */,
 				A52A8425224421C5009A6593 /* LoginButton.swift */,
 				A52A8427224421DD009A6593 /* FacebookLoginButton.swift */,
+				A52A842D224459D7009A6593 /* GoogleLoginButton.swift */,
 				A52A8428224421DD009A6593 /* TwitterLoginButton.swift */,
 			);
 			path = Interface;
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52A842E224459D7009A6593 /* GoogleLoginButton.swift in Sources */,
 				A52A8426224421C5009A6593 /* LoginButton.swift in Sources */,
 				4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */,
 				4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */,
