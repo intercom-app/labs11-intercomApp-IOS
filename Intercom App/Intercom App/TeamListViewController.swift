@@ -24,7 +24,7 @@ class TeamListViewController: UITableViewController {
         super.viewDidLoad()
         
         //Pull the information in the background of the main thread
-        DispatchQueue.main.async {
+        DispatchQueue.global().async {
             TeamImporter.shared.fetchTeam()
 
         }
@@ -40,7 +40,7 @@ class TeamListViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "teammateCell", for: indexPath)
         
-        cell.textLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].name
+        cell.textLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].firstName
         
         return cell
     }

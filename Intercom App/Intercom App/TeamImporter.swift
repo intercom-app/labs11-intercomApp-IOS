@@ -16,7 +16,7 @@ class TeamImporter {
     
     var teamMembers: [User] = []
     
-    var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/team")!
+    var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
     
     func fetchTeam() {
         
@@ -50,7 +50,10 @@ class TeamImporter {
                 //Reload the table with current data
                 DispatchQueue.main.async { self.tlvc!.tableView.reloadData() }
 
-                
+                // Convert to a string and print
+                if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
+                    print(JSONString)
+                }
             }
             catch { //In case Decoding doesn't work.
                 
