@@ -11,6 +11,11 @@ import Foundation
 struct User: Codable {
     
     var id: Int
-    var name: String
+    var firstName: String
+    var lastName: String?
     var displayName: String
+    var email: String
+    var phoneNumber: Int
+    var callStatus: Int
+    var billingSubcription: String
 }
