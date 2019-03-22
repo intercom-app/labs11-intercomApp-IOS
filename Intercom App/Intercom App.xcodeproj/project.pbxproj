@@ -19,6 +19,9 @@
 		A52A842A224421DD009A6593 /* TwitterLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8428224421DD009A6593 /* TwitterLoginButton.swift */; };
 		A52A842C22442F13009A6593 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A842B22442F13009A6593 /* LoginViewController.swift */; };
 		A52A842E224459D7009A6593 /* GoogleLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A842D224459D7009A6593 /* GoogleLoginButton.swift */; };
+		A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843222458464009A6593 /* GroupViewTableViewCell.swift */; };
+		A52A843522459455009A6593 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843422459455009A6593 /* GroupTableViewController.swift */; };
+		A52A8437224594AE009A6593 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8436224594AE009A6593 /* Group.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		A52A8428224421DD009A6593 /* TwitterLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLoginButton.swift; sourceTree = "<group>"; };
 		A52A842B22442F13009A6593 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A52A842D224459D7009A6593 /* GoogleLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginButton.swift; sourceTree = "<group>"; };
+		A52A843222458464009A6593 /* GroupViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewTableViewCell.swift; sourceTree = "<group>"; };
+		A52A843422459455009A6593 /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		A52A8436224594AE009A6593 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				4CC028DA2244073C0097A2FD /* User.swift */,
+				A52A8436224594AE009A6593 /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -60,6 +67,8 @@
 		4C108A6322454BB900D4926D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A52A842F224583A2009A6593 /* Cell View */,
+				A52A843422459455009A6593 /* GroupTableViewController.swift */,
 				4CC028DE22440FE70097A2FD /* TeamListViewController.swift */,
 				A52A842B22442F13009A6593 /* LoginViewController.swift */,
 			);
@@ -131,6 +140,14 @@
 				A52A8428224421DD009A6593 /* TwitterLoginButton.swift */,
 			);
 			path = "UI Customisations";
+			sourceTree = "<group>";
+		};
+		A52A842F224583A2009A6593 /* Cell View */ = {
+			isa = PBXGroup;
+			children = (
+				A52A843222458464009A6593 /* GroupViewTableViewCell.swift */,
+			);
+			path = "Cell View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +223,8 @@
 			files = (
 				A52A842E224459D7009A6593 /* GoogleLoginButton.swift in Sources */,
 				A52A8426224421C5009A6593 /* LoginButton.swift in Sources */,
+				A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */,
+				A52A8437224594AE009A6593 /* Group.swift in Sources */,
 				4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */,
 				4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */,
 				4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */,
@@ -213,6 +232,7 @@
 				4CC028DB2244073C0097A2FD /* User.swift in Sources */,
 				A52A842A224421DD009A6593 /* TwitterLoginButton.swift in Sources */,
 				A52A8429224421DD009A6593 /* FacebookLoginButton.swift in Sources */,
+				A52A843522459455009A6593 /* GroupTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = KF4QEGAU36;
 				INFOPLIST_FILE = "$(SRCROOT)/Intercom App/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -377,7 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = KF4QEGAU36;
 				INFOPLIST_FILE = "$(SRCROOT)/Intercom App/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
