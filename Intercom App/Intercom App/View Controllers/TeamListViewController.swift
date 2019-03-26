@@ -42,6 +42,6 @@ class TeamListViewController: UITableViewController {
         cell.detailTextLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].lastName
         return cell
     }
-    
+   
     
 }
