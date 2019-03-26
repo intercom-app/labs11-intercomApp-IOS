@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pnH-zc-HMf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YM6-6z-nh5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -67,7 +67,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="138" id="cYA-Xh-Xog" customClass="GroupViewTableViewCell" customModule="Intercom_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="138" id="cYA-Xh-Xog" customClass="GroupViewTableViewCell" customModule="Intercom_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cYA-Xh-Xog" id="ugg-lf-b5e" customClass="GroupViewTableViewCell" customModule="Intercom_App" customModuleProvider="target">
@@ -118,6 +118,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9cW-KW-Tx4" id="dYH-Ia-5cF"/>
+                                    <outlet property="delegate" destination="9cW-KW-Tx4" id="vPu-Fh-6wx"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -195,219 +199,72 @@
             <point key="canvasLocation" x="450" y="-843"/>
         </scene>
         <!--Login View Controller-->
-        <scene sceneID="kO4-wy-D8X">
+        <scene sceneID="MgZ-zw-KCR">
             <objects>
-                <viewController storyboardIdentifier="LoginViewControllerIdentifier" id="pnH-zc-HMf" customClass="LoginViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="78N-7E-uYe"/>
-                        <viewControllerLayoutGuide type="bottom" id="s6W-yZ-EAe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="smh-h7-oDA">
+                <viewController id="YM6-6z-nh5" customClass="LoginViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XTv-dr-sKF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night-stars-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="jaR-8B-HhL">
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night-stars-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-8d-tx9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="piL-vv-Dxe">
-                                <rect key="frame" x="0.0" y="325.5" width="375" height="16"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="ORc-aE-DsN">
+                                <rect key="frame" x="0.0" y="214.99999999999997" width="375" height="237.00000000000009"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intercom App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkU-AN-hUK">
-                                <rect key="frame" x="0.0" y="55" width="375" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intercom App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-qd-Nk2">
+                                <rect key="frame" x="0.0" y="55" width="375" height="32"/>
                                 <color key="tintColor" red="0.1215686275" green="0.29411764709999999" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oe8-fX-53z" customClass="LoginButton" customModule="Intercom_App" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvR-EF-f5H" customClass="LoginButton" customModule="Intercom_App" customModuleProvider="target">
+                                <rect key="frame" x="50" y="679" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="T8P-Zm-jKr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIO-oC-9DH" customClass="LoginButton" customModule="Intercom_App" customModuleProvider="target">
                                 <rect key="frame" x="55" y="607" width="265" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="QuP-5c-mJE"/>
+                                    <constraint firstAttribute="height" constant="30" id="pT5-8c-Xph"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="didTapLoginButton:" destination="pnH-zc-HMf" eventType="touchUpInside" id="a6u-3O-U50"/>
+                                    <action selector="didTapLoginButton:" destination="YM6-6z-nh5" eventType="touchUpInside" id="r29-B1-qyB"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jaR-8B-HhL" firstAttribute="trailing" secondItem="CL6-Ny-AGv" secondAttribute="trailing" id="B7v-gR-Vem"/>
-                            <constraint firstItem="EkU-AN-hUK" firstAttribute="leading" secondItem="CL6-Ny-AGv" secondAttribute="leading" id="C4d-D7-nmA"/>
-                            <constraint firstItem="jaR-8B-HhL" firstAttribute="leading" secondItem="CL6-Ny-AGv" secondAttribute="leading" id="LcG-4d-f0p"/>
-                            <constraint firstItem="EkU-AN-hUK" firstAttribute="trailing" secondItem="CL6-Ny-AGv" secondAttribute="trailing" id="QH9-xC-uG3"/>
-                            <constraint firstItem="CL6-Ny-AGv" firstAttribute="trailing" secondItem="Oe8-fX-53z" secondAttribute="trailing" constant="55" id="U6M-86-8Mz"/>
-                            <constraint firstItem="jaR-8B-HhL" firstAttribute="top" secondItem="smh-h7-oDA" secondAttribute="top" id="WtK-RM-Hel"/>
-                            <constraint firstAttribute="bottom" secondItem="jaR-8B-HhL" secondAttribute="bottom" id="aoa-9g-5rX"/>
-                            <constraint firstItem="Oe8-fX-53z" firstAttribute="leading" secondItem="CL6-Ny-AGv" secondAttribute="leading" constant="55" id="fg2-e8-HP7"/>
-                            <constraint firstItem="piL-vv-Dxe" firstAttribute="centerY" secondItem="smh-h7-oDA" secondAttribute="centerY" id="jmG-z6-ztp"/>
-                            <constraint firstItem="piL-vv-Dxe" firstAttribute="leading" secondItem="smh-h7-oDA" secondAttribute="leading" id="kkR-M0-2j3"/>
-                            <constraint firstItem="s6W-yZ-EAe" firstAttribute="top" secondItem="Oe8-fX-53z" secondAttribute="bottom" constant="30" id="mwv-10-8Rm"/>
-                            <constraint firstItem="piL-vv-Dxe" firstAttribute="centerX" secondItem="smh-h7-oDA" secondAttribute="centerX" id="oBh-2q-51K"/>
-                            <constraint firstAttribute="trailing" secondItem="piL-vv-Dxe" secondAttribute="trailing" id="r41-6W-faF"/>
-                            <constraint firstItem="EkU-AN-hUK" firstAttribute="top" secondItem="smh-h7-oDA" secondAttribute="top" constant="55" id="rI6-Xa-QwV"/>
+                            <constraint firstItem="yc0-8d-tx9" firstAttribute="top" secondItem="XTv-dr-sKF" secondAttribute="top" id="0eu-aJ-khI"/>
+                            <constraint firstItem="BvR-EF-f5H" firstAttribute="leading" secondItem="XTv-dr-sKF" secondAttribute="leadingMargin" constant="34" id="0pC-dn-ixA"/>
+                            <constraint firstItem="2Ei-qd-Nk2" firstAttribute="top" secondItem="XTv-dr-sKF" secondAttribute="top" constant="55" id="4pt-Of-Yzp"/>
+                            <constraint firstAttribute="trailing" secondItem="yc0-8d-tx9" secondAttribute="trailing" id="5wX-lo-UT8"/>
+                            <constraint firstAttribute="bottom" secondItem="yc0-8d-tx9" secondAttribute="bottom" id="8lA-9a-vkb"/>
+                            <constraint firstItem="cIO-oC-9DH" firstAttribute="leading" secondItem="MCI-V7-Uaf" secondAttribute="leading" constant="55" id="HhG-oE-Xdk"/>
+                            <constraint firstItem="BvR-EF-f5H" firstAttribute="top" secondItem="yc0-8d-tx9" secondAttribute="bottom" constant="12" id="HoG-NY-3Vl"/>
+                            <constraint firstItem="ORc-aE-DsN" firstAttribute="centerY" secondItem="XTv-dr-sKF" secondAttribute="centerY" id="N5Y-hA-NzX"/>
+                            <constraint firstItem="ORc-aE-DsN" firstAttribute="centerX" secondItem="XTv-dr-sKF" secondAttribute="centerX" id="Qx2-0X-shQ"/>
+                            <constraint firstItem="yc0-8d-tx9" firstAttribute="leading" secondItem="XTv-dr-sKF" secondAttribute="leading" id="Uop-tq-VUv"/>
+                            <constraint firstItem="2Ei-qd-Nk2" firstAttribute="leading" secondItem="XTv-dr-sKF" secondAttribute="leading" id="abC-fr-bjf"/>
+                            <constraint firstItem="MCI-V7-Uaf" firstAttribute="trailing" secondItem="2Ei-qd-Nk2" secondAttribute="trailing" id="cBc-q2-1tq"/>
+                            <constraint firstAttribute="trailing" secondItem="ORc-aE-DsN" secondAttribute="trailing" id="g9d-ib-9kS"/>
+                            <constraint firstItem="ORc-aE-DsN" firstAttribute="leading" secondItem="XTv-dr-sKF" secondAttribute="leading" id="gCj-44-ESD"/>
+                            <constraint firstItem="MCI-V7-Uaf" firstAttribute="trailing" secondItem="cIO-oC-9DH" secondAttribute="trailing" constant="55" id="ir7-Uh-UOc"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="BvR-EF-f5H" secondAttribute="trailing" id="uCf-4G-bqa"/>
+                            <constraint firstItem="MCI-V7-Uaf" firstAttribute="bottom" secondItem="cIO-oC-9DH" secondAttribute="bottom" constant="30" id="uiU-zC-J8x"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="CL6-Ny-AGv"/>
+                        <viewLayoutGuide key="safeArea" id="MCI-V7-Uaf"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F77-QX-8Fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OG9-j5-dkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-180" y="611"/>
-        </scene>
-        <!--Sign Up View Controller-->
-        <scene sceneID="mOt-ci-sxx">
-            <objects>
-                <viewController storyboardIdentifier="SignUpViewControllerIdentifier" title="Sign Up View Controller" id="Jn0-XS-kgP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="m9k-iW-Ysz"/>
-                        <viewControllerLayoutGuide type="bottom" id="FcO-BQ-0M3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xOM-mJ-wgV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night-stars-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="xmQ-Hb-jf2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYj-hD-4Xf" userLabel="LoginFormContainerView">
-                                <rect key="frame" x="36" y="152.5" width="304" height="133.5"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4qd-5C-7Uh" userLabel="Username Text Field" customClass="LoginTextField" customModule="Intercom_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="20" width="264" height="30"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="1Uz-Xg-paU"/>
-                                        </constraints>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                                                <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r4v-xZ-YPQ" userLabel="Password Text Field" customClass="LoginTextField" customModule="Intercom_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="57" width="264" height="30"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Xdr-Me-xpO"/>
-                                        </constraints>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                                                <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rE-JX-Gdp" customClass="LoginButton" customModule="Intercom_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="101" width="264" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="g2n-bU-gk4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                        <state key="normal" title="SignUp"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="4qd-5C-7Uh" firstAttribute="top" secondItem="fYj-hD-4Xf" secondAttribute="top" constant="20" id="5kk-Uz-g3Y"/>
-                                    <constraint firstAttribute="height" constant="133.5" id="Djk-sl-8oX"/>
-                                    <constraint firstItem="2rE-JX-Gdp" firstAttribute="centerX" secondItem="fYj-hD-4Xf" secondAttribute="centerX" id="FfH-Oj-psr"/>
-                                    <constraint firstItem="r4v-xZ-YPQ" firstAttribute="top" secondItem="4qd-5C-7Uh" secondAttribute="bottom" constant="7" id="Gzf-v4-i1x"/>
-                                    <constraint firstItem="2rE-JX-Gdp" firstAttribute="width" secondItem="r4v-xZ-YPQ" secondAttribute="width" id="JwI-Ac-mUz"/>
-                                    <constraint firstAttribute="trailing" secondItem="4qd-5C-7Uh" secondAttribute="trailing" constant="20" id="NQZ-iV-2gI"/>
-                                    <constraint firstItem="r4v-xZ-YPQ" firstAttribute="leading" secondItem="fYj-hD-4Xf" secondAttribute="leading" constant="20" id="WKj-ah-OFY"/>
-                                    <constraint firstItem="4qd-5C-7Uh" firstAttribute="leading" secondItem="fYj-hD-4Xf" secondAttribute="leading" constant="20" id="ehU-5A-qCc" userLabel="Username Text Field.leading = leading + 40"/>
-                                    <constraint firstItem="2rE-JX-Gdp" firstAttribute="top" secondItem="r4v-xZ-YPQ" secondAttribute="bottom" constant="14" id="k7M-yP-8BT"/>
-                                    <constraint firstAttribute="trailing" secondItem="r4v-xZ-YPQ" secondAttribute="trailing" constant="20" id="xku-T0-Yrq"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or connect with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sV6-yH-8gL" userLabel="ConectWithLabel">
-                                <rect key="frame" x="0.0" y="300" width="375" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="dpB-S7-YG4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intercom App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WK-6G-agu">
-                                <rect key="frame" x="0.0" y="103" width="375" height="42"/>
-                                <color key="tintColor" red="0.1215686275" green="0.29411764709999999" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="NZq-82-Tmp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="26"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEP-vn-I8v" userLabel="SocialButtonsContainerView">
-                                <rect key="frame" x="45" y="321" width="285" height="64"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4og-QD-1nP">
-                                        <rect key="frame" x="0.0" y="17" width="285" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-Bx-bLk" userLabel="FacebookButton" customClass="FacebookLoginButton" customModule="Intercom_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="95" height="30"/>
-                                                <state key="normal" image="facebook-icon"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImH-zb-sYl" userLabel="TwitterButton" customClass="TwitterLoginButton" customModule="Intercom_App" customModuleProvider="target">
-                                                <rect key="frame" x="95" y="0.0" width="95" height="30"/>
-                                                <state key="normal" image="twitter-icon"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywr-Yr-Vdb" userLabel="GoogleButton" customClass="GoogleLoginButton" customModule="Intercom_App" customModuleProvider="target">
-                                                <rect key="frame" x="190" y="0.0" width="95" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="HGg-CQ-was"/>
-                                                    <constraint firstAttribute="width" constant="95" id="RBt-QS-NOh"/>
-                                                </constraints>
-                                                <state key="normal" image="google-icon"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="ImH-zb-sYl" firstAttribute="height" secondItem="Ywr-Yr-Vdb" secondAttribute="height" id="0Xc-3q-kZo"/>
-                                            <constraint firstItem="1vC-Bx-bLk" firstAttribute="height" secondItem="Ywr-Yr-Vdb" secondAttribute="height" id="Peq-tF-lBz"/>
-                                            <constraint firstItem="ImH-zb-sYl" firstAttribute="width" secondItem="Ywr-Yr-Vdb" secondAttribute="width" id="RVX-Hy-AUP"/>
-                                            <constraint firstItem="1vC-Bx-bLk" firstAttribute="width" secondItem="Ywr-Yr-Vdb" secondAttribute="width" id="yh4-29-Dy8"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="22I-dZ-Mb9"/>
-                                    <constraint firstAttribute="width" constant="285" id="JSO-gc-Qcu"/>
-                                    <constraint firstAttribute="trailing" secondItem="4og-QD-1nP" secondAttribute="trailing" id="XEB-6I-dOk"/>
-                                    <constraint firstItem="4og-QD-1nP" firstAttribute="centerY" secondItem="IEP-vn-I8v" secondAttribute="centerY" id="ZvK-rt-GUN"/>
-                                    <constraint firstItem="4og-QD-1nP" firstAttribute="leading" secondItem="IEP-vn-I8v" secondAttribute="leading" id="vBo-VL-Bjh"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="IEP-vn-I8v" firstAttribute="top" secondItem="sV6-yH-8gL" secondAttribute="bottom" id="1W1-8u-Zkv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fYj-hD-4Xf" secondAttribute="trailing" constant="19" id="3fd-UO-tLt"/>
-                            <constraint firstItem="sV6-yH-8gL" firstAttribute="width" secondItem="xOM-mJ-wgV" secondAttribute="width" id="4Rh-iX-Bnk"/>
-                            <constraint firstItem="xmQ-Hb-jf2" firstAttribute="centerY" secondItem="xOM-mJ-wgV" secondAttribute="centerY" id="7OD-13-5Sz"/>
-                            <constraint firstItem="5WK-6G-agu" firstAttribute="centerX" secondItem="xOM-mJ-wgV" secondAttribute="centerX" id="7h7-Zq-Yt3"/>
-                            <constraint firstItem="xmQ-Hb-jf2" firstAttribute="centerX" secondItem="xOM-mJ-wgV" secondAttribute="centerX" id="8fA-Db-yyM"/>
-                            <constraint firstItem="5WK-6G-agu" firstAttribute="width" secondItem="xOM-mJ-wgV" secondAttribute="width" id="ADf-rF-yuQ"/>
-                            <constraint firstItem="5WK-6G-agu" firstAttribute="top" secondItem="m9k-iW-Ysz" secondAttribute="bottom" multiplier="4" constant="23" id="DFZ-Bp-M0c"/>
-                            <constraint firstItem="sV6-yH-8gL" firstAttribute="centerX" secondItem="xOM-mJ-wgV" secondAttribute="centerX" id="DyV-PJ-qPc"/>
-                            <constraint firstItem="xmQ-Hb-jf2" firstAttribute="width" secondItem="xOM-mJ-wgV" secondAttribute="width" id="EAu-yG-RFh"/>
-                            <constraint firstItem="fYj-hD-4Xf" firstAttribute="leading" secondItem="xOM-mJ-wgV" secondAttribute="leadingMargin" constant="20" id="JLZ-TG-8kb"/>
-                            <constraint firstItem="xmQ-Hb-jf2" firstAttribute="height" secondItem="xOM-mJ-wgV" secondAttribute="height" id="KyM-L4-ADq"/>
-                            <constraint firstItem="fYj-hD-4Xf" firstAttribute="top" secondItem="5WK-6G-agu" secondAttribute="bottom" multiplier="1.05" id="RU9-ky-NaI"/>
-                            <constraint firstItem="sV6-yH-8gL" firstAttribute="top" secondItem="fYj-hD-4Xf" secondAttribute="bottom" multiplier="1.05" id="c2M-pD-ZCr"/>
-                            <constraint firstItem="IEP-vn-I8v" firstAttribute="centerX" secondItem="xOM-mJ-wgV" secondAttribute="centerX" id="vsg-ab-dfB"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="rwz-w7-SVG"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i6z-ub-nm4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-329" y="-843"/>
+            <point key="canvasLocation" x="-330" y="610"/>
         </scene>
         <!--My Profile-->
         <scene sceneID="JtR-8E-irj">
@@ -457,9 +314,6 @@
     </scenes>
     <resources>
         <image name="audio-sound-waves" width="1000" height="237"/>
-        <image name="facebook-icon" width="17.5" height="17.5"/>
-        <image name="google-icon" width="17.5" height="17.5"/>
         <image name="night-stars-wallpaper" width="320" height="568"/>
-        <image name="twitter-icon" width="17.5" height="17.5"/>
     </resources>
 </document>

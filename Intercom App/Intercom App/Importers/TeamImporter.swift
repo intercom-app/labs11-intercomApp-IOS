@@ -13,6 +13,7 @@ class TeamImporter {
     static let shared = TeamImporter()
     
     var tlvc: TeamListViewController?
+    var gtvc: GroupTableViewController?
     
     var teamMembers: [User] = []
     
@@ -50,7 +51,10 @@ class TeamImporter {
                 self.teamMembers = decodedTeam
                 
                 //Reload the table with current data
-                DispatchQueue.main.async { self.tlvc!.tableView.reloadData() }
+                DispatchQueue.main.async {
+                    self.tlvc!.tableView.reloadData()
+                    self.gtvc?.tableView.reloadData()
+                }
 
                 // Convert to a string and print
                 if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {

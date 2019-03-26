@@ -18,5 +18,5 @@ struct User: Codable {
     var phoneNumber: Int
     var callStatus: Int
     var billingSubcription: String
-    //var createdAt: Date
+    var createdAt: String
 }
