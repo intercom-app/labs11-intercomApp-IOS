@@ -15,10 +15,7 @@
 		4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DC224408610097A2FD /* TeamImporter.swift */; };
 		4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DE22440FE70097A2FD /* TeamListViewController.swift */; };
 		A52A8426224421C5009A6593 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8425224421C5009A6593 /* LoginButton.swift */; };
-		A52A8429224421DD009A6593 /* FacebookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8427224421DD009A6593 /* FacebookLoginButton.swift */; };
-		A52A842A224421DD009A6593 /* TwitterLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8428224421DD009A6593 /* TwitterLoginButton.swift */; };
 		A52A842C22442F13009A6593 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A842B22442F13009A6593 /* LoginViewController.swift */; };
-		A52A842E224459D7009A6593 /* GoogleLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A842D224459D7009A6593 /* GoogleLoginButton.swift */; };
 		A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843222458464009A6593 /* GroupViewTableViewCell.swift */; };
 		A52A843522459455009A6593 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843422459455009A6593 /* GroupTableViewController.swift */; };
 		A52A8437224594AE009A6593 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8436224594AE009A6593 /* Group.swift */; };
@@ -35,10 +32,7 @@
 		4CC028DC224408610097A2FD /* TeamImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamImporter.swift; sourceTree = "<group>"; };
 		4CC028DE22440FE70097A2FD /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
 		A52A8425224421C5009A6593 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
-		A52A8427224421DD009A6593 /* FacebookLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginButton.swift; sourceTree = "<group>"; };
-		A52A8428224421DD009A6593 /* TwitterLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLoginButton.swift; sourceTree = "<group>"; };
 		A52A842B22442F13009A6593 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A52A842D224459D7009A6593 /* GoogleLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginButton.swift; sourceTree = "<group>"; };
 		A52A843222458464009A6593 /* GroupViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewTableViewCell.swift; sourceTree = "<group>"; };
 		A52A843422459455009A6593 /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		A52A8436224594AE009A6593 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -135,9 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				A52A8425224421C5009A6593 /* LoginButton.swift */,
-				A52A8427224421DD009A6593 /* FacebookLoginButton.swift */,
-				A52A842D224459D7009A6593 /* GoogleLoginButton.swift */,
-				A52A8428224421DD009A6593 /* TwitterLoginButton.swift */,
 			);
 			path = "UI Customisations";
 			sourceTree = "<group>";
@@ -221,7 +212,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A52A842E224459D7009A6593 /* GoogleLoginButton.swift in Sources */,
 				A52A8426224421C5009A6593 /* LoginButton.swift in Sources */,
 				A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */,
 				A52A8437224594AE009A6593 /* Group.swift in Sources */,
@@ -230,8 +220,6 @@
 				4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */,
 				A52A842C22442F13009A6593 /* LoginViewController.swift in Sources */,
 				4CC028DB2244073C0097A2FD /* User.swift in Sources */,
-				A52A842A224421DD009A6593 /* TwitterLoginButton.swift in Sources */,
-				A52A8429224421DD009A6593 /* FacebookLoginButton.swift in Sources */,
 				A52A843522459455009A6593 /* GroupTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
