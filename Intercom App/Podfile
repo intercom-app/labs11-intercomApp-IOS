@@ -1,0 +1,14 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Intercom App' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Intercom App
+
+pod 'Auth0'
+pod 'SimpleKeychain'
+pod 'SwiftKeychainWrapper'
+
+end
