@@ -1,0 +1,25 @@
+PODS:
+  - Auth0 (1.14.1):
+    - SimpleKeychain
+  - SimpleKeychain (0.8.1)
+  - SwiftKeychainWrapper (3.2.0)
+
+DEPENDENCIES:
+  - Auth0
+  - SimpleKeychain
+  - SwiftKeychainWrapper
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Auth0
+    - SimpleKeychain
+    - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  Auth0: 064dc115cd99eec7334d1cab565f4d974eecac4d
+  SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
+  SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
+
+PODFILE CHECKSUM: fd124c20d13d144271830bb8a80567c732520e0d
+
+COCOAPODS: 1.6.0
