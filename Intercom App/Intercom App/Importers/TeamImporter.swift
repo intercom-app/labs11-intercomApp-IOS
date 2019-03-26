@@ -34,7 +34,9 @@ class TeamImporter {
             } //End of error handling.
             
             guard let teamData = data else {
-                
+                if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
+                    print(JSONString)
+                }
                 print("Data was not recieved.")
                 
                 return

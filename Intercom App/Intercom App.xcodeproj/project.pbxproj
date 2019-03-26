@@ -19,7 +19,9 @@
 		A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843222458464009A6593 /* GroupViewTableViewCell.swift */; };
 		A52A843522459455009A6593 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843422459455009A6593 /* GroupTableViewController.swift */; };
 		A52A8437224594AE009A6593 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8436224594AE009A6593 /* Group.swift */; };
-		A5DC52E8224AB2E600A24589 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52E7224AB2E600A24589 /* Helpers.swift */; };
+		A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EB224AB85E00A24589 /* SessionManager.swift */; };
+		A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EC224AB85F00A24589 /* LoginViewController.swift */; };
+		A5DC52F0224AB91D00A24589 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52EF224AB91D00A24589 /* Auth0.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,9 @@
 		A52A843222458464009A6593 /* GroupViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewTableViewCell.swift; sourceTree = "<group>"; };
 		A52A843422459455009A6593 /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		A52A8436224594AE009A6593 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		A5DC52E7224AB2E600A24589 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		A5DC52EB224AB85E00A24589 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		A5DC52EC224AB85F00A24589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A5DC52EF224AB91D00A24589 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		D8320EBCA1B1A88320C5CD89 /* Pods-Intercom App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intercom App.debug.xcconfig"; path = "Target Support Files/Pods-Intercom App/Pods-Intercom App.debug.xcconfig"; sourceTree = "<group>"; };
 		F30C8D41480033DD3B9E2AA3 /* Pods_Intercom_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Intercom_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +108,7 @@
 			children = (
 				4C69CE5C2243FF6B00FCC33A /* AppDelegate.swift */,
 				4C69CE682243FF6D00FCC33A /* Info.plist */,
+				A5DC52EF224AB91D00A24589 /* Auth0.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -169,7 +174,6 @@
 		A5DC52E9224AB2FC00A24589 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				A5DC52E7224AB2E600A24589 /* Helpers.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -177,6 +181,8 @@
 		A5DC52EA224AB32600A24589 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A5DC52EC224AB85F00A24589 /* LoginViewController.swift */,
+				A5DC52EB224AB85E00A24589 /* SessionManager.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 				4C69CE672243FF6D00FCC33A /* LaunchScreen.storyboard in Resources */,
 				4C69CE642243FF6D00FCC33A /* Assets.xcassets in Resources */,
 				4C69CE622243FF6B00FCC33A /* Main.storyboard in Resources */,
+				A5DC52F0224AB91D00A24589 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,11 +316,12 @@
 				A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */,
 				A52A8437224594AE009A6593 /* Group.swift in Sources */,
 				4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */,
-				A5DC52E8224AB2E600A24589 /* Helpers.swift in Sources */,
 				4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */,
 				4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */,
 				4CC028DB2244073C0097A2FD /* User.swift in Sources */,
+				A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */,
 				A52A843522459455009A6593 /* GroupTableViewController.swift in Sources */,
+				A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
