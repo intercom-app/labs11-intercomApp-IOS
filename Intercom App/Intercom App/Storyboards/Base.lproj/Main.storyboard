@@ -192,9 +192,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9g-cY-f1a">
-                                <rect key="frame" x="172" y="473.5" width="31" height="30"/>
-                                <state key="normal" title="END">
-                                    <color key="titleColor" red="1" green="0.097888789810000001" blue="0.1009366376" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="172.5" y="473.5" width="30" height="30"/>
+                                <state key="normal" title="Call">
+                                    <color key="titleColor" red="1" green="0.065431795061399733" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                         </subviews>
@@ -213,6 +213,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rPp-va-iWj"/>
                     </view>
+                    <connections>
+                        <outlet property="callControlView" destination="taG-rA-1Kj" id="Leu-IT-GIz"/>
+                        <outlet property="groupImage" destination="zZE-3f-NOg" id="aOL-3i-AKE"/>
+                        <outlet property="muteSwitch" destination="G9E-E3-BOB" id="NNJ-hQ-23p"/>
+                        <outlet property="placeCallButton" destination="E9g-cY-f1a" id="Vb4-lX-WSw"/>
+                        <outlet property="speakerSwitch" destination="JIb-xb-nRW" id="6rh-lL-8O9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pcl-cF-ymo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

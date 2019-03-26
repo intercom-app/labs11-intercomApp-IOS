@@ -43,7 +43,7 @@
 		A5DC52EB224AB85E00A24589 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		A5DC52EC224AB85F00A24589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5DC52EF224AB91D00A24589 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
-		A5DC52F3224ADC1A00A24589 /* GroupChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatRoomViewController.swift; sourceTree = "<group>"; };
+		A5DC52F3224ADC1A00A24589 /* GroupChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupChatRoomViewController.swift; path = Login/GroupChatRoomViewController.swift; sourceTree = "<group>"; };
 		D8320EBCA1B1A88320C5CD89 /* Pods-Intercom App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intercom App.debug.xcconfig"; path = "Target Support Files/Pods-Intercom App/Pods-Intercom App.debug.xcconfig"; sourceTree = "<group>"; };
 		F30C8D41480033DD3B9E2AA3 /* Pods_Intercom_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Intercom_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +84,7 @@
 				A52A842F224583A2009A6593 /* Cell View */,
 				A52A843422459455009A6593 /* GroupTableViewController.swift */,
 				4CC028DE22440FE70097A2FD /* TeamListViewController.swift */,
+				A5DC52F3224ADC1A00A24589 /* GroupChatRoomViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -185,7 +186,6 @@
 			children = (
 				A5DC52EC224AB85F00A24589 /* LoginViewController.swift */,
 				A5DC52EB224AB85E00A24589 /* SessionManager.swift */,
-				A5DC52F3224ADC1A00A24589 /* GroupChatRoomViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
