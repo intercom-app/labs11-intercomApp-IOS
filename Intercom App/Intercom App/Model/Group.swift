@@ -10,11 +10,10 @@ import Foundation
 
 struct Group: Codable, Equatable {
     
-    var groupName: String
-    var groupID: Int
-    var groupToken: String?
-    var userID: Int
-    var userCount: Int
-    var createdDate: String
+    var name: String
+    var id: Int
+    var phoneNumber: String?
+    var callStatus: Int
+    var createdAt: String
 
 }

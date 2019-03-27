@@ -26,6 +26,7 @@
 		A5DC52FB224AEFDB00A24589 /* incoming.wav in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52F8224AEFDB00A24589 /* incoming.wav */; };
 		A5DC52FC224AEFDB00A24589 /* outgoing.wav in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52F9224AEFDB00A24589 /* outgoing.wav */; };
 		A5DC52FD224AEFDB00A24589 /* disconnect.wav in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52FA224AEFDB00A24589 /* disconnect.wav */; };
+		A5DC52FF224BE1A500A24589 /* GroupeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52FE224BE1A500A24589 /* GroupeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		A5DC52F8224AEFDB00A24589 /* incoming.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incoming.wav; sourceTree = "<group>"; };
 		A5DC52F9224AEFDB00A24589 /* outgoing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = outgoing.wav; sourceTree = "<group>"; };
 		A5DC52FA224AEFDB00A24589 /* disconnect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = disconnect.wav; sourceTree = "<group>"; };
+		A5DC52FE224BE1A500A24589 /* GroupeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupeController.swift; sourceTree = "<group>"; };
 		D8320EBCA1B1A88320C5CD89 /* Pods-Intercom App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intercom App.debug.xcconfig"; path = "Target Support Files/Pods-Intercom App/Pods-Intercom App.debug.xcconfig"; sourceTree = "<group>"; };
 		F30C8D41480033DD3B9E2AA3 /* Pods_Intercom_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Intercom_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4CC028DC224408610097A2FD /* TeamImporter.swift */,
+				A5DC52FE224BE1A500A24589 /* GroupeController.swift */,
 			);
 			path = Importers;
 			sourceTree = "<group>";
@@ -151,7 +154,7 @@
 				A52A842222442116009A6593 /* UI Customisations */,
 				4C108A6522454C0A00D4926D /* Storyboards */,
 				A5DC52E9224AB2FC00A24589 /* Helper */,
-				A5DC52F7224AEF8D00A24589 /* New Group */,
+				A5DC52F7224AEF8D00A24589 /* Ringtones */,
 				4C108A6622454C2900D4926D /* Resources */,
 				4C69CE632243FF6D00FCC33A /* Assets.xcassets */,
 			);
@@ -199,15 +202,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		A5DC52F7224AEF8D00A24589 /* New Group */ = {
+		A5DC52F7224AEF8D00A24589 /* Ringtones */ = {
 			isa = PBXGroup;
 			children = (
 				A5DC52FA224AEFDB00A24589 /* disconnect.wav */,
 				A5DC52F8224AEFDB00A24589 /* incoming.wav */,
 				A5DC52F9224AEFDB00A24589 /* outgoing.wav */,
 			);
-			name = "New Group";
-			path = "Helper/New Group";
+			name = Ringtones;
+			path = Helper/Ringtones;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +359,7 @@
 				4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */,
 				4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */,
 				4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */,
+				A5DC52FF224BE1A500A24589 /* GroupeController.swift in Sources */,
 				4CC028DB2244073C0097A2FD /* User.swift in Sources */,
 				A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */,
 				A52A843522459455009A6593 /* GroupTableViewController.swift in Sources */,
