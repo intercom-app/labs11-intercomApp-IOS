@@ -1,35 +1,36 @@
 //
-//  TeamImporter.swift
+//  GroupeController.swift
 //  Intercom App
 //
-//  Created by Lotanna Igwe-Odunze on 3/21/19.
+//  Created by Sergey Osipyan on 3/27/19.
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
 import Foundation
 
-class TeamImporter {
+class GroupController {
     
-    static let shared = TeamImporter()
+    static let shared = GroupController()
     
-    var tlvc: TeamListViewController?
     
-    var teamMembers: [User] = []
+    var gtvc: GroupTableViewController?
     
-    var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
+    var groups: [Group] = []
     
-    func fetchTeam() {
+    var groupBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
+    
+    func fetchGroups() {
         
-        var request = URLRequest(url: teamBaseURL)
-
+        var request = URLRequest(url: groupBaseURL)
+        
         request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
-    
+            
             if let teamError = error {
                 print("Error getting team members from API: \(teamError)")
                 
-            return
+                return
                 
             } //End of error handling.
             
@@ -45,15 +46,15 @@ class TeamImporter {
             do {
                 let jsonDecoder = JSONDecoder()
                 
-                let decodedTeam = try jsonDecoder.decode([User].self, from: teamData)
+                let decodedTeam = try jsonDecoder.decode([Group].self, from: teamData)
                 
-                self.teamMembers = decodedTeam
+                self.groups = decodedTeam
                 
                 //Reload the table with current data
                 DispatchQueue.main.async {
-                    self.tlvc!.tableView.reloadData()
+                    self.gtvc!.tableView.reloadData()
                 }
-
+                
                 // Convert to a string and print
                 if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
                     print(JSONString)
@@ -65,7 +66,7 @@ class TeamImporter {
                 
                 return
             }
-        } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
+            } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
         
     } //End of fetch team function.
 }

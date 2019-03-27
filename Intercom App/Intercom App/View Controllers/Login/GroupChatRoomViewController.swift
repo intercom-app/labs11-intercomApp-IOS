@@ -6,12 +6,20 @@
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
+
+/*
+ live sid: ACa080132a7f88f31b3938a9a1c4a91736
+ test sid: AC810892ca17edaceb6d723c25fe559dfb
+ live token: 4fd2f52fcbbd17dee014ce52ac3a94e2
+ test token: 52452d2c0726cc48501146ab0db96bff
+ */
+
 import UIKit
 import AVFoundation
 import PushKit
 import TwilioVoice
 
-let baseURLString = "http://649579d2.ngrok.io"  // http://649579d2.ngrok.io/api/voice
+let baseURLString = "https://intercom-be.herokuapp.com/api/voice"  // http://649579d2.ngrok.io/api/voice
 let accessTokenEndpoint = "/accessToken"
 let identity = "alice"
 let twimlParamTo = "to"
