@@ -12,6 +12,7 @@
 		4C69CE622243FF6B00FCC33A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE602243FF6B00FCC33A /* Main.storyboard */; };
 		4C69CE642243FF6D00FCC33A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE632243FF6D00FCC33A /* Assets.xcassets */; };
 		4C69CE672243FF6D00FCC33A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE652243FF6D00FCC33A /* LaunchScreen.storyboard */; };
+		4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */; };
 		4CC028DB2244073C0097A2FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DA2244073C0097A2FD /* User.swift */; };
 		4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DC224408610097A2FD /* TeamImporter.swift */; };
 		4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DE22440FE70097A2FD /* TeamListViewController.swift */; };
@@ -26,7 +27,7 @@
 		A5DC52FB224AEFDB00A24589 /* incoming.wav in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52F8224AEFDB00A24589 /* incoming.wav */; };
 		A5DC52FC224AEFDB00A24589 /* outgoing.wav in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52F9224AEFDB00A24589 /* outgoing.wav */; };
 		A5DC52FD224AEFDB00A24589 /* disconnect.wav in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52FA224AEFDB00A24589 /* disconnect.wav */; };
-		A5DC52FF224BE1A500A24589 /* GroupeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52FE224BE1A500A24589 /* GroupeController.swift */; };
+		A5DC52FF224BE1A500A24589 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52FE224BE1A500A24589 /* GroupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4C69CE632243FF6D00FCC33A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C69CE662243FF6D00FCC33A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C69CE682243FF6D00FCC33A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4CC028DA2244073C0097A2FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4CC028DC224408610097A2FD /* TeamImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamImporter.swift; sourceTree = "<group>"; };
 		4CC028DE22440FE70097A2FD /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +54,7 @@
 		A5DC52F8224AEFDB00A24589 /* incoming.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incoming.wav; sourceTree = "<group>"; };
 		A5DC52F9224AEFDB00A24589 /* outgoing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = outgoing.wav; sourceTree = "<group>"; };
 		A5DC52FA224AEFDB00A24589 /* disconnect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = disconnect.wav; sourceTree = "<group>"; };
-		A5DC52FE224BE1A500A24589 /* GroupeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupeController.swift; sourceTree = "<group>"; };
+		A5DC52FE224BE1A500A24589 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
 		D8320EBCA1B1A88320C5CD89 /* Pods-Intercom App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intercom App.debug.xcconfig"; path = "Target Support Files/Pods-Intercom App/Pods-Intercom App.debug.xcconfig"; sourceTree = "<group>"; };
 		F30C8D41480033DD3B9E2AA3 /* Pods_Intercom_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Intercom_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 				A52A843422459455009A6593 /* GroupTableViewController.swift */,
 				4CC028DE22440FE70097A2FD /* TeamListViewController.swift */,
 				A5DC52F3224ADC1A00A24589 /* GroupChatRoomViewController.swift */,
+				4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -102,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				4CC028DC224408610097A2FD /* TeamImporter.swift */,
-				A5DC52FE224BE1A500A24589 /* GroupeController.swift */,
+				A5DC52FE224BE1A500A24589 /* GroupController.swift */,
 			);
 			path = Importers;
 			sourceTree = "<group>";
@@ -359,9 +362,10 @@
 				4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */,
 				4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */,
 				4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */,
-				A5DC52FF224BE1A500A24589 /* GroupeController.swift in Sources */,
+				A5DC52FF224BE1A500A24589 /* GroupController.swift in Sources */,
 				4CC028DB2244073C0097A2FD /* User.swift in Sources */,
 				A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */,
+				4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */,
 				A52A843522459455009A6593 /* GroupTableViewController.swift in Sources */,
 				A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */,
 			);
@@ -512,7 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Intercom App/Intercom App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KF4QEGAU36;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "$(SRCROOT)/Intercom App/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -532,7 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Intercom App/Intercom App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KF4QEGAU36;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "$(SRCROOT)/Intercom App/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -125,7 +125,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="zZE-3f-NOg">
-                                <rect key="frame" x="67.5" y="213.49999999999997" width="240" height="240.00000000000009"/>
+                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="0iq-kU-bOJ"/>
                                     <constraint firstAttribute="width" constant="240" id="xrD-2D-fEv"/>
@@ -264,7 +264,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="ORc-aE-DsN">
-                                <rect key="frame" x="0.0" y="214.99999999999997" width="375" height="237.00000000000009"/>
+                                <rect key="frame" x="0.0" y="325.5" width="375" height="16"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intercom App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-qd-Nk2">
                                 <rect key="frame" x="0.0" y="55" width="375" height="32"/>
@@ -323,13 +323,86 @@
         <!--My Profile-->
         <scene sceneID="JtR-8E-irj">
             <objects>
-                <viewController title="My Profile" id="nSn-kU-O1J" sceneMemberID="viewController">
+                <viewController title="My Profile" id="nSn-kU-O1J" customClass="ProfileViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lsp-Br-vgu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="Dnq-ht-YJG">
+                                <rect key="frame" x="37" y="38" width="300" height="598.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="LRo-uV-VKG">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="391.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weX-9C-Jw8">
+                                                <rect key="frame" x="92.5" y="0.0" width="115.5" height="31.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MLr-lS-gbm">
+                                                <rect key="frame" x="0.0" y="49.5" width="300" height="300"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Firstname Lastname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7s-ee-v7m">
+                                                <rect key="frame" x="62" y="367.5" width="176.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-xG-HTu">
+                                        <rect key="frame" x="0.0" y="418.5" width="191.5" height="180"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMp-6H-eFz">
+                                                <rect key="frame" x="0.0" y="0.0" width="191.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="992-y4-95Q">
+                                                <rect key="frame" x="0.0" y="39" width="191.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcJ-F6-BBe">
+                                                <rect key="frame" x="0.0" y="78" width="191.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User since: Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MH-Ev-aBR">
+                                                <rect key="frame" x="0.0" y="117" width="191.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscription: STATUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoO-rU-hfX">
+                                                <rect key="frame" x="0.0" y="156" width="191.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Mq1-Ue-BBE"/>
                     </view>
+                    <connections>
+                        <outlet property="callStatusLabel" destination="992-y4-95Q" id="qQ0-p8-rwc"/>
+                        <outlet property="creationDateLabel" destination="4MH-Ev-aBR" id="nQh-4u-XLf"/>
+                        <outlet property="emailLabel" destination="lcJ-F6-BBe" id="cbC-Ru-095"/>
+                        <outlet property="fullnameLabel" destination="M7s-ee-v7m" id="B1J-uw-DI8"/>
+                        <outlet property="phoneLabel" destination="AMp-6H-eFz" id="FRf-c7-T2S"/>
+                        <outlet property="photoView" destination="MLr-lS-gbm" id="Im1-tX-7pT"/>
+                        <outlet property="subscriptionLabel" destination="SoO-rU-hfX" id="6Qe-WL-EhY"/>
+                        <outlet property="usernameLabel" destination="weX-9C-Jw8" id="T65-KD-FlN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wh1-L1-hlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
