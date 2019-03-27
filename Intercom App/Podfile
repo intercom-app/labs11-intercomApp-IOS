@@ -10,5 +10,5 @@ target 'Intercom App' do
 pod 'Auth0'
 pod 'SimpleKeychain'
 pod 'SwiftKeychainWrapper'
-
+pod 'TwilioVoice', '~> 2.0'
 end

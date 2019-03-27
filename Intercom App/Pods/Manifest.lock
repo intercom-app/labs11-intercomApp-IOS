@@ -3,23 +3,27 @@ PODS:
     - SimpleKeychain
   - SimpleKeychain (0.8.1)
   - SwiftKeychainWrapper (3.2.0)
+  - TwilioVoice (2.0.7)
 
 DEPENDENCIES:
   - Auth0
   - SimpleKeychain
   - SwiftKeychainWrapper
+  - TwilioVoice (~> 2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Auth0
     - SimpleKeychain
     - SwiftKeychainWrapper
+    - TwilioVoice
 
 SPEC CHECKSUMS:
   Auth0: 064dc115cd99eec7334d1cab565f4d974eecac4d
   SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
+  TwilioVoice: c0eacff80ee4d9b1e5f8c789ce8c5747c09e6140
 
-PODFILE CHECKSUM: fd124c20d13d144271830bb8a80567c732520e0d
+PODFILE CHECKSUM: 43b89781f559419d15050b83f14ce0a7b56cf045
 
 COCOAPODS: 1.6.0
