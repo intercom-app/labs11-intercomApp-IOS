@@ -19,7 +19,6 @@ class GroupTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //Pull the information in the background of the main thread
         DispatchQueue.global().async {
             GroupController.shared.fetchGroups()
@@ -29,14 +28,11 @@ class GroupTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-   
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return GroupController.shared.groups.count
     }
-
-   
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupViewTableViewCell
 
