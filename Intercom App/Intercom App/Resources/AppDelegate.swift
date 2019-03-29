@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import TwilioVoice
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        NSLog("Twilio Voice Version: %@", TwilioVoice.version())
+        self.configureUserNotifications()
         return true
     }
 
@@ -41,6 +44,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func configureUserNotifications() {
+        let rejectAction = UIMutableUserNotificationAction()
+        rejectAction.activationMode = .background
+        rejectAction.title = "Reject"
+        rejectAction.identifier = "reject"
+        rejectAction.isDestructive = true
+        rejectAction.isAuthenticationRequired = false
+        
+        let acceptAction = UIMutableUserNotificationAction()
+        acceptAction.activationMode = .background
+        acceptAction.title = "Accept"
+        acceptAction.identifier = "accept"
+        acceptAction.isDestructive = false
+        acceptAction.isAuthenticationRequired = false
+        
+        let actionCategory = UIMutableUserNotificationCategory()
+        actionCategory.identifier = "ACTIONABLE"
+        actionCategory.setActions([rejectAction, acceptAction], for: .default)
+        
+        let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: [actionCategory])
+        UIApplication.shared.registerUserNotificationSettings(settings)
+    }
 
 }
 
