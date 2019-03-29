@@ -14,7 +14,7 @@ import AVFoundation
 import PushKit
 import TwilioVoice
 
-let baseURLString = "https://f6c46f3d.ngrok.io"
+let baseURLString = "https://f6c46f3d.ngrok.io/"
 let accessTokenEndpoint = "/accessToken.php"
 let identity = "alice"
 let twimlParamTo = "to"
