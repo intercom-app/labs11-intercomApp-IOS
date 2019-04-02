@@ -125,7 +125,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="zZE-3f-NOg">
-                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
+                                <rect key="frame" x="67.5" y="213.49999999999997" width="240" height="240.00000000000009"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="0iq-kU-bOJ"/>
                                     <constraint firstAttribute="width" constant="240" id="xrD-2D-fEv"/>
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhG-rG-MK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-330" y="-833"/>
+            <point key="canvasLocation" x="2802" y="609"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="MgZ-zw-KCR">
@@ -275,7 +275,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="ORc-aE-DsN">
-                                <rect key="frame" x="0.0" y="325.5" width="375" height="16"/>
+                                <rect key="frame" x="0.0" y="214.99999999999997" width="375" height="237.00000000000009"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intercom App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-qd-Nk2">
                                 <rect key="frame" x="0.0" y="55" width="375" height="32"/>
@@ -536,27 +536,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WT2-9z-gbW">
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WT2-9z-gbW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="abc-1a-cTW">
-                                                    <rect key="frame" x="0.0" y="6.5" width="120" height="120"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="132.5" height="132.50000000000006"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="4gr-0l-6ST"/>
-                                                        <constraint firstAttribute="height" constant="120" id="Y7v-vg-M0H"/>
+                                                        <constraint firstAttribute="height" constant="132.5" id="RJE-dt-nVf"/>
+                                                        <constraint firstAttribute="width" secondItem="abc-1a-cTW" secondAttribute="height" multiplier="1:1" id="cbR-bl-d3P"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K0j-ga-PX1">
-                                                    <rect key="frame" x="140" y="36" width="235" height="61"/>
+                                                    <rect key="frame" x="140.5" y="36" width="234.5" height="61"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxW-nc-dwF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="235" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="234.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lL0-gr-opP">
-                                                            <rect key="frame" x="0.0" y="40.5" width="235" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="40.5" width="234.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -597,7 +597,6 @@
         <image name="night-stars-wallpaper" width="320" height="568"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2AC-VJ-X0d"/>
         <segue reference="mux-Pn-6OY"/>
     </inferredMetricsTieBreakers>
 </document>
