@@ -159,20 +159,31 @@
                                     <segue destination="Z5r-Nj-yxM" kind="show" id="2AC-VJ-X0d"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdE-0I-LKB">
+                                <rect key="frame" x="313" y="20" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="cgp-YC-AX1" kind="show" id="qHg-A1-F6N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="E9g-cY-f1a" firstAttribute="top" secondItem="zZE-3f-NOg" secondAttribute="bottom" constant="47.5" id="2WA-XV-kCo"/>
                             <constraint firstItem="E9g-cY-f1a" firstAttribute="centerX" secondItem="PBe-cO-uPh" secondAttribute="centerX" id="8zW-TF-ytN"/>
+                            <constraint firstItem="ZIR-lD-HMN" firstAttribute="top" secondItem="FdE-0I-LKB" secondAttribute="bottom" constant="411.5" id="A8D-dA-VP4"/>
                             <constraint firstItem="taG-rA-1Kj" firstAttribute="centerX" secondItem="PBe-cO-uPh" secondAttribute="centerX" id="Hdp-at-iTM"/>
                             <constraint firstItem="rPp-va-iWj" firstAttribute="trailing" secondItem="ZIR-lD-HMN" secondAttribute="trailing" constant="50" id="KsD-CB-vtx"/>
+                            <constraint firstItem="FdE-0I-LKB" firstAttribute="top" secondItem="rPp-va-iWj" secondAttribute="top" id="L5y-89-unm"/>
                             <constraint firstItem="niA-EN-zz9" firstAttribute="top" secondItem="rPp-va-iWj" secondAttribute="top" constant="93" id="N6C-QU-dHe"/>
                             <constraint firstItem="ZIR-lD-HMN" firstAttribute="top" secondItem="zZE-3f-NOg" secondAttribute="bottom" constant="8" id="VJ5-xK-LPl"/>
                             <constraint firstItem="zZE-3f-NOg" firstAttribute="centerX" secondItem="PBe-cO-uPh" secondAttribute="centerX" id="aFE-8B-Si5"/>
                             <constraint firstItem="rPp-va-iWj" firstAttribute="bottom" secondItem="taG-rA-1Kj" secondAttribute="bottom" constant="40" id="hD2-Qt-FF4"/>
                             <constraint firstItem="9wp-t7-Zkc" firstAttribute="centerX" secondItem="PBe-cO-uPh" secondAttribute="centerX" id="hpE-bC-6rb"/>
                             <constraint firstItem="niA-EN-zz9" firstAttribute="top" secondItem="9wp-t7-Zkc" secondAttribute="bottom" constant="8" id="jEn-va-Auz"/>
+                            <constraint firstItem="rPp-va-iWj" firstAttribute="trailing" secondItem="FdE-0I-LKB" secondAttribute="trailing" constant="16" id="jrs-6P-fYJ"/>
                             <constraint firstItem="zZE-3f-NOg" firstAttribute="centerY" secondItem="PBe-cO-uPh" secondAttribute="centerY" id="kVl-Fz-MbK"/>
+                            <constraint firstItem="FdE-0I-LKB" firstAttribute="leading" secondItem="rPp-va-iWj" secondAttribute="leading" constant="313" id="nSM-z1-eBm"/>
                             <constraint firstItem="ZIR-lD-HMN" firstAttribute="leading" secondItem="rPp-va-iWj" secondAttribute="leading" constant="50" id="oqa-9j-Rut"/>
                             <constraint firstItem="niA-EN-zz9" firstAttribute="centerX" secondItem="PBe-cO-uPh" secondAttribute="centerX" id="qo7-a7-yN6"/>
                             <constraint firstItem="9wp-t7-Zkc" firstAttribute="top" secondItem="rPp-va-iWj" secondAttribute="top" constant="55" id="zMr-qP-9uh"/>
@@ -483,7 +494,15 @@
             </objects>
             <point key="canvasLocation" x="1284" y="-164"/>
         </scene>
-        <!--Group Table View Controller-->
+        <!--MultipeerVoiceChat-->
+        <scene sceneID="syY-Sh-JnF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MultipeerVoiceChat" id="cgp-YC-AX1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCE-gH-EYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="196"/>
+        </scene>
+        <!--Title-->
         <scene sceneID="G78-Hg-r1W">
             <objects>
                 <tableViewController id="Z5r-Nj-yxM" customClass="GroupTableViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -491,9 +510,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="UFy-gz-8PZ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Title" id="o99-lk-Gb6">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="undo" id="1rj-JE-37C">
+                                        <connections>
+                                            <segue destination="Dh5-Dj-HVh" kind="show" id="mux-Pn-6OY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="fd0-KF-7gY">
+                                        <connections>
+                                            <action selector="addNewGroupe:" destination="Z5r-Nj-yxM" id="pOO-HE-3df"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="133" id="uRD-N4-Izs" customClass="GroupViewTableViewCell" customModule="Intercom_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="133"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uRD-N4-Izs" id="ebA-kJ-i6C">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
@@ -548,6 +585,7 @@
                             <outlet property="delegate" destination="Z5r-Nj-yxM" id="QG3-k7-pp0"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="RhR-Ga-0rX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5v-gB-fRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -558,4 +596,7 @@
         <image name="audio-sound-waves" width="1000" height="237"/>
         <image name="night-stars-wallpaper" width="320" height="568"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="mux-Pn-6OY"/>
+    </inferredMetricsTieBreakers>
 </document>
