@@ -25,7 +25,30 @@ class GroupTableViewController: UITableViewController {
             
         }
     }
-  
+    @IBAction func addNewGroupe(_ sender: Any) {
+        
+            let alert = UIAlertController(title: "Add a Group", message: "Write your group name below:", preferredStyle: .alert)
+            var commentTextField: UITextField?
+            
+            alert.addTextField { (textField) in
+                textField.placeholder = "Group Name:"
+                commentTextField = textField
+            }
+            
+            let addCommentAction = UIAlertAction(title: "Add Group", style: .default) { (_) in
+                
+                guard let groupName = commentTextField?.text else { return }
+                GroupController.shared.postRequest(groupName: groupName)
+                
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alert.addAction(addCommentAction)
+            alert.addAction(cancelAction)
+            
+            self.present(alert, animated: true, completion: nil)
+        
+    }
     
     // MARK: - Table view data source
 

@@ -500,7 +500,7 @@
                 <viewControllerPlaceholder storyboardName="MultipeerVoiceChat" id="cgp-YC-AX1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCE-gH-EYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1874" y="196"/>
+            <point key="canvasLocation" x="1283" y="1078"/>
         </scene>
         <!--Title-->
         <scene sceneID="G78-Hg-r1W">
@@ -597,6 +597,7 @@
         <image name="night-stars-wallpaper" width="320" height="568"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2AC-VJ-X0d"/>
         <segue reference="mux-Pn-6OY"/>
     </inferredMetricsTieBreakers>
 </document>
