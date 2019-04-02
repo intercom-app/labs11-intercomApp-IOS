@@ -25,6 +25,10 @@ class GroupTableViewController: UITableViewController {
             
         }
     }
+    @IBAction func dismissView(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func addNewGroupe(_ sender: Any) {
         
             let alert = UIAlertController(title: "Add a Group", message: "Write your group name below:", preferredStyle: .alert)
@@ -81,8 +85,9 @@ class GroupTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let destination = segue.destination as! GroupDetailViewController
+        destination.group = GroupController.shared.groups[indexPath.row]
     }
 
 }

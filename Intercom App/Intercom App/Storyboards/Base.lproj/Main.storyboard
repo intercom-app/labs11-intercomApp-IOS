@@ -156,7 +156,7 @@
                                 <rect key="frame" x="97" y="75" width="181" height="30"/>
                                 <state key="normal" title="temp Button Show Groups"/>
                                 <connections>
-                                    <segue destination="Z5r-Nj-yxM" kind="show" id="2AC-VJ-X0d"/>
+                                    <segue destination="drL-dq-Sf7" kind="show" id="2AC-VJ-X0d"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdE-0I-LKB">
@@ -231,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtJ-4E-a0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4167" y="-843"/>
+            <point key="canvasLocation" x="2206" y="-833"/>
         </scene>
         <!--Invite to Group-->
         <scene sceneID="oLU-Nu-Q1I">
@@ -251,17 +251,60 @@
         <!--Group Settings-->
         <scene sceneID="1qT-CK-s2q">
             <objects>
-                <viewController title="Group Settings" id="BvZ-1x-CaD" sceneMemberID="viewController">
+                <viewController title="Group Settings" id="BvZ-1x-CaD" customClass="GroupDetailViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DP3-FR-aLb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wzc-wG-Ufd">
+                                <rect key="frame" x="8" y="72" width="359" height="467.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J24-v3-she">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="47.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="Njn-2V-p9C">
+                                        <rect key="frame" x="0.0" y="55.5" width="359" height="359.00000000000006"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CreatedAt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-Ib-0Kk">
+                                        <rect key="frame" x="0.0" y="422.5" width="359" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Njn-2V-p9C" secondAttribute="height" multiplier="1:1" id="uH6-0M-f7f"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wzc-wG-Ufd" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="to5-wu-tPZ" secondAttribute="bottom" constant="-150" id="0x3-Sa-q99"/>
+                            <constraint firstItem="Wzc-wG-Ufd" firstAttribute="top" secondItem="to5-wu-tPZ" secondAttribute="top" constant="8" id="O7p-75-Cgy"/>
+                            <constraint firstItem="to5-wu-tPZ" firstAttribute="trailing" secondItem="Wzc-wG-Ufd" secondAttribute="trailing" constant="8" id="XLB-2a-GLU"/>
+                            <constraint firstItem="Wzc-wG-Ufd" firstAttribute="leading" secondItem="to5-wu-tPZ" secondAttribute="leading" constant="8" id="gTh-Uc-7uE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="to5-wu-tPZ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="vb4-AG-Zki">
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="S09-02-Zty">
+                            <connections>
+                                <action selector="deleteGroup:" destination="BvZ-1x-CaD" id="2Jq-D4-Zcy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="createdAt" destination="gMM-Ib-0Kk" id="2f1-fe-nw9"/>
+                        <outlet property="groupImage" destination="Njn-2V-p9C" id="L5f-kQ-ifO"/>
+                        <outlet property="groupName" destination="J24-v3-she" id="mua-nZ-OwB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhG-rG-MK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2802" y="609"/>
+            <point key="canvasLocation" x="3548" y="609"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="MgZ-zw-KCR">
@@ -502,7 +545,7 @@
             </objects>
             <point key="canvasLocation" x="1283" y="1078"/>
         </scene>
-        <!--Title-->
+        <!--Groups-->
         <scene sceneID="G78-Hg-r1W">
             <objects>
                 <tableViewController id="Z5r-Nj-yxM" customClass="GroupTableViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -510,27 +553,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="UFy-gz-8PZ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Title" id="o99-lk-Gb6">
-                                    <barButtonItem key="leftBarButtonItem" systemItem="undo" id="1rj-JE-37C">
-                                        <connections>
-                                            <segue destination="Dh5-Dj-HVh" kind="show" id="mux-Pn-6OY"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="fd0-KF-7gY">
-                                        <connections>
-                                            <action selector="addNewGroupe:" destination="Z5r-Nj-yxM" id="pOO-HE-3df"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="133" id="uRD-N4-Izs" customClass="GroupViewTableViewCell" customModule="Intercom_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="133"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uRD-N4-Izs" id="ebA-kJ-i6C">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
@@ -577,6 +602,10 @@
                                     <outlet property="groupImage" destination="abc-1a-cTW" id="eDr-Fg-5lg"/>
                                     <outlet property="groupNameLabel" destination="YxW-nc-dwF" id="0bl-TU-fy3"/>
                                     <outlet property="numberOfUsers" destination="lL0-gr-opP" id="c2z-JI-6Qq"/>
+                                    <segue destination="BvZ-1x-CaD" kind="show" id="PID-sK-Ysx">
+                                        <segue key="commit" inheritsFrom="parent" id="R8C-sL-agZ"/>
+                                        <segue key="preview" inheritsFrom="commit" id="fpy-Ni-WaC"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -585,11 +614,40 @@
                             <outlet property="delegate" destination="Z5r-Nj-yxM" id="QG3-k7-pp0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="RhR-Ga-0rX"/>
+                    <navigationItem key="navigationItem" title="Groups" id="RhR-Ga-0rX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="undo" id="1rj-JE-37C">
+                            <connections>
+                                <action selector="dismissView:" destination="Z5r-Nj-yxM" id="Pr0-CI-4aK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fd0-KF-7gY">
+                            <connections>
+                                <action selector="addNewGroupe:" destination="Z5r-Nj-yxM" id="pOO-HE-3df"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5v-gB-fRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2052" y="609"/>
+            <point key="canvasLocation" x="2788" y="609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I20-Do-zYI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="drL-dq-Sf7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QGy-rK-Zds">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z5r-Nj-yxM" kind="relationship" relationship="rootViewController" id="xuK-t0-X3l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0t-RH-OWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2039" y="609"/>
         </scene>
     </scenes>
     <resources>
@@ -597,6 +655,6 @@
         <image name="night-stars-wallpaper" width="320" height="568"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mux-Pn-6OY"/>
+        <segue reference="PID-sK-Ysx"/>
     </inferredMetricsTieBreakers>
 </document>
