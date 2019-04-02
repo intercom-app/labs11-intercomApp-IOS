@@ -65,6 +65,16 @@ class GroupTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let group = GroupController.shared.groups[indexPath.row]
+            GroupController.shared.groups.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            GroupController.shared.deleteRequest(groupID: group.id!)
+        }
+    }
+    
    
 
     // MARK: - Navigation
