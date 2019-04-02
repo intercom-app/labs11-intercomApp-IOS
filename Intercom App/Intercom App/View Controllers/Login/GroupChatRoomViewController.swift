@@ -14,9 +14,9 @@ import AVFoundation
 import PushKit
 import TwilioVoice
 
-let baseURLString = "https://f6c46f3d.ngrok.io"
+let baseURLString = "https://284aebbe.ngrok.io"
 let accessTokenEndpoint = "/accessToken.php"
-let identity = "bob"
+let identity = "test"
 let twimlParamTo = "to"
 
 class GroupChatRoomViewController: UIViewController, PKPushRegistryDelegate, TVONotificationDelegate, TVOCallDelegate, AVAudioPlayerDelegate, UITextFieldDelegate {

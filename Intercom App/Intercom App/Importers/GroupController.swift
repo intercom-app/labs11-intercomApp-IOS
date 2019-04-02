@@ -69,4 +69,7 @@ class GroupController {
             } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
         
     } //End of fetch team function.
+    
+    
+   
 }
