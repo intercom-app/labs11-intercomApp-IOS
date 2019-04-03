@@ -8,19 +8,20 @@
 
 import UIKit
 
-class GroupDetailViewController: UIViewController {
+class GroupDetailViewController: UIViewController, UITextFieldDelegate {
 
     
     var group: Group?
     
-    @IBOutlet weak var groupName: UILabel!
+
     @IBOutlet weak var createdAt: UILabel!
     @IBOutlet weak var groupImage: UIImageView!
+    @IBOutlet weak var groupName: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.groupName.delegate = self
         updateView()
     }
     
@@ -32,9 +33,24 @@ class GroupDetailViewController: UIViewController {
         
     }
     
+    @IBAction func saveButton(_ sender: Any) {
+        if let name = groupName.text {
+            GroupController.shared.putRequest(groupID: group!.id!, groupName: name)
+        }
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func deleteGroup(_ sender: Any) {
         GroupController.shared.deleteRequest(groupID: group!.id!)
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        groupName.resignFirstResponder()
+        return true
     }
     
     /*
