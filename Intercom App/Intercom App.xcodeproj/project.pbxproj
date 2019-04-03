@@ -21,6 +21,18 @@
 		A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843222458464009A6593 /* GroupViewTableViewCell.swift */; };
 		A52A843522459455009A6593 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843422459455009A6593 /* GroupTableViewController.swift */; };
 		A52A8437224594AE009A6593 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8436224594AE009A6593 /* Group.swift */; };
+		A5323F7B2253C89F00B86706 /* InCallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F6F2253C89E00B86706 /* InCallTableViewCell.swift */; };
+		A5323F7C2253C89F00B86706 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F702253C89E00B86706 /* AddViewController.swift */; };
+		A5323F7D2253C89F00B86706 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F712253C89E00B86706 /* NameViewController.swift */; };
+		A5323F7E2253C89F00B86706 /* AddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F722253C89E00B86706 /* AddTableViewCell.swift */; };
+		A5323F7F2253C89F00B86706 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F732253C89E00B86706 /* Peer.swift */; };
+		A5323F812253C89F00B86706 /* ThisUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F752253C89E00B86706 /* ThisUser.swift */; };
+		A5323F832253C89F00B86706 /* InCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F772253C89E00B86706 /* InCallViewController.swift */; };
+		A5323F842253C89F00B86706 /* CallData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F782253C89E00B86706 /* CallData.swift */; };
+		A5323F852253C89F00B86706 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F792253C89F00B86706 /* Enums.swift */; };
+		A5323F862253C89F00B86706 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F7A2253C89F00B86706 /* UserData.swift */; };
+		A5323F8A2253CA2700B86706 /* MultipeerVoiceChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5323F892253CA2700B86706 /* MultipeerVoiceChat.storyboard */; };
+		A5323F8C2254196800B86706 /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F8B2254196800B86706 /* GroupDetailViewController.swift */; };
 		A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EB224AB85E00A24589 /* SessionManager.swift */; };
 		A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EC224AB85F00A24589 /* LoginViewController.swift */; };
 		A5DC52F0224AB91D00A24589 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52EF224AB91D00A24589 /* Auth0.plist */; };
@@ -48,6 +60,18 @@
 		A52A843222458464009A6593 /* GroupViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewTableViewCell.swift; sourceTree = "<group>"; };
 		A52A843422459455009A6593 /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		A52A8436224594AE009A6593 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		A5323F6F2253C89E00B86706 /* InCallTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InCallTableViewCell.swift; sourceTree = "<group>"; };
+		A5323F702253C89E00B86706 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		A5323F712253C89E00B86706 /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		A5323F722253C89E00B86706 /* AddTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewCell.swift; sourceTree = "<group>"; };
+		A5323F732253C89E00B86706 /* Peer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
+		A5323F752253C89E00B86706 /* ThisUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThisUser.swift; sourceTree = "<group>"; };
+		A5323F772253C89E00B86706 /* InCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InCallViewController.swift; sourceTree = "<group>"; };
+		A5323F782253C89E00B86706 /* CallData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallData.swift; sourceTree = "<group>"; };
+		A5323F792253C89F00B86706 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		A5323F7A2253C89F00B86706 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		A5323F892253CA2700B86706 /* MultipeerVoiceChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultipeerVoiceChat.storyboard; sourceTree = "<group>"; };
+		A5323F8B2254196800B86706 /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		A5DC52EB224AB85E00A24589 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		A5DC52EC224AB85F00A24589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5DC52EF224AB91D00A24589 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
@@ -96,6 +120,7 @@
 				A5DC52EA224AB32600A24589 /* Login */,
 				A52A842F224583A2009A6593 /* Cell View */,
 				A52A843422459455009A6593 /* GroupTableViewController.swift */,
+				A5323F8B2254196800B86706 /* GroupDetailViewController.swift */,
 				4CC028DE22440FE70097A2FD /* TeamListViewController.swift */,
 				A5DC52F3224ADC1A00A24589 /* GroupChatRoomViewController.swift */,
 				4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */,
@@ -136,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				4C69CE5B2243FF6B00FCC33A /* Intercom App */,
+				A5323F6E2253C79F00B86706 /* Multipeer Voice Chat */,
 				4C69CE5A2243FF6B00FCC33A /* Products */,
 				4FD39646C8F780EFAB9C91F2 /* Pods */,
 				2548EE492E421CA7D5357C34 /* Frameworks */,
@@ -190,6 +216,24 @@
 				A52A843222458464009A6593 /* GroupViewTableViewCell.swift */,
 			);
 			path = "Cell View";
+			sourceTree = "<group>";
+		};
+		A5323F6E2253C79F00B86706 /* Multipeer Voice Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A5323F892253CA2700B86706 /* MultipeerVoiceChat.storyboard */,
+				A5323F722253C89E00B86706 /* AddTableViewCell.swift */,
+				A5323F702253C89E00B86706 /* AddViewController.swift */,
+				A5323F782253C89E00B86706 /* CallData.swift */,
+				A5323F792253C89F00B86706 /* Enums.swift */,
+				A5323F6F2253C89E00B86706 /* InCallTableViewCell.swift */,
+				A5323F772253C89E00B86706 /* InCallViewController.swift */,
+				A5323F712253C89E00B86706 /* NameViewController.swift */,
+				A5323F732253C89E00B86706 /* Peer.swift */,
+				A5323F752253C89E00B86706 /* ThisUser.swift */,
+				A5323F7A2253C89F00B86706 /* UserData.swift */,
+			);
+			path = "Multipeer Voice Chat";
 			sourceTree = "<group>";
 		};
 		A5DC52E9224AB2FC00A24589 /* Helper */ = {
@@ -288,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5323F8A2253CA2700B86706 /* MultipeerVoiceChat.storyboard in Resources */,
 				4C69CE672243FF6D00FCC33A /* LaunchScreen.storyboard in Resources */,
 				4C69CE642243FF6D00FCC33A /* Assets.xcassets in Resources */,
 				A5DC52FC224AEFDB00A24589 /* outgoing.wav in Resources */,
@@ -361,17 +406,28 @@
 				A52A8426224421C5009A6593 /* LoginButton.swift in Sources */,
 				A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */,
 				A52A8437224594AE009A6593 /* Group.swift in Sources */,
+				A5323F862253C89F00B86706 /* UserData.swift in Sources */,
 				A5DC52F4224ADC1A00A24589 /* GroupChatRoomViewController.swift in Sources */,
 				4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */,
 				4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */,
 				4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */,
 				A5DC52FF224BE1A500A24589 /* GroupController.swift in Sources */,
+				A5323F7D2253C89F00B86706 /* NameViewController.swift in Sources */,
+				A5323F7F2253C89F00B86706 /* Peer.swift in Sources */,
+				A5323F7E2253C89F00B86706 /* AddTableViewCell.swift in Sources */,
+				A5323F832253C89F00B86706 /* InCallViewController.swift in Sources */,
+				A5323F842253C89F00B86706 /* CallData.swift in Sources */,
 				4CC028DB2244073C0097A2FD /* User.swift in Sources */,
+				A5323F812253C89F00B86706 /* ThisUser.swift in Sources */,
 				A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */,
+				A5323F7C2253C89F00B86706 /* AddViewController.swift in Sources */,
 				4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */,
+				A5323F8C2254196800B86706 /* GroupDetailViewController.swift in Sources */,
 				A52A843522459455009A6593 /* GroupTableViewController.swift in Sources */,
 				A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */,
 				4C62D7E0224DA08B002D4BE4 /* ProfileEditController.swift in Sources */,
+				A5323F852253C89F00B86706 /* Enums.swift in Sources */,
+				A5323F7B2253C89F00B86706 /* InCallTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

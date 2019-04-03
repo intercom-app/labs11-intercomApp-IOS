@@ -39,8 +39,8 @@ class TeamListViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "teammateCell", for: indexPath)
         
-        cell.textLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].firstName
-        cell.detailTextLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].lastName
+        cell.textLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].displayName
+        cell.detailTextLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].email
         return cell
     }
    
