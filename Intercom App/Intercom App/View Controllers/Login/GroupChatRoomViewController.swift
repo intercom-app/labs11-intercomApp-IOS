@@ -112,6 +112,9 @@ class GroupChatRoomViewController: UIViewController, PKPushRegistryDelegate, TVO
         outgoingValue.resignFirstResponder()
         return true
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     // MARK: PKPushRegistryDelegate
     func pushRegistry(_ registry: PKPushRegistry, didUpdate credentials: PKPushCredentials, for type: PKPushType) {

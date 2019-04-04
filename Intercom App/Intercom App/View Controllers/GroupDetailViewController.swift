@@ -30,7 +30,7 @@ class GroupDetailViewController: UIViewController, UITextFieldDelegate {
         
         groupName.text = group?.name
         createdAt.text = group?.createdAt
-        
+        title = group?.name
     }
     
     @IBAction func saveButton(_ sender: Any) {
@@ -42,6 +42,9 @@ class GroupDetailViewController: UIViewController, UITextFieldDelegate {
     @IBAction func deleteGroup(_ sender: Any) {
         GroupController.shared.deleteRequest(groupID: group!.id!)
         navigationController?.popViewController(animated: true)
+    }
+    @IBAction func inviteNewUser(_ sender: Any) {
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
