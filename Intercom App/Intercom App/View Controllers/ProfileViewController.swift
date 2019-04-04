@@ -10,6 +10,9 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    var currentUser: User? { didSet { displayInformation() }}
+    var userImage: UIImage?
+    
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var photoView: UIImageView!
@@ -25,6 +28,19 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var creationDateLabel: UILabel!
     
     @IBOutlet weak var subscriptionLabel: UILabel!
+    
+    
+    func displayInformation() {
+    
+        usernameLabel.text = currentUser?.displayName
+        photoView.image = userImage
+        fullnameLabel.text = "\(currentUser?.firstName) \(currentUser?.lastName)"
+        //phoneLabel.text = currentUser?.phoneNumber! as String
+        //callStatusLabel.text =
+        emailLabel.text = currentUser?.email
+        //creationDateLabel.text =
+        //subscriptionLabel.text =
+    }
     
     
     
