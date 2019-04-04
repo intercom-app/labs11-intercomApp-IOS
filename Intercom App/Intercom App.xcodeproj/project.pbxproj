@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3396FE9202F45C9183EBEAD3 /* Pods_Intercom_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30C8D41480033DD3B9E2AA3 /* Pods_Intercom_App.framework */; };
 		4C62D7E0224DA08B002D4BE4 /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C62D7DF224DA08B002D4BE4 /* ProfileEditController.swift */; };
+		4C6304FF22558F6C004DA03E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6304FE22558F6C004DA03E /* UserManager.swift */; };
 		4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C69CE5C2243FF6B00FCC33A /* AppDelegate.swift */; };
 		4C69CE622243FF6B00FCC33A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE602243FF6B00FCC33A /* Main.storyboard */; };
 		4C69CE642243FF6D00FCC33A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE632243FF6D00FCC33A /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		4C62D7DF224DA08B002D4BE4 /* ProfileEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditController.swift; sourceTree = "<group>"; };
+		4C6304FE22558F6C004DA03E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		4C69CE592243FF6B00FCC33A /* Intercom App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Intercom App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C69CE5C2243FF6B00FCC33A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C69CE612243FF6B00FCC33A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				4CC028DC224408610097A2FD /* TeamImporter.swift */,
 				A5DC52FE224BE1A500A24589 /* GroupController.swift */,
+				4C6304FE22558F6C004DA03E /* UserManager.swift */,
 			);
 			path = Importers;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				A5323F842253C89F00B86706 /* CallData.swift in Sources */,
 				4CC028DB2244073C0097A2FD /* User.swift in Sources */,
 				A5323F812253C89F00B86706 /* ThisUser.swift in Sources */,
+				4C6304FF22558F6C004DA03E /* UserManager.swift in Sources */,
 				A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */,
 				A5323F7C2253C89F00B86706 /* AddViewController.swift in Sources */,
 				4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */,
