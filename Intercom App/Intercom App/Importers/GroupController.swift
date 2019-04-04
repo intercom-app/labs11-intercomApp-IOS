@@ -18,6 +18,7 @@ class GroupController {
     var groups: [Group] = []
     
     var groupBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
+   
     
     func fetchGroups() {
         

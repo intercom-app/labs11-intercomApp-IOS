@@ -14,8 +14,8 @@ import AVFoundation
 import PushKit
 import TwilioVoice
 
-let baseURLString = "https://284aebbe.ngrok.io"
-let accessTokenEndpoint = "/accessToken.php"
+let baseURLString = "https://intercom-be-farste.herokuapp.com/api/voice/"
+let accessTokenEndpoint = "accessToken"
 let identity = "test"
 let twimlParamTo = "to"
 
@@ -111,6 +111,9 @@ class GroupChatRoomViewController: UIViewController, PKPushRegistryDelegate, TVO
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         outgoingValue.resignFirstResponder()
         return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // MARK: PKPushRegistryDelegate
