@@ -12,10 +12,18 @@ class ProfileEditController: UIViewController, UIImagePickerControllerDelegate, 
     
     //Properties
     var originalImage: UIImage?
+    var currentUser: User?
     
     //Outlets
     @IBOutlet weak var profilePhotoView: UIImageView!
     
+    @IBOutlet weak var firstnameField: UITextField!
+    
+    @IBOutlet weak var lastnameField: UITextField!
+    
+    @IBOutlet weak var phoneField: UITextField!
+    
+    @IBOutlet weak var emailField: UITextField!
     
     //Actions
     @IBAction func choosePhotoClicked(_ sender: UIButton) {
@@ -52,4 +60,25 @@ class ProfileEditController: UIViewController, UIImagePickerControllerDelegate, 
         picker.dismiss(animated: true, completion: nil)
         
     }
+    
+    //What happens when the user clicks save
+    @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
+        
+        currentUser?.firstName = firstnameField.text
+        currentUser?.lastName = lastnameField.text
+        currentUser?.email = emailField.text!
+        currentUser?.phoneNumber = Int(phoneField.text!)
+        
+        performSegue(withIdentifier: "saveProfile", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "saveProfile" {
+            let profileVC = segue.destination as! ProfileViewController
+            
+            profileVC.userImage = originalImage
+        }
+    }
+    
+    
 }
