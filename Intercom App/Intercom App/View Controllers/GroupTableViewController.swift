@@ -22,7 +22,7 @@ class GroupTableViewController: UITableViewController {
         //Pull the information in the background of the main thread
         DispatchQueue.global().async {
             GroupController.shared.fetchGroups()
-            GroupController.shared.getUserInfo()
+            
         }
     }
     @IBAction func dismissView(_ sender: Any) {

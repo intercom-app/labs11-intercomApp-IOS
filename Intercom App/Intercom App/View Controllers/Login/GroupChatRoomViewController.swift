@@ -14,8 +14,8 @@ import AVFoundation
 import PushKit
 import TwilioVoice
 
-let baseURLString = "https://284aebbe.ngrok.io"
-let accessTokenEndpoint = "/accessToken.php"
+let baseURLString = "https://intercom-be-farste.herokuapp.com/api/voice/"
+let accessTokenEndpoint = "accessToken"
 let identity = "test"
 let twimlParamTo = "to"
 

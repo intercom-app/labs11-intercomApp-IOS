@@ -715,6 +715,7 @@
         <image name="night-stars-wallpaper" width="320" height="568"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="de8-X1-BmQ"/>
         <segue reference="OSd-FO-hRq"/>
         <segue reference="PID-sK-Ysx"/>
     </inferredMetricsTieBreakers>
