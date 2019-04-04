@@ -14,6 +14,7 @@ import AVFoundation
 import PushKit
 import TwilioVoice
 
+
 let baseURLString = "https://intercom-be-farste.herokuapp.com/api/voice/"
 let accessTokenEndpoint = "accessToken"
 let identity = "test"
@@ -51,9 +52,10 @@ class GroupChatRoomViewController: UIViewController, PKPushRegistryDelegate, TVO
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
+        
     }
     
     func fetchAccessToken() -> String? {
