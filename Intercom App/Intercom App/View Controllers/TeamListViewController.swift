@@ -24,7 +24,7 @@ class TeamListViewController: UITableViewController {
         
         //Pull the information in the background of the main thread
         DispatchQueue.global().async {
-            TeamImporter.shared.fetchTeam()
+            TeamImporter.shared.getUser()
 
         }
     }
@@ -32,15 +32,15 @@ class TeamListViewController: UITableViewController {
    //Tableview Datasource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return TeamImporter.shared.teamMembers.count
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "teammateCell", for: indexPath)
         
-        cell.textLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].displayName
-        cell.detailTextLabel?.text = TeamImporter.shared.teamMembers[indexPath.row].email
+        cell.textLabel?.text = TeamImporter.shared.teamMembers?.displayName
+        cell.detailTextLabel?.text = TeamImporter.shared.teamMembers?.email
         return cell
     }
    
