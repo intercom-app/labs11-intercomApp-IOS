@@ -17,7 +17,7 @@ class GroupController {
     var groups: [Group] = []
     var groupBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
     var userEmail = UserManager.shared.authUser?.email
-    var userNikname = UserManager.shared.authUser?.nickname
+    var userNickname = UserManager.shared.authUser?.nickname
     
     
     func getUser() {
@@ -25,7 +25,7 @@ class GroupController {
         let usersBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
         
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
-        guard let email = userEmail, let name = userNikname else { return }
+        guard let email = userEmail, let name = userNickname else { return }
         let parameters = ["nickname": name, "email": email]
         
         //create the session object
