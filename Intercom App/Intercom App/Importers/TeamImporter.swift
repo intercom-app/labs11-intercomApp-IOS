@@ -18,7 +18,7 @@ class TeamImporter {
     var userID: Int?
     var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
     var userEmail = UserManager.shared.authUser?.email
-    var userNickname = UserManager.shared.authUser?.nickname
+    var userNikname = UserManager.shared.authUser?.nickname
     
     
     func getUser() {
@@ -26,7 +26,7 @@ class TeamImporter {
         let usersBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
         
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
-        guard let email = userEmail, let name = userNickname else { return }
+        guard let email = userEmail, let name = userNikname else { return }
         let parameters = ["nickname": name, "email": email]
         
         //create the session object
