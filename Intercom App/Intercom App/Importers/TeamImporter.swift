@@ -67,7 +67,8 @@ class TeamImporter {
                         if let userID = json["id"] as? Int {
                             print(userID)
                         self.userID = userID
-                        self.fetchTeam(userID: userID)
+                            // MARK Temporary added user ID 1 to test JSON object
+                        self.fetchTeam(userID: 1) // need to change to userID
                     }
                     
                 }
