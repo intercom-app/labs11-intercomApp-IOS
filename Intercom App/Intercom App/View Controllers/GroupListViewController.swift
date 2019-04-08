@@ -15,6 +15,7 @@ class GroupListViewController: UITableViewController {
         super.viewWillAppear(animated)
         TeamImporter.shared.gtvc = self
         GroupController.shared.gtvc = self
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -58,14 +59,15 @@ class GroupListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return GroupController.shared.groups.count
+        return TeamImporter.shared.teamMembers?.groupsBelongedTo!.count ?? 0
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupViewTableViewCell
 
         cell.groupNameLabel.text = TeamImporter.shared.teamMembers?.groupsBelongedTo![indexPath.row].groupName
-        cell.numberOfUsers.text = GroupController.shared.groups[indexPath.row].createdAt
+        cell.numberOfUsers.text = TeamImporter.shared.teamMembers?.groupsBelongedTo![indexPath.row].groupCreatedAt
 
         return cell
     }
@@ -87,7 +89,7 @@ class GroupListViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let destination = segue.destination as! GroupEditViewController
-        destination.group = GroupController.shared.groups[indexPath.row]
+//        destination.group = GroupController.shared.groups[indexPath.row]
     }
 
 }
