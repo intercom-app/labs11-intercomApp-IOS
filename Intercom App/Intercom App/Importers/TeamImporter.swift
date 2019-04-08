@@ -19,7 +19,7 @@ class TeamImporter {
     var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
     var userEmail = userProfile.email
     var userNikname = userProfile.nickname
-    
+    var allGroups: [[Groups]]?
     
     func getUser() {
         
@@ -68,7 +68,7 @@ class TeamImporter {
                             print(userID)
                         self.userID = userID
                             // MARK Temporary added user ID 1 to test JSON object
-                        self.fetchTeam(userID: 1) // need to change to userID
+                        self.fetchTeam(userID: 2) // need to change to userID
                     }
                     
                 }
@@ -116,7 +116,9 @@ class TeamImporter {
                 let decodedTeam = try jsonDecoder.decode(Users.self, from: teamData)
                 
                 self.teamMembers = decodedTeam
-                
+                self.allGroups = ([self.teamMembers!.groupsOwned,
+                                   self.teamMembers!.groupsBelongedTo,
+                                   self.teamMembers!.groupsInvitedTo] as! [[Groups]]) 
                 //Reload the table with current data
                 DispatchQueue.main.async {
                     self.gtvc!.tableView.reloadData()
