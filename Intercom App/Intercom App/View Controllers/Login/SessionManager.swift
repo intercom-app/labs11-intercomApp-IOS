@@ -56,12 +56,11 @@ class SessionManager {
             .userInfo(withAccessToken: accessToken)
             .start { result in
                 switch(result) {
-                case .success(let profile): UserManager.shared.authUser = profile
+                case .success(let profile):
+                    userProfile = profile
                     callback(profile, nil)
                 case .failure(let error): callback(nil, error)
                 }
         }
-        
-        
     }
 }
