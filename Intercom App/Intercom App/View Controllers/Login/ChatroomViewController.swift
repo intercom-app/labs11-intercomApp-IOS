@@ -20,7 +20,7 @@ let accessTokenEndpoint = "accessToken"
 let identity = "test"
 let twimlParamTo = "to"
 
-class GroupChatRoomViewController: UIViewController, PKPushRegistryDelegate, TVONotificationDelegate, TVOCallDelegate, AVAudioPlayerDelegate, UITextFieldDelegate {
+class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotificationDelegate, TVOCallDelegate, AVAudioPlayerDelegate, UITextFieldDelegate {
     
     
    

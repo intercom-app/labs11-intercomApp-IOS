@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupDetailViewController: UIViewController, UITextFieldDelegate {
+class GroupEditViewController: UIViewController, UITextFieldDelegate {
 
     
     var group: Group?
