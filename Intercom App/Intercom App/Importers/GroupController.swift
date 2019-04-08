@@ -13,7 +13,7 @@ class GroupController {
     static let shared = GroupController()
     
     
-    var gtvc: GroupTableViewController?
+    var gtvc: GroupListViewController?
     var groups: [Group] = []
     var groupBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
     var id = TeamImporter.shared.teamMembers?.id

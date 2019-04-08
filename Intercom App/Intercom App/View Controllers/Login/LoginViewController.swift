@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TeamListViewController") as! TeamListViewController
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "GroupNavController") as! UINavigationController
                     self.present(nextViewController, animated:true, completion:nil)
                     }
                         })
