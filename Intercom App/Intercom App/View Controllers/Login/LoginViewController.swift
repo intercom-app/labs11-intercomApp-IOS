@@ -37,15 +37,16 @@ class LoginViewController: UIViewController {
                 case .success(let credentials):
                     guard let accessToken = credentials.accessToken, let idToken = credentials.idToken else { return }
                     SessionManager.tokens = Tokens(accessToken: accessToken, idToken: idToken)
-                    SessionManager.retrieveProfile({ (nil, error) in
-                        UserManager.shared.setUser()
-                    })
+                    SessionManager.retrieveProfile({ (user, error) in
+                        UserManager.shared.authUser = user
+                    
                     DispatchQueue.main.async {
                         
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "GroupNavController") as! UINavigationController
                     self.present(nextViewController, animated:true, completion:nil)
                     }
+                        })
                 }
         }
     }

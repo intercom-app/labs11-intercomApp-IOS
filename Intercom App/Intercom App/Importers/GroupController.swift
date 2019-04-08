@@ -20,13 +20,12 @@ class GroupController {
     
     
     
-    
     func fetchGroups() {
         var usersBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
         guard let userID = id else { return }
         usersBaseURL.appendPathComponent("\(userID)")
         usersBaseURL.appendPathComponent("groupsBelongedTo")
-        var request = URLRequest(url: groupBaseURL)
+        var request = URLRequest(url: usersBaseURL)
         
         request.httpMethod = "GET"
         
@@ -114,8 +113,9 @@ class GroupController {
                 //create json object from data
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     print(json)
-                    // handle json...
-                  
+                    
+                   
+                    
                 }
             } catch let error {
                 print(error.localizedDescription)

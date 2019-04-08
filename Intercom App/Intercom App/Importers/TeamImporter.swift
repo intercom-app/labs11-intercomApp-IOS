@@ -13,12 +13,12 @@ class TeamImporter {
     static let shared = TeamImporter()
     
     var tlvc: TeamListViewController?
-    
-    var teamMembers: User?
+    var gtvc: GroupListViewController?
+    var teamMembers: Users?
     var userID: Int?
     var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
-    var userEmail = UserManager.shared.authUser?.email
-    var userNikname = UserManager.shared.authUser?.nickname
+    var userEmail = userProfile.email
+    var userNikname = userProfile.nickname
     
     
     func getUser() {
@@ -84,12 +84,15 @@ class TeamImporter {
     func fetchTeam(userID: Int) {
         
         teamBaseURL.appendPathComponent("\(userID)")
+        teamBaseURL.appendPathComponent("detailed")
         var request = URLRequest(url: teamBaseURL)
 
         request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
-    
+            if let response = urlResponse {
+                print(response)
+            }
             if let teamError = error {
                 print("Error getting team members from API: \(teamError)")
                 
@@ -98,24 +101,24 @@ class TeamImporter {
             } //End of error handling.
             
             guard let teamData = data else {
-                if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
-                    print(JSONString)
-                }
+               
                 print("Data was not recieved.")
                 
                 return
             }
-            
+            if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
+                print(JSONString)
+            }
             do {
                 let jsonDecoder = JSONDecoder()
                 
-                let decodedTeam = try jsonDecoder.decode(User.self, from: teamData)
+                let decodedTeam = try jsonDecoder.decode(Users.self, from: teamData)
                 
                 self.teamMembers = decodedTeam
                 
                 //Reload the table with current data
                 DispatchQueue.main.async {
-                    self.tlvc!.tableView.reloadData()
+                    self.gtvc!.tableView.reloadData()
                 }
 
                 // Convert to a string and print
