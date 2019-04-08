@@ -34,6 +34,8 @@
 		A5323F862253C89F00B86706 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F7A2253C89F00B86706 /* UserData.swift */; };
 		A5323F8A2253CA2700B86706 /* MultipeerVoiceChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5323F892253CA2700B86706 /* MultipeerVoiceChat.storyboard */; };
 		A5323F8C2254196800B86706 /* GroupEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F8B2254196800B86706 /* GroupEditViewController.swift */; };
+		A5323F93225BA01500B86706 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F91225BA01500B86706 /* Groups.swift */; };
+		A5323F94225BA01500B86706 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F92225BA01500B86706 /* Users.swift */; };
 		A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EB224AB85E00A24589 /* SessionManager.swift */; };
 		A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EC224AB85F00A24589 /* LoginViewController.swift */; };
 		A5DC52F0224AB91D00A24589 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52EF224AB91D00A24589 /* Auth0.plist */; };
@@ -74,6 +76,8 @@
 		A5323F7A2253C89F00B86706 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		A5323F892253CA2700B86706 /* MultipeerVoiceChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultipeerVoiceChat.storyboard; sourceTree = "<group>"; };
 		A5323F8B2254196800B86706 /* GroupEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEditViewController.swift; sourceTree = "<group>"; };
+		A5323F91225BA01500B86706 /* Groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
+		A5323F92225BA01500B86706 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		A5DC52EB224AB85E00A24589 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		A5DC52EC224AB85F00A24589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5DC52EF224AB91D00A24589 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			children = (
 				4CC028DA2244073C0097A2FD /* User.swift */,
 				A52A8436224594AE009A6593 /* Group.swift */,
+				A5323F91225BA01500B86706 /* Groups.swift */,
+				A5323F92225BA01500B86706 /* Users.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,12 +432,14 @@
 				A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */,
 				A5323F7C2253C89F00B86706 /* AddViewController.swift in Sources */,
 				4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */,
+				A5323F94225BA01500B86706 /* Users.swift in Sources */,
 				A5323F8C2254196800B86706 /* GroupEditViewController.swift in Sources */,
 				A52A843522459455009A6593 /* GroupListViewController.swift in Sources */,
 				A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */,
 				4C62D7E0224DA08B002D4BE4 /* ProfileEditController.swift in Sources */,
 				A5323F852253C89F00B86706 /* Enums.swift in Sources */,
 				A5323F7B2253C89F00B86706 /* InCallTableViewCell.swift in Sources */,
+				A5323F93225BA01500B86706 /* Groups.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

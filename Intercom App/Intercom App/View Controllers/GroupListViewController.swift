@@ -13,7 +13,7 @@ class GroupListViewController: UITableViewController {
     //Overrides
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        TeamImporter.shared.gtvc = self
         GroupController.shared.gtvc = self
     }
     
@@ -21,6 +21,7 @@ class GroupListViewController: UITableViewController {
         super.viewDidLoad()
         //Pull the information in the background of the main thread
         DispatchQueue.global().async {
+            TeamImporter.shared.getUser()
             GroupController.shared.fetchGroups()
         }
     }
@@ -63,7 +64,7 @@ class GroupListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupViewTableViewCell
 
-        cell.groupNameLabel.text = GroupController.shared.groups[indexPath.row].name
+        cell.groupNameLabel.text = TeamImporter.shared.teamMembers?.groupsBelongedTo![indexPath.row].groupName
         cell.numberOfUsers.text = GroupController.shared.groups[indexPath.row].createdAt
 
         return cell

@@ -13,7 +13,7 @@ class TeamImporter {
     static let shared = TeamImporter()
     
     var tlvc: TeamListViewController?
-    
+    var gtvc: GroupListViewController?
     var teamMembers: Users?
     var userID: Int?
     var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
@@ -118,7 +118,7 @@ class TeamImporter {
                 
                 //Reload the table with current data
                 DispatchQueue.main.async {
-                    self.tlvc!.tableView.reloadData()
+                    self.gtvc!.tableView.reloadData()
                 }
 
                 // Convert to a string and print
