@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupTableViewController: UITableViewController {
+class GroupListViewController: UITableViewController {
 
     //Overrides
     override func viewWillAppear(_ animated: Bool) {
@@ -85,7 +85,7 @@ class GroupTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let destination = segue.destination as! GroupDetailViewController
+        let destination = segue.destination as! GroupEditViewController
         destination.group = GroupController.shared.groups[indexPath.row]
     }
 
