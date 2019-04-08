@@ -560,34 +560,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="133" id="uRD-N4-Izs" customClass="GroupViewTableViewCell" customModule="Intercom_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="133"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupsCell" rowHeight="100" id="uRD-N4-Izs" customClass="GroupViewTableViewCell" customModule="Intercom_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uRD-N4-Izs" id="ebA-kJ-i6C">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WT2-9z-gbW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="abc-1a-cTW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="132.5" height="132.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="99.5" height="99.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="132.5" id="RJE-dt-nVf"/>
+                                                        <constraint firstAttribute="height" constant="99.5" id="1Rr-iK-UFe"/>
+                                                        <constraint firstAttribute="width" constant="99.5" id="Jgs-Ex-qvw"/>
                                                         <constraint firstAttribute="width" secondItem="abc-1a-cTW" secondAttribute="height" multiplier="1:1" id="cbR-bl-d3P"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K0j-ga-PX1">
-                                                    <rect key="frame" x="140.5" y="36" width="234.5" height="61"/>
+                                                    <rect key="frame" x="107.5" y="19.5" width="267.5" height="61"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxW-nc-dwF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="234.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="267.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lL0-gr-opP">
-                                                            <rect key="frame" x="0.0" y="40.5" width="234.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="40.5" width="267.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -605,9 +606,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="groupImage" destination="abc-1a-cTW" id="eDr-Fg-5lg"/>
-                                    <outlet property="groupNameLabel" destination="YxW-nc-dwF" id="0bl-TU-fy3"/>
-                                    <outlet property="numberOfUsers" destination="lL0-gr-opP" id="c2z-JI-6Qq"/>
+                                    <outlet property="groupOwnedToImage" destination="abc-1a-cTW" id="MFS-eb-DQY"/>
+                                    <outlet property="groupOwnedToNameLabel" destination="YxW-nc-dwF" id="eKQ-Xm-Bzl"/>
+                                    <outlet property="groupOwnedTonumberOfUsers" destination="lL0-gr-opP" id="ZRo-xh-zd9"/>
                                     <segue destination="BvZ-1x-CaD" kind="show" id="aya-Q2-00k"/>
                                 </connections>
                             </tableViewCell>

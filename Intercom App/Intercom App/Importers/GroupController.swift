@@ -107,7 +107,7 @@ class GroupController {
             guard let data = data else {
                 return
             }
-            self.fetchGroups()
+            TeamImporter.shared.getUser()
             
             do {
                 //create json object from data
@@ -149,7 +149,7 @@ class GroupController {
             guard let data = data else {
                 return
             }
-            self.fetchGroups()
+            TeamImporter.shared.getUser()
             
             do {
                 //create json object from data
@@ -199,8 +199,10 @@ class GroupController {
             guard let data = data else {
                 return
             }
-            self.fetchGroups()
-            
+            TeamImporter.shared.getUser()
+            DispatchQueue.main.async {
+                self.gtvc!.tableView.reloadData()
+            }
             do {
                 //create json object from data
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {

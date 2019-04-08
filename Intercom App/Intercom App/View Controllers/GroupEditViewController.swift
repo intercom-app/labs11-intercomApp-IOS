@@ -11,7 +11,7 @@ import UIKit
 class GroupEditViewController: UIViewController, UITextFieldDelegate {
 
     
-    var group: Group?
+    var group: Groups?
     
 
     @IBOutlet weak var createdAt: UILabel!
@@ -28,19 +28,19 @@ class GroupEditViewController: UIViewController, UITextFieldDelegate {
     
     func updateView() {
         
-        groupName.text = group?.name
-        createdAt.text = group?.createdAt
-        title = group?.name
+        groupName.text = group?.groupName
+        createdAt.text = group?.groupCreatedAt
+        title = group?.groupName
     }
     
     @IBAction func saveButton(_ sender: Any) {
         if let name = groupName.text {
-            GroupController.shared.putRequest(groupID: group!.id!, groupName: name)
+            GroupController.shared.putRequest(groupID: group!.groupID, groupName: name)
         }
         navigationController?.popViewController(animated: true)
     }
     @IBAction func deleteGroup(_ sender: Any) {
-        GroupController.shared.deleteRequest(groupID: group!.id!)
+        GroupController.shared.deleteRequest(groupID: group!.groupID)
         navigationController?.popViewController(animated: true)
     }
     @IBAction func inviteNewUser(_ sender: Any) {
