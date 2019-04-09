@@ -64,10 +64,10 @@ class ProfileEditController: UIViewController, UIImagePickerControllerDelegate, 
     //What happens when the user clicks save
     @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
         
-        currentUser?.firstName = firstnameField.text
-        currentUser?.lastName = lastnameField.text
-        currentUser?.email = emailField.text!
-        currentUser?.phoneNumber = Int(phoneField.text!)
+//        currentUser?.firstName = firstnameField.text
+//        currentUser?.lastName = lastnameField.text
+//        currentUser?.email = emailField.text!
+        //currentUser?.phoneNumber = Int(phoneField.text!)
         
         performSegue(withIdentifier: "saveProfile", sender: nil)
     }
