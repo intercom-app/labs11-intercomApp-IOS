@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    var currentUser: User? { didSet { displayInformation() }}
+    var currentUser: Users? { didSet { displayInformation() }}
     var userImage: UIImage?
     
     @IBOutlet weak var usernameLabel: UILabel!

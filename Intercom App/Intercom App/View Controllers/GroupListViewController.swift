@@ -12,19 +12,20 @@ class GroupListViewController: UITableViewController {
 
     
     //Overrides
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        TeamImporter.shared.gtvc = self
-        GroupController.shared.gtvc = self
-        self.tableView.reloadData()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        TeamImporter.shared.gtvc = self
+//        GroupController.shared.gtvc = self
+//        self.tableView.reloadData()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TeamImporter.shared.gtvc = self
+        GroupController.shared.gtvc = self
         //Pull the information in the background of the main thread
         DispatchQueue.global().async {
             TeamImporter.shared.getUser()
-            GroupController.shared.fetchGroups()
         }
     }
     @IBAction func dismissView(_ sender: Any) {

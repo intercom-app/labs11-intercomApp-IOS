@@ -11,19 +11,19 @@ import Foundation
 
 
 struct Users: Codable {
-    let id: Int
-    let stripeID: JSONNull?
-    let firstName, lastName: String?
-    let displayName, email: String
-    let phoneNumber: Int?
-    let callStatus: Int
-    let billingSubcription: BillingSubcription
-    let createdAt: String
-    let groupsOwned, groupsBelongedTo, groupsInvitedTo: [Groups]?
-    let activityID: Int?
-    let activityCreatedAt: String?
-    let activity: String?
-    let inviteeCreatedAt, memberCreatedAt, ownerCreatedAt, participantCreatedAt: String?
+    var id: Int
+    var stripeID: JSONNull?
+    var firstName, lastName: String?
+    var displayName, email: String
+    var phoneNumber: Int?
+    var callStatus: Int
+    var billingSubcription: BillingSubcription
+    var createdAt: String
+    var groupsOwned, groupsBelongedTo, groupsInvitedTo: [Groups]?
+    var activityID: Int?
+    var activityCreatedAt: String?
+    var activity: String?
+    var inviteeCreatedAt, memberCreatedAt, ownerCreatedAt, participantCreatedAt: String?
     
     enum CodingKeys: String, CodingKey {
         case id

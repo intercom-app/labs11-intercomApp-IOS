@@ -14,7 +14,7 @@ class GroupController {
     
     
     var gtvc: GroupListViewController?
-    var groups: [Group] = []
+    var groups: [Groups] = []
     var groupBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
     var id = TeamImporter.shared.teamMembers?.id
     
@@ -50,7 +50,7 @@ class GroupController {
             do {
                 let jsonDecoder = JSONDecoder()
                 
-                let decodedTeam = try jsonDecoder.decode([Group].self, from: teamData)
+                let decodedTeam = try jsonDecoder.decode([Groups].self, from: teamData)
                 
                 self.groups = decodedTeam
                 
@@ -199,16 +199,15 @@ class GroupController {
             guard let data = data else {
                 return
             }
-            TeamImporter.shared.getUser()
-            DispatchQueue.main.async {
-                self.gtvc!.tableView.reloadData()
-            }
+            
+            
             do {
                 //create json object from data
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     print(json)
                     // handle json...
-                    
+                    TeamImporter.shared.getUser()
+                   
                 }
             } catch let error {
                 print(error.localizedDescription)

@@ -68,7 +68,7 @@ class TeamImporter {
                             print(userID)
                         self.userID = userID
                             // MARK Temporary added user ID 1 to test JSON object
-                        self.fetchTeam(userID: 2) // need to change to userID
+                        self.fetchTeam(userID: 1) // need to change to userID
                     }
                     
                 }
@@ -83,10 +83,10 @@ class TeamImporter {
     
     
     func fetchTeam(userID: Int) {
-        
-        teamBaseURL.appendPathComponent("\(userID)")
-        teamBaseURL.appendPathComponent("detailed")
-        var request = URLRequest(url: teamBaseURL)
+        var teamURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
+        teamURL.appendPathComponent("\(userID)")
+        teamURL.appendPathComponent("detailed")
+        var request = URLRequest(url: teamURL)
 
         request.httpMethod = "GET"
         

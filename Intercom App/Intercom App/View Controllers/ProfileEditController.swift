@@ -12,7 +12,7 @@ class ProfileEditController: UIViewController, UIImagePickerControllerDelegate, 
     
     //Properties
     var originalImage: UIImage?
-    var currentUser: User?
+    var currentUser: Users?
     
     //Outlets
     @IBOutlet weak var profilePhotoView: UIImageView!

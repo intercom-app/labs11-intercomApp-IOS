@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
                     guard let accessToken = credentials.accessToken, let idToken = credentials.idToken else { return }
                     SessionManager.tokens = Tokens(accessToken: accessToken, idToken: idToken)
                     SessionManager.retrieveProfile({ (user, error) in
-                        UserManager.shared.authUser = user
+                       // UserManager.shared.authUser = user
                     
                     DispatchQueue.main.async {
                         
