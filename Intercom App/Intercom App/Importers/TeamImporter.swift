@@ -67,15 +67,12 @@ class TeamImporter {
                         if let userID = json["id"] as? Int {
                             print(userID)
                         self.userID = userID
-                            // MARK Temporary added user ID 1 to test JSON object
-                        self.fetchTeam(userID: 2) // need to change to userID
+                        self.fetchTeam(userID: userID)
                     }
-                    
                 }
             } catch let error {
                 print(error.localizedDescription)
             }
-            
         })
         task.resume()
         
@@ -83,10 +80,10 @@ class TeamImporter {
     
     
     func fetchTeam(userID: Int) {
-        
-        teamBaseURL.appendPathComponent("\(userID)")
-        teamBaseURL.appendPathComponent("detailed")
-        var request = URLRequest(url: teamBaseURL)
+        var teamURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
+        teamURL.appendPathComponent("\(userID)")
+        teamURL.appendPathComponent("detailed")
+        var request = URLRequest(url: teamURL)
 
         request.httpMethod = "GET"
         
@@ -116,9 +113,9 @@ class TeamImporter {
                 let decodedTeam = try jsonDecoder.decode(Users.self, from: teamData)
                 
                 self.teamMembers = decodedTeam
-                self.allGroups = ([self.teamMembers!.groupsOwned,
-                                   self.teamMembers!.groupsBelongedTo,
-                                   self.teamMembers!.groupsInvitedTo] as! [[Groups]]) 
+                
+                 self.allGroups = ([self.teamMembers!.groupsOwned!, self.teamMembers!.groupsBelongedTo!, self.teamMembers!.groupsInvitedTo] as? [[Groups]])
+                    
                 //Reload the table with current data
                 DispatchQueue.main.async {
                     self.gtvc!.tableView.reloadData()

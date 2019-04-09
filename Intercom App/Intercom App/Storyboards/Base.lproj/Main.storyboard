@@ -157,11 +157,18 @@
                         <viewLayoutGuide key="safeArea" id="rPp-va-iWj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Intercom" id="h6y-3P-iOL">
-                        <barButtonItem key="rightBarButtonItem" title="Button" id="K0o-vC-hyW">
-                            <connections>
-                                <segue destination="cgp-YC-AX1" kind="show" id="qqr-3E-job"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Edit" id="Mzd-0R-y5e">
+                                <connections>
+                                    <segue destination="BvZ-1x-CaD" kind="show" identifier="editGroup" id="3bp-yC-jTA"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="radio_waves" id="K0o-vC-hyW">
+                                <connections>
+                                    <segue destination="cgp-YC-AX1" kind="show" id="qqr-3E-job"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="callControlView" destination="bo6-aw-goD" id="KnK-dg-Kkv"/>
@@ -189,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVy-KR-MEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3974" y="1367"/>
+            <point key="canvasLocation" x="3742" y="1388"/>
         </scene>
         <!--Create or Edit Group-->
         <scene sceneID="1qT-CK-s2q">
@@ -200,41 +207,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Wzc-wG-Ufd">
-                                <rect key="frame" x="8" y="72" width="359" height="3096.5"/>
+                                <rect key="frame" x="8" y="72" width="359" height="445"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i78-T5-KNb">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="673"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="126"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="Njn-2V-p9C">
-                                        <rect key="frame" x="0.0" y="675" width="359" height="359"/>
+                                        <rect key="frame" x="0.0" y="128" width="359" height="67"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqD-Px-gA7">
-                                        <rect key="frame" x="0.0" y="1036" width="359" height="673.5"/>
-                                        <state key="normal" title="Invite Group Members"/>
-                                        <connections>
-                                            <segue destination="IpA-Bj-1Z7" kind="show" identifier="groupInvite" id="IQ7-8a-dNC"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CreatedAt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-Ib-0Kk">
-                                        <rect key="frame" x="0.0" y="1711.5" width="359" height="538.5"/>
+                                        <rect key="frame" x="0.0" y="197" width="359" height="101"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3S-iQ-pJp">
-                                        <rect key="frame" x="0.0" y="2252" width="359" height="844.5"/>
+                                        <rect key="frame" x="0.0" y="300" width="359" height="145"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveButton:" destination="BvZ-1x-CaD" eventType="touchUpInside" id="zcc-Mr-EeI"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Njn-2V-p9C" secondAttribute="height" multiplier="1:1" id="uH6-0M-f7f"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -246,6 +243,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="to5-wu-tPZ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Edit Group" id="iqy-lC-pkh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="add_user_male" id="EqN-fy-VHK">
+                            <connections>
+                                <segue destination="IpA-Bj-1Z7" kind="show" id="28w-kA-32r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="createdAt" destination="gMM-Ib-0Kk" id="2f1-fe-nw9"/>
                         <outlet property="groupImage" destination="Njn-2V-p9C" id="L5f-kQ-ifO"/>
@@ -254,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhG-rG-MK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3014" y="1367"/>
+            <point key="canvasLocation" x="3014" y="1389"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="MgZ-zw-KCR">
@@ -609,7 +613,7 @@
                                     <outlet property="groupOwnedToImage" destination="abc-1a-cTW" id="MFS-eb-DQY"/>
                                     <outlet property="groupOwnedToNameLabel" destination="YxW-nc-dwF" id="eKQ-Xm-Bzl"/>
                                     <outlet property="groupOwnedTonumberOfUsers" destination="lL0-gr-opP" id="ZRo-xh-zd9"/>
-                                    <segue destination="BvZ-1x-CaD" kind="show" id="aya-Q2-00k"/>
+                                    <segue destination="Dh5-Dj-HVh" kind="show" id="3ZZ-qb-TwA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -624,9 +628,9 @@
                                 <segue destination="nSn-kU-O1J" kind="show" id="Egl-Of-Rkj"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Voice Chat" id="9rZ-BW-Oba">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9rZ-BW-Oba">
                             <connections>
-                                <segue destination="Dh5-Dj-HVh" kind="show" id="CmF-D3-9I7"/>
+                                <action selector="addNewGroupe:" destination="Z5r-Nj-yxM" id="86O-vP-2KX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -655,7 +659,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_user_male" width="30" height="30"/>
         <image name="audio-sound-waves" width="1000" height="237"/>
         <image name="night-stars-wallpaper" width="320" height="568"/>
+        <image name="radio_waves" width="30" height="30"/>
     </resources>
 </document>

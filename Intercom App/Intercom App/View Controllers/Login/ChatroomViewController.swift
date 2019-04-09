@@ -39,8 +39,15 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var call:TVOCall?
     var ringtonePlayer:AVAudioPlayer?
     var ringtonePlaybackCallback: (() -> ())?
+    var group: Groups?
     
     
+    func updateView() {
+        
+        outgoingValue.text = group?.groupName
+        title = outgoingValue.text
+        
+    }
     
     required init?(coder aDecoder: NSCoder) {
         voipRegistry = PKPushRegistry.init(queue: DispatchQueue.main)
@@ -52,10 +59,17 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        updateView()
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editGroup" {
+            let destination = segue.destination as! GroupEditViewController
+            destination.group = self.group
+        }
     }
     
     func fetchAccessToken() -> String? {
