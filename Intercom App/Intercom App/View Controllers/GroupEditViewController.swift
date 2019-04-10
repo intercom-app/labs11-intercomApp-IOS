@@ -36,6 +36,7 @@ class GroupEditViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveButton(_ sender: Any) {
         if let name = groupName.text {
             GroupController.shared.putRequest(groupID: group!.groupID, groupName: name)
+           
         }
        // navigationController?.show(groupListViewController, sender: group) 
     }

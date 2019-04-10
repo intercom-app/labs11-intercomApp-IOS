@@ -16,7 +16,7 @@ class GroupController {
     var gtvc: GroupListViewController?
     var groups: [Groups] = []
     var groupBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
-    var id = TeamImporter.shared.teamMembers?.id
+    var id = TeamImporter.shared.userID
     var groupID: Int?
     
     
@@ -74,6 +74,62 @@ class GroupController {
         
     } //End of fetch team function.
     
+    func fetchGroupActivities(groupID: Int, completion: @escaping ([Activities]?) -> Void = { _ in }) {
+        var groupParticipantsURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
+        
+        groupParticipantsURL.appendPathComponent("\(groupID)")
+        groupParticipantsURL.appendPathComponent("activities")
+        var request = URLRequest(url: groupParticipantsURL)
+        
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            
+            if let teamError = error {
+                print("Error getting team members from API: \(teamError)")
+                
+                return
+                
+            } //End of error handling.
+            
+            guard let teamData = data else {
+                if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
+                    print(JSONString)
+                }
+                print("Data was not recieved.")
+                
+                return
+            }
+            
+            do {
+                let jsonDecoder = JSONDecoder()
+                
+                let decodedTeam = try jsonDecoder.decode([Activities].self, from: teamData)
+                
+                //self.groups = decodedTeam
+                
+                //Reload the table with current data
+                DispatchQueue.main.async {
+                    self.gtvc!.tableView.reloadData()
+                }
+                
+                // Convert to a string and print
+                if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
+                    print(JSONString)
+                }
+                completion(decodedTeam)
+            }
+            catch { //In case Decoding doesn't work.
+                
+                NSLog("Error: \(error.localizedDescription)")
+                if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
+                    print(JSONString)
+                }
+                
+            }
+            } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
+        
+    } //End of fetch team function.
     
     func createNewGroup(groupName: String) {
         
@@ -131,11 +187,14 @@ class GroupController {
     }
     
     func addGroupOwner(groupID: Int) {
-        
-        let parameters = ["userId": id]
+        guard let id = TeamImporter.shared.userID else {
+            fatalError("cant fetch user ID: \(String(describing: TeamImporter.shared.userID))")
+        }
+        let parameters = ["userId" : id]
         
         var groupsURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
-        groupsURL.appendPathComponent("\(groupID)/groupOwners")
+        groupsURL.appendPathComponent("\(groupID)")
+        groupsURL.appendPathComponent("groupOwners")
         //create the session object
         let session = URLSession.shared
         
@@ -151,7 +210,7 @@ class GroupController {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
+//
         //create dataTask using the session object to send data to the server
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
