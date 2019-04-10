@@ -85,12 +85,6 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         updateView()
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
-        GroupController.shared.fetchGroupActivities(groupID: group!.groupID) { (test) in
-            DispatchQueue.main.async {
-                self.userNameLabel11.isHidden = false
-                self.userNameLabel11.text = test?[0].activity
-            }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

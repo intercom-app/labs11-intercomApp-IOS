@@ -20,14 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog("Twilio Voice Version: %@", TwilioVoice.version())
         self.configureUserNotifications()
         
-        let center = UNUserNotificationCenter.current()
-        center.getNotificationSettings { (settings) in
-            if settings.authorizationStatus == .authorized {
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-            }
-        }
         return true
     }
 
