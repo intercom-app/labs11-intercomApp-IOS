@@ -24,6 +24,30 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     
    
+    @IBOutlet weak var userNameLabel1: UILabel!
+    @IBOutlet weak var userNameLabel2: UILabel!
+    @IBOutlet weak var userNameLabel3: UILabel!
+    @IBOutlet weak var userNameLabel4: UILabel!
+    @IBOutlet weak var userNameLabel5: UILabel!
+    @IBOutlet weak var userNameLabel6: UILabel!
+    @IBOutlet weak var userNameLabel7: UILabel!
+    @IBOutlet weak var userNameLabel8: UILabel!
+    @IBOutlet weak var userNameLabel9: UILabel!
+    @IBOutlet weak var userNameLabel10: UILabel!
+    @IBOutlet weak var userNameLabel11: UILabel!
+    var labelArray: [UILabel]?
+    
+    func setupLabel() {
+        labelArray = [userNameLabel1, userNameLabel2, userNameLabel3, userNameLabel4, userNameLabel5, userNameLabel6, userNameLabel7, userNameLabel8, userNameLabel9, userNameLabel10, userNameLabel11]
+        for tag in 0...10 {
+            if labelArray?[tag].tag == tag + 1 {
+                labelArray?[tag].isHidden = true
+            }
+        }
+    }
+    
+    
+    
     @IBOutlet weak var placeCallButton: UIButton!
     @IBOutlet weak var groupImage: UIImageView!
     @IBOutlet weak var outgoingValue: UITextField!
@@ -43,10 +67,9 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     
     func updateView() {
-        
         outgoingValue.text = group?.groupName
         title = outgoingValue.text
-        
+        setupLabel()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -62,12 +85,14 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         updateView()
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editGroup" {
             let destination = segue.destination as! GroupEditViewController
+            destination.group = self.group
+        } else if segue.identifier == "activity" {
+            let destination = segue.destination as! ChatroomActivityTableViewController
             destination.group = self.group
         }
     }
