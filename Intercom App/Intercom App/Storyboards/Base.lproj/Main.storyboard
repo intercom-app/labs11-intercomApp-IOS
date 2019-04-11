@@ -83,7 +83,7 @@
                                         <rect key="frame" x="0.0" y="58.5" width="359" height="214.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="253" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="zZE-3f-NOg">
-                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="214.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="214.50000000000006"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-Vl-ye2">
                                                 <rect key="frame" x="179.5" y="0.0" width="179.5" height="214.5"/>
@@ -255,6 +255,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="callControlView" destination="bo6-aw-goD" id="KnK-dg-Kkv"/>
+                        <outlet property="editOutlet" destination="Mzd-0R-y5e" id="fUp-cE-NO4"/>
                         <outlet property="groupImage" destination="zZE-3f-NOg" id="aOL-3i-AKE"/>
                         <outlet property="muteSwitch" destination="G9E-E3-BOB" id="NNJ-hQ-23p"/>
                         <outlet property="outgoingValue" destination="ZIR-lD-HMN" id="v00-ga-W28"/>
@@ -304,22 +305,22 @@
                                 <rect key="frame" x="8" y="72" width="359" height="445"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i78-T5-KNb">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="126"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="41"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="Njn-2V-p9C">
-                                        <rect key="frame" x="0.0" y="128" width="359" height="67"/>
+                                        <rect key="frame" x="0.0" y="43" width="359" height="322.50000000000006"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CreatedAt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-Ib-0Kk">
-                                        <rect key="frame" x="0.0" y="197" width="359" height="101"/>
+                                        <rect key="frame" x="0.0" y="367.5" width="359" height="32.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3S-iQ-pJp">
-                                        <rect key="frame" x="0.0" y="300" width="359" height="145"/>
+                                        <rect key="frame" x="0.0" y="402" width="359" height="43"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveButton:" destination="BvZ-1x-CaD" eventType="touchUpInside" id="zcc-Mr-EeI"/>
@@ -366,7 +367,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="ORc-aE-DsN">
-                                <rect key="frame" x="0.0" y="325.5" width="375" height="16"/>
+                                <rect key="frame" x="0.0" y="214.99999999999997" width="375" height="237.00000000000009"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intercom App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-qd-Nk2">
                                 <rect key="frame" x="0.0" y="55" width="375" height="32"/>
@@ -718,7 +719,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="abc-1a-cTW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="99.5" height="99.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="99.5" height="99.500000000000057"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="99.5" id="1Rr-iK-UFe"/>
                                                         <constraint firstAttribute="width" constant="99.5" id="Jgs-Ex-qvw"/>

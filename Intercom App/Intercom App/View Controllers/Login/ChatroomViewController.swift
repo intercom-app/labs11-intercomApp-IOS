@@ -48,6 +48,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     
     
+    @IBOutlet weak var editOutlet: UIBarButtonItem!
     @IBOutlet weak var placeCallButton: UIButton!
     @IBOutlet weak var groupImage: UIImageView!
     @IBOutlet weak var outgoingValue: UITextField!
@@ -65,11 +66,14 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var call:TVOCall?
     var ringtonePlayer:AVAudioPlayer?
     var ringtonePlaybackCallback: (() -> ())?
+    var names: [String] = []
     var group: Groups? {
         didSet {
             if let group = group {
             identity = "\(group.groupID)" + group.groupName
-            userIdentity = TeamImporter.shared.userNikname
+                if let nikName = TeamImporter.shared.userNikname {
+                    userIdentity = nikName
+                }
             }
         }
     }
@@ -80,20 +84,24 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         outgoingValue.text = identity
         title = outgoingValue.text
         setupLabel()
-        GroupController.shared.fetchGroupMembers(groupID: group!.groupID) { (users) in
-            DispatchQueue.main.async {
-                guard let users = users else { return }
-                self.usersArray = users
-                for numberOfUsers in 0..<users.count {
-                    self.labelArray?[numberOfUsers].isHidden = false
-                    self.labelArray?[numberOfUsers].text = users[numberOfUsers]
-                    
-                }
-                
-            }
-           
+        
+                guard let users = self.group?.members else { return }
+                self.names = []
+                // guard let jsonCount = json.first?.count else { return }
+                for nameArray in 0..<users.count {
+                     let displayName = users[nameArray].displayName
+                        print(displayName)
+                        self.labelArray?[nameArray].isHidden = false
+                        self.labelArray?[nameArray].text = displayName
+                        self.names.append(displayName)
+                    }
+        
+        if TeamImporter.shared.userID == group?.owners.first?.id {
+            self.editOutlet.isEnabled = true
+            
         }
-    }
+        }
+    
     
     required init?(coder aDecoder: NSCoder) {
         voipRegistry = PKPushRegistry.init(queue: DispatchQueue.main)
@@ -107,9 +115,11 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView()
+       
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
+        self.editOutlet.isEnabled = false
+         updateView()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
