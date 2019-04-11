@@ -67,18 +67,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rwl-bv-CjS">
                                 <rect key="frame" x="8" y="72" width="359" height="307"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niA-EN-zz9">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="test" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZIR-lD-HMN">
-                                        <rect key="frame" x="0.0" y="24.5" width="359" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niA-EN-zz9">
+                                        <rect key="frame" x="0.0" y="34" width="359" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lhU-66-Yo2">
                                         <rect key="frame" x="0.0" y="58.5" width="359" height="214.5"/>
                                         <subviews>
@@ -158,7 +158,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9g-cY-f1a">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9g-cY-f1a" customClass="CallButton" customModule="Intercom_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="277" width="359" height="30"/>
                                         <state key="normal" title="Call">
                                             <color key="titleColor" red="1" green="0.065431795061399733" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -257,6 +257,7 @@
                         <outlet property="callControlView" destination="bo6-aw-goD" id="KnK-dg-Kkv"/>
                         <outlet property="editOutlet" destination="Mzd-0R-y5e" id="fUp-cE-NO4"/>
                         <outlet property="groupImage" destination="zZE-3f-NOg" id="aOL-3i-AKE"/>
+                        <outlet property="groupOwner" destination="niA-EN-zz9" id="jG1-OU-xcd"/>
                         <outlet property="muteSwitch" destination="G9E-E3-BOB" id="NNJ-hQ-23p"/>
                         <outlet property="outgoingValue" destination="ZIR-lD-HMN" id="v00-ga-W28"/>
                         <outlet property="placeCallButton" destination="E9g-cY-f1a" id="Vb4-lX-WSw"/>
@@ -278,20 +279,34 @@
             </objects>
             <point key="canvasLocation" x="3013.5999999999999" y="608.54572713643188"/>
         </scene>
-        <!--Invite to Group-->
-        <scene sceneID="oLU-Nu-Q1I">
+        <!--Invite/Delete Users-->
+        <scene sceneID="IFV-AM-Pfc">
             <objects>
-                <viewController title="Invite to Group" id="IpA-Bj-1Z7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mbe-3o-gPA">
+                <tableViewController id="rT1-x1-2Uj" customClass="InviteUserTableViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wtK-fa-M0Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="aUM-xT-leW"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PVy-KR-MEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="inviteCell" id="iP8-eL-wOB">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iP8-eL-wOB" id="OcV-ol-7Uj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rT1-x1-2Uj" id="aJf-pt-Rpo"/>
+                            <outlet property="delegate" destination="rT1-x1-2Uj" id="psi-K5-VB6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Invite/Delete Users" id="jhe-vo-7zE"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lQH-ez-yxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3742" y="1388"/>
+            <point key="canvasLocation" x="3764" y="1388"/>
         </scene>
         <!--Create or Edit Group-->
         <scene sceneID="1qT-CK-s2q">
@@ -341,7 +356,7 @@
                     <navigationItem key="navigationItem" title="Edit Group" id="iqy-lC-pkh">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="add_user_male" id="EqN-fy-VHK">
                             <connections>
-                                <segue destination="IpA-Bj-1Z7" kind="show" id="28w-kA-32r"/>
+                                <segue destination="rT1-x1-2Uj" kind="show" identifier="inviteSegue" id="A88-Nr-PVg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -651,29 +666,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="activityCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" textLabel="41Z-6P-UQ3" detailTextLabel="Edw-zu-zXs" imageView="ip4-8m-NbL" style="IBUITableViewCellStyleSubtitle" id="o0J-ub-WZj">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="activityCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" textLabel="41Z-6P-UQ3" detailTextLabel="Edw-zu-zXs" imageView="ip4-8m-NbL" rowHeight="37" style="IBUITableViewCellStyleSubtitle" id="o0J-ub-WZj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o0J-ub-WZj" id="Iem-Uk-laQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="36.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" id="41Z-6P-UQ3">
-                                            <rect key="frame" x="61" y="7" width="25" height="14.5"/>
+                                            <rect key="frame" x="61" y="5" width="25" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Edw-zu-zXs">
-                                            <rect key="frame" x="61" y="23.5" width="37.5" height="12"/>
+                                            <rect key="frame" x="61" y="19.5" width="37.5" height="12"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="conference" id="ip4-8m-NbL">
-                                            <rect key="frame" x="16" y="6" width="30" height="30"/>
+                                            <rect key="frame" x="16" y="3" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -689,7 +704,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vB-XG-rMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3796" y="412"/>
+            <point key="canvasLocation" x="3794" y="494"/>
         </scene>
         <!--MultipeerVoiceChat-->
         <scene sceneID="syY-Sh-JnF">

@@ -1,5 +1,5 @@
 //
-//  Activities.swift
+//  AllUsers.swift
 //  Intercom App
 //
 //  Created by Sergey Osipyan on 4/9/19.
@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Activities: Codable {
+struct AllUsers: Codable {
     let id: Int
-    let activity, createdAt, displayName: String
+    let displayName: String
 }
