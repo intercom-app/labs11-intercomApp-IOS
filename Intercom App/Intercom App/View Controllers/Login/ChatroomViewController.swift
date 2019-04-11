@@ -48,6 +48,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     
     
+    @IBOutlet weak var groupOwner: UILabel!
     @IBOutlet weak var editOutlet: UIBarButtonItem!
     @IBOutlet weak var placeCallButton: UIButton!
     @IBOutlet weak var groupImage: UIImageView!
@@ -84,7 +85,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         outgoingValue.text = identity
         title = outgoingValue.text
         setupLabel()
-        
+        guard let ownerName = group?.owners.first?.displayName else { return }
+        groupOwner.text = "Group Owner: " + ownerName
                 guard let users = self.group?.members else { return }
                 self.names = []
                 // guard let jsonCount = json.first?.count else { return }
@@ -152,8 +154,9 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
             callControlView.isHidden = true
         }
     }
+  
     
-    @IBAction func placeCall(_ sender: UIButton) {
+    @IBAction func placeCall(_ sender: CallButton) {
         if (self.call != nil) {
             self.call?.disconnect()
             self.toggleUIState(isEnabled: false, showCallControl: false)

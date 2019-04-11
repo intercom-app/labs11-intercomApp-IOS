@@ -35,6 +35,7 @@
 		A5323F94225BA01500B86706 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F92225BA01500B86706 /* Users.swift */; };
 		A532F9C9225DC2A0007EEC18 /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532F9C8225DC2A0007EEC18 /* Activities.swift */; };
 		A532F9CB225E5314007EEC18 /* ChatroomActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532F9CA225E5314007EEC18 /* ChatroomActivityTableViewController.swift */; };
+		A56AFD28225FB684008C67E9 /* CallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD27225FB684008C67E9 /* CallButton.swift */; };
 		A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EB224AB85E00A24589 /* SessionManager.swift */; };
 		A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EC224AB85F00A24589 /* LoginViewController.swift */; };
 		A5DC52F0224AB91D00A24589 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52EF224AB91D00A24589 /* Auth0.plist */; };
@@ -76,6 +77,7 @@
 		A5323F92225BA01500B86706 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		A532F9C8225DC2A0007EEC18 /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		A532F9CA225E5314007EEC18 /* ChatroomActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomActivityTableViewController.swift; sourceTree = "<group>"; };
+		A56AFD27225FB684008C67E9 /* CallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallButton.swift; sourceTree = "<group>"; };
 		A5DC52EB224AB85E00A24589 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		A5DC52EC224AB85F00A24589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5DC52EF224AB91D00A24589 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				A52A8425224421C5009A6593 /* LoginButton.swift */,
+				A56AFD27225FB684008C67E9 /* CallButton.swift */,
 			);
 			path = "UI Customisations";
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				A52A8426224421C5009A6593 /* LoginButton.swift in Sources */,
 				A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */,
 				A5323F862253C89F00B86706 /* UserData.swift in Sources */,
+				A56AFD28225FB684008C67E9 /* CallButton.swift in Sources */,
 				A5DC52F4224ADC1A00A24589 /* ChatroomViewController.swift in Sources */,
 				4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */,
 				4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */,
