@@ -17,7 +17,7 @@ import TwilioVoice
 
 let baseURLString = "https://intercom-be-farste.herokuapp.com/api/voice/"
 let accessTokenEndpoint = "accessToken"
-let identity = "test"
+
 let twimlParamTo = "to"
 
 class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotificationDelegate, TVOCallDelegate, AVAudioPlayerDelegate, UITextFieldDelegate {
@@ -48,6 +48,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     
     
+    @IBOutlet weak var editOutlet: UIBarButtonItem!
     @IBOutlet weak var placeCallButton: UIButton!
     @IBOutlet weak var groupImage: UIImageView!
     @IBOutlet weak var outgoingValue: UITextField!
@@ -55,6 +56,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBOutlet weak var muteSwitch: UISwitch!
     @IBOutlet weak var speakerSwitch: UISwitch!
     
+    var userIdentity: String?
+    var identity: String?
     var deviceTokenString:String?
     var voipRegistry:PKPushRegistry
     var incomingPushCompletionCallback: (()->Swift.Void?)? = nil
@@ -63,14 +66,42 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var call:TVOCall?
     var ringtonePlayer:AVAudioPlayer?
     var ringtonePlaybackCallback: (() -> ())?
-    var group: Groups?
+    var names: [String] = []
+    var group: Groups? {
+        didSet {
+            if let group = group {
+            identity = "\(group.groupID)" + group.groupName
+                if let nikName = TeamImporter.shared.userNikname {
+                    userIdentity = nikName
+                }
+            }
+        }
+    }
+    var usersArray: [String] = []
     
     
     func updateView() {
-        outgoingValue.text = group?.groupName
+        outgoingValue.text = identity
         title = outgoingValue.text
         setupLabel()
-    }
+        
+                guard let users = self.group?.members else { return }
+                self.names = []
+                // guard let jsonCount = json.first?.count else { return }
+                for nameArray in 0..<users.count {
+                     let displayName = users[nameArray].displayName
+                        print(displayName)
+                        self.labelArray?[nameArray].isHidden = false
+                        self.labelArray?[nameArray].text = displayName
+                        self.names.append(displayName)
+                    }
+        
+        if TeamImporter.shared.userID == group?.owners.first?.id {
+            self.editOutlet.isEnabled = true
+            
+        }
+        }
+    
     
     required init?(coder aDecoder: NSCoder) {
         voipRegistry = PKPushRegistry.init(queue: DispatchQueue.main)
@@ -80,11 +111,15 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         TwilioVoice.logLevel = .verbose
     }
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView()
+       
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
+        self.editOutlet.isEnabled = false
+         updateView()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -98,7 +133,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     }
     
     func fetchAccessToken() -> String? {
-        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identity)
+        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, userIdentity ?? "")
+        print(userIdentity ?? "not set")
         guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else {
             return nil
         }

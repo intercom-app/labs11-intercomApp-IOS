@@ -85,6 +85,7 @@ class GroupListViewController: UITableViewController {
         return label
     }
     
+
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
@@ -105,7 +106,7 @@ class GroupListViewController: UITableViewController {
         let destination = segue.destination as! ChatroomViewController
         guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
         destination.group = group
-        
+        TeamImporter.shared.getUser()
     }
 
 }
