@@ -11,7 +11,6 @@ import UIKit
 class ChatroomActivityTableViewController: UITableViewController {
 
     var group: Groups?
-    var activity: [Activities] = []
     
     
     override func viewDidLoad() {
@@ -36,7 +35,11 @@ class ChatroomActivityTableViewController: UITableViewController {
         cell.detailTextLabel?.text = activity.createdAt
         return cell
     }
-   
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "inviteSegue" {
+            let destination = segue.destination as! InviteUserTableViewController
+            destination.group = self.group
+        }
+    }
 }
