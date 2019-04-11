@@ -33,6 +33,13 @@ class ChatroomActivityTableViewController: UITableViewController {
         guard let activityString = activity.activity else { return cell }
         cell.textLabel?.text = activity.displayName + ": " + activityString
         cell.detailTextLabel?.text = activity.createdAt
+        
+        if let imageURL = activity.avatar {
+            let url = URL(string: imageURL)!
+            if let imageData = try? Data(contentsOf: url) {
+                cell.imageView?.image = UIImage(data: imageData)
+            }
+        }
         return cell
     }
     

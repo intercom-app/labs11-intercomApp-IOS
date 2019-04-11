@@ -15,7 +15,7 @@ import PushKit
 import TwilioVoice
 
 
-let baseURLString = "https://intercom-be-farste.herokuapp.com/api/voice/"
+let baseURLString = "https://intercom-be.herokuapp.com/api/voice/"
 let accessTokenEndpoint = "accessToken"
 
 let twimlParamTo = "to"
@@ -57,7 +57,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBOutlet weak var muteSwitch: UISwitch!
     @IBOutlet weak var speakerSwitch: UISwitch!
     
-    var userIdentity: String?
+    
     var identity: String?
     var deviceTokenString:String?
     var voipRegistry:PKPushRegistry
@@ -72,9 +72,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         didSet {
             if let group = group {
             identity = "\(group.groupID)" + group.groupName
-                if let nikName = TeamImporter.shared.userNikname {
-                    userIdentity = nikName
-                }
+                
             }
         }
     }
@@ -82,8 +80,9 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     
     func updateView() {
+        guard let identity = self.identity else { return }
         outgoingValue.text = identity
-        title = outgoingValue.text
+        title = "Voice Chatroom"
         setupLabel()
         guard let ownerName = group?.owners.first?.displayName else { return }
         groupOwner.text = "Group Owner: " + ownerName
@@ -135,8 +134,9 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     }
     
     func fetchAccessToken() -> String? {
-        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, userIdentity ?? "")
-        print(userIdentity ?? "not set")
+        guard let identityText = identity else { fatalError("outgoig value is empty")}
+        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identityText)
+        print(identityText ?? "not set")
         guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else {
             return nil
         }
@@ -164,10 +164,12 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
             guard let accessToken = fetchAccessToken() else {
                 return
             }
-            
+            self.navigationController?.isNavigationBarHidden = true
             playOutgoingRingtone(completion: { [weak self] in
                 if let strongSelf = self {
-                    strongSelf.call = TwilioVoice.call(accessToken, params: [twimlParamTo : strongSelf.outgoingValue.text!], delegate: strongSelf)
+                    guard let text = strongSelf.outgoingValue.text else { fatalError("outgoig value is empty")}
+                    strongSelf.call = TwilioVoice.call(accessToken, params: [twimlParamTo : text], delegate: strongSelf)
+                    print(text)
                     strongSelf.toggleUIState(isEnabled: false, showCallControl: false)
                     
                 }
@@ -383,7 +385,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     // MARK: TVOCallDelegate
     func callDidConnect(_ call: TVOCall) {
         NSLog("callDidConnect:")
-        
+        navigationController?.isNavigationBarHidden = true
         self.call = call
         
         self.placeCallButton.setTitle("Hang Up", for: .normal)
@@ -396,6 +398,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         NSLog("Call failed to connect: \(error.localizedDescription)")
         
         callDisconnected()
+        
     }
     
     func call(_ call: TVOCall, didDisconnectWithError error: Error?) {
@@ -406,14 +409,16 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         }
         
         callDisconnected()
+        
     }
     
     func callDisconnected() {
         self.call = nil
-        
+        navigationItem.leftBarButtonItem?.isEnabled = true
         playDisconnectSound()
         toggleUIState(isEnabled: true, showCallControl: false)
         self.placeCallButton.setTitle("Call", for: .normal)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     

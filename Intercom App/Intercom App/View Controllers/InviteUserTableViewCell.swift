@@ -15,13 +15,14 @@ class InviteUserTableViewCell: UITableViewCell {
     
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var userDisplayName: UILabel!
+    @IBOutlet weak var inviteButtonOutlet: UIButton!
     
-    @IBAction func declineButton(_ sender: Any) {
-        
-    }
+
     
-    @IBAction func joinGroupButton(_ sender: Any) {
-        
+    @IBAction func inviteButton(_ sender: Any) {
+        inviteButtonOutlet.setTitle("Invited", for: .normal)
+        inviteButtonOutlet.setTitleColor(.gray, for: .normal)
+        inviteButtonOutlet.isEnabled = false
     }
     
 }
