@@ -9,19 +9,16 @@
 /* Begin PBXBuildFile section */
 		3396FE9202F45C9183EBEAD3 /* Pods_Intercom_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30C8D41480033DD3B9E2AA3 /* Pods_Intercom_App.framework */; };
 		4C62D7E0224DA08B002D4BE4 /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C62D7DF224DA08B002D4BE4 /* ProfileEditController.swift */; };
-		4C6304FF22558F6C004DA03E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6304FE22558F6C004DA03E /* UserManager.swift */; };
 		4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C69CE5C2243FF6B00FCC33A /* AppDelegate.swift */; };
 		4C69CE622243FF6B00FCC33A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE602243FF6B00FCC33A /* Main.storyboard */; };
 		4C69CE642243FF6D00FCC33A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE632243FF6D00FCC33A /* Assets.xcassets */; };
 		4C69CE672243FF6D00FCC33A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE652243FF6D00FCC33A /* LaunchScreen.storyboard */; };
 		4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */; };
-		4CC028DB2244073C0097A2FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DA2244073C0097A2FD /* User.swift */; };
 		4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DC224408610097A2FD /* TeamImporter.swift */; };
 		4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DE22440FE70097A2FD /* TeamListViewController.swift */; };
 		A52A8426224421C5009A6593 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8425224421C5009A6593 /* LoginButton.swift */; };
 		A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843222458464009A6593 /* GroupViewTableViewCell.swift */; };
 		A52A843522459455009A6593 /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843422459455009A6593 /* GroupListViewController.swift */; };
-		A52A8437224594AE009A6593 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8436224594AE009A6593 /* Group.swift */; };
 		A5323F7B2253C89F00B86706 /* InCallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F6F2253C89E00B86706 /* InCallTableViewCell.swift */; };
 		A5323F7C2253C89F00B86706 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F702253C89E00B86706 /* AddViewController.swift */; };
 		A5323F7D2253C89F00B86706 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F712253C89E00B86706 /* NameViewController.swift */; };
@@ -36,6 +33,11 @@
 		A5323F8C2254196800B86706 /* GroupEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F8B2254196800B86706 /* GroupEditViewController.swift */; };
 		A5323F93225BA01500B86706 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F91225BA01500B86706 /* Groups.swift */; };
 		A5323F94225BA01500B86706 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F92225BA01500B86706 /* Users.swift */; };
+		A532F9C9225DC2A0007EEC18 /* AllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532F9C8225DC2A0007EEC18 /* AllUsers.swift */; };
+		A532F9CB225E5314007EEC18 /* ChatroomActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532F9CA225E5314007EEC18 /* ChatroomActivityTableViewController.swift */; };
+		A56AFD28225FB684008C67E9 /* CallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD27225FB684008C67E9 /* CallButton.swift */; };
+		A56AFD2A225FBBB4008C67E9 /* InviteUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */; };
+		A56AFD2C225FCD0F008C67E9 /* InviteUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */; };
 		A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EB224AB85E00A24589 /* SessionManager.swift */; };
 		A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EC224AB85F00A24589 /* LoginViewController.swift */; };
 		A5DC52F0224AB91D00A24589 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52EF224AB91D00A24589 /* Auth0.plist */; };
@@ -48,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		4C62D7DF224DA08B002D4BE4 /* ProfileEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditController.swift; sourceTree = "<group>"; };
-		4C6304FE22558F6C004DA03E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		4C69CE592243FF6B00FCC33A /* Intercom App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Intercom App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C69CE5C2243FF6B00FCC33A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C69CE612243FF6B00FCC33A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,14 +57,12 @@
 		4C69CE662243FF6D00FCC33A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C69CE682243FF6D00FCC33A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		4CC028DA2244073C0097A2FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4CC028DC224408610097A2FD /* TeamImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamImporter.swift; sourceTree = "<group>"; };
 		4CC028DE22440FE70097A2FD /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
 		7092D35AAFA1476D27B66940 /* Pods-Intercom App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intercom App.release.xcconfig"; path = "Target Support Files/Pods-Intercom App/Pods-Intercom App.release.xcconfig"; sourceTree = "<group>"; };
 		A52A8425224421C5009A6593 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		A52A843222458464009A6593 /* GroupViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewTableViewCell.swift; sourceTree = "<group>"; };
 		A52A843422459455009A6593 /* GroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
-		A52A8436224594AE009A6593 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A5323F6F2253C89E00B86706 /* InCallTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InCallTableViewCell.swift; sourceTree = "<group>"; };
 		A5323F702253C89E00B86706 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		A5323F712253C89E00B86706 /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +77,11 @@
 		A5323F8B2254196800B86706 /* GroupEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEditViewController.swift; sourceTree = "<group>"; };
 		A5323F91225BA01500B86706 /* Groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		A5323F92225BA01500B86706 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		A532F9C8225DC2A0007EEC18 /* AllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsers.swift; sourceTree = "<group>"; };
+		A532F9CA225E5314007EEC18 /* ChatroomActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomActivityTableViewController.swift; sourceTree = "<group>"; };
+		A56AFD27225FB684008C67E9 /* CallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallButton.swift; sourceTree = "<group>"; };
+		A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUserTableViewController.swift; sourceTree = "<group>"; };
+		A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InviteUserTableViewCell.swift; path = ../InviteUserTableViewCell.swift; sourceTree = "<group>"; };
 		A5DC52EB224AB85E00A24589 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		A5DC52EC224AB85F00A24589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5DC52EF224AB91D00A24589 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
@@ -114,10 +118,9 @@
 		4C108A6222454BAA00D4926D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4CC028DA2244073C0097A2FD /* User.swift */,
-				A52A8436224594AE009A6593 /* Group.swift */,
 				A5323F91225BA01500B86706 /* Groups.swift */,
 				A5323F92225BA01500B86706 /* Users.swift */,
+				A532F9C8225DC2A0007EEC18 /* AllUsers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +134,8 @@
 				A5323F8B2254196800B86706 /* GroupEditViewController.swift */,
 				4CC028DE22440FE70097A2FD /* TeamListViewController.swift */,
 				A5DC52F3224ADC1A00A24589 /* ChatroomViewController.swift */,
+				A532F9CA225E5314007EEC18 /* ChatroomActivityTableViewController.swift */,
+				A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */,
 				4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */,
 				4C62D7DF224DA08B002D4BE4 /* ProfileEditController.swift */,
 			);
@@ -142,7 +147,6 @@
 			children = (
 				4CC028DC224408610097A2FD /* TeamImporter.swift */,
 				A5DC52FE224BE1A500A24589 /* GroupController.swift */,
-				4C6304FE22558F6C004DA03E /* UserManager.swift */,
 			);
 			path = Importers;
 			sourceTree = "<group>";
@@ -215,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				A52A8425224421C5009A6593 /* LoginButton.swift */,
+				A56AFD27225FB684008C67E9 /* CallButton.swift */,
 			);
 			path = "UI Customisations";
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				A52A843222458464009A6593 /* GroupViewTableViewCell.swift */,
+				A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */,
 			);
 			path = "Cell View";
 			sourceTree = "<group>";
@@ -414,8 +420,8 @@
 			files = (
 				A52A8426224421C5009A6593 /* LoginButton.swift in Sources */,
 				A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */,
-				A52A8437224594AE009A6593 /* Group.swift in Sources */,
 				A5323F862253C89F00B86706 /* UserData.swift in Sources */,
+				A56AFD28225FB684008C67E9 /* CallButton.swift in Sources */,
 				A5DC52F4224ADC1A00A24589 /* ChatroomViewController.swift in Sources */,
 				4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */,
 				4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */,
@@ -425,18 +431,20 @@
 				A5323F7F2253C89F00B86706 /* Peer.swift in Sources */,
 				A5323F7E2253C89F00B86706 /* AddTableViewCell.swift in Sources */,
 				A5323F832253C89F00B86706 /* InCallViewController.swift in Sources */,
+				A56AFD2C225FCD0F008C67E9 /* InviteUserTableViewCell.swift in Sources */,
 				A5323F842253C89F00B86706 /* CallData.swift in Sources */,
-				4CC028DB2244073C0097A2FD /* User.swift in Sources */,
 				A5323F812253C89F00B86706 /* ThisUser.swift in Sources */,
-				4C6304FF22558F6C004DA03E /* UserManager.swift in Sources */,
+				A532F9C9225DC2A0007EEC18 /* AllUsers.swift in Sources */,
 				A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */,
 				A5323F7C2253C89F00B86706 /* AddViewController.swift in Sources */,
 				4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */,
 				A5323F94225BA01500B86706 /* Users.swift in Sources */,
 				A5323F8C2254196800B86706 /* GroupEditViewController.swift in Sources */,
 				A52A843522459455009A6593 /* GroupListViewController.swift in Sources */,
+				A56AFD2A225FBBB4008C67E9 /* InviteUserTableViewController.swift in Sources */,
 				A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */,
 				4C62D7E0224DA08B002D4BE4 /* ProfileEditController.swift in Sources */,
+				A532F9CB225E5314007EEC18 /* ChatroomActivityTableViewController.swift in Sources */,
 				A5323F852253C89F00B86706 /* Enums.swift in Sources */,
 				A5323F7B2253C89F00B86706 /* InCallTableViewCell.swift in Sources */,
 				A5323F93225BA01500B86706 /* Groups.swift in Sources */,

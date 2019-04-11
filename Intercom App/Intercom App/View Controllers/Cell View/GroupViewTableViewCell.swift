@@ -10,8 +10,8 @@ import UIKit
 
 class GroupViewTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var groupImage: UIImageView!
-    @IBOutlet weak var groupNameLabel: UILabel!
-    @IBOutlet weak var numberOfUsers: UILabel!
+    @IBOutlet weak var groupOwnedToImage: UIImageView!
+    @IBOutlet weak var groupOwnedToNameLabel: UILabel!
+    @IBOutlet weak var groupOwnedTonumberOfUsers: UILabel!
     
 }

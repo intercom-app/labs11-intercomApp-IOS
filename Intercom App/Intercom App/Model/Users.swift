@@ -8,44 +8,38 @@
 
 import Foundation
 
-
-
 struct Users: Codable {
     let id: Int
-    let stripeID: JSONNull?
-    let firstName, lastName: String?
-    let displayName, email: String
-    let phoneNumber: Int?
-    let callStatus: Int
+    let stripeID: String?
+    let twilioSubSID, firstName, lastName: JSONNull?
+    let avatar: String?
+    let displayName: String
+    let email: String?
+    let phoneNumber: JSONNull?
+    let callStatus: Bool
     let billingSubcription: BillingSubcription
     let createdAt: String
-    let groupsOwned, groupsBelongedTo, groupsInvitedTo: [Groups]?
+    let groupsOwned, groupsBelongedTo: [Groups]?
+    let groupsInvitedTo: [Groups]?
     let activityID: Int?
     let activityCreatedAt: String?
     let activity: String?
-    let inviteeCreatedAt, memberCreatedAt, ownerCreatedAt, participantCreatedAt: String?
+    let inviteeCreatedAt, memberCreatedAt, ownerCreatedAt: String?
     
     enum CodingKeys: String, CodingKey {
         case id
         case stripeID = "stripeId"
-        case firstName, lastName, displayName, email, phoneNumber, callStatus, billingSubcription, createdAt, groupsOwned, groupsBelongedTo, groupsInvitedTo
+        case twilioSubSID, firstName, lastName, avatar, displayName, email, phoneNumber, callStatus, billingSubcription, createdAt, groupsOwned, groupsBelongedTo, groupsInvitedTo
         case activityID = "activityId"
-        case activityCreatedAt, activity, inviteeCreatedAt, memberCreatedAt, ownerCreatedAt, participantCreatedAt
+        case activityCreatedAt, activity, inviteeCreatedAt, memberCreatedAt, ownerCreatedAt
+    }
+    enum BillingSubcription: String, Codable {
+        case free = "free"
+        case premium = "premium"
     }
 }
 
-enum CreatedAtEnum: String, Codable {
-    case the20190404014425 = "2019-04-04 01:44:25"
-}
 
-enum CreatedAt: String, Codable {
-    case the20190404014426 = "2019-04-04 01:44:26"
-}
-
-enum BillingSubcription: String, Codable {
-    case free = "free"
-    case premium = "premium"
-}
 
 // MARK: Encode/decode helpers
 
@@ -73,3 +67,26 @@ class JSONNull: Codable, Hashable {
         try container.encodeNil()
     }
 }
+
+class JSONCodingKey: CodingKey {
+    let key: String
+    
+    required init?(intValue: Int) {
+        return nil
+    }
+    
+    required init?(stringValue: String) {
+        key = stringValue
+    }
+    
+    var intValue: Int? {
+        return nil
+    }
+    
+    var stringValue: String {
+        return key
+    }
+}
+
+
+

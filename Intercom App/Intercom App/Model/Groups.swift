@@ -12,7 +12,7 @@ struct Groups: Codable {
     let groupID: Int
     let groupName: String
     let phoneNumber: JSONNull?
-    let callStatus: Int
+    let callStatus: Bool
     let activities, callParticipants, owners, members: [Users]
     let invitees: [Users]
     let inviteCreatedAt, ownershipCreatedAt: String?

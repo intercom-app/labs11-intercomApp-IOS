@@ -10,20 +10,16 @@ import UIKit
 
 class GroupListViewController: UITableViewController {
 
-    //Overrides
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        TeamImporter.shared.gtvc = self
-        GroupController.shared.gtvc = self
-        tableView.reloadData()
-    }
+    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TeamImporter.shared.gtvc = self
+        GroupController.shared.gtvc = self
         //Pull the information in the background of the main thread
         DispatchQueue.global().async {
             TeamImporter.shared.getUser()
-            GroupController.shared.fetchGroups()
         }
     }
     @IBAction func dismissView(_ sender: Any) {
@@ -43,7 +39,7 @@ class GroupListViewController: UITableViewController {
             let addCommentAction = UIAlertAction(title: "Add Group", style: .default) { (_) in
                 
                 guard let groupName = commentTextField?.text else { return }
-                GroupController.shared.postRequest(groupName: groupName)
+                GroupController.shared.createNewGroup(groupName: groupName)
                 
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -57,27 +53,46 @@ class GroupListViewController: UITableViewController {
     
     // MARK: - Table view data source
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return TeamImporter.shared.allGroups?.count ?? 0
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return TeamImporter.shared.teamMembers?.groupsBelongedTo!.count ?? 0
+        return TeamImporter.shared.allGroups?[section].count ?? 0
         
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupViewTableViewCell
-
-        cell.groupNameLabel.text = TeamImporter.shared.teamMembers?.groupsBelongedTo![indexPath.row].groupName
-        cell.numberOfUsers.text = TeamImporter.shared.teamMembers?.groupsBelongedTo![indexPath.row].groupCreatedAt
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "groupsCell", for: indexPath) as! GroupViewTableViewCell
+        
+        guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return cell }
+        
+        cell.groupOwnedToNameLabel.text = group.groupName
+        cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
 
         return cell
+
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let label = UILabel()
+        label.text = "Header"
+        label.backgroundColor = UIColor.lightGray
+        return label
+    }
+    
+
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            let group = GroupController.shared.groups[indexPath.row]
-            GroupController.shared.groups.remove(at: indexPath.row)
+            guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
+            TeamImporter.shared.allGroups?[indexPath.section].remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-            GroupController.shared.deleteRequest(groupID: group.id!)
+            GroupController.shared.deleteRequest(groupID: group.groupID)
         }
     }
     
@@ -88,8 +103,10 @@ class GroupListViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let destination = segue.destination as! GroupEditViewController
-//        destination.group = GroupController.shared.groups[indexPath.row]
+        let destination = segue.destination as! ChatroomViewController
+        guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
+        destination.group = group
+        TeamImporter.shared.getUser()
     }
 
 }

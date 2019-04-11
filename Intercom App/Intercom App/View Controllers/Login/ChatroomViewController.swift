@@ -15,15 +15,41 @@ import PushKit
 import TwilioVoice
 
 
-let baseURLString = "https://intercom-be-farste.herokuapp.com/api/voice/"
+let baseURLString = "https://intercom-be.herokuapp.com/api/voice/"
 let accessTokenEndpoint = "accessToken"
-let identity = "test"
+
 let twimlParamTo = "to"
 
 class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotificationDelegate, TVOCallDelegate, AVAudioPlayerDelegate, UITextFieldDelegate {
     
     
    
+    @IBOutlet weak var userNameLabel1: UILabel!
+    @IBOutlet weak var userNameLabel2: UILabel!
+    @IBOutlet weak var userNameLabel3: UILabel!
+    @IBOutlet weak var userNameLabel4: UILabel!
+    @IBOutlet weak var userNameLabel5: UILabel!
+    @IBOutlet weak var userNameLabel6: UILabel!
+    @IBOutlet weak var userNameLabel7: UILabel!
+    @IBOutlet weak var userNameLabel8: UILabel!
+    @IBOutlet weak var userNameLabel9: UILabel!
+    @IBOutlet weak var userNameLabel10: UILabel!
+    @IBOutlet weak var userNameLabel11: UILabel!
+    var labelArray: [UILabel]?
+    
+    func setupLabel() {
+        labelArray = [userNameLabel1, userNameLabel2, userNameLabel3, userNameLabel4, userNameLabel5, userNameLabel6, userNameLabel7, userNameLabel8, userNameLabel9, userNameLabel10, userNameLabel11]
+        for tag in 0...10 {
+            if labelArray?[tag].tag == tag + 1 {
+                labelArray?[tag].isHidden = true
+            }
+        }
+    }
+    
+    
+    
+    @IBOutlet weak var groupOwner: UILabel!
+    @IBOutlet weak var editOutlet: UIBarButtonItem!
     @IBOutlet weak var placeCallButton: UIButton!
     @IBOutlet weak var groupImage: UIImageView!
     @IBOutlet weak var outgoingValue: UITextField!
@@ -31,6 +57,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBOutlet weak var muteSwitch: UISwitch!
     @IBOutlet weak var speakerSwitch: UISwitch!
     
+    
+    var identity: String?
     var deviceTokenString:String?
     var voipRegistry:PKPushRegistry
     var incomingPushCompletionCallback: (()->Swift.Void?)? = nil
@@ -39,7 +67,41 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var call:TVOCall?
     var ringtonePlayer:AVAudioPlayer?
     var ringtonePlaybackCallback: (() -> ())?
+    var names: [String] = []
+    var group: Groups? {
+        didSet {
+            if let group = group {
+            identity = "\(group.groupID)" + group.groupName
+                
+            }
+        }
+    }
+    var usersArray: [String] = []
     
+    
+    func updateView() {
+        guard let identity = self.identity else { return }
+        outgoingValue.text = identity
+        title = "Voice Chatroom"
+        setupLabel()
+        guard let ownerName = group?.owners.first?.displayName else { return }
+        groupOwner.text = "Group Owner: " + ownerName
+                guard let users = self.group?.members else { return }
+                self.names = []
+                // guard let jsonCount = json.first?.count else { return }
+                for nameArray in 0..<users.count {
+                     let displayName = users[nameArray].displayName
+                        print(displayName)
+                        self.labelArray?[nameArray].isHidden = false
+                        self.labelArray?[nameArray].text = displayName
+                        self.names.append(displayName)
+                    }
+        
+        if TeamImporter.shared.userID == group?.owners.first?.id {
+            self.editOutlet.isEnabled = true
+            
+        }
+        }
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,16 +112,31 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         TwilioVoice.logLevel = .verbose
     }
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
-        
+        self.editOutlet.isEnabled = false
+         updateView()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editGroup" {
+            let destination = segue.destination as! GroupEditViewController
+            destination.group = self.group
+        } else if segue.identifier == "activity" {
+            let destination = segue.destination as! ChatroomActivityTableViewController
+            destination.group = self.group
+        }
     }
     
     func fetchAccessToken() -> String? {
-        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identity)
+        guard let identityText = identity else { fatalError("outgoig value is empty")}
+        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identityText)
+        print(identityText ?? "not set")
         guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else {
             return nil
         }
@@ -77,8 +154,9 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
             callControlView.isHidden = true
         }
     }
+  
     
-    @IBAction func placeCall(_ sender: UIButton) {
+    @IBAction func placeCall(_ sender: CallButton) {
         if (self.call != nil) {
             self.call?.disconnect()
             self.toggleUIState(isEnabled: false, showCallControl: false)
@@ -86,10 +164,12 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
             guard let accessToken = fetchAccessToken() else {
                 return
             }
-            
+            self.navigationController?.isNavigationBarHidden = true
             playOutgoingRingtone(completion: { [weak self] in
                 if let strongSelf = self {
-                    strongSelf.call = TwilioVoice.call(accessToken, params: [twimlParamTo : strongSelf.outgoingValue.text!], delegate: strongSelf)
+                    guard let text = strongSelf.outgoingValue.text else { fatalError("outgoig value is empty")}
+                    strongSelf.call = TwilioVoice.call(accessToken, params: [twimlParamTo : text], delegate: strongSelf)
+                    print(text)
                     strongSelf.toggleUIState(isEnabled: false, showCallControl: false)
                     
                 }
@@ -305,7 +385,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     // MARK: TVOCallDelegate
     func callDidConnect(_ call: TVOCall) {
         NSLog("callDidConnect:")
-        
+        navigationController?.isNavigationBarHidden = true
         self.call = call
         
         self.placeCallButton.setTitle("Hang Up", for: .normal)
@@ -318,6 +398,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         NSLog("Call failed to connect: \(error.localizedDescription)")
         
         callDisconnected()
+        
     }
     
     func call(_ call: TVOCall, didDisconnectWithError error: Error?) {
@@ -328,14 +409,16 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         }
         
         callDisconnected()
+        
     }
     
     func callDisconnected() {
         self.call = nil
-        
+        navigationItem.leftBarButtonItem?.isEnabled = true
         playDisconnectSound()
         toggleUIState(isEnabled: true, showCallControl: false)
         self.placeCallButton.setTitle("Call", for: .normal)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     

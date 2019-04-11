@@ -11,8 +11,8 @@ import UIKit
 class GroupEditViewController: UIViewController, UITextFieldDelegate {
 
     
-    var group: Group?
-    
+    var group: Groups?
+    let groupListViewController = GroupListViewController()
 
     @IBOutlet weak var createdAt: UILabel!
     @IBOutlet weak var groupImage: UIImageView!
@@ -28,24 +28,23 @@ class GroupEditViewController: UIViewController, UITextFieldDelegate {
     
     func updateView() {
         
-        groupName.text = group?.name
-        createdAt.text = group?.createdAt
-        title = group?.name
+        groupName.text = group?.groupName
+        createdAt.text = group?.groupCreatedAt
+        title = group?.groupName
     }
     
     @IBAction func saveButton(_ sender: Any) {
         if let name = groupName.text {
-            GroupController.shared.putRequest(groupID: group!.id!, groupName: name)
+            GroupController.shared.editGroupName(groupID: group!.groupID, groupName: name)
+           
         }
-        navigationController?.popViewController(animated: true)
+       // navigationController?.show(groupListViewController, sender: group) 
     }
     @IBAction func deleteGroup(_ sender: Any) {
-        GroupController.shared.deleteRequest(groupID: group!.id!)
+        GroupController.shared.deleteRequest(groupID: group!.groupID)
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func inviteNewUser(_ sender: Any) {
-        
-    }
+   
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -56,14 +55,5 @@ class GroupEditViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
