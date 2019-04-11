@@ -13,6 +13,7 @@ class ChatroomActivityTableViewController: UITableViewController {
     var group: Groups?
     var activity: [Activities] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GroupController.shared.fetchGroupActivities(groupID: group!.groupID) { (test) in
@@ -22,6 +23,8 @@ class ChatroomActivityTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        
+      //  GroupController.shared.addGroupMember(groupID: group!.groupID)
     }
 
     // MARK: - Table view data source

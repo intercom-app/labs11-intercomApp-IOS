@@ -17,7 +17,7 @@ import TwilioVoice
 
 let baseURLString = "https://intercom-be-farste.herokuapp.com/api/voice/"
 let accessTokenEndpoint = "accessToken"
-let identity = "test"
+
 let twimlParamTo = "to"
 
 class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotificationDelegate, TVOCallDelegate, AVAudioPlayerDelegate, UITextFieldDelegate {
@@ -55,6 +55,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBOutlet weak var muteSwitch: UISwitch!
     @IBOutlet weak var speakerSwitch: UISwitch!
     
+    var userIdentity: String?
+    var identity: String?
     var deviceTokenString:String?
     var voipRegistry:PKPushRegistry
     var incomingPushCompletionCallback: (()->Swift.Void?)? = nil
@@ -63,13 +65,34 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var call:TVOCall?
     var ringtonePlayer:AVAudioPlayer?
     var ringtonePlaybackCallback: (() -> ())?
-    var group: Groups?
+    var group: Groups? {
+        didSet {
+            if let group = group {
+            identity = "\(group.groupID)" + group.groupName
+            userIdentity = TeamImporter.shared.userNikname
+            }
+        }
+    }
+    var usersArray: [String] = []
     
     
     func updateView() {
-        outgoingValue.text = group?.groupName
+        outgoingValue.text = identity
         title = outgoingValue.text
         setupLabel()
+        GroupController.shared.fetchGroupMembers(groupID: group!.groupID) { (users) in
+            DispatchQueue.main.async {
+                guard let users = users else { return }
+                self.usersArray = users
+                for numberOfUsers in 0..<users.count {
+                    self.labelArray?[numberOfUsers].isHidden = false
+                    self.labelArray?[numberOfUsers].text = users[numberOfUsers]
+                    
+                }
+                
+            }
+           
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -80,6 +103,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         TwilioVoice.logLevel = .verbose
     }
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
@@ -98,7 +123,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     }
     
     func fetchAccessToken() -> String? {
-        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identity)
+        let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, userIdentity ?? "")
+        print(userIdentity ?? "not set")
         guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else {
             return nil
         }
