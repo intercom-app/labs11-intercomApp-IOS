@@ -10,6 +10,10 @@ import UIKit
 
 class BillingViewController: UIViewController {
     
+    override func viewDidLoad() {
+        updateViews()
+    }
+    
     //Outlets
     @IBOutlet weak var creditLabel: UILabel!
     @IBOutlet weak var cardInfoLabel: UILabel!
@@ -24,7 +28,9 @@ class BillingViewController: UIViewController {
     
     
     //Functions
+    func updateViews(){
     
+    }
     
     //Actions
     

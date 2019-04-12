@@ -31,15 +31,17 @@ class ProfileViewController: UIViewController {
     
     
     func displayInformation() {
+        
     
         usernameLabel.text = currentUser?.displayName
         photoView.image = userImage
         fullnameLabel.text = "\(currentUser?.firstName) \(currentUser?.lastName)"
-        //phoneLabel.text = currentUser?.phoneNumber! as String
-        //callStatusLabel.text =
+        //phoneLabel.text = currentUser?.phoneNumber as String
+        if currentUser?.callStatus == true { callStatusLabel.text = "On a Call" }
         emailLabel.text = currentUser?.email
-        //creationDateLabel.text =
-        //subscriptionLabel.text =
+        creationDateLabel.text = currentUser?.createdAt
+        let subscription = String(describing: currentUser?.billingSubcription)
+        subscriptionLabel.text = subscription
     }
     
     
