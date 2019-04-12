@@ -13,6 +13,7 @@
 		4C69CE622243FF6B00FCC33A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE602243FF6B00FCC33A /* Main.storyboard */; };
 		4C69CE642243FF6D00FCC33A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE632243FF6D00FCC33A /* Assets.xcassets */; };
 		4C69CE672243FF6D00FCC33A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE652243FF6D00FCC33A /* LaunchScreen.storyboard */; };
+		4C90249E2260DBEF00E9843F /* BillingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C90249D2260DBEF00E9843F /* BillingViewController.swift */; };
 		4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */; };
 		4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DC224408610097A2FD /* TeamImporter.swift */; };
 		4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DE22440FE70097A2FD /* TeamListViewController.swift */; };
@@ -56,6 +57,7 @@
 		4C69CE632243FF6D00FCC33A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C69CE662243FF6D00FCC33A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C69CE682243FF6D00FCC33A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C90249D2260DBEF00E9843F /* BillingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingViewController.swift; sourceTree = "<group>"; };
 		4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4CC028DC224408610097A2FD /* TeamImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamImporter.swift; sourceTree = "<group>"; };
 		4CC028DE22440FE70097A2FD /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */,
 				4C62D7DF224DA08B002D4BE4 /* ProfileEditController.swift */,
 				4CC028DE22440FE70097A2FD /* TeamListViewController.swift */,
+				4C90249D2260DBEF00E9843F /* BillingViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				A5DC52F4224ADC1A00A24589 /* ChatroomViewController.swift in Sources */,
 				4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */,
 				4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */,
+				4C90249E2260DBEF00E9843F /* BillingViewController.swift in Sources */,
 				4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */,
 				A5DC52FF224BE1A500A24589 /* GroupController.swift in Sources */,
 				A5323F7D2253C89F00B86706 /* NameViewController.swift in Sources */,
