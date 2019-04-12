@@ -151,7 +151,7 @@ extension CallData: MCSessionDelegate {
             print("peer with display name: \(peerID.displayName) connected")
 
             // Remove newly connected peer from nearbyPeers if it can be found
-            if let correspondingNearbyPeerPos = nearbyPeers.index(where: { $0 == peerID }) {
+            if let correspondingNearbyPeerPos = nearbyPeers.firstIndex(where: { $0 == peerID }) {
                 print("corresponding nearby peer found")
                 let newPeer = nearbyPeers[correspondingNearbyPeerPos]
 
@@ -177,7 +177,7 @@ extension CallData: MCSessionDelegate {
             print("no longer in contact with peer with display name: \(peerID.displayName)")
 
             // Remove the peer from the list of connected peers if it's there
-            if let peerIndexToRemove = connectedPeers.index(where: { $0 == peerID }) {
+            if let peerIndexToRemove = connectedPeers.firstIndex(where: { $0 == peerID }) {
                 let playerNodeToDetach = connectedPeers[peerIndexToRemove].playerNode
                 audioEngine.detach(playerNodeToDetach)
                 connectedPeers.remove(at: peerIndexToRemove)
@@ -204,7 +204,7 @@ extension CallData: MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         print("recieved data from peer with display name: \(peerID.displayName)")
         
-        if let indexOfCorrespondingUserData = connectedPeers.index(where: { $0 == peerID }) {
+        if let indexOfCorrespondingUserData = connectedPeers.firstIndex(where: { $0 == peerID }) {
             let peer = connectedPeers[indexOfCorrespondingUserData]
             let playerNode = peer.playerNode
             peer.timesPlayed = peer.timesPlayed &+ 1
@@ -259,7 +259,7 @@ extension CallData: MCNearbyServiceBrowserDelegate {
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
         print("lost peer with display name: \(peerID.displayName)")
         
-        if let peerPos = nearbyPeers.index(where: { $0 == peerID }) {
+        if let peerPos = nearbyPeers.firstIndex(where: { $0 == peerID }) {
             nearbyPeers.remove(at: peerPos)
         }
         DispatchQueue.main.async {
