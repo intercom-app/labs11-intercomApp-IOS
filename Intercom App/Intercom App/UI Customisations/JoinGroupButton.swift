@@ -20,7 +20,7 @@ class JoinGroupButton: UIButton {
     }
     
     private func configureUI() {
-        self.backgroundColor = kJoinGroupButtonBackgroundColor
+      //  self.backgroundColor = kJoinGroupButtonBackgroundColor
         self.layer.cornerRadius = kJoinGroupButtonCornerRadius
         self.tintColor = kJoinGroupButtonTintColor
         self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14)

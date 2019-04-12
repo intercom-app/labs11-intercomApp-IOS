@@ -16,7 +16,7 @@ class InviteUserTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+       invitedUserId = []
         TeamImporter.shared.iuvc = self
         TeamImporter.shared.fetchAllUsers { (allUsers) in
             self.allUsers = allUsers
@@ -28,6 +28,7 @@ class InviteUserTableViewController: UITableViewController {
         DispatchQueue.global().async {
             TeamImporter.shared.getUserAndFetchAllDetails()
         }
+       
     }
     
     func findAllInviteesInTheGroup() {
@@ -63,7 +64,9 @@ class InviteUserTableViewController: UITableViewController {
         if invitedUserId != [] {
         for id in invitedUserId {
         if user.id == id {
-            cell.userID = 0
+            cell.invited = true
+            
+            cell.userID = user.id
             cell.userName = user.displayName
             if let imageURL = user.avatar {
                 let url = URL(string: imageURL)!

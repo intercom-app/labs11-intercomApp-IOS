@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rwl-bv-CjS">
-                                <rect key="frame" x="8" y="72" width="359" height="307"/>
+                                <rect key="frame" x="8" y="72" width="359" height="297.5"/>
                                 <subviews>
                                     <textField hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="test" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZIR-lD-HMN">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="0.0"/>
@@ -86,7 +86,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lhU-66-Yo2">
-                                        <rect key="frame" x="0.0" y="58.5" width="359" height="214.5"/>
+                                        <rect key="frame" x="0.0" y="49" width="359" height="214.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="253" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="zZE-3f-NOg">
                                                 <rect key="frame" x="0.0" y="0.0" width="175.5" height="214.5"/>
@@ -165,7 +165,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9g-cY-f1a" customClass="CallButton" customModule="Intercom_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="277" width="359" height="30"/>
+                                        <rect key="frame" x="0.0" y="267.5" width="359" height="30"/>
                                         <state key="normal" title="Call">
                                             <color key="titleColor" red="1" green="0.065431795061399733" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -176,7 +176,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bo6-aw-goD">
-                                <rect key="frame" x="8" y="383" width="359" height="53.5"/>
+                                <rect key="frame" x="8" y="373.5" width="359" height="53.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="3gG-7m-E6y">
                                         <rect key="frame" x="55" y="0.0" width="249" height="53.5"/>
@@ -320,9 +320,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXH-Af-XGC">
                                                     <rect key="frame" x="237" y="0.0" width="37" height="61"/>
-                                                    <state key="normal" title="Invite">
-                                                        <color key="titleColor" red="0.36893075698568639" green="0.70508803934010156" blue="0.38980505284798334" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
+                                                    <state key="normal" title="Invite"/>
                                                     <connections>
                                                         <action selector="inviteButton:" destination="iP8-eL-wOB" eventType="touchUpInside" id="Sck-B0-K16"/>
                                                     </connections>
@@ -370,26 +368,22 @@
                                 <rect key="frame" x="8" y="72" width="359" height="445"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i78-T5-KNb">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="96.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="126"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="Njn-2V-p9C">
-                                        <rect key="frame" x="0.0" y="98.5" width="359" height="52"/>
+                                        <rect key="frame" x="0.0" y="128" width="359" height="67"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqD-Px-gA7">
-                                        <rect key="frame" x="0.0" y="152.5" width="359" height="96.5"/>
-                                        <state key="normal" title="Invite Group Members"/>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CreatedAt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-Ib-0Kk">
-                                        <rect key="frame" x="0.0" y="251" width="359" height="77.5"/>
+                                        <rect key="frame" x="0.0" y="197" width="359" height="101"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3S-iQ-pJp">
-                                        <rect key="frame" x="0.0" y="330.5" width="359" height="114.5"/>
+                                        <rect key="frame" x="0.0" y="300" width="359" height="145"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveButton:" destination="BvZ-1x-CaD" eventType="touchUpInside" id="zcc-Mr-EeI"/>
@@ -952,7 +946,7 @@
                 <viewControllerPlaceholder storyboardName="MultipeerVoiceChat" id="cgp-YC-AX1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCE-gH-EYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3792" y="684"/>
+            <point key="canvasLocation" x="3659" y="736"/>
         </scene>
         <!--My Groups-->
         <scene sceneID="G78-Hg-r1W">

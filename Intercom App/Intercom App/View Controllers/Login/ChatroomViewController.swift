@@ -69,6 +69,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var ringtonePlayer:AVAudioPlayer?
     var ringtonePlaybackCallback: (() -> ())?
     var names: [String] = []
+    var callStatus: Bool = false
     var group: Groups? {
         didSet {
             if let group = group {
@@ -169,6 +170,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
                 return
             }
             self.navigationController?.isNavigationBarHidden = true
+            self.callStatus = true
             playOutgoingRingtone(completion: { [weak self] in
                 if let strongSelf = self {
                     guard let text = strongSelf.outgoingValue.text else { fatalError("outgoig value is empty")}

@@ -147,7 +147,7 @@ class GroupController {
         task.resume()
     }
     
-    func deleteRequest(groupID: Int) {
+    func deleteGroupRequest(groupID: Int) {
         
         //create the session object
         let session = URLSession.shared
@@ -260,25 +260,21 @@ class GroupController {
         task.resume()
     }
     
-    
-    func deleteFromeInvitations(groupID: Int) {
-        guard let id = TeamImporter.shared.userID else {
-            fatalError("cant fetch user ID: \(String(describing: TeamImporter.shared.userID))")
+    func deleteInvitation(groupID: Int, userID: Int?) {
+        guard let id = userID else {
+            fatalError("cant fetch user ID")
         }
-        //let parameters = ["userId" : id, "activity" : massage] as [String : Any]
         
         var groupsURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
         groupsURL.appendPathComponent("\(groupID)")
         groupsURL.appendPathComponent("groupInvitees")
         groupsURL.appendPathComponent("\(id)")
-        
         //create the session object
         let session = URLSession.shared
         
         //now create the URLRequest object using the url object
         var request = URLRequest(url: groupsURL)
-        
-        request.httpMethod = "DELETE" //set http method as POST
+        request.httpMethod = "DELETE" //set http method as DELETE
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -289,23 +285,7 @@ class GroupController {
             guard error == nil else {
                 return
             }
-            
-            guard let data = data else {
-                return
-            }
-            TeamImporter.shared.getUserAndFetchAllDetails()
-            
-            do {
-                //create json object from data
-                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                    print(json)
-                    // handle json...
-                    
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
+            //TeamImporter.shared.getUser()
         })
         task.resume()
     }

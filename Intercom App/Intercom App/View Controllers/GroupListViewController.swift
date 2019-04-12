@@ -120,7 +120,7 @@ class GroupListViewController: UITableViewController {
                 if editingStyle == UITableViewCell.EditingStyle.delete {
             TeamImporter.shared.allGroups?[indexPath.section].remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-            GroupController.shared.deleteRequest(groupID: group.groupID)
+            GroupController.shared.deleteGroupRequest(groupID: group.groupID)
             }
         }
     }

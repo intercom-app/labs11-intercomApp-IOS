@@ -11,7 +11,7 @@ import UIKit
 class ChatroomActivityTableViewController: UITableViewController {
 
     var group: Groups?
-    
+    var callStatus: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
