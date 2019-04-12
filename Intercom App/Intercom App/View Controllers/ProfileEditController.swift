@@ -64,21 +64,17 @@ class ProfileEditController: UIViewController, UIImagePickerControllerDelegate, 
     //What happens when the user clicks save
     @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
         
-//        currentUser?.firstName = firstnameField.text
-//        currentUser?.lastName = lastnameField.text
-//        currentUser?.email = emailField.text!
+        //currentUser?.firstName = firstnameField.text
+        //currentUser?.lastName = lastnameField.text
+        //currentUser?.email = emailField.text!
         //currentUser?.phoneNumber = Int(phoneField.text!)
+        //profileVC.userImage = originalImage
+
         
-        performSegue(withIdentifier: "saveProfile", sender: nil)
+        navigationController?.popViewController(animated: true)
+        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "saveProfile" {
-            let profileVC = segue.destination as! ProfileViewController
-            
-            profileVC.userImage = originalImage
-        }
-    }
     
     
 }

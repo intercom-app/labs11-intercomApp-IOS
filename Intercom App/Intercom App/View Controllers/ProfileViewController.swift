@@ -10,7 +10,12 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    var currentUser: Users? { didSet { displayInformation() }}
+    override func viewDidLoad() {
+        //displayInformation()
+    }
+    
+    var currentUser: Users?
+    
     var userImage: UIImage?
     
     @IBOutlet weak var usernameLabel: UILabel!
@@ -31,13 +36,12 @@ class ProfileViewController: UIViewController {
     
     
     func displayInformation() {
-        
     
-        usernameLabel.text = currentUser?.displayName
+        usernameLabel.text = currentUser?.displayName ?? "Add a Username"
         photoView.image = userImage
         fullnameLabel.text = "\(currentUser?.firstName) \(currentUser?.lastName)"
         //phoneLabel.text = currentUser?.phoneNumber as String
-        if currentUser?.callStatus == true { callStatusLabel.text = "On a Call" }
+        if currentUser?.callStatus == true { callStatusLabel.text = "Call Status: On a Call" } else { callStatusLabel.text = "Call Status: Available" }
         emailLabel.text = currentUser?.email
         creationDateLabel.text = currentUser?.createdAt
         let subscription = String(describing: currentUser?.billingSubcription)

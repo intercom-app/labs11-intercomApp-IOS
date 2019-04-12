@@ -25,11 +25,20 @@ class BillingViewController: UIViewController {
     @IBOutlet weak var updatePaymentButton: UIButton!
     
     //Properties
+    var currentUser: Users?
     
     
     //Functions
     func updateViews(){
-    
+        
+        if currentUser?.billingSubcription == .premium { creditLabel.text = "Premium" }
+        else { creditLabel.text = "Free"
+        }
+        
+        var lastDigits: String?
+        
+        cardInfoLabel.text = "···· ···· ···· \(lastDigits ?? "4242")"
+        
     }
     
     //Actions
