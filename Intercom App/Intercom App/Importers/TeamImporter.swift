@@ -12,7 +12,7 @@ class TeamImporter {
     
     static let shared = TeamImporter()
     
-    var tlvc: TeamListViewController?
+    var cavc: ChatroomActivityTableViewController?
     var gtvc: GroupListViewController?
     var iuvc: InviteUserTableViewController?
     var teamMembers: Users?
@@ -22,7 +22,7 @@ class TeamImporter {
     var userNikname = userProfile.nickname
     var allGroups: [[Groups]]?
     
-    func getUser() {
+    func getUserAndFetchAllDetails() {
         
         let usersBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
         
@@ -119,7 +119,9 @@ class TeamImporter {
                     
                 //Reload the table with current data
                 DispatchQueue.main.async {
-                    self.gtvc!.tableView.reloadData()
+                    self.gtvc?.tableView.reloadData()
+                    self.iuvc?.tableView.reloadData()
+                    self.cavc?.tableView.reloadData()
                 }
 
                 // Convert to a string and print

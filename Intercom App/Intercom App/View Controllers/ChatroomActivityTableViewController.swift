@@ -15,7 +15,11 @@ class ChatroomActivityTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       tableView.reloadData()
+       
+        TeamImporter.shared.cavc = self
+        DispatchQueue.global().async {
+            TeamImporter.shared.getUserAndFetchAllDetails()
+        }
     }
 
     // MARK: - Table view data source
@@ -41,12 +45,5 @@ class ChatroomActivityTableViewController: UITableViewController {
             }
         }
         return cell
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "inviteSegue" {
-            let destination = segue.destination as! InviteUserTableViewController
-            destination.group = self.group
-        }
     }
 }

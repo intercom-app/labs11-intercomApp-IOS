@@ -132,12 +132,12 @@
 				A52A842F224583A2009A6593 /* Cell View */,
 				A52A843422459455009A6593 /* GroupListViewController.swift */,
 				A5323F8B2254196800B86706 /* GroupEditViewController.swift */,
-				4CC028DE22440FE70097A2FD /* TeamListViewController.swift */,
 				A5DC52F3224ADC1A00A24589 /* ChatroomViewController.swift */,
 				A532F9CA225E5314007EEC18 /* ChatroomActivityTableViewController.swift */,
 				A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */,
 				4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */,
 				4C62D7DF224DA08B002D4BE4 /* ProfileEditController.swift */,
+				4CC028DE22440FE70097A2FD /* TeamListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

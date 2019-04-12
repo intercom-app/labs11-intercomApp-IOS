@@ -19,6 +19,9 @@ class InviteUserTableViewController: UITableViewController {
         TeamImporter.shared.fetchAllUsers { (allUsers) in
             self.allUsers = allUsers
         }
+        DispatchQueue.global().async {
+            TeamImporter.shared.getUserAndFetchAllDetails()
+        }
     }
 
     // MARK: - Table view data source
@@ -36,13 +39,14 @@ class InviteUserTableViewController: UITableViewController {
 
         cell.userDisplayName.text = user.displayName
         cell.userID = user.id
+        cell.userName = user.displayName
         if let imageURL = user.avatar {
             let url = URL(string: imageURL)!
             if let imageData = try? Data(contentsOf: url) {
                 cell.userAvatar.image = UIImage(data: imageData)
             }
         }
-        cell.group = group
+        cell.group = self.group
         return cell
     }
     

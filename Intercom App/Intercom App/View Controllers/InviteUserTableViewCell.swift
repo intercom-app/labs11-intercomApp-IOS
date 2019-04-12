@@ -12,6 +12,7 @@ class InviteUserTableViewCell: UITableViewCell {
 
     var group: Groups?
     var userID: Int?
+    var userName: String?
     
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var userDisplayName: UILabel!
@@ -23,6 +24,10 @@ class InviteUserTableViewCell: UITableViewCell {
         inviteButtonOutlet.setTitle("Invited", for: .normal)
         inviteButtonOutlet.setTitleColor(.gray, for: .normal)
         inviteButtonOutlet.isEnabled = false
+        GroupController.shared.postInvitation(groupID: group!.groupID, userID: userID)
+        
+        GroupController.shared.postActivity(groupID: group!.groupID, massage: "Invited " + "\(String(describing: userName!))" + " to the group")
+        TeamImporter.shared.getUserAndFetchAllDetails()
     }
     
 }

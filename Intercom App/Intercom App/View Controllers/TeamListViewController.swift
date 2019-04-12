@@ -16,7 +16,7 @@ class TeamListViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        TeamImporter.shared.tlvc = self
+        
     }
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class TeamListViewController: UITableViewController {
         
         //Pull the information in the background of the main thread
         DispatchQueue.global().async {
-            TeamImporter.shared.getUser()
+            TeamImporter.shared.getUserAndFetchAllDetails()
 
         }
     }
