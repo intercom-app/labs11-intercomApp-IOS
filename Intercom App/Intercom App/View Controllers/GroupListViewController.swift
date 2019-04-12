@@ -13,8 +13,10 @@ class GroupListViewController: UITableViewController {
     
   
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         TeamImporter.shared.gtvc = self
         GroupController.shared.gtvc = self
         //Pull the information in the background of the main thread
@@ -22,9 +24,7 @@ class GroupListViewController: UITableViewController {
             TeamImporter.shared.getUserAndFetchAllDetails()
         }
     }
-    @IBAction func dismissView(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+   
     
     @IBAction func addNewGroupe(_ sender: Any) {
         
@@ -70,6 +70,20 @@ class GroupListViewController: UITableViewController {
         
         guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return cell }
         
+        
+        if indexPath.section == 2 {
+           guard let group = TeamImporter.shared.allGroups?[2][indexPath.row] else { return cell }
+            cell.joinGroupbutton.isHidden = false
+            cell.declineButton.isHidden = false
+            
+            cell.groupOwnedToNameLabel.text = group.groupName
+            cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
+            return cell
+        } else {
+            cell.joinGroupbutton.isHidden = true
+            cell.declineButton.isHidden = true
+        }
+        
         cell.groupOwnedToNameLabel.text = group.groupName
         cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
 
@@ -106,7 +120,7 @@ class GroupListViewController: UITableViewController {
                 if editingStyle == UITableViewCell.EditingStyle.delete {
             TeamImporter.shared.allGroups?[indexPath.section].remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-            GroupController.shared.deleteRequest(groupID: group.groupID)
+            GroupController.shared.deleteGroupRequest(groupID: group.groupID)
             }
         }
     }

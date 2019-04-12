@@ -39,6 +39,8 @@
 		A56AFD28225FB684008C67E9 /* CallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD27225FB684008C67E9 /* CallButton.swift */; };
 		A56AFD2A225FBBB4008C67E9 /* InviteUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */; };
 		A56AFD2C225FCD0F008C67E9 /* InviteUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */; };
+		A58AD83F2261152600D642F9 /* JoinGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AD83E2261152600D642F9 /* JoinGroupButton.swift */; };
+		A58AD841226115ED00D642F9 /* DeclineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AD840226115ED00D642F9 /* DeclineButton.swift */; };
 		A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EB224AB85E00A24589 /* SessionManager.swift */; };
 		A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EC224AB85F00A24589 /* LoginViewController.swift */; };
 		A5DC52F0224AB91D00A24589 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5DC52EF224AB91D00A24589 /* Auth0.plist */; };
@@ -84,6 +86,8 @@
 		A56AFD27225FB684008C67E9 /* CallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallButton.swift; sourceTree = "<group>"; };
 		A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUserTableViewController.swift; sourceTree = "<group>"; };
 		A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InviteUserTableViewCell.swift; path = ../InviteUserTableViewCell.swift; sourceTree = "<group>"; };
+		A58AD83E2261152600D642F9 /* JoinGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGroupButton.swift; sourceTree = "<group>"; };
+		A58AD840226115ED00D642F9 /* DeclineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclineButton.swift; sourceTree = "<group>"; };
 		A5DC52EB224AB85E00A24589 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		A5DC52EC224AB85F00A24589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5DC52EF224AB91D00A24589 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 			children = (
 				A52A8425224421C5009A6593 /* LoginButton.swift */,
 				A56AFD27225FB684008C67E9 /* CallButton.swift */,
+				A58AD83E2261152600D642F9 /* JoinGroupButton.swift */,
+				A58AD840226115ED00D642F9 /* DeclineButton.swift */,
 			);
 			path = "UI Customisations";
 			sourceTree = "<group>";
@@ -447,10 +453,12 @@
 				A52A843522459455009A6593 /* GroupListViewController.swift in Sources */,
 				A56AFD2A225FBBB4008C67E9 /* InviteUserTableViewController.swift in Sources */,
 				A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */,
+				A58AD83F2261152600D642F9 /* JoinGroupButton.swift in Sources */,
 				4C62D7E0224DA08B002D4BE4 /* ProfileEditController.swift in Sources */,
 				A532F9CB225E5314007EEC18 /* ChatroomActivityTableViewController.swift in Sources */,
 				A5323F852253C89F00B86706 /* Enums.swift in Sources */,
 				A5323F7B2253C89F00B86706 /* InCallTableViewCell.swift in Sources */,
+				A58AD841226115ED00D642F9 /* DeclineButton.swift in Sources */,
 				A5323F93225BA01500B86706 /* Groups.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,7 +608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Intercom App/Intercom App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = KF4QEGAU36;
 				INFOPLIST_FILE = "$(SRCROOT)/Intercom App/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -620,7 +628,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Intercom App/Intercom App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VXUQXR6S56;
+				DEVELOPMENT_TEAM = KF4QEGAU36;
 				INFOPLIST_FILE = "$(SRCROOT)/Intercom App/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

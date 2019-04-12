@@ -48,6 +48,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     
     
+    @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var groupOwner: UILabel!
     @IBOutlet weak var editOutlet: UIBarButtonItem!
     @IBOutlet weak var placeCallButton: UIButton!
@@ -68,6 +69,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var ringtonePlayer:AVAudioPlayer?
     var ringtonePlaybackCallback: (() -> ())?
     var names: [String] = []
+    var callStatus: Bool = false
     var group: Groups? {
         didSet {
             if let group = group {
@@ -83,6 +85,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         guard let identity = self.identity else { return }
         outgoingValue.text = identity
         title = "Voice Chatroom"
+        groupNameLabel.text = group?.groupName
         setupLabel()
         guard let ownerName = group?.owners.first?.displayName else { return }
         groupOwner.text = "Group Owner: " + ownerName
@@ -138,7 +141,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     func fetchAccessToken() -> String? {
         guard let identityText = identity else { fatalError("outgoig value is empty")}
         let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identityText)
-        print(identityText ?? "not set")
+        print(identityText )
         guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else {
             return nil
         }
@@ -167,6 +170,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
                 return
             }
             self.navigationController?.isNavigationBarHidden = true
+            self.callStatus = true
             playOutgoingRingtone(completion: { [weak self] in
                 if let strongSelf = self {
                     guard let text = strongSelf.outgoingValue.text else { fatalError("outgoig value is empty")}

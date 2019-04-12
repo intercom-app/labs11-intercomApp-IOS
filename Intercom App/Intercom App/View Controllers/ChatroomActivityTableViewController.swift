@@ -11,15 +11,21 @@ import UIKit
 class ChatroomActivityTableViewController: UITableViewController {
 
     var group: Groups?
-    
+    var callStatus: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         TeamImporter.shared.cavc = self
         DispatchQueue.global().async {
-            TeamImporter.shared.getUserAndFetchAllDetails()
+//            TeamImporter.shared.getUserAndFetchAllDetails(completion: { (users) in
+//                self.tableView.reloadData()
+//            })
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
