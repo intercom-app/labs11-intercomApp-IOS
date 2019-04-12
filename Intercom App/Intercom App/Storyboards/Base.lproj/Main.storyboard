@@ -363,22 +363,26 @@
                                 <rect key="frame" x="8" y="72" width="359" height="445"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i78-T5-KNb">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="37"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="Njn-2V-p9C">
-                                        <rect key="frame" x="0.0" y="43" width="359" height="322.50000000000006"/>
+                                        <rect key="frame" x="0.0" y="39" width="359" height="294.00000000000006"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqD-Px-gA7">
+                                        <rect key="frame" x="0.0" y="335" width="359" height="37"/>
+                                        <state key="normal" title="Invite Group Members"/>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CreatedAt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-Ib-0Kk">
-                                        <rect key="frame" x="0.0" y="367.5" width="359" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="374" width="359" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3S-iQ-pJp">
-                                        <rect key="frame" x="0.0" y="402" width="359" height="43"/>
+                                        <rect key="frame" x="0.0" y="406" width="359" height="39"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveButton:" destination="BvZ-1x-CaD" eventType="touchUpInside" id="zcc-Mr-EeI"/>
@@ -744,6 +748,7 @@
                             <outlet property="delegate" destination="uLP-2d-zlx" id="fPA-VM-g9Y"/>
                         </connections>
                     </tableView>
+                    <size key="freeformSize" width="375" height="229"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vB-XG-rMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
