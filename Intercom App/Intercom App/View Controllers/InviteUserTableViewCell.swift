@@ -18,16 +18,32 @@ class InviteUserTableViewCell: UITableViewCell {
     @IBOutlet weak var userDisplayName: UILabel!
     @IBOutlet weak var inviteButtonOutlet: UIButton!
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if userID == 0 {
+            
+            inviteButtonOutlet.setTitle("Invited", for: .normal)
+            inviteButtonOutlet.setTitleColor(.gray, for: .normal)
+            inviteButtonOutlet.isEnabled = false
+        } else {
+           print(userID)
+        }
+    }
 
     
     @IBAction func inviteButton(_ sender: Any) {
+        
+        if userID == 0 {
+        } else {
+        
         inviteButtonOutlet.setTitle("Invited", for: .normal)
         inviteButtonOutlet.setTitleColor(.gray, for: .normal)
         inviteButtonOutlet.isEnabled = false
         GroupController.shared.postInvitation(groupID: group!.groupID, userID: userID)
-        
         GroupController.shared.postActivity(groupID: group!.groupID, massage: "Invited " + "\(String(describing: userName!))" + " to the group")
+            
         TeamImporter.shared.getUserAndFetchAllDetails()
     }
     
+    }
 }

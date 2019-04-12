@@ -22,7 +22,7 @@ class TeamImporter {
     var userNikname = userProfile.nickname
     var allGroups: [[Groups]]?
     
-    func getUserAndFetchAllDetails() {
+    func getUserAndFetchAllDetails(completion: @escaping ([Users]) -> Void = { _ in }) {
         
         let usersBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
         

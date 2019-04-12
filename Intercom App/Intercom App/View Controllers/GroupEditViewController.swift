@@ -42,11 +42,16 @@ class GroupEditViewController: UIViewController, UITextFieldDelegate {
             GroupController.shared.postActivity(groupID: group!.groupID, massage: "Changed Group Name")
            
         }
+        navigationController?.popViewController(animated: true)
+    
+            dismiss(animated: true, completion: nil)
+       
        // navigationController?.show(groupListViewController, sender: group) 
     }
     @IBAction func deleteGroup(_ sender: Any) {
         GroupController.shared.deleteRequest(groupID: group!.groupID)
         navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
    
     
