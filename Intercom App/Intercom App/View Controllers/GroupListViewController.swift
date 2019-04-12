@@ -19,7 +19,7 @@ class GroupListViewController: UITableViewController {
         GroupController.shared.gtvc = self
         //Pull the information in the background of the main thread
         DispatchQueue.global().async {
-            TeamImporter.shared.getUser()
+            TeamImporter.shared.getUserAndFetchAllDetails()
         }
     }
     @IBAction func dismissView(_ sender: Any) {
@@ -78,21 +78,36 @@ class GroupListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
+        if section == 0 {
         let label = UILabel()
-        label.text = "Header"
+        label.center = view.center
+        label.text = "Owned Groups"
         label.backgroundColor = UIColor.lightGray
-        return label
+            return label
+        } else if section == 1 {
+            let label = UILabel()
+            label.text = "Groups Belong To"
+            label.backgroundColor = UIColor.lightGray
+            return label
+        } else {
+            let label = UILabel()
+            label.text = "Groups Invited To"
+            label.backgroundColor = UIColor.lightGray
+            return label
+        }
+        
     }
     
 
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
             guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
+            if group.owners.first?.id == TeamImporter.shared.userID {
+                if editingStyle == UITableViewCell.EditingStyle.delete {
             TeamImporter.shared.allGroups?[indexPath.section].remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             GroupController.shared.deleteRequest(groupID: group.groupID)
+            }
         }
     }
     
@@ -106,7 +121,7 @@ class GroupListViewController: UITableViewController {
         let destination = segue.destination as! ChatroomViewController
         guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
         destination.group = group
-        TeamImporter.shared.getUser()
+        TeamImporter.shared.getUserAndFetchAllDetails()
     }
 
 }

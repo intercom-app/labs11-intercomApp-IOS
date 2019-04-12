@@ -116,7 +116,9 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        DispatchQueue.global().async {
+            TeamImporter.shared.getUserAndFetchAllDetails()
+        }
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
         self.editOutlet.isEnabled = false

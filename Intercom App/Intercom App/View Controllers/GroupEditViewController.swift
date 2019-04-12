@@ -31,11 +31,15 @@ class GroupEditViewController: UIViewController, UITextFieldDelegate {
         groupName.text = group?.groupName
         createdAt.text = group?.groupCreatedAt
         title = group?.groupName
+        DispatchQueue.global().async {
+            TeamImporter.shared.getUserAndFetchAllDetails()
+        }
     }
     
     @IBAction func saveButton(_ sender: Any) {
         if let name = groupName.text {
             GroupController.shared.editGroupName(groupID: group!.groupID, groupName: name)
+            GroupController.shared.postActivity(groupID: group!.groupID, massage: "Changed Group Name")
            
         }
        // navigationController?.show(groupListViewController, sender: group) 
@@ -54,6 +58,11 @@ class GroupEditViewController: UIViewController, UITextFieldDelegate {
         groupName.resignFirstResponder()
         return true
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "inviteSegue" {
+            let destination = segue.destination as! InviteUserTableViewController
+            destination.group = self.group
+        }
+    }
 
 }

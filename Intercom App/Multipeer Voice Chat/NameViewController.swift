@@ -14,6 +14,9 @@ class NameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func unwindToNameViewController(segue: UIStoryboardSegue) { textField.becomeFirstResponder() }
     
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     var name: String!
     
     override func viewDidLoad() {
