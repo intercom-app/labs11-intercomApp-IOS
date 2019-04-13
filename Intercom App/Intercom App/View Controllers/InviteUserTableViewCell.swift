@@ -14,12 +14,19 @@ class InviteUserTableViewCell: UITableViewCell {
     var userID: Int?
     var userName: String?
     var invited: Bool = false
+    var isOwner: Bool = false
+    
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var userDisplayName: UILabel!
     @IBOutlet weak var inviteButtonOutlet: UIButton!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        if isOwner {
+            inviteButtonOutlet.setTitle("Group Owner", for: .normal)
+            inviteButtonOutlet.setTitleColor(.gray, for: .normal)
+            inviteButtonOutlet.isEnabled = false
+        } else {
         if invited {
             
             inviteButtonOutlet.setTitle("Invited", for: .normal)
@@ -27,6 +34,7 @@ class InviteUserTableViewCell: UITableViewCell {
         } else {
             inviteButtonOutlet.setTitle("Invite", for: .normal)
             inviteButtonOutlet.setTitleColor(.green, for: .normal)
+        }
         }
     }
 
