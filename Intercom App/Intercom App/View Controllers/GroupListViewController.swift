@@ -10,9 +10,7 @@ import UIKit
 
 class GroupListViewController: UITableViewController {
 
-    
-  
-    
+    var sectionHeaderInvitedTo: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,7 +110,12 @@ class GroupListViewController: UITableViewController {
         
     }
     
-
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+            if tableView.indexPathForSelectedRow?.section == 2 {
+                return false
+            }
+        return true
+    }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
@@ -135,7 +138,8 @@ class GroupListViewController: UITableViewController {
         let destination = segue.destination as! ChatroomViewController
         guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
         destination.group = group
-        TeamImporter.shared.getUserAndFetchAllDetails()
+       
+        
     }
 
 }

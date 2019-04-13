@@ -1025,7 +1025,7 @@
                                     <outlet property="groupOwnedToNameLabel" destination="YxW-nc-dwF" id="eKQ-Xm-Bzl"/>
                                     <outlet property="groupOwnedTonumberOfUsers" destination="lL0-gr-opP" id="ZRo-xh-zd9"/>
                                     <outlet property="joinGroupbutton" destination="TUE-8d-PJE" id="d98-Pa-jN5"/>
-                                    <segue destination="Dh5-Dj-HVh" kind="show" id="3ZZ-qb-TwA"/>
+                                    <segue destination="Dh5-Dj-HVh" kind="show" identifier="chatroom" id="3ZZ-qb-TwA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
