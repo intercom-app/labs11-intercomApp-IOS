@@ -1000,12 +1000,18 @@
                                                             <state key="normal" title="Join Group">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="joinGroupButtonAction:" destination="uRD-N4-Izs" eventType="touchUpInside" id="uRT-K1-xnn"/>
+                                                            </connections>
                                                         </button>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-1K-R4R" customClass="DeclineButton" customModule="Intercom_App" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="0.0"/>
                                                             <state key="normal" title="Decline">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="declineButtonAction:" destination="uRD-N4-Izs" eventType="touchUpInside" id="CPO-OB-fQb"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>

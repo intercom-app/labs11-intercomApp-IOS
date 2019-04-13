@@ -22,7 +22,7 @@ class GroupListViewController: UITableViewController {
             TeamImporter.shared.getUserAndFetchAllDetails()
         }
     }
-   
+  
     
     @IBAction func addNewGroupe(_ sender: Any) {
         
@@ -73,7 +73,7 @@ class GroupListViewController: UITableViewController {
            guard let group = TeamImporter.shared.allGroups?[2][indexPath.row] else { return cell }
             cell.joinGroupbutton.isHidden = false
             cell.declineButton.isHidden = false
-            
+            cell.groupId = group.groupID
             cell.groupOwnedToNameLabel.text = group.groupName
             cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
             return cell
@@ -81,7 +81,7 @@ class GroupListViewController: UITableViewController {
             cell.joinGroupbutton.isHidden = true
             cell.declineButton.isHidden = true
         }
-        
+        cell.groupId = group.groupID
         cell.groupOwnedToNameLabel.text = group.groupName
         cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
 
