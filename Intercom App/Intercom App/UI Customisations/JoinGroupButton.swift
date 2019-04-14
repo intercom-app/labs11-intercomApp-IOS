@@ -8,7 +8,7 @@
 
 import UIKit
 
-let kJoinGroupButtonBackgroundColor = UIColor(displayP3Red: 1/255, green: 180/255, blue: 1/255, alpha: 1)
+let kJoinGroupButtonBackgroundColor = UIColor(displayP3Red: 178/255, green: 178/255, blue: 178/255, alpha: 1)
 let kJoinGroupButtonTintColor = UIColor.white
 let kJoinGroupButtonCornerRadius: CGFloat = 13.0
 
@@ -20,7 +20,7 @@ class JoinGroupButton: UIButton {
     }
     
     private func configureUI() {
-      //  self.backgroundColor = kJoinGroupButtonBackgroundColor
+        self.backgroundColor = kJoinGroupButtonBackgroundColor
         self.layer.cornerRadius = kJoinGroupButtonCornerRadius
         self.tintColor = kJoinGroupButtonTintColor
         self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14)

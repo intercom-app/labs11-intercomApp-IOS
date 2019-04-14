@@ -10,9 +10,7 @@ import UIKit
 
 class GroupListViewController: UITableViewController {
 
-    
-  
-    
+    var sectionHeaderInvitedTo: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +22,7 @@ class GroupListViewController: UITableViewController {
             TeamImporter.shared.getUserAndFetchAllDetails()
         }
     }
-   
+  
     
     @IBAction func addNewGroupe(_ sender: Any) {
         
@@ -75,7 +73,7 @@ class GroupListViewController: UITableViewController {
            guard let group = TeamImporter.shared.allGroups?[2][indexPath.row] else { return cell }
             cell.joinGroupbutton.isHidden = false
             cell.declineButton.isHidden = false
-            
+            cell.groupId = group.groupID
             cell.groupOwnedToNameLabel.text = group.groupName
             cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
             return cell
@@ -83,7 +81,7 @@ class GroupListViewController: UITableViewController {
             cell.joinGroupbutton.isHidden = true
             cell.declineButton.isHidden = true
         }
-        
+        cell.groupId = group.groupID
         cell.groupOwnedToNameLabel.text = group.groupName
         cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
 
@@ -112,7 +110,12 @@ class GroupListViewController: UITableViewController {
         
     }
     
-
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+            if tableView.indexPathForSelectedRow?.section == 2 {
+                return false
+            }
+        return true
+    }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
@@ -135,7 +138,8 @@ class GroupListViewController: UITableViewController {
         let destination = segue.destination as! ChatroomViewController
         guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
         destination.group = group
-        TeamImporter.shared.getUserAndFetchAllDetails()
+       
+        
     }
 
 }

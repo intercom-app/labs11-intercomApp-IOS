@@ -13,6 +13,7 @@ class InviteUserTableViewController: UITableViewController {
     var group: Groups?
     var allUsers: [AllUsers]?
     var invitedUserId: [Int] = []
+    var ownerId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,16 +43,16 @@ class InviteUserTableViewController: UITableViewController {
     func invitedUsersShouldBeInactive(userID: Int)  {
         guard let allUsers = allUsers else { return }
         for user in allUsers {
+            if TeamImporter.shared.userID == user.id {
+                ownerId = user.id
+                return
+            }
             if userID == user.id {
                 self.invitedUserId.append(userID)
             }
         }
     }
-    
-
     // MARK: - Table view data source
-
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let count = allUsers?.count else { return 0 }
         return count
@@ -78,6 +79,10 @@ class InviteUserTableViewController: UITableViewController {
                     cell.group = self.group
                     return cell
         } else {
+            if ownerId == user.id {
+               cell.userID = ownerId
+               cell.isOwner = true
+            }
         cell.userID = user.id
         }
         }
