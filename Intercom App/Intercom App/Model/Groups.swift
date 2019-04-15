@@ -7,15 +7,15 @@
 //
 
 struct Groups: Codable {
-    let membershipCreatedAt: String?
-    let groupCreatedAt: String
-    let groupID: Int
-    let groupName: String
-    let phoneNumber: JSONNull?
-    let callStatus: Bool
-    let activities, callParticipants, owners, members: [Users]
-    let invitees: [Users]
-    let inviteCreatedAt, ownershipCreatedAt: String?
+    var membershipCreatedAt: String?
+    var groupCreatedAt: String
+    var groupID: Int
+    var groupName: String
+    var phoneNumber: JSONNull?
+    var callStatus: Bool
+    var activities, callParticipants, owners, members: [Users]
+    var invitees: [Users]
+    var inviteCreatedAt, ownershipCreatedAt: String?
     
     enum CodingKeys: String, CodingKey {
         case membershipCreatedAt, groupCreatedAt

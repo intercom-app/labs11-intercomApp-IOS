@@ -75,7 +75,7 @@ class GroupListViewController: UITableViewController {
             cell.declineButton.isHidden = false
             cell.groupId = group.groupID
             cell.groupOwnedToNameLabel.text = group.groupName
-            cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
+            //cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
             return cell
         } else {
             cell.joinGroupbutton.isHidden = true
@@ -83,7 +83,7 @@ class GroupListViewController: UITableViewController {
         }
         cell.groupId = group.groupID
         cell.groupOwnedToNameLabel.text = group.groupName
-        cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
+        //cell.groupOwnedTonumberOfUsers.text = group.groupCreatedAt
 
         return cell
 

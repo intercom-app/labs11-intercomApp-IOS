@@ -21,32 +21,7 @@ let accessTokenEndpoint = "accessToken"
 let twimlParamTo = "to"
 
 class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotificationDelegate, TVOCallDelegate, AVAudioPlayerDelegate, UITextFieldDelegate {
-    
-    
-   
-    @IBOutlet weak var userNameLabel1: UILabel!
-    @IBOutlet weak var userNameLabel2: UILabel!
-    @IBOutlet weak var userNameLabel3: UILabel!
-    @IBOutlet weak var userNameLabel4: UILabel!
-    @IBOutlet weak var userNameLabel5: UILabel!
-    @IBOutlet weak var userNameLabel6: UILabel!
-    @IBOutlet weak var userNameLabel7: UILabel!
-    @IBOutlet weak var userNameLabel8: UILabel!
-    @IBOutlet weak var userNameLabel9: UILabel!
-    @IBOutlet weak var userNameLabel10: UILabel!
-    @IBOutlet weak var userNameLabel11: UILabel!
-    var labelArray: [UILabel]?
-    
-    func setupLabel() {
-        labelArray = [userNameLabel1, userNameLabel2, userNameLabel3, userNameLabel4, userNameLabel5, userNameLabel6, userNameLabel7, userNameLabel8, userNameLabel9, userNameLabel10, userNameLabel11]
-        for tag in 0...10 {
-            if labelArray?[tag].tag == tag + 1 {
-                labelArray?[tag].isHidden = true
-            }
-        }
-    }
-    
-    
+  
     
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var groupOwner: UILabel!
@@ -58,8 +33,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBOutlet weak var muteSwitch: UISwitch!
     @IBOutlet weak var speakerSwitch: UISwitch!
     
-    var serverURL = "https://intercom-be.herokuapp.com/api/voice"
-    var path = "/register-binding"
+//    var serverURL = "https://intercom-be.herokuapp.com/api/voice"
+//    var path = "/register-binding"
     var identity: String?
     var deviceTokenString:String?
     var voipRegistry:PKPushRegistry
@@ -87,20 +62,11 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         outgoingValue.text = identity
         title = "Voice Chatroom"
         groupNameLabel.text = group?.groupName
-        setupLabel()
+       
         guard let ownerName = group?.owners.first?.displayName else { return }
         groupOwner.text = "Group Owner: " + ownerName
-                guard let users = self.group?.members else { return }
-                self.names = []
-                // guard let jsonCount = json.first?.count else { return }
-                for nameArray in 0..<users.count {
-                     let displayName = users[nameArray].displayName
-                        print(displayName)
-                        self.labelArray?[nameArray].isHidden = false
-                        self.labelArray?[nameArray].text = displayName
-                        self.names.append(displayName)
-                    }
         
+                self.names = []
         if TeamImporter.shared.userID == group?.owners.first?.id {
             self.editOutlet.isEnabled = true
             
@@ -127,7 +93,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         outgoingValue.delegate = self
         self.editOutlet.isEnabled = false
          updateView()
-         registerDeviceToken()
+         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -137,17 +103,20 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         } else if segue.identifier == "activity" {
             let destination = segue.destination as! ChatroomActivityTableViewController
             destination.group = self.group
-        }
+        } else if segue.identifier == "userSegue" {
+            let destination = segue.destination as! UserListTableViewController
+            destination.group = self.group
+    }
     }
     
-    func registerDeviceToken() {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let deviceToken : String! = appDelegate.devToken
-        let identity : String! = self.identity
-        registerDevice(identity: identity, deviceToken: deviceToken)
-        resignFirstResponder()
-    }
+//    func registerDeviceToken() {
+//
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let deviceToken : String! = appDelegate.devToken
+//        let identity : String! = self.identity
+//        registerDevice(identity: identity, deviceToken: deviceToken)
+//        resignFirstResponder()
+//    }
     
     func displayError(_ errorMessage:String) {
         let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
