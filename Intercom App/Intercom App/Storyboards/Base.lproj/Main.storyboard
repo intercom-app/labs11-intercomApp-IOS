@@ -226,9 +226,8 @@
                                     <constraint firstAttribute="bottom" secondItem="3gG-7m-E6y" secondAttribute="bottom" id="zlB-OG-N55"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="beU-dJ-rRq">
-                                <rect key="frame" x="0.0" y="438" width="375" height="229"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="beU-dJ-rRq">
+                                <rect key="frame" x="0.0" y="427" width="375" height="240"/>
                                 <connections>
                                     <segue destination="uLP-2d-zlx" kind="embed" identifier="activity" id="RNU-dg-TLS"/>
                                 </connections>
@@ -237,9 +236,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bo6-aw-goD" firstAttribute="leading" secondItem="rPp-va-iWj" secondAttribute="leading" constant="8" id="7H9-hP-XUx"/>
+                            <constraint firstItem="beU-dJ-rRq" firstAttribute="trailing" secondItem="rPp-va-iWj" secondAttribute="trailing" id="GlS-3T-vcO"/>
+                            <constraint firstItem="beU-dJ-rRq" firstAttribute="leading" secondItem="rPp-va-iWj" secondAttribute="leading" id="ISn-d3-2SE"/>
                             <constraint firstItem="rwl-bv-CjS" firstAttribute="leading" secondItem="rPp-va-iWj" secondAttribute="leading" constant="8" id="VhM-dA-Eqg"/>
+                            <constraint firstItem="beU-dJ-rRq" firstAttribute="top" secondItem="bo6-aw-goD" secondAttribute="bottom" id="ZJi-78-cvx"/>
                             <constraint firstItem="bo6-aw-goD" firstAttribute="top" secondItem="rwl-bv-CjS" secondAttribute="bottom" constant="4" id="dsg-YW-6ey"/>
                             <constraint firstItem="rwl-bv-CjS" firstAttribute="top" secondItem="rPp-va-iWj" secondAttribute="top" constant="8" id="emE-wx-xQv"/>
+                            <constraint firstAttribute="bottom" secondItem="beU-dJ-rRq" secondAttribute="bottom" id="ksO-pf-Xck"/>
                             <constraint firstItem="rPp-va-iWj" firstAttribute="trailing" secondItem="bo6-aw-goD" secondAttribute="trailing" constant="8" id="qiQ-2j-6XW"/>
                             <constraint firstItem="rPp-va-iWj" firstAttribute="trailing" secondItem="rwl-bv-CjS" secondAttribute="trailing" constant="8" id="uba-GD-nfw"/>
                         </constraints>
