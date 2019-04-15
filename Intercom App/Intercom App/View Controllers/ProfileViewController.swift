@@ -39,7 +39,9 @@ class ProfileViewController: UIViewController {
         
         if let currentUser = pulledUser {
         
-            photoView.image = UserManager.shared.buildUserPhoto(user: currentUser) }
+          //  photoView.image = UserManager.shared.buildUserPhoto(user: currentUser)
+            
+        }
         
         fullnameLabel.text = "\(pulledUser?.firstName) \(pulledUser?.lastName)"
         //phoneLabel.text = currentUser?.phoneNumber as String

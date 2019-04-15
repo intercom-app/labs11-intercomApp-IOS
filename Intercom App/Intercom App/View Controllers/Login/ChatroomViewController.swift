@@ -58,7 +58,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBOutlet weak var muteSwitch: UISwitch!
     @IBOutlet weak var speakerSwitch: UISwitch!
     
-    
+    var serverURL = "https://intercom-be.herokuapp.com/api/voice"
+    var path = "/register-binding"
     var identity: String?
     var deviceTokenString:String?
     var voipRegistry:PKPushRegistry
@@ -73,7 +74,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var group: Groups? {
         didSet {
             if let group = group {
-            identity = "\(group.groupID)" + group.groupName
+            identity = "\(group.groupID)"
                 
             }
         }
@@ -126,6 +127,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         outgoingValue.delegate = self
         self.editOutlet.isEnabled = false
          updateView()
+         registerDeviceToken()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -138,8 +140,79 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         }
     }
     
+    func registerDeviceToken() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let deviceToken : String! = appDelegate.devToken
+        let identity : String! = self.identity
+        registerDevice(identity: identity, deviceToken: deviceToken)
+        resignFirstResponder()
+    }
+    
+    func displayError(_ errorMessage:String) {
+        let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func registerDevice(identity: String, deviceToken: String) {
+        
+        // Create a POST request to the /register endpoint with device variables to register for Twilio Notifications
+        let session = URLSession.shared
+        
+        let url = URL(string: baseURLString)
+        var request = URLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30.0)
+        request.httpMethod = "POST"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        var params = ["identity": identity,
+                      "BindingType" : "apn",
+                      "Address" : deviceToken]
+        
+        //Check if we have an Endpoint identifier already for this app
+        if let endpoint = try? KeychainAccess.readEndpoint(identity: identity){
+            params["endpoint"] = endpoint
+        } else {
+            print("Error retrieving endpoint from keychain")
+        }
+        
+        let jsonData = try! JSONSerialization.data(withJSONObject: params, options: [])
+        request.httpBody = jsonData
+        
+        let requestBody = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
+        print("Request Body: \(requestBody ?? "")")
+        
+        let task = session.dataTask(with: request, completionHandler: {
+            (responseData, response, error) in
+            
+            if let responseData = responseData {
+                let responseString = String(data: responseData, encoding: String.Encoding.utf8)
+                
+                print("Response Body: \(responseString ?? "")")
+                do {
+                    let responseObject = try JSONSerialization.jsonObject(with: responseData, options: [])
+                    
+                    if let responseDictionary = responseObject as? [String: Any] {
+                        try KeychainAccess.saveEndpoint(identity: identity, endpoint: responseDictionary["endpoint"] as! String)
+                        if let message = responseDictionary["message"] as? String {
+                            print("Message: \(message)")
+                        }
+                    }
+                    print("JSON: \(responseObject)")
+                } catch let error {
+                    print("Error: \(error)")
+                }
+            }
+        })
+        
+        task.resume()
+    }
+    
     func fetchAccessToken() -> String? {
-        guard let identityText = identity else { fatalError("outgoig value is empty")}
+        guard let identityText = TeamImporter.shared.userNikname else { fatalError("outgoig value is empty")}
         let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identityText)
         print(identityText )
         guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else {
