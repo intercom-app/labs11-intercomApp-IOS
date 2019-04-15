@@ -11,10 +11,12 @@ import UIKit
 class ProfileEditController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //Properties
-    var originalImage: UIImage?
-    var currentUser: Users?
-    
+    var updatedImage: UIImage?
+    var pulledUser: Users?
+
     //Outlets
+    @IBOutlet weak var usernameField: UITextField!
+    
     @IBOutlet weak var profilePhotoView: UIImageView!
     
     @IBOutlet weak var firstnameField: UITextField!
@@ -48,9 +50,9 @@ class ProfileEditController: UIViewController, UIImagePickerControllerDelegate, 
         picker.dismiss(animated: true, completion: nil)
         
         //set the picked image to your class property for use
-        originalImage = info[.originalImage] as? UIImage
+        updatedImage = info[.originalImage] as? UIImage
         
-        profilePhotoView.image = originalImage
+        profilePhotoView.image = updatedImage
     }
     
     //What happens if the user cancels picking an image
@@ -64,14 +66,16 @@ class ProfileEditController: UIViewController, UIImagePickerControllerDelegate, 
     //What happens when the user clicks save
     @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
         
-        //currentUser?.firstName = firstnameField.text
-        //currentUser?.lastName = lastnameField.text
-        //currentUser?.email = emailField.text!
-        //currentUser?.phoneNumber = Int(phoneField.text!)
-        //profileVC.userImage = originalImage
-
+        UserManager.shared.localUser?.displayName = usernameField.text ?? pulledUser!.displayName
+        UserManager.shared.localUser?.firstName = firstnameField.text
+        UserManager.shared.localUser?.lastName = lastnameField.text
+        UserManager.shared.localUser?.email = emailField.text ?? pulledUser?.email
+        UserManager.shared.localUser?.phoneNumber = Int(phoneField.text!)
+        UserManager.shared.localUser?.photo = updatedImage
         
         navigationController?.popViewController(animated: true)
+        
+
         
     }
     

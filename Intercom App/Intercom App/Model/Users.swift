@@ -18,6 +18,7 @@ struct Users: Codable {
     let phoneNumber: JSONNull?
     let callStatus: Bool
     let billingSubcription: BillingSubcription
+    let accountBalance: Int
     let createdAt: String
     let groupsOwned, groupsBelongedTo: [Groups]?
     let groupsInvitedTo: [Groups]?
@@ -29,7 +30,7 @@ struct Users: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case stripeID = "stripeId"
-        case twilioSubSID, firstName, lastName, avatar, displayName, email, phoneNumber, callStatus, billingSubcription, createdAt, groupsOwned, groupsBelongedTo, groupsInvitedTo
+        case twilioSubSID, firstName, lastName, avatar, displayName, email, phoneNumber, callStatus, billingSubcription, accountBalance, createdAt, groupsOwned, groupsBelongedTo, groupsInvitedTo
         case activityID = "activityId"
         case activityCreatedAt, activity, inviteeCreatedAt, memberCreatedAt, ownerCreatedAt
     }

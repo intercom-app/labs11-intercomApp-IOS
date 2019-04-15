@@ -25,14 +25,18 @@ class BillingViewController: UIViewController {
     @IBOutlet weak var updatePaymentButton: UIButton!
     
     //Properties
-    var currentUser: Users?
-    
+    var pulledUser: Users?
     
     //Functions
     func updateViews(){
         
-        if currentUser?.billingSubcription == .premium { creditLabel.text = "Premium" }
-        else { creditLabel.text = "Free"
+        switch pulledUser?.billingSubcription {
+        case .premium?:
+            creditLabel.text = String(describing: pulledUser?.accountBalance)
+        default: creditLabel.text = "Free"
+            
+            
+            
         }
         
         var lastDigits: String?
