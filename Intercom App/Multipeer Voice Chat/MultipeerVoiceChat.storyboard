@@ -67,7 +67,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh9-fa-u4y">
-                                                    <rect key="frame" x="256" y="11" width="22" height="22"/>
+                                                    <rect key="frame" x="201" y="11" width="22" height="22"/>
                                                     <connections>
                                                         <action selector="addButtonPressed:" destination="ECO-3D-Jg1" eventType="touchUpInside" id="KWL-VO-5cF"/>
                                                     </connections>
@@ -218,7 +218,7 @@
                             <constraint firstItem="aXR-qU-MzI" firstAttribute="top" secondItem="e2C-4c-A1S" secondAttribute="top" id="XWn-tf-gTe"/>
                             <constraint firstItem="e2C-4c-A1S" firstAttribute="trailing" secondItem="Oii-39-2dv" secondAttribute="trailing" constant="16" id="Zbz-i2-N2n"/>
                             <constraint firstItem="g05-0j-IYP" firstAttribute="top" secondItem="e2C-4c-A1S" secondAttribute="top" constant="89" id="da1-fc-b9T"/>
-                            <constraint firstItem="e2C-4c-A1S" firstAttribute="trailing" secondItem="aXR-qU-MzI" secondAttribute="trailing" constant="319" id="gzc-rQ-UaO"/>
+                            <constraint firstItem="e2C-4c-A1S" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="aXR-qU-MzI" secondAttribute="trailing" constant="319" id="gzc-rQ-UaO"/>
                             <constraint firstItem="g05-0j-IYP" firstAttribute="top" secondItem="aXR-qU-MzI" secondAttribute="bottom" constant="59" id="j1L-Fb-Ny4"/>
                             <constraint firstItem="e2C-4c-A1S" firstAttribute="trailing" secondItem="g05-0j-IYP" secondAttribute="trailing" constant="16" id="jnq-2W-Usn"/>
                             <constraint firstItem="Oii-39-2dv" firstAttribute="top" secondItem="g05-0j-IYP" secondAttribute="bottom" constant="18" id="ljw-kW-GAg"/>
@@ -293,13 +293,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-3v-gOS">
-                                                    <rect key="frame" x="15" y="12" width="230" height="21"/>
+                                                    <rect key="frame" x="15" y="12" width="175" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHJ-P0-g9a">
-                                                    <rect key="frame" x="253" y="10" width="24" height="22"/>
+                                                    <rect key="frame" x="198" y="10" width="24" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="nHJ-P0-g9a" secondAttribute="height" multiplier="12:11" id="bnp-5E-w0X"/>
                                                     </constraints>
