@@ -15,6 +15,7 @@
 		4C69CE672243FF6D00FCC33A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C69CE652243FF6D00FCC33A /* LaunchScreen.storyboard */; };
 		4C90249E2260DBEF00E9843F /* BillingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C90249D2260DBEF00E9843F /* BillingViewController.swift */; };
 		4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */; };
+		4CB6AA4C2264692100C88CE1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB6AA4B2264692100C88CE1 /* UserManager.swift */; };
 		4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DC224408610097A2FD /* TeamImporter.swift */; };
 		4CC028DF22440FE70097A2FD /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DE22440FE70097A2FD /* TeamListViewController.swift */; };
 		A52A8426224421C5009A6593 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8425224421C5009A6593 /* LoginButton.swift */; };
@@ -61,6 +62,7 @@
 		4C69CE682243FF6D00FCC33A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C90249D2260DBEF00E9843F /* BillingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingViewController.swift; sourceTree = "<group>"; };
 		4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4CB6AA4B2264692100C88CE1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		4CC028DC224408610097A2FD /* TeamImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamImporter.swift; sourceTree = "<group>"; };
 		4CC028DE22440FE70097A2FD /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
 		7092D35AAFA1476D27B66940 /* Pods-Intercom App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intercom App.release.xcconfig"; path = "Target Support Files/Pods-Intercom App/Pods-Intercom App.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				A5323F91225BA01500B86706 /* Groups.swift */,
 				A5323F92225BA01500B86706 /* Users.swift */,
+				4CB6AA4B2264692100C88CE1 /* UserManager.swift */,
 				A532F9C8225DC2A0007EEC18 /* AllUsers.swift */,
 			);
 			path = Model;
@@ -449,6 +452,7 @@
 				A5323F7C2253C89F00B86706 /* AddViewController.swift in Sources */,
 				4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */,
 				A5323F94225BA01500B86706 /* Users.swift in Sources */,
+				4CB6AA4C2264692100C88CE1 /* UserManager.swift in Sources */,
 				A5323F8C2254196800B86706 /* GroupEditViewController.swift in Sources */,
 				A52A843522459455009A6593 /* GroupListViewController.swift in Sources */,
 				A56AFD2A225FBBB4008C67E9 /* InviteUserTableViewController.swift in Sources */,

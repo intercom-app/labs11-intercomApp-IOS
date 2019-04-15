@@ -11,12 +11,10 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
-        //displayInformation()
+        displayInformation()
     }
     
-    var currentUser: Users?
-    
-    var userImage: UIImage?
+    var pulledUser: Users?
     
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -37,14 +35,23 @@ class ProfileViewController: UIViewController {
     
     func displayInformation() {
     
-        usernameLabel.text = currentUser?.displayName ?? "Add a Username"
-        photoView.image = userImage
-        fullnameLabel.text = "\(currentUser?.firstName) \(currentUser?.lastName)"
+        usernameLabel.text = pulledUser?.displayName ?? "Add a Username"
+        
+        if let currentUser = pulledUser {
+        
+            photoView.image = UserManager.shared.buildUserPhoto(user: currentUser) }
+        
+        fullnameLabel.text = "\(pulledUser?.firstName) \(pulledUser?.lastName)"
         //phoneLabel.text = currentUser?.phoneNumber as String
-        if currentUser?.callStatus == true { callStatusLabel.text = "Call Status: On a Call" } else { callStatusLabel.text = "Call Status: Available" }
-        emailLabel.text = currentUser?.email
-        creationDateLabel.text = currentUser?.createdAt
-        let subscription = String(describing: currentUser?.billingSubcription)
+        
+        if pulledUser?.callStatus == true { callStatusLabel.text = "Call Status: On a Call" } else { callStatusLabel.text = "Call Status: Available" }
+        
+        emailLabel.text = pulledUser?.email
+        
+        creationDateLabel.text = pulledUser?.createdAt
+        
+        let subscription = String(describing: pulledUser?.billingSubcription)
+        
         subscriptionLabel.text = subscription
     }
     
