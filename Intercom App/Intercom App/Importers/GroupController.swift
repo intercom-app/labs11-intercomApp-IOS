@@ -13,7 +13,10 @@ class GroupController {
     static let shared = GroupController()
     
     
+    var cavc: ChatroomActivityTableViewController?
     var gtvc: GroupListViewController?
+    var iuvc: InviteUserTableViewController?
+    var ulvc: UserListTableViewController?
     var groups: [Groups] = []
     var groupBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
     var id = TeamImporter.shared.userID
@@ -219,7 +222,14 @@ class GroupController {
             guard error == nil else {
                 return
             }
-            //TeamImporter.shared.getUser()
+            //Reload the table with current data
+            DispatchQueue.main.async {
+                self.gtvc?.tableView.reloadData()
+                self.iuvc?.tableView.reloadData()
+                self.cavc?.tableView.reloadData()
+                self.ulvc?.tableView.reloadData()
+                
+            }
         })
         task.resume()
     }
@@ -255,7 +265,51 @@ class GroupController {
             guard error == nil else {
                 return
             }
-            //TeamImporter.shared.getUser()
+            //Reload the table with current data
+            DispatchQueue.main.async {
+                self.gtvc?.tableView.reloadData()
+                self.iuvc?.tableView.reloadData()
+                self.cavc?.tableView.reloadData()
+                self.ulvc?.tableView.reloadData()
+                
+            }
+        })
+        task.resume()
+    }
+    
+    func deleteGroupMamber(groupID: Int, userID: Int?) {
+        guard let id = userID else {
+            fatalError("cant fetch user ID")
+        }
+        
+        var groupsURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
+        groupsURL.appendPathComponent("\(groupID)")
+        groupsURL.appendPathComponent("groupMembers")
+        groupsURL.appendPathComponent("\(id)")
+        //create the session object
+        let session = URLSession.shared
+        
+        //now create the URLRequest object using the url object
+        var request = URLRequest(url: groupsURL)
+        request.httpMethod = "DELETE" //set http method as DELETE
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //create dataTask using the session object to send data to the server
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+            
+            guard error == nil else {
+                return
+            }
+            //Reload the table with current data
+            DispatchQueue.main.async {
+                self.gtvc?.tableView.reloadData()
+                self.iuvc?.tableView.reloadData()
+                self.cavc?.tableView.reloadData()
+                self.ulvc?.tableView.reloadData()
+                
+            }
         })
         task.resume()
     }
@@ -285,7 +339,14 @@ class GroupController {
             guard error == nil else {
                 return
             }
-            //TeamImporter.shared.getUser()
+            //Reload the table with current data
+            DispatchQueue.main.async {
+                self.gtvc?.tableView.reloadData()
+                self.iuvc?.tableView.reloadData()
+                self.cavc?.tableView.reloadData()
+                self.ulvc?.tableView.reloadData()
+                
+            }
         })
         task.resume()
     }

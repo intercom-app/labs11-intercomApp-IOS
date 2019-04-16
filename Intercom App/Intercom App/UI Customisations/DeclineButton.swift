@@ -20,9 +20,12 @@ class DeclineButton: UIButton {
     }
     
     private func configureUI() {
-        self.backgroundColor = kDeclineButtonBackgroundColor
+        //self.backgroundColor = kDeclineButtonBackgroundColor
         self.layer.cornerRadius = kDeclineButtonCornerRadius
-        self.tintColor = kDeclineButtonTintColor
+        self.tintColor = UIColor.red
+        self.setTitleColor(.red, for: .normal)
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.red.cgColor
         self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14)
     }
     

@@ -34,8 +34,8 @@ class InviteUserTableViewController: UITableViewController {
     
     func findAllInviteesInTheGroup() {
         guard let groupInvitees = group?.invitees else { return }
-        for numberOfGroup in groupInvitees {
-            let id = numberOfGroup.id
+        for userOfGroup in groupInvitees {
+            let id = userOfGroup.id
             invitedUsersShouldBeInactive(userID: id)
         }
         
@@ -45,10 +45,12 @@ class InviteUserTableViewController: UITableViewController {
         for user in allUsers {
             if TeamImporter.shared.userID == user.id {
                 ownerId = user.id
-                return
-            }
+                
+            } else {
             if userID == user.id {
                 self.invitedUserId.append(userID)
+                return
+                }
             }
         }
     }

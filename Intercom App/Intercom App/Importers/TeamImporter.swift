@@ -15,6 +15,7 @@ class TeamImporter {
     var cavc: ChatroomActivityTableViewController?
     var gtvc: GroupListViewController?
     var iuvc: InviteUserTableViewController?
+    var ulvc: UserListTableViewController?
     var teamMembers: Users?
     var userID: Int?
     var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
@@ -122,6 +123,8 @@ class TeamImporter {
                     self.gtvc?.tableView.reloadData()
                     self.iuvc?.tableView.reloadData()
                     self.cavc?.tableView.reloadData()
+                    self.ulvc?.tableView.reloadData()
+                    
                 }
 
                 // Convert to a string and print

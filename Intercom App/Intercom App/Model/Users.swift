@@ -9,23 +9,23 @@
 import Foundation
 
 struct Users: Codable {
-    let id: Int
-    let stripeID: String?
-    let twilioSubSID, firstName, lastName: JSONNull?
-    let avatar: String?
-    let displayName: String
-    let email: String?
-    let phoneNumber: JSONNull?
-    let callStatus: Bool
-    let billingSubcription: BillingSubcription
-    let accountBalance: Int
-    let createdAt: String
-    let groupsOwned, groupsBelongedTo: [Groups]?
-    let groupsInvitedTo: [Groups]?
-    let activityID: Int?
-    let activityCreatedAt: String?
-    let activity: String?
-    let inviteeCreatedAt, memberCreatedAt, ownerCreatedAt: String?
+   var id: Int
+   var stripeID: String?
+   var twilioSubSID, firstName, lastName: JSONNull?
+   var avatar: String?
+   var displayName: String
+   var email: String?
+   var phoneNumber: JSONNull?
+   var callStatus: Bool
+   var billingSubcription: BillingSubcription
+   var accountBalance: Int
+   var createdAt: String
+   var groupsOwned, groupsBelongedTo: [Groups]?
+   var groupsInvitedTo: [Groups]?
+   var activityID: Int?
+   var activityCreatedAt: String?
+   var activity: String?
+   var inviteeCreatedAt, memberCreatedAt, ownerCreatedAt: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -49,7 +49,7 @@ class JSONNull: Codable, Hashable {
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
     }
-    
+
     public var hashValue: Int {
         return 0
     }
