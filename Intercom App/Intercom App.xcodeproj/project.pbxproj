@@ -32,7 +32,6 @@
 		A5323F852253C89F00B86706 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F792253C89F00B86706 /* Enums.swift */; };
 		A5323F862253C89F00B86706 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F7A2253C89F00B86706 /* UserData.swift */; };
 		A5323F8A2253CA2700B86706 /* MultipeerVoiceChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5323F892253CA2700B86706 /* MultipeerVoiceChat.storyboard */; };
-		A5323F8C2254196800B86706 /* GroupEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F8B2254196800B86706 /* GroupEditViewController.swift */; };
 		A5323F93225BA01500B86706 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F91225BA01500B86706 /* Groups.swift */; };
 		A5323F94225BA01500B86706 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5323F92225BA01500B86706 /* Users.swift */; };
 		A532F9C9225DC2A0007EEC18 /* AllUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532F9C8225DC2A0007EEC18 /* AllUsers.swift */; };
@@ -43,6 +42,7 @@
 		A5845C4A2264F552007777DA /* KeychainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5845C492264F552007777DA /* KeychainAccess.swift */; };
 		A5845C4E2264F589007777DA /* ProvisioningProfileInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = A5845C4D2264F589007777DA /* ProvisioningProfileInspector.m */; };
 		A5845C5522652DF5007777DA /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5845C5422652DF5007777DA /* UserListTableViewController.swift */; };
+		A5845C572265A961007777DA /* InviteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5845C562265A961007777DA /* InviteButton.swift */; };
 		A58AD83F2261152600D642F9 /* JoinGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AD83E2261152600D642F9 /* JoinGroupButton.swift */; };
 		A58AD841226115ED00D642F9 /* DeclineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AD840226115ED00D642F9 /* DeclineButton.swift */; };
 		A5DC52ED224AB85F00A24589 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC52EB224AB85E00A24589 /* SessionManager.swift */; };
@@ -83,7 +83,6 @@
 		A5323F792253C89F00B86706 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		A5323F7A2253C89F00B86706 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		A5323F892253CA2700B86706 /* MultipeerVoiceChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultipeerVoiceChat.storyboard; sourceTree = "<group>"; };
-		A5323F8B2254196800B86706 /* GroupEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEditViewController.swift; sourceTree = "<group>"; };
 		A5323F91225BA01500B86706 /* Groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		A5323F92225BA01500B86706 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		A532F9C8225DC2A0007EEC18 /* AllUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsers.swift; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		A5845C4C2264F589007777DA /* ProvisioningProfileInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvisioningProfileInspector.h; sourceTree = "<group>"; };
 		A5845C4D2264F589007777DA /* ProvisioningProfileInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvisioningProfileInspector.m; sourceTree = "<group>"; };
 		A5845C5422652DF5007777DA /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
+		A5845C562265A961007777DA /* InviteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteButton.swift; sourceTree = "<group>"; };
 		A58AD83E2261152600D642F9 /* JoinGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGroupButton.swift; sourceTree = "<group>"; };
 		A58AD840226115ED00D642F9 /* DeclineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclineButton.swift; sourceTree = "<group>"; };
 		A5DC52EB224AB85E00A24589 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
@@ -148,7 +148,6 @@
 				A5DC52EA224AB32600A24589 /* Login */,
 				A52A842F224583A2009A6593 /* Cell View */,
 				A52A843422459455009A6593 /* GroupListViewController.swift */,
-				A5323F8B2254196800B86706 /* GroupEditViewController.swift */,
 				A5DC52F3224ADC1A00A24589 /* ChatroomViewController.swift */,
 				A532F9CA225E5314007EEC18 /* ChatroomActivityTableViewController.swift */,
 				A5845C5422652DF5007777DA /* UserListTableViewController.swift */,
@@ -240,6 +239,7 @@
 				A52A8425224421C5009A6593 /* LoginButton.swift */,
 				A56AFD27225FB684008C67E9 /* CallButton.swift */,
 				A58AD83E2261152600D642F9 /* JoinGroupButton.swift */,
+				A5845C562265A961007777DA /* InviteButton.swift */,
 				A58AD840226115ED00D642F9 /* DeclineButton.swift */,
 			);
 			path = "UI Customisations";
@@ -469,7 +469,6 @@
 				4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */,
 				A5323F94225BA01500B86706 /* Users.swift in Sources */,
 				4CB6AA4C2264692100C88CE1 /* UserManager.swift in Sources */,
-				A5323F8C2254196800B86706 /* GroupEditViewController.swift in Sources */,
 				A52A843522459455009A6593 /* GroupListViewController.swift in Sources */,
 				A56AFD2A225FBBB4008C67E9 /* InviteUserTableViewController.swift in Sources */,
 				A5DC52EE224AB85F00A24589 /* LoginViewController.swift in Sources */,
@@ -477,6 +476,7 @@
 				4C62D7E0224DA08B002D4BE4 /* ProfileEditController.swift in Sources */,
 				A532F9CB225E5314007EEC18 /* ChatroomActivityTableViewController.swift in Sources */,
 				A5323F852253C89F00B86706 /* Enums.swift in Sources */,
+				A5845C572265A961007777DA /* InviteButton.swift in Sources */,
 				A5323F7B2253C89F00B86706 /* InCallTableViewCell.swift in Sources */,
 				A58AD841226115ED00D642F9 /* DeclineButton.swift in Sources */,
 				A5323F93225BA01500B86706 /* Groups.swift in Sources */,

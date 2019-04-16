@@ -22,18 +22,25 @@ let twimlParamTo = "to"
 
 class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotificationDelegate, TVOCallDelegate, AVAudioPlayerDelegate, UITextFieldDelegate {
   
+    @IBAction func groupNameTextFieldAction(_ sender: Any) {
+        if let name = groupNameTextField.text {
+            GroupController.shared.editGroupName(groupID: group!.groupID, groupName: name)
+            GroupController.shared.postActivity(groupID: group!.groupID, massage: "Changed Group Name")
+        }
+    }
     
-    @IBOutlet weak var groupNameLabel: UILabel!
+    
+    @IBOutlet weak var deleteGroupOutlet: UIBarButtonItem!
+    @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var groupOwner: UILabel!
-    @IBOutlet weak var editOutlet: UIBarButtonItem!
     @IBOutlet weak var placeCallButton: UIButton!
-    @IBOutlet weak var groupImage: UIImageView!
+    @IBOutlet weak var inviteButtonOutlet: UIButton!
     @IBOutlet weak var outgoingValue: UITextField!
     @IBOutlet weak var callControlView: UIView!
     @IBOutlet weak var muteSwitch: UISwitch!
     @IBOutlet weak var speakerSwitch: UISwitch!
     
-//    var serverURL = "https://intercom-be.herokuapp.com/api/voice"
+//    var serverURL =  "https://intercom-be.herokuapp.com/api/voice"
 //    var path = "/register-binding"
     var identity: String?
     var deviceTokenString:String?
@@ -44,7 +51,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var call:TVOCall?
     var ringtonePlayer:AVAudioPlayer?
     var ringtonePlaybackCallback: (() -> ())?
-    var names: [String] = []
+    var groupListVC = GroupListViewController()
     var callStatus: Bool = false
     var group: Groups? {
         didSet {
@@ -54,21 +61,32 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
             }
         }
     }
-    var usersArray: [String] = []
     
+    
+    
+    @IBAction func deleteGroup(_ sender: Any) {
+        guard let group = group else { return }
+        if TeamImporter.shared.userID == group.owners.first?.id {
+        GroupController.shared.deleteGroupRequest(groupID: group.groupID)
+        navigationController?.popViewController(animated: true)
+        } else {
+            GroupController.shared.deleteGroupMamber(groupID: group.groupID, userID: TeamImporter.shared.userID)
+            GroupController.shared.postActivity(groupID: group.groupID, massage: "\(String(describing: TeamImporter.shared.userNikname)) left the group")
+            navigationController?.popViewController(animated: true)
+        }
+    }
     
     func updateView() {
         guard let identity = self.identity else { return }
         outgoingValue.text = identity
         title = "Voice Chatroom"
-        groupNameLabel.text = group?.groupName
-       
+        groupNameTextField.text = group?.groupName
         guard let ownerName = group?.owners.first?.displayName else { return }
         groupOwner.text = "Group Owner: " + ownerName
-        
-                self.names = []
         if TeamImporter.shared.userID == group?.owners.first?.id {
-            self.editOutlet.isEnabled = true
+            deleteGroupOutlet.title = "Delete Group"
+            inviteButtonOutlet.isHidden = false
+            groupNameTextField.isEnabled = true
             
         }
         }
@@ -91,23 +109,26 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         }
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
-        self.editOutlet.isEnabled = false
+        groupNameTextField.delegate = self
+        deleteGroupOutlet.title = "Leave Group"
+        groupNameTextField.isEnabled = false
          updateView()
          
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "editGroup" {
-            let destination = segue.destination as! GroupEditViewController
-            destination.group = self.group
-        } else if segue.identifier == "activity" {
+        if segue.identifier == "activity" {
             let destination = segue.destination as! ChatroomActivityTableViewController
             destination.group = self.group
         } else if segue.identifier == "userSegue" {
             let destination = segue.destination as! UserListTableViewController
             destination.group = self.group
+        } else if segue.identifier == "inviteSegue" {
+            let destination = segue.destination as! InviteUserTableViewController
+            destination.group = self.group
+        }
     }
-    }
+    
     
 //    func registerDeviceToken() {
 //
@@ -239,7 +260,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        outgoingValue.resignFirstResponder()
+        groupNameTextField.resignFirstResponder()
         return true
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
