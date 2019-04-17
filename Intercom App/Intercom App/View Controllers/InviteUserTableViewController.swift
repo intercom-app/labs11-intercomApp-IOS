@@ -17,7 +17,7 @@ class InviteUserTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       invitedUserId = []
+        invitedUserId = []
         TeamImporter.shared.iuvc = self
         TeamImporter.shared.fetchAllUsers { (allUsers) in
             self.allUsers = allUsers
@@ -29,7 +29,7 @@ class InviteUserTableViewController: UITableViewController {
         DispatchQueue.global().async {
             TeamImporter.shared.getUserAndFetchAllDetails()
         }
-       
+        
     }
     
     func findAllInviteesInTheGroup() {
@@ -47,9 +47,9 @@ class InviteUserTableViewController: UITableViewController {
                 ownerId = user.id
                 
             } else {
-            if userID == user.id {
-                self.invitedUserId.append(userID)
-                return
+                if userID == user.id {
+                    self.invitedUserId.append(userID)
+                    return
                 }
             }
         }
@@ -59,41 +59,41 @@ class InviteUserTableViewController: UITableViewController {
         guard let count = allUsers?.count else { return 0 }
         return count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "inviteCell", for: indexPath) as! InviteUserTableViewCell
         guard let user = allUsers?[indexPath.row] else { return cell }
         if invitedUserId != [] {
-        for id in invitedUserId {
-        if user.id == id {
-            cell.invited = true
-            
-            cell.userID = user.id
-            cell.userName = user.displayName
-            if let imageURL = user.avatar {
-                let url = URL(string: imageURL)!
-                if let imageData = try? Data(contentsOf: url) {
-                    cell.userAvatar.image = UIImage(data: imageData)
-                }
-            }
+            for id in invitedUserId {
+                if user.id == id {
+                    cell.invited = true
+                    
+                    cell.userID = user.id
+                    cell.userName = user.displayName
+                    if let imageURL = user.avatar {
+                        let url = URL(string: imageURL)!
+                        if let imageData = try? Data(contentsOf: url) {
+                            cell.userAvatar.image = UIImage(data: imageData)
+                        }
+                    }
                     cell.userDisplayName.text = user.displayName
                     cell.group = self.group
                     return cell
-        } else {
-            if ownerId == user.id {
-               cell.userID = ownerId
-               cell.isOwner = true
+                } else {
+                    if ownerId == user.id {
+                        cell.userID = ownerId
+                        cell.isOwner = true
+                    }
+                    cell.userID = user.id
+                }
             }
-        cell.userID = user.id
-        }
-        }
         } else {
             cell.userID = user.id
         }
         cell.userName = user.displayName
         if let imageURL = user.avatar {
-            let url = URL(string: imageURL)!
+            guard let url = URL(string: imageURL) else { return cell}
             if let imageData = try? Data(contentsOf: url) {
                 cell.userAvatar.image = UIImage(data: imageData)
             }

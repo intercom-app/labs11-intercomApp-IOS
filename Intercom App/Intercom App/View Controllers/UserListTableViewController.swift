@@ -11,13 +11,20 @@ import UIKit
 class UserListTableViewController: UITableViewController {
     
     var group: Groups?
+    @IBOutlet weak var inviteButtonOutlet: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.tableFooterView = UIView()
+        view.backgroundColor = UIColor.groupTableViewBackground
+        if TeamImporter.shared.userID == group?.owners.first?.id {
+            inviteButtonOutlet.isEnabled = true
+        } else {
+            inviteButtonOutlet.isEnabled = false
+        }
         TeamImporter.shared.ulvc = self
         DispatchQueue.global().async {
-           
+            
         }
     }
     
@@ -29,28 +36,33 @@ class UserListTableViewController: UITableViewController {
         return group?.members.count ?? 0
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         guard let user = group?.members[indexPath.row] else { return cell }
-       
-        
-            cell.textLabel?.text = user.displayName.capitalized
-       
-        
+        cell.textLabel?.text = user.displayName.capitalized
         return cell
     }
     
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard var group = self.group else { return }
-        let user = group.members
-       if group.owners.first?.id == TeamImporter.shared.userID {
-            if editingStyle == UITableViewCell.EditingStyle.delete {
-              // user.remove(at: indexPath.row)
-                
-            }
-        }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 75
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 65))
+        let label = UILabel(frame: CGRect(x: 20, y: 25, width: tableView.frame.size.width, height: 65))
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "MAMBERS"
+        label.textColor = UIColor.gray
+        view.backgroundColor = UIColor.groupTableViewBackground
+        view.addSubview(label)
+        return view
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "inviteSegue" {
+            let destination = segue.destination as! InviteUserTableViewController
+            destination.group = self.group
+        }
+    }
 }

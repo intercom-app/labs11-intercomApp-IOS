@@ -67,8 +67,8 @@ class TeamImporter {
                     // handle json...
                     
                     
-                        if let userID = json["id"] as? Int {
-                            print(userID)
+                    if let userID = json["id"] as? Int {
+                        print(userID)
                         self.userID = userID
                         self.fetchCurentUserDetails(userID: userID) // need to change
                     }
@@ -87,7 +87,7 @@ class TeamImporter {
         teamURL.appendPathComponent("\(userID)")
         teamURL.appendPathComponent("detailed")
         var request = URLRequest(url: teamURL)
-
+        
         request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
@@ -97,12 +97,12 @@ class TeamImporter {
             if let teamError = error {
                 print("Error getting team members from API: \(teamError)")
                 
-            return
+                return
                 
             } //End of error handling.
             
             guard let teamData = data else {
-               
+                
                 print("Data was not recieved.")
                 
                 return
@@ -117,8 +117,8 @@ class TeamImporter {
                 
                 self.teamMembers = decodedTeam
                 
-                 self.allGroups = ([self.teamMembers!.groupsOwned!, self.teamMembers!.groupsBelongedTo!, self.teamMembers!.groupsInvitedTo] as? [[Groups]])
-                    
+                self.allGroups = ([self.teamMembers!.groupsOwned!, self.teamMembers!.groupsBelongedTo!, self.teamMembers!.groupsInvitedTo] as? [[Groups]])
+                
                 //Reload the table with current data
                 DispatchQueue.main.async {
                     self.gtvc?.tableView.reloadData()
@@ -128,7 +128,7 @@ class TeamImporter {
                     self.givc?.tableView.reloadData()
                     
                 }
-
+                
                 // Convert to a string and print
                 if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
                     print(JSONString)
@@ -140,7 +140,7 @@ class TeamImporter {
                 
                 return
             }
-        } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
+            } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
         
     } //End of fetch team function.
     
@@ -176,7 +176,7 @@ class TeamImporter {
                 
                 let decodedTeam = try jsonDecoder.decode([AllUsers].self, from: teamData)
                 
-               
+                
                 completion(decodedTeam)
                 //Reload the table with current data
                 DispatchQueue.main.async {
@@ -198,4 +198,55 @@ class TeamImporter {
             } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
         
     } //End of fetch team function.
+    
+    func editUserDisplayName(userDispayName: String) {
+        
+        //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
+        
+        let parameters = ["displayName": userDispayName] as [String : Any]
+        
+        //create the session object
+        let session = URLSession.shared
+        
+        //now create the URLRequest object using the url object
+        guard let id = userID else { return }
+        var request = URLRequest(url: URL(string: "https://intercom-be.herokuapp.com/api/users/" + "\(id)")!)
+        request.httpMethod = "PUT" //set http method as PUT
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //create dataTask using the session object to send data to the server
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+            
+            guard error == nil else {
+                return
+            }
+            
+            guard let data = data else {
+                return
+            }
+            
+            
+            do {
+                //create json object from data
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    print(json)
+                    // handle json...
+                    TeamImporter.shared.getUserAndFetchAllDetails()
+                    
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+            
+        })
+        task.resume()
+    }
 }

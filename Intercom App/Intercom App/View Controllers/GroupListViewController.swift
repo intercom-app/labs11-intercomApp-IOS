@@ -56,7 +56,7 @@ class GroupListViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
-  
+    
     
     // MARK: - Table view data source
     
@@ -68,7 +68,7 @@ class GroupListViewController: UITableViewController {
         if section == 2 {
             return 1
         } else {
-        return TeamImporter.shared.allGroups?[section].count ?? 0
+            return TeamImporter.shared.allGroups?[section].count ?? 0
         }
     }
     
@@ -82,7 +82,7 @@ class GroupListViewController: UITableViewController {
         
         if indexPath.section == 2 {
             guard let group = TeamImporter.shared.allGroups?[2][indexPath.row] else { return cell }
-           
+            
             cell.groupId = group.groupID
             cell.groupOwnedToNameLabel.text = "Invites"
             //cell.groupOwnedTonumberOfUsers.text = "\(group.members.count) users"
@@ -135,42 +135,19 @@ class GroupListViewController: UITableViewController {
         
     }
     
-//
+    //
     
     
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-       
+        
         if tableView.indexPathForSelectedRow?.section == 2 {
             let vc = storyboard?.instantiateViewController(withIdentifier: "GroupInvites")
             self.navigationController?.pushViewController(vc!, animated: true)
-         return false
+            return false
         }
         return true
     }
-    
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
-//        if group.owners.first?.id == TeamImporter.shared.userID {
-//            if editingStyle == UITableViewCell.EditingStyle.delete {
-//                TeamImporter.shared.allGroups?[indexPath.section].remove(at: indexPath.row)
-//                tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-//                GroupController.shared.deleteGroupRequest(groupID: group.groupID)
-//            }
-//        }
-//    }
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.section == 2 {
-//            let vc = storyboard?.instantiateViewController(withIdentifier: "GroupInvites")
-//            self.navigationController?.pushViewController(vc!, animated: true)
-//        } else {
-//            let vc = storyboard?.instantiateViewController(withIdentifier: "groupChatroom")
-//            self.navigationController?.pushViewController(vc!, animated: true)
-//
-//        }
-//
-//    }
-    
     
     // MARK: - Navigation
     
@@ -184,9 +161,9 @@ class GroupListViewController: UITableViewController {
             segueIdentifier = "chatroomSegue"
         }
         if segue.identifier == segueIdentifier {
-                let destination = segue.destination as! ChatroomViewController
-                guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
-                destination.group = group
+            let destination = segue.destination as! ChatroomViewController
+            guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
+            destination.group = group
         } else if segue.identifier == segueIdentifier {
             let vc = storyboard?.instantiateViewController(withIdentifier: "GroupInvites")
             self.navigationController?.pushViewController(vc!, animated: true)

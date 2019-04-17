@@ -22,7 +22,7 @@ class GroupController {
     var id = TeamImporter.shared.userID
     var groupID: Int?
     var names: [String] = []
-   
+    
     func createNewGroup(groupName: String) {
         
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
@@ -73,7 +73,7 @@ class GroupController {
             } catch let error {
                 print(error.localizedDescription)
             }
-           
+            
         })
         task.resume()
     }
@@ -102,7 +102,7 @@ class GroupController {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-//
+        //
         //create dataTask using the session object to send data to the server
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
@@ -212,13 +212,13 @@ class GroupController {
         } catch let error {
             print(error.localizedDescription)
         }
-
+        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         //
         //create dataTask using the session object to send data to the server
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-
+            
             guard error == nil else {
                 return
             }
@@ -386,7 +386,7 @@ class GroupController {
                     print(json)
                     // handle json...
                     TeamImporter.shared.getUserAndFetchAllDetails()
-                   
+                    
                 }
             } catch let error {
                 print(error.localizedDescription)
@@ -395,5 +395,5 @@ class GroupController {
         })
         task.resume()
     }
-
+    
 }
