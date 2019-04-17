@@ -14,9 +14,18 @@ class GroupListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
+        view.backgroundColor = UIColor.groupTableViewBackground
         TeamImporter.shared.gtvc = self
         GroupController.shared.gtvc = self
         //Pull the information in the background of the main thread
+        DispatchQueue.global().async {
+            TeamImporter.shared.getUserAndFetchAllDetails()
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         DispatchQueue.global().async {
             TeamImporter.shared.getUserAndFetchAllDetails()
         }
@@ -56,9 +65,11 @@ class GroupListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if section == 2 {
+            return 1
+        } else {
         return TeamImporter.shared.allGroups?[section].count ?? 0
-        
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,15 +82,13 @@ class GroupListViewController: UITableViewController {
         
         if indexPath.section == 2 {
             guard let group = TeamImporter.shared.allGroups?[2][indexPath.row] else { return cell }
-            cell.joinGroupbutton.isHidden = false
-            cell.declineButton.isHidden = false
+           
             cell.groupId = group.groupID
-            cell.groupOwnedToNameLabel.text = group.groupName
-            cell.groupOwnedTonumberOfUsers.text = "\(group.members.count) users"
+            cell.groupOwnedToNameLabel.text = "Invites"
+            //cell.groupOwnedTonumberOfUsers.text = "\(group.members.count) users"
             return cell
         } else {
-            cell.joinGroupbutton.isHidden = true
-            cell.declineButton.isHidden = true
+            
         }
         cell.groupId = group.groupID
         cell.groupOwnedToNameLabel.text = group.groupName
@@ -89,52 +98,78 @@ class GroupListViewController: UITableViewController {
         
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 75
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         
         if section == 0 {
-            let label = UILabel()
-            label.font = UIFont.boldSystemFont(ofSize: 20)
-            label.text = "Owned Groups"
-            label.backgroundColor = UIColor.groupTableViewBackground
-            return label
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 65))
+            let label = UILabel(frame: CGRect(x: 10, y: 25, width: tableView.frame.size.width, height: 65))
+            label.font = UIFont.systemFont(ofSize: 14)
+            label.text = "MY GROUPS"
+            label.textColor = UIColor.gray
+            view.backgroundColor = UIColor.groupTableViewBackground
+            view.addSubview(label)
+            return view
         } else if section == 1 {
-            let label = UILabel()
-            label.font = UIFont.boldSystemFont(ofSize: 20)
-            label.text = "Groups Belong To"
-            label.backgroundColor = UIColor.groupTableViewBackground
-            return label
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 65))
+            let label = UILabel(frame: CGRect(x: 10, y: 25, width: tableView.frame.size.width, height: 65))
+            label.font = UIFont.systemFont(ofSize: 14)
+            label.text = "OTHER GROUPS"
+            label.textColor = UIColor.gray
+            view.backgroundColor = UIColor.groupTableViewBackground
+            view.addSubview(label)
+            return view
         } else {
-            let label = UILabel()
-            label.font = UIFont.boldSystemFont(ofSize: 20)
-            label.text = "Groups Invited To"
-            label.backgroundColor = UIColor.groupTableViewBackground
-            return label
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 65))
+            let label = UILabel(frame: CGRect(x: 10, y: 25, width: tableView.frame.size.width, height: 65))
+            label.font = UIFont.systemFont(ofSize: 14)
+            label.text = "GROUP INVITES"
+            label.textColor = UIColor.gray
+            view.backgroundColor = UIColor.groupTableViewBackground
+            view.addSubview(label)
+            return view
         }
         
     }
     
+//
+    
+    
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+       
         if tableView.indexPathForSelectedRow?.section == 2 {
-            return false
+            let vc = storyboard?.instantiateViewController(withIdentifier: "GroupInvites")
+            self.navigationController?.pushViewController(vc!, animated: true)
+         return false
         }
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
-        if group.owners.first?.id == TeamImporter.shared.userID {
-            if editingStyle == UITableViewCell.EditingStyle.delete {
-                TeamImporter.shared.allGroups?[indexPath.section].remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-                GroupController.shared.deleteGroupRequest(groupID: group.groupID)
-            }
-        }
-    }
-    
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
+//        if group.owners.first?.id == TeamImporter.shared.userID {
+//            if editingStyle == UITableViewCell.EditingStyle.delete {
+//                TeamImporter.shared.allGroups?[indexPath.section].remove(at: indexPath.row)
+//                tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+//                GroupController.shared.deleteGroupRequest(groupID: group.groupID)
+//            }
+//        }
+//    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.section == 2 {
+//            let vc = storyboard?.instantiateViewController(withIdentifier: "GroupInvites")
+//            self.navigationController?.pushViewController(vc!, animated: true)
+//        } else {
+//            let vc = storyboard?.instantiateViewController(withIdentifier: "groupChatroom")
+//            self.navigationController?.pushViewController(vc!, animated: true)
+//
+//        }
+//
+//    }
     
     
     // MARK: - Navigation
@@ -142,11 +177,20 @@ class GroupListViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let destination = segue.destination as! ChatroomViewController
-        guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
-        destination.group = group
-        
-        
+        var segueIdentifier: String!
+        if indexPath.section == 2 {
+            segueIdentifier = "invitesSegue"
+        } else{
+            segueIdentifier = "chatroomSegue"
+        }
+        if segue.identifier == segueIdentifier {
+                let destination = segue.destination as! ChatroomViewController
+                guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return }
+                destination.group = group
+        } else if segue.identifier == segueIdentifier {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "GroupInvites")
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
     }
     
 }

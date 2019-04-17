@@ -45,7 +45,7 @@ class ChatroomActivityTableViewController: UITableViewController {
         cell.detailTextLabel?.text = activity.createdAt
         
         if let imageURL = activity.avatar {
-            let url = URL(string: imageURL)!
+            guard let url = URL(string: imageURL) else { return cell}
             if let imageData = try? Data(contentsOf: url) {
                 cell.imageView?.image = UIImage(data: imageData)
             }

@@ -13,7 +13,7 @@
         <!--Chatroom-->
         <scene sceneID="9Wm-Zd-uLy">
             <objects>
-                <viewController title="Chatroom" id="Dh5-Dj-HVh" customClass="ChatroomViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="groupChatroom" title="Chatroom" id="Dh5-Dj-HVh" customClass="ChatroomViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PBe-cO-uPh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -276,7 +276,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-sound-waves" translatesAutoresizingMaskIntoConstraints="NO" id="ORc-aE-DsN">
-                                <rect key="frame" x="0.0" y="325.5" width="375" height="16"/>
+                                <rect key="frame" x="0.0" y="214.99999999999997" width="375" height="237.00000000000009"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intercom App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-qd-Nk2">
                                 <rect key="frame" x="0.0" y="55" width="375" height="32"/>
@@ -791,13 +791,101 @@
             </objects>
             <point key="canvasLocation" x="3793" y="412"/>
         </scene>
+        <!--Group Invites-->
+        <scene sceneID="AKc-hN-ZDe">
+            <objects>
+                <tableViewController storyboardIdentifier="GroupInvites" id="YZi-Jv-pJV" customClass="GroupInvitesTableViewController" customModule="Intercom_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oY4-LV-1Ra">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="invitesCell" rowHeight="92" id="o02-aK-gIa" customClass="GroupInvitesTableViewCell" customModule="Intercom_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="92"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o02-aK-gIa" id="iW6-Pz-HYL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="p6J-Wf-Oj8">
+                                            <rect key="frame" x="16" y="19" width="44" height="54"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcV-B2-EFT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-7c-3ml">
+                                                    <rect key="frame" x="0.0" y="28.5" width="44" height="25.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7gf-3a-T3T">
+                                            <rect key="frame" x="203" y="28.5" width="152" height="35"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i56-xT-khv" customClass="JoinGroupButton" customModule="Intercom_App" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="J1A-Be-46Q"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="XAi-Jc-X5c"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Accept"/>
+                                                    <connections>
+                                                        <action selector="joinGroupButtonAction:" destination="o02-aK-gIa" eventType="touchUpInside" id="6nc-rf-AIb"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbt-gS-m6Z" customClass="DeclineButton" customModule="Intercom_App" customModuleProvider="target">
+                                                    <rect key="frame" x="84" y="0.0" width="68" height="35"/>
+                                                    <state key="normal" title="Deny">
+                                                        <color key="titleColor" red="1" green="0.065431795060000006" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="declineButtonAction:" destination="o02-aK-gIa" eventType="touchUpInside" id="sHF-Of-HNK"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bbt-gS-m6Z" firstAttribute="height" secondItem="i56-xT-khv" secondAttribute="height" id="4cF-NB-jil"/>
+                                                <constraint firstItem="bbt-gS-m6Z" firstAttribute="width" secondItem="i56-xT-khv" secondAttribute="width" id="XwR-4U-UBS"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="p6J-Wf-Oj8" firstAttribute="top" secondItem="iW6-Pz-HYL" secondAttribute="topMargin" constant="8" id="E6M-y1-gBy"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="p6J-Wf-Oj8" secondAttribute="bottom" constant="8" id="Fg3-5w-4iM"/>
+                                        <constraint firstAttribute="trailing" secondItem="7gf-3a-T3T" secondAttribute="trailing" constant="20" id="OPt-UR-vjN"/>
+                                        <constraint firstItem="p6J-Wf-Oj8" firstAttribute="leading" secondItem="iW6-Pz-HYL" secondAttribute="leadingMargin" id="Q6m-uJ-CUP"/>
+                                        <constraint firstItem="7gf-3a-T3T" firstAttribute="centerY" secondItem="iW6-Pz-HYL" secondAttribute="centerY" id="YBJ-LW-ezv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="groupNameLabel" destination="HcV-B2-EFT" id="tgU-hB-5SU"/>
+                                    <outlet property="numberOfUsersLabel" destination="gaS-7c-3ml" id="c76-KM-e7k"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YZi-Jv-pJV" id="0pH-6E-n7S"/>
+                            <outlet property="delegate" destination="YZi-Jv-pJV" id="Klq-Y0-bDw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Group Invites" id="Pvr-36-0S3"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VfO-7S-8VU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2221.5999999999999" y="1366.8665667166417"/>
+        </scene>
         <!--MultipeerVoiceChat-->
         <scene sceneID="syY-Sh-JnF">
             <objects>
                 <viewControllerPlaceholder storyboardName="MultipeerVoiceChat" id="cgp-YC-AX1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCE-gH-EYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="1125"/>
+            <point key="canvasLocation" x="2376" y="95"/>
         </scene>
         <!--My Groups-->
         <scene sceneID="G78-Hg-r1W">
@@ -808,92 +896,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupsCell" rowHeight="100" id="uRD-N4-Izs" customClass="GroupViewTableViewCell" customModule="Intercom_App" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="groupsCell" rowHeight="100" id="uRD-N4-Izs" customClass="GroupViewTableViewCell" customModule="Intercom_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uRD-N4-Izs" id="ebA-kJ-i6C">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WT2-9z-gbW">
-                                            <rect key="frame" x="4" y="4" width="367" height="91.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WT2-9z-gbW">
+                                            <rect key="frame" x="10" y="8" width="323" height="83.5"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group" translatesAutoresizingMaskIntoConstraints="NO" id="abc-1a-cTW">
-                                                    <rect key="frame" x="0.0" y="16" width="60" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="1Rr-iK-UFe"/>
-                                                        <constraint firstAttribute="width" constant="60" id="Jgs-Ex-qvw"/>
-                                                        <constraint firstAttribute="width" secondItem="abc-1a-cTW" secondAttribute="height" multiplier="1:1" id="cbR-bl-d3P"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K0j-ga-PX1">
-                                                    <rect key="frame" x="68" y="19.5" width="201" height="52.5"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxW-nc-dwF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="201" height="24"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lL0-gr-opP">
-                                                            <rect key="frame" x="0.0" y="32" width="201" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="edm-XT-5wL">
-                                                    <rect key="frame" x="277" y="46" width="90" height="0.0"/>
-                                                    <subviews>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUE-8d-PJE" customClass="JoinGroupButton" customModule="Intercom_App" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="0.0"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="kn3-3E-4Zs"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                            <state key="normal" title="Join">
-                                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="joinGroupButtonAction:" destination="uRD-N4-Izs" eventType="touchUpInside" id="uRT-K1-xnn"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-1K-R4R" customClass="DeclineButton" customModule="Intercom_App" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="0.0"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="LfH-Bz-5Ch"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                            <state key="normal" title="Decline">
-                                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="declineButtonAction:" destination="uRD-N4-Izs" eventType="touchUpInside" id="CPO-OB-fQb"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="NuP-e5-D0E"/>
-                                                    </constraints>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxW-nc-dwF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="323" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lL0-gr-opP">
+                                                    <rect key="frame" x="0.0" y="29.5" width="323" height="54"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="WT2-9z-gbW" secondAttribute="bottom" constant="4" id="6cJ-w5-lNg"/>
-                                        <constraint firstItem="WT2-9z-gbW" firstAttribute="top" secondItem="ebA-kJ-i6C" secondAttribute="top" constant="4" id="8vg-tb-mpp"/>
-                                        <constraint firstItem="WT2-9z-gbW" firstAttribute="leading" secondItem="ebA-kJ-i6C" secondAttribute="leading" constant="4" id="dFV-Y7-Jh8"/>
-                                        <constraint firstAttribute="trailing" secondItem="WT2-9z-gbW" secondAttribute="trailing" constant="4" id="ls4-GN-SkL"/>
+                                        <constraint firstAttribute="bottom" secondItem="WT2-9z-gbW" secondAttribute="bottom" constant="8" id="6cJ-w5-lNg"/>
+                                        <constraint firstItem="WT2-9z-gbW" firstAttribute="top" secondItem="ebA-kJ-i6C" secondAttribute="top" constant="8" id="8vg-tb-mpp"/>
+                                        <constraint firstItem="WT2-9z-gbW" firstAttribute="leading" secondItem="ebA-kJ-i6C" secondAttribute="leading" constant="10" id="dFV-Y7-Jh8"/>
+                                        <constraint firstAttribute="trailing" secondItem="WT2-9z-gbW" secondAttribute="trailing" constant="8" id="ls4-GN-SkL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="declineButton" destination="o2t-1K-R4R" id="fks-39-xaq"/>
-                                    <outlet property="groupOwnedToImage" destination="abc-1a-cTW" id="MFS-eb-DQY"/>
                                     <outlet property="groupOwnedToNameLabel" destination="YxW-nc-dwF" id="eKQ-Xm-Bzl"/>
                                     <outlet property="groupOwnedTonumberOfUsers" destination="lL0-gr-opP" id="ZRo-xh-zd9"/>
-                                    <outlet property="joinGroupbutton" destination="TUE-8d-PJE" id="d98-Pa-jN5"/>
-                                    <segue destination="Dh5-Dj-HVh" kind="show" identifier="chatroom" id="3ZZ-qb-TwA"/>
+                                    <segue destination="Dh5-Dj-HVh" kind="show" identifier="chatroomSegue" id="cIg-DT-8v5"/>
+                                    <segue destination="YZi-Jv-pJV" kind="show" identifier="invitesSegue" trigger="accessoryAction" id="0w6-gV-ENG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -902,7 +941,7 @@
                             <outlet property="delegate" destination="Z5r-Nj-yxM" id="QG3-k7-pp0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Groups" id="AfY-Hy-Don">
+                    <navigationItem key="navigationItem" title="Groups" id="AfY-Hy-Don">
                         <barButtonItem key="leftBarButtonItem" title="Account" id="vHd-Np-YMA">
                             <connections>
                                 <segue destination="nSn-kU-O1J" kind="show" id="Egl-Of-Rkj"/>
@@ -987,7 +1026,6 @@
     <resources>
         <image name="add_user_male" width="30" height="30"/>
         <image name="audio-sound-waves" width="1000" height="237"/>
-        <image name="group" width="512" height="512"/>
         <image name="night-stars-wallpaper" width="320" height="568"/>
         <image name="radio_waves" width="30" height="30"/>
     </resources>

@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NSLog("Twilio Voice Version: %@", TwilioVoice.version())
         self.configureUserNotifications()
-        UINavigationBar.appearance().backgroundColor = .green
-        UINavigationBar.appearance().tintColor = .black
+       
         let settings = UIUserNotificationSettings(types: .alert, categories: nil)
         UIApplication.shared.registerUserNotificationSettings(settings)
         UIApplication.shared.registerForRemoteNotifications()

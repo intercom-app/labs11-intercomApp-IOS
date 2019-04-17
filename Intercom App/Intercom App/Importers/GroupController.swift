@@ -302,14 +302,8 @@ class GroupController {
             guard error == nil else {
                 return
             }
-            //Reload the table with current data
-            DispatchQueue.main.async {
-                self.gtvc?.tableView.reloadData()
-                self.iuvc?.tableView.reloadData()
-                self.cavc?.tableView.reloadData()
-                self.ulvc?.tableView.reloadData()
-                
-            }
+            
+            TeamImporter.shared.fetchAllUsers()
         })
         task.resume()
     }
