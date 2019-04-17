@@ -9,7 +9,7 @@
 import UIKit
 
 class InviteUserTableViewCell: UITableViewCell {
-
+    
     var group: Groups?
     var userID: Int?
     var userName: String?
@@ -28,20 +28,20 @@ class InviteUserTableViewCell: UITableViewCell {
             inviteButtonOutlet.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
             inviteButtonOutlet.isEnabled = false
         } else {
-        if invited {
-            
-            inviteButtonOutlet.setTitle("Invited", for: .normal)
-            inviteButtonOutlet.setTitleColor(.lightGray, for: .normal)
-            inviteButtonOutlet.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
-        } else {
-            inviteButtonOutlet.setTitle("Invite", for: .normal)
-            inviteButtonOutlet.setTitleColor(.green, for: .normal)
-            inviteButtonOutlet.setTitleShadowColor(.black, for: .normal)
-            inviteButtonOutlet.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
-        }
+            if invited {
+                
+                inviteButtonOutlet.setTitle("Invited", for: .normal)
+                inviteButtonOutlet.setTitleColor(.lightGray, for: .normal)
+                inviteButtonOutlet.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
+            } else {
+                inviteButtonOutlet.setTitle("Invite", for: .normal)
+                inviteButtonOutlet.setTitleColor(.green, for: .normal)
+                inviteButtonOutlet.setTitleShadowColor(.black, for: .normal)
+                inviteButtonOutlet.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
+            }
         }
     }
-
+    
     
     @IBAction func inviteButton(_ sender: Any) {
         guard let groupID = group?.groupID else { return }

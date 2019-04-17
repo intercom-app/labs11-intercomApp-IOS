@@ -21,7 +21,7 @@ let accessTokenEndpoint = "accessToken"
 let twimlParamTo = "to"
 
 class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotificationDelegate, TVOCallDelegate, AVAudioPlayerDelegate, UITextFieldDelegate {
-  
+    
     @IBAction func groupNameTextFieldAction(_ sender: Any) {
         if let name = groupNameTextField.text {
             GroupController.shared.editGroupName(groupID: group!.groupID, groupName: name)
@@ -34,14 +34,14 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var groupOwner: UILabel!
     @IBOutlet weak var placeCallButton: UIButton!
-    @IBOutlet weak var inviteButtonOutlet: UIButton!
+    @IBOutlet weak var viewActivityButton: UIButton!
+    @IBOutlet weak var viewGroupMembersButton: UIButton!
     @IBOutlet weak var outgoingValue: UITextField!
-    @IBOutlet weak var callControlView: UIView!
     @IBOutlet weak var muteSwitch: UISwitch!
     @IBOutlet weak var speakerSwitch: UISwitch!
     
-//    var serverURL =  "https://intercom-be.herokuapp.com/api/voice"
-//    var path = "/register-binding"
+    //    var serverURL =  "https://intercom-be.herokuapp.com/api/voice"
+    //    var path = "/register-binding"
     var identity: String?
     var deviceTokenString:String?
     var voipRegistry:PKPushRegistry
@@ -56,7 +56,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var group: Groups? {
         didSet {
             if let group = group {
-            identity = "\(group.groupID)"
+                identity = "\(group.groupID)"
                 
             }
         }
@@ -67,12 +67,14 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBAction func deleteGroup(_ sender: Any) {
         guard let group = group else { return }
         if TeamImporter.shared.userID == group.owners.first?.id {
-        GroupController.shared.deleteGroupRequest(groupID: group.groupID)
-        navigationController?.popViewController(animated: true)
+            GroupController.shared.deleteGroupRequest(groupID: group.groupID)
+            navigationController?.popViewController(animated: true)
+            TeamImporter.shared.getUserAndFetchAllDetails()
         } else {
             GroupController.shared.deleteGroupMamber(groupID: group.groupID, userID: TeamImporter.shared.userID)
             GroupController.shared.postActivity(groupID: group.groupID, massage: "\(String(describing: TeamImporter.shared.userNikname)) left the group")
             navigationController?.popViewController(animated: true)
+            TeamImporter.shared.getUserAndFetchAllDetails()
         }
     }
     
@@ -85,11 +87,10 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         groupOwner.text = "Group Owner: " + ownerName
         if TeamImporter.shared.userID == group?.owners.first?.id {
             deleteGroupOutlet.title = "Delete Group"
-            inviteButtonOutlet.isHidden = false
             groupNameTextField.isEnabled = true
             
         }
-        }
+    }
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -99,7 +100,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         voipRegistry.desiredPushTypes = Set([PKPushType.voIP])
         TwilioVoice.logLevel = .verbose
     }
-
+    
     
     
     override func viewDidLoad() {
@@ -112,8 +113,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         groupNameTextField.delegate = self
         deleteGroupOutlet.title = "Leave Group"
         groupNameTextField.isEnabled = false
-         updateView()
-         
+        updateView()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -123,21 +124,18 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         } else if segue.identifier == "userSegue" {
             let destination = segue.destination as! UserListTableViewController
             destination.group = self.group
-        } else if segue.identifier == "inviteSegue" {
-            let destination = segue.destination as! InviteUserTableViewController
-            destination.group = self.group
         }
     }
     
     
-//    func registerDeviceToken() {
-//
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let deviceToken : String! = appDelegate.devToken
-//        let identity : String! = self.identity
-//        registerDevice(identity: identity, deviceToken: deviceToken)
-//        resignFirstResponder()
-//    }
+    //    func registerDeviceToken() {
+    //
+    //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    //        let deviceToken : String! = appDelegate.devToken
+    //        let identity : String! = self.identity
+    //        registerDevice(identity: identity, deviceToken: deviceToken)
+    //        resignFirstResponder()
+    //    }
     
     func displayError(_ errorMessage:String) {
         let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
@@ -215,14 +213,11 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     func toggleUIState(isEnabled: Bool, showCallControl: Bool) {
         placeCallButton.isEnabled = isEnabled
         if (showCallControl) {
-            callControlView.isHidden = false
             muteSwitch.isOn = false
             speakerSwitch.isOn = true
-        } else {
-            callControlView.isHidden = true
         }
     }
-  
+    
     
     @IBAction func placeCall(_ sender: CallButton) {
         if (self.call != nil) {
@@ -233,6 +228,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
                 return
             }
             self.navigationController?.isNavigationBarHidden = true
+            viewActivityButton.isHidden = true
+            viewGroupMembersButton.isHidden = true
             self.callStatus = true
             playOutgoingRingtone(completion: { [weak self] in
                 if let strongSelf = self {
@@ -455,6 +452,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     func callDidConnect(_ call: TVOCall) {
         NSLog("callDidConnect:")
         navigationController?.isNavigationBarHidden = true
+        viewActivityButton.isHidden = true
+        viewGroupMembersButton.isHidden = true
         self.call = call
         
         self.placeCallButton.setTitle("Hang Up", for: .normal)
@@ -487,6 +486,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         playDisconnectSound()
         toggleUIState(isEnabled: true, showCallControl: false)
         self.placeCallButton.setTitle("Call", for: .normal)
+        viewActivityButton.isHidden = false
+        viewGroupMembersButton.isHidden = false
         self.navigationController?.isNavigationBarHidden = false
     }
     
@@ -587,15 +588,15 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         }
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

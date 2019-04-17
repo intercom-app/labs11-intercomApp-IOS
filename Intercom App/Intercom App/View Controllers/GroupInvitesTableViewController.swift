@@ -9,7 +9,7 @@
 import UIKit
 
 class GroupInvitesTableViewController: UITableViewController {
-
+    
     var group: Groups?
     
     override func viewDidLoad() {
@@ -21,10 +21,10 @@ class GroupInvitesTableViewController: UITableViewController {
             TeamImporter.shared.getUserAndFetchAllDetails()
         }
     }
-
+    
     // MARK: - Table view data source
-
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return TeamImporter.shared.allGroups?[2].count ?? 0
@@ -43,20 +43,20 @@ class GroupInvitesTableViewController: UITableViewController {
         
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 75
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 65))
-            let label = UILabel(frame: CGRect(x: 20, y: 25, width: tableView.frame.size.width, height: 65))
-            label.font = UIFont.systemFont(ofSize: 14)
-            label.text = "INVITE REQUEST"
-            label.textColor = UIColor.gray
-            view.backgroundColor = UIColor.groupTableViewBackground
-            view.addSubview(label)
-            return view
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 65))
+        let label = UILabel(frame: CGRect(x: 20, y: 25, width: tableView.frame.size.width, height: 65))
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "INVITE REQUEST"
+        label.textColor = UIColor.gray
+        view.backgroundColor = UIColor.groupTableViewBackground
+        view.addSubview(label)
+        return view
     }
 }

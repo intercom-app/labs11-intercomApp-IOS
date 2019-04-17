@@ -9,8 +9,8 @@
 import UIKit
 
 class GroupInvitesTableViewCell: UITableViewCell {
-
-     var groupId: Int?
+    
+    var groupId: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +19,7 @@ class GroupInvitesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var numberOfUsersLabel: UILabel!
     @IBOutlet weak var groupNameLabel: UILabel!
-   
+    
     
     @IBAction func joinGroupButtonAction(_ sender: Any) {
         guard let groupId = groupId else { return }
@@ -35,11 +35,11 @@ class GroupInvitesTableViewCell: UITableViewCell {
         GroupController.shared.postActivity(groupID: groupId, massage: "Declined to join the group")
         TeamImporter.shared.fetchCurentUserDetails(userID: TeamImporter.shared.userID!)
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

@@ -10,7 +10,7 @@ import UIKit
 
 let kCallButtonBackgroundColor = UIColor(displayP3Red: 131/255, green: 175/255, blue: 164/255, alpha: 1)
 let kCallButtonTintColor = UIColor.white
-let kCallButtonCornerRadius: CGFloat = 13.0
+let kCallButtonCornerRadius: CGFloat = 6.0
 
 class CallButton: UIButton {
     
@@ -20,10 +20,10 @@ class CallButton: UIButton {
     }
     
     private func configureUI() {
-        self.backgroundColor = kCallButtonBackgroundColor
+       // self.backgroundColor = UIColor.blue
         self.layer.cornerRadius = kCallButtonCornerRadius
         self.tintColor = kCallButtonTintColor
-        self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14)
+        //self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16)
     }
     
 }
