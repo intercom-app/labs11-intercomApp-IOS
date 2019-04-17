@@ -58,6 +58,7 @@ class InviteUserTableViewCell: UITableViewCell {
             GroupController.shared.postInvitation(groupID: groupID, userID: userID)
             GroupController.shared.postActivity(groupID: groupID, massage: "Invited " + "\(String(describing: userName!))" + " to the group")
             invited = true
+            
         }
     }
 }

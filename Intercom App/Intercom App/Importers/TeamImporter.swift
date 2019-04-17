@@ -12,6 +12,7 @@ class TeamImporter {
     
     static let shared = TeamImporter()
     
+    var givc: GroupInvitesTableViewController?
     var cavc: ChatroomActivityTableViewController?
     var gtvc: GroupListViewController?
     var iuvc: InviteUserTableViewController?
@@ -124,6 +125,7 @@ class TeamImporter {
                     self.iuvc?.tableView.reloadData()
                     self.cavc?.tableView.reloadData()
                     self.ulvc?.tableView.reloadData()
+                    self.givc?.tableView.reloadData()
                     
                 }
 
@@ -178,7 +180,7 @@ class TeamImporter {
                 completion(decodedTeam)
                 //Reload the table with current data
                 DispatchQueue.main.async {
-                    self.iuvc!.tableView.reloadData()
+                    self.iuvc?.tableView.reloadData()
                 }
                 
                 // Convert to a string and print
