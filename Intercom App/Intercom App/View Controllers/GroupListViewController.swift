@@ -11,6 +11,7 @@ import UIKit
 class GroupListViewController: UITableViewController {
     
     var sectionHeaderInvitedTo: Bool?
+    var group: Groups?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +67,11 @@ class GroupListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 2 {
+            if TeamImporter.shared.allGroups?[2].count ?? 0 > 0 {
             return 1
+            } else {
+                return 0
+            }
         } else {
             return TeamImporter.shared.allGroups?[section].count ?? 0
         }
@@ -77,28 +82,52 @@ class GroupListViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupsCell", for: indexPath) as! GroupViewTableViewCell
         
-        guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return cell }
         
+        switch indexPath.section {
+        case 0:
+            guard let group = TeamImporter.shared.allGroups?[0][indexPath.row] else { return cell }
+            cell.groupId = group.groupID
+            cell.groupOwnedToNameLabel.text = group.groupName
+            var memberCountString: String?
+            if group.members.count > 1 {
+                memberCountString = "\(group.members.count) users"
+            } else {
+                memberCountString = "\(group.members.count) user"
+            }
+            cell.update(count: 0)
+            cell.groupOwnedTonumberOfUsers.text = memberCountString
         
-        if indexPath.section == 2 {
+            return cell
+        case 1:
+            guard let group = TeamImporter.shared.allGroups?[1][indexPath.row] else { return cell }
+            cell.groupId = group.groupID
+            cell.groupOwnedToNameLabel.text = group.groupName
+            var memberCountString: String?
+            if group.members.count > 1 {
+                memberCountString = "\(group.members.count) users"
+            } else {
+                memberCountString = "\(group.members.count) user"
+            }
+            cell.update(count: 0)
+            cell.groupOwnedTonumberOfUsers.text = memberCountString
+            return cell
+        case 2:
             guard let group = TeamImporter.shared.allGroups?[2][indexPath.row] else { return cell }
             
             cell.groupId = group.groupID
             cell.groupOwnedToNameLabel.text = "Invites"
-            //cell.groupOwnedTonumberOfUsers.text = "\(group.members.count) users"
+            cell.groupOwnedTonumberOfUsers.text = nil
+            // Configure Cell Badge
+            if let badgeCount = TeamImporter.shared.allGroups?[2].count {
+                cell.update(count: badgeCount)
+            }
             return cell
-        } else {
-            
+        default:
+            return cell
         }
-        cell.groupId = group.groupID
-        cell.groupOwnedToNameLabel.text = group.groupName
-        cell.groupOwnedTonumberOfUsers.text = "\(group.members.count) users"
-        
-        return cell
-        
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 75
+        return 70
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -135,10 +164,6 @@ class GroupListViewController: UITableViewController {
         
     }
     
-    //
-    
-    
-    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         if tableView.indexPathForSelectedRow?.section == 2 {
@@ -170,4 +195,41 @@ class GroupListViewController: UITableViewController {
         }
     }
     
+}
+
+extension UITableViewCell {
+    func update(count: Int) {
+        // Count > 0, show count
+        if count > 0 {
+            
+            // Create label
+            let fontSize: CGFloat = 16
+            let label = UILabel()
+            label.font = UIFont.systemFont(ofSize: fontSize)
+            label.textAlignment = .center
+            label.textColor = UIColor.white
+            label.backgroundColor = UIColor(displayP3Red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
+            
+            // Add count to label and size to fit
+            label.text = "\(NSNumber(value: count))"
+            label.sizeToFit()
+            
+            // Adjust frame to be square for single digits or elliptical for numbers > 9
+            var frame: CGRect = label.frame
+            frame.size.height += CGFloat(Int(0.4 * fontSize))
+            frame.size.width = (count <= 9) ? frame.size.height : frame.size.width + CGFloat(Int(fontSize))
+            label.frame = frame
+            
+            // Set radius and clip to bounds
+            label.layer.cornerRadius = frame.size.height / 2.0
+            label.clipsToBounds = true
+            
+            // Show label in accessory view and remove disclosure
+            self.accessoryView = label
+            self.accessoryType = .none
+        } else {
+            self.accessoryView = nil
+            self.accessoryType = .disclosureIndicator
+        }
+    }
 }

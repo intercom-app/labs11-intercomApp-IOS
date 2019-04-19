@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
                     SessionManager.tokens = Tokens(accessToken: accessToken, idToken: idToken)
                     SessionManager.retrieveProfile({ (user, error) in
                        // UserManager.shared.authUser = user
-                    
+                    print(error)
                     DispatchQueue.main.async {
                         
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

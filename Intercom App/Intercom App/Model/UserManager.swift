@@ -15,33 +15,7 @@ class UserManager {
     var localUser: UserRep?
     
     
-    func buildUserPhoto(user: Users) {
-        
-        if let avi = user.avatar {
-            
-           let url = URL(string: avi)
-        
-            let photoData = try? Data(contentsOf: url!)
-        
-            let photo = UIImage(data: photoData!)
-            
-            localUser?.photo = photo!
-        
-        }
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
     
     struct UserRep: Codable {
         let id: Int

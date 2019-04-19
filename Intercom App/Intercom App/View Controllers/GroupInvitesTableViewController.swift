@@ -39,7 +39,13 @@ class GroupInvitesTableViewController: UITableViewController {
         
         cell.groupId = group.groupID
         cell.groupNameLabel.text = group.groupName
-        cell.numberOfUsersLabel.text = "\(group.members.count) users"
+        var memberCountString: String?
+        if group.members.count > 1 {
+            memberCountString = "\(group.members.count) users"
+        } else {
+            memberCountString = "\(group.members.count) user"
+        }
+        cell.numberOfUsersLabel.text = memberCountString
         
         return cell
     }

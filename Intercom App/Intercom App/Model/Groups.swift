@@ -11,7 +11,7 @@ struct Groups: Codable {
     var groupCreatedAt: String
     var groupID: Int
     var groupName: String
-    var phoneNumber: JSONNull?
+   // var phoneNumber: JSONNull?
     var callStatus: Bool
     var activities, callParticipants, owners, members: [Users]
     var invitees: [Users]
@@ -20,6 +20,6 @@ struct Groups: Codable {
     enum CodingKeys: String, CodingKey {
         case membershipCreatedAt, groupCreatedAt
         case groupID = "groupId"
-        case groupName, phoneNumber, callStatus, activities, callParticipants, owners, members, invitees, inviteCreatedAt, ownershipCreatedAt
+        case groupName, callStatus, activities, callParticipants, owners, members, invitees, inviteCreatedAt, ownershipCreatedAt
     }
 }

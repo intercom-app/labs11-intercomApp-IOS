@@ -112,7 +112,9 @@ class TeamImporter {
             }
             do {
                 let jsonDecoder = JSONDecoder()
-                
+                if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
+                    print(JSONString)
+                }
                 let decodedTeam = try jsonDecoder.decode(Users.self, from: teamData)
                 
                 self.teamMembers = decodedTeam

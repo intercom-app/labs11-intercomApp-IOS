@@ -386,7 +386,7 @@
                                         <rect key="frame" x="69.5" y="105" width="80" height="33"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="2i9-qP-Nvc"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="2i9-qP-Nvc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Save">
@@ -693,16 +693,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="p6J-Wf-Oj8">
-                                            <rect key="frame" x="16" y="19" width="44" height="54"/>
+                                            <rect key="frame" x="16" y="19" width="48" height="54"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcV-B2-EFT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="21.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="48" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-7c-3ml">
-                                                    <rect key="frame" x="0.0" y="28.5" width="44" height="25.5"/>
+                                                    <rect key="frame" x="0.0" y="31" width="48" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -710,21 +710,25 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7gf-3a-T3T">
-                                            <rect key="frame" x="203" y="28.5" width="152" height="35"/>
+                                            <rect key="frame" x="203" y="26" width="152" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i56-xT-khv" customClass="JoinGroupButton" customModule="Intercom_App" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="J1A-Be-46Q"/>
+                                                        <constraint firstAttribute="height" constant="40" id="J1A-Be-46Q"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="XAi-Jc-X5c"/>
                                                     </constraints>
-                                                    <state key="normal" title="Accept"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="Accept">
+                                                        <color key="titleColor" red="0.0087706133833912129" green="0.38729036583115783" blue="0.77549968274111669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="joinGroupButtonAction:" destination="o02-aK-gIa" eventType="touchUpInside" id="6nc-rf-AIb"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbt-gS-m6Z" customClass="DeclineButton" customModule="Intercom_App" customModuleProvider="target">
-                                                    <rect key="frame" x="84" y="0.0" width="68" height="35"/>
+                                                    <rect key="frame" x="84" y="0.0" width="68" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <state key="normal" title="Deny">
                                                         <color key="titleColor" red="1" green="0.065431795060000006" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
@@ -791,7 +795,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WT2-9z-gbW">
                                             <rect key="frame" x="10" y="8" width="323" height="83.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxW-nc-dwF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Invites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxW-nc-dwF">
                                                     <rect key="frame" x="0.0" y="0.0" width="323" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>

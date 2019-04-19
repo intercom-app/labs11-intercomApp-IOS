@@ -15,7 +15,7 @@ import PushKit
 import TwilioVoice
 
 
-let baseURLString = "https://intercom-be.herokuapp.com/api/voice/"
+let baseURLString = "https://intercom-be-farste.herokuapp.com/api/voice/" // "https://intercom-be.herokuapp.com/api/voice/"
 let accessTokenEndpoint = "accessToken"
 
 let twimlParamTo = "to"
@@ -41,7 +41,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBOutlet weak var speakerSwitch: UISwitch!
     
     //    var serverURL =  "https://intercom-be.herokuapp.com/api/voice"
-    //    var path = "/register-binding"
+        var path = "/register-binding"
     var identity: String?
     var deviceTokenString:String?
     var voipRegistry:PKPushRegistry
@@ -56,7 +56,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var group: Groups? {
         didSet {
             if let group = group {
-                identity = "\(group.groupID)"
+                self.identity = "\(group.groupID)"
                 
             }
         }
@@ -72,7 +72,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
             TeamImporter.shared.getUserAndFetchAllDetails()
         } else {
             GroupController.shared.deleteGroupMamber(groupID: group.groupID, userID: TeamImporter.shared.userID)
-            GroupController.shared.postActivity(groupID: group.groupID, massage: "\(String(describing: TeamImporter.shared.userNikname)) left the group")
+            GroupController.shared.postActivity(groupID: group.groupID, massage: "\(String(describing: TeamImporter.shared.teamMembers?.displayName)) left the group")
             navigationController?.popViewController(animated: true)
             TeamImporter.shared.getUserAndFetchAllDetails()
         }
@@ -81,6 +81,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     func updateView() {
         guard let identity = self.identity else { return }
         outgoingValue.text = identity
+  
         title = "Voice Chatroom"
         groupNameTextField.text = group?.groupName
         guard let ownerName = group?.owners.first?.displayName else { return }
@@ -128,14 +129,14 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     }
     
     
-    //    func registerDeviceToken() {
-    //
-    //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    //        let deviceToken : String! = appDelegate.devToken
-    //        let identity : String! = self.identity
-    //        registerDevice(identity: identity, deviceToken: deviceToken)
-    //        resignFirstResponder()
-    //    }
+        func registerDeviceToken() {
+    
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let deviceToken : String! = appDelegate.devToken
+            let identity : String! = self.identity
+            registerDevice(identity: identity, deviceToken: deviceToken)
+            resignFirstResponder()
+        }
     
     func displayError(_ errorMessage:String) {
         let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
@@ -149,7 +150,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         // Create a POST request to the /register endpoint with device variables to register for Twilio Notifications
         let session = URLSession.shared
         
-        let url = URL(string: baseURLString)
+        var url = URL(string: baseURLString)
+        url?.appendPathComponent(path)
         var request = URLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30.0)
         request.httpMethod = "POST"
         
@@ -200,7 +202,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     }
     
     func fetchAccessToken() -> String? {
-        guard let identityText = TeamImporter.shared.userNikname else { fatalError("outgoig value is empty")}
+        guard let id = group?.groupID else { fatalError("outgoig value is empty") }
+         let identityText = "\(id)"
         let endpointWithIdentity = String(format: "%@?identity=%@", accessTokenEndpoint, identityText)
         print(identityText )
         guard let accessTokenURL = URL(string: baseURLString + endpointWithIdentity) else {
@@ -228,6 +231,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
                 return
             }
             self.navigationController?.isNavigationBarHidden = true
+            registerDeviceToken()
             viewActivityButton.isHidden = true
             viewGroupMembersButton.isHidden = true
             self.callStatus = true
