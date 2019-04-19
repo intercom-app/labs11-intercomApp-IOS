@@ -40,7 +40,28 @@ class UserListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         guard let user = group?.members[indexPath.row] else { return cell }
         cell.textLabel?.text = user.displayName.capitalized
+        
+        
+        // declare the button
+        let customDetailDisclosureButton = UIButton.init(type: .detailDisclosure)
+        
+        // set the image for .normal and .selected
+        customDetailDisclosureButton.setImage(UIImage(named: "remove-1")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        customDetailDisclosureButton.setImage(UIImage(named: "remove-1")?.withRenderingMode(.alwaysTemplate), for: .selected)
+        
+        // add a target action
+        customDetailDisclosureButton.addTarget(self, action: #selector(accessoryButtonTapped), for: .touchUpInside)
+        
+        cell.accessoryView = customDetailDisclosureButton
         return cell
+    }
+    
+    @objc func accessoryButtonTapped() {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        guard let user = group?.members[indexPath.row] else { return }
+        GroupController.shared.deleteGroupMamber(groupID: group!.groupID, userID: user.id)
+        GroupController.shared.postActivity(groupID: group!.groupID, massage: "Removed \(user.displayName) from group.")
+        TeamImporter.shared.getUserAndFetchAllDetails()
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

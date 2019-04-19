@@ -11,6 +11,7 @@ import UIKit
 class GroupListViewController: UITableViewController {
     
     var sectionHeaderInvitedTo: Bool?
+    var group: Groups?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +67,11 @@ class GroupListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 2 {
+            if TeamImporter.shared.allGroups?[2].count ?? 0 > 0 {
             return 1
+            } else {
+                return 0
+            }
         } else {
             return TeamImporter.shared.allGroups?[section].count ?? 0
         }
@@ -77,29 +82,49 @@ class GroupListViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupsCell", for: indexPath) as! GroupViewTableViewCell
         
-        guard let group = TeamImporter.shared.allGroups?[indexPath.section][indexPath.row] else { return cell }
         
+        switch indexPath.section {
+        case 0:
+            guard let group = TeamImporter.shared.allGroups?[0][indexPath.row] else { return cell }
+            cell.groupId = group.groupID
+            cell.groupOwnedToNameLabel.text = group.groupName
+            var memberCountString: String?
+            if group.members.count > 1 {
+                memberCountString = "\(group.members.count) users"
+            } else {
+                memberCountString = "\(group.members.count) user"
+            }
+            cell.update(count: 0)
+            cell.groupOwnedTonumberOfUsers.text = memberCountString
         
-        if indexPath.section == 2 {
+            return cell
+        case 1:
+            guard let group = TeamImporter.shared.allGroups?[1][indexPath.row] else { return cell }
+            cell.groupId = group.groupID
+            cell.groupOwnedToNameLabel.text = group.groupName
+            var memberCountString: String?
+            if group.members.count > 1 {
+                memberCountString = "\(group.members.count) users"
+            } else {
+                memberCountString = "\(group.members.count) user"
+            }
+            cell.update(count: 0)
+            cell.groupOwnedTonumberOfUsers.text = memberCountString
+            return cell
+        case 2:
             guard let group = TeamImporter.shared.allGroups?[2][indexPath.row] else { return cell }
             
             cell.groupId = group.groupID
             cell.groupOwnedToNameLabel.text = "Invites"
-            
+            cell.groupOwnedTonumberOfUsers.text = nil
             // Configure Cell Badge
             if let badgeCount = TeamImporter.shared.allGroups?[2].count {
-           cell.update(count: badgeCount)
+                cell.update(count: badgeCount)
             }
             return cell
-        } else {
-            
+        default:
+            return cell
         }
-        cell.groupId = group.groupID
-        cell.groupOwnedToNameLabel.text = group.groupName
-        cell.groupOwnedTonumberOfUsers.text = "\(group.members.count) users"
-        
-        return cell
-        
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 70

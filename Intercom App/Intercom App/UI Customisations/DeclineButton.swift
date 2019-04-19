@@ -10,7 +10,7 @@ import UIKit
 
 let kDeclineButtonBackgroundColor = UIColor(displayP3Red: 178/255, green: 178/255, blue: 178/255, alpha: 1)
 let kDeclineButtonTintColor = UIColor.white
-let kDeclineButtonCornerRadius: CGFloat = 8.0
+let kDeclineButtonCornerRadius: CGFloat = 6.0
 
 class DeclineButton: UIButton {
     

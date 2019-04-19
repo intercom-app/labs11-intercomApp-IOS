@@ -11,14 +11,15 @@ import Foundation
 struct Users: Codable {
    var id: Int
    var stripeID: String?
-   var twilioSubSID, firstName, lastName: JSONNull?
-   var avatar: String?
+   var firstName, lastName: JSONNull?
+  // var avatar: String?
    var displayName: String
    var email: String?
    var phoneNumber: JSONNull?
    var callStatus: Bool
-   var billingSubcription: BillingSubcription
-   var accountBalance: Int
+   var billingSubcription: String
+   var accountBalance: Int?
+   //var last4: Int?
    var createdAt: String
    var groupsOwned, groupsBelongedTo: [Groups]?
    var groupsInvitedTo: [Groups]?
@@ -30,7 +31,7 @@ struct Users: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case stripeID = "stripeId"
-        case twilioSubSID, firstName, lastName, avatar, displayName, email, phoneNumber, callStatus, billingSubcription, accountBalance, createdAt, groupsOwned, groupsBelongedTo, groupsInvitedTo
+        case firstName, lastName, displayName, email, phoneNumber, callStatus, billingSubcription, accountBalance, createdAt, groupsOwned, groupsBelongedTo, groupsInvitedTo
         case activityID = "activityId"
         case activityCreatedAt, activity, inviteeCreatedAt, memberCreatedAt, ownerCreatedAt
     }
