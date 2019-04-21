@@ -13,6 +13,7 @@ import UIKit
 import AVFoundation
 import PushKit
 import TwilioVoice
+import UserNotifications
 
 
 let baseURLString = "https://intercom-be-farste.herokuapp.com/api/voice/" // "https://intercom-be.herokuapp.com/api/voice/"
@@ -26,6 +27,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         if let name = groupNameTextField.text {
             GroupController.shared.editGroupName(groupID: group!.groupID, groupName: name)
             GroupController.shared.postActivity(groupID: group!.groupID, massage: "Changed Group Name")
+            
         }
     }
     
@@ -99,7 +101,10 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         super.init(coder: aDecoder)
         voipRegistry.delegate = self
         voipRegistry.desiredPushTypes = Set([PKPushType.voIP])
-        TwilioVoice.logLevel = .verbose
+        DispatchQueue.global().async {
+            
+            TwilioVoice.logLevel = .verbose
+        }
     }
     
     
@@ -112,7 +117,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
         groupNameTextField.delegate = self
-        deleteGroupOutlet.title = "Leave Group"
+        deleteGroupOutlet.title = "Leave"
         groupNameTextField.isEnabled = false
         updateView()
         

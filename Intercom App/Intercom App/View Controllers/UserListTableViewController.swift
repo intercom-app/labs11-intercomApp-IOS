@@ -21,6 +21,7 @@ class UserListTableViewController: UITableViewController {
             inviteButtonOutlet.isEnabled = true
         } else {
             inviteButtonOutlet.isEnabled = false
+            
         }
         TeamImporter.shared.ulvc = self
         DispatchQueue.global().async {
@@ -41,7 +42,7 @@ class UserListTableViewController: UITableViewController {
         guard let user = group?.members[indexPath.row] else { return cell }
         cell.textLabel?.text = user.displayName.capitalized
         
-        
+        if TeamImporter.shared.userID == group?.owners.first?.id {
         // declare the button
         let customDetailDisclosureButton = UIButton.init(type: .detailDisclosure)
         
@@ -53,6 +54,7 @@ class UserListTableViewController: UITableViewController {
         customDetailDisclosureButton.addTarget(self, action: #selector(accessoryButtonTapped), for: .touchUpInside)
         
         cell.accessoryView = customDetailDisclosureButton
+        }
         return cell
     }
     

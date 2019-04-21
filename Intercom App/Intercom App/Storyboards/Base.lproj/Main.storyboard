@@ -128,13 +128,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNI-jX-b47">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNI-jX-b47">
                                 <rect key="frame" x="0.0" y="454" width="375" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jA5-bH-tW2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="   View Recent Activity">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -163,9 +162,34 @@
                                     <action selector="speakerSwitchToggled:" destination="Dh5-Dj-HVh" eventType="valueChanged" id="fuh-YK-NRS"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-NA-rpN">
+                                <rect key="frame" x="346" y="470" width="13" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="4K5-N3-U4x"/>
+                                    <constraint firstAttribute="width" constant="13" id="wUE-Zm-sTC"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="greaterThen"/>
+                                <connections>
+                                    <segue destination="uLP-2d-zlx" kind="show" id="QMc-n5-trK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIs-fr-WiX">
+                                <rect key="frame" x="346" y="516" width="13" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="13" id="6se-VU-E7o"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="13" id="fWt-dx-1E8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="13" id="j7T-ka-Qfy"/>
+                                    <constraint firstAttribute="height" constant="13" id="paG-Kw-mwl"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="greaterThen"/>
+                                <connections>
+                                    <segue destination="TnA-A6-i80" kind="show" id="HG5-nN-rP8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="rPp-va-iWj" firstAttribute="trailing" secondItem="zhf-NA-rpN" secondAttribute="trailing" constant="16" id="0xa-4i-vci"/>
                             <constraint firstItem="G9E-E3-BOB" firstAttribute="top" secondItem="jU3-8Y-fpk" secondAttribute="bottom" constant="8" id="1KM-vC-Kvs"/>
                             <constraint firstItem="jU3-8Y-fpk" firstAttribute="leading" secondItem="rPp-va-iWj" secondAttribute="leading" id="1gL-fO-5HG"/>
                             <constraint firstItem="Gy1-Up-mcz" firstAttribute="leading" secondItem="rPp-va-iWj" secondAttribute="leading" id="1iH-he-6x6"/>
@@ -187,14 +211,17 @@
                             <constraint firstItem="rwl-bv-CjS" firstAttribute="top" secondItem="rPp-va-iWj" secondAttribute="top" constant="8" id="emE-wx-xQv"/>
                             <constraint firstItem="rPp-va-iWj" firstAttribute="trailing" secondItem="G9E-E3-BOB" secondAttribute="trailing" constant="16" id="hLJ-28-wgb"/>
                             <constraint firstItem="lfM-jQ-d4Y" firstAttribute="leading" secondItem="rPp-va-iWj" secondAttribute="leading" id="nE7-Ah-H73"/>
+                            <constraint firstItem="zhf-NA-rpN" firstAttribute="centerY" secondItem="uNI-jX-b47" secondAttribute="centerY" id="oSr-Ss-XGy"/>
                             <constraint firstItem="jU3-8Y-fpk" firstAttribute="top" secondItem="rwl-bv-CjS" secondAttribute="bottom" constant="15" id="oUI-FF-u42"/>
                             <constraint firstItem="uNI-jX-b47" firstAttribute="top" secondItem="JIb-xb-nRW" secondAttribute="bottom" constant="8" id="pAg-kT-xGb"/>
+                            <constraint firstItem="rPp-va-iWj" firstAttribute="trailing" secondItem="IIs-fr-WiX" secondAttribute="trailing" constant="16" id="rHk-ns-VoT"/>
+                            <constraint firstItem="IIs-fr-WiX" firstAttribute="centerY" secondItem="Gr9-6F-28T" secondAttribute="centerY" id="rjb-RA-7lG"/>
                             <constraint firstItem="rPp-va-iWj" firstAttribute="trailing" secondItem="rwl-bv-CjS" secondAttribute="trailing" constant="8" id="uba-GD-nfw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rPp-va-iWj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Intercom" id="h6y-3P-iOL">
-                        <barButtonItem key="rightBarButtonItem" title="Delete Group" id="Fdd-XW-4Bc">
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="Fdd-XW-4Bc">
                             <color key="tintColor" red="1" green="0.065431795060000006" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="deleteGroup:" destination="Dh5-Dj-HVh" id="YY1-VU-tdy"/>
@@ -210,7 +237,7 @@
                         <outlet property="placeCallButton" destination="E9g-cY-f1a" id="Vb4-lX-WSw"/>
                         <outlet property="speakerSwitch" destination="JIb-xb-nRW" id="6rh-lL-8O9"/>
                         <outlet property="viewActivityButton" destination="uNI-jX-b47" id="LhY-dG-VxB"/>
-                        <outlet property="viewGroupMembersButton" destination="Gr9-6F-28T" id="DoC-3f-JAx"/>
+                        <outlet property="viewGroupMembersButton" destination="Gr9-6F-28T" id="7bB-Uc-nZI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pcl-cF-ymo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -407,7 +434,7 @@
                         <viewLayoutGuide key="safeArea" id="Mq1-Ue-BBE"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="FVP-q0-rVq">
-                        <barButtonItem key="rightBarButtonItem" title="Billing Settings" id="k3s-Le-eCS">
+                        <barButtonItem key="rightBarButtonItem" title="Billing" id="k3s-Le-eCS">
                             <connections>
                                 <segue destination="uiF-ZB-D2L" kind="show" id="lL5-QR-Kl2"/>
                             </connections>
@@ -925,7 +952,12 @@
     <resources>
         <image name="add_user_male" width="30" height="30"/>
         <image name="audio-sound-waves" width="1000" height="237"/>
+        <image name="greaterThen" width="512" height="512"/>
         <image name="night-stars-wallpaper" width="320" height="568"/>
         <image name="radio_waves" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="h5k-TY-dmV"/>
+        <segue reference="QMc-n5-trK"/>
+    </inferredMetricsTieBreakers>
 </document>

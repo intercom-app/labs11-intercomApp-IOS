@@ -1,0 +1,748 @@
+2019-04-19 15:28:50 +0000  Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7ff6b5520bf0; archive(resolved)='<IDEArchive: 0x7ff6c8b411a0>', distributionTask(resolved)='2', distributionDestination(resolved)='2', distributionMethod(resolved)='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team(resolved)='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	Chain (13, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7ff6b5520bf0; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionProcessingPipelineContext: 0x7ff6b9902ab0; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff6b5329790; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff6c699c1f0; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff6b52791a0; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff6b554bc20; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff6d19140e0; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff6ca9f6460; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff6c699dc00; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff6b557ce90; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff6c878fc50; teamID='VXUQXR6S56', teamName='Lambda, Inc', teamType='Company', username='osipyansergey@gmail.com', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff6ca9550e0; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='(null)'>
+	<IDEDistributionContext: 0x7ff6b55afc10; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff6b20362b0>', team='(null)'>
+	<IDEDistributionContext: 0x7ff6b54c6260; archive = '<IDEArchive: 0x7ff6c8b411a0>', distributionMethod='(null)', team='(null)'>
+</IDEDistributionProcessingPipelineContext: 0x7ff6b5520bf0>
+2019-04-19 15:28:50 +0000  Processing step: IDEDistributionCreateDestRootStep
+2019-04-19 15:28:50 +0000  Processing step: IDEDistributionCopyItemStep
+2019-04-19 15:28:50 +0000  Running /usr/bin/ditto '-V' '/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app'
+2019-04-19 15:28:50 +0000  >>> Copying /Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app 
+2019-04-19 15:28:50 +0000  copying file ./_CodeSignature/CodeResources ... 
+2019-04-19 15:28:50 +0000  20225 bytes for ./_CodeSignature/CodeResources
+2019-04-19 15:28:50 +0000  copying file ./disconnect.wav ... 
+2019-04-19 15:28:50 +0000  89516 bytes for ./disconnect.wav
+2019-04-19 15:28:50 +0000  copying file ./Intercom App ... 
+2019-04-19 15:28:50 +0000  2494784 bytes for ./Intercom App
+copying file ./Auth0.plist ... 
+2019-04-19 15:28:50 +0000  127 bytes for ./Auth0.plist
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/UITableViewController-uLP-2d-zlx.nib ... 
+2019-04-19 15:28:50 +0000  1212 bytes for ./Base.lproj/Main.storyboardc/UITableViewController-uLP-2d-zlx.nib
+copying file ./Base.lproj/Main.storyboardc/GroupListController.nib ... 
+2019-04-19 15:28:50 +0000  2543 bytes for ./Base.lproj/Main.storyboardc/GroupListController.nib
+copying file ./Base.lproj/Main.storyboardc/Z5r-Nj-yxM-view-VYU-TN-WEs.nib ... 
+2019-04-19 15:28:50 +0000  6039 bytes for ./Base.lproj/Main.storyboardc/Z5r-Nj-yxM-view-VYU-TN-WEs.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/UIViewController-YM6-6z-nh5.nib ... 
+2019-04-19 15:28:50 +0000  989 bytes for ./Base.lproj/Main.storyboardc/UIViewController-YM6-6z-nh5.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/YZi-Jv-pJV-view-oY4-LV-1Ra.nib ... 
+2019-04-19 15:28:50 +0000  7019 bytes for ./Base.lproj/Main.storyboardc/YZi-Jv-pJV-view-oY4-LV-1Ra.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/UITableViewController-rT1-x1-2Uj.nib ... 
+2019-04-19 15:28:50 +0000  1208 bytes for ./Base.lproj/Main.storyboardc/UITableViewController-rT1-x1-2Uj.nib
+copying file ./Base.lproj/Main.storyboardc/rT1-x1-2Uj-view-wtK-fa-M0Q.nib ... 
+2019-04-19 15:28:50 +0000  6434 bytes for ./Base.lproj/Main.storyboardc/rT1-x1-2Uj-view-wtK-fa-M0Q.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/UITableViewController-TnA-A6-i80.nib ... 
+2019-04-19 15:28:50 +0000  1916 bytes for ./Base.lproj/Main.storyboardc/UITableViewController-TnA-A6-i80.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/GroupNavController.nib ... 
+2019-04-19 15:28:50 +0000  3236 bytes for ./Base.lproj/Main.storyboardc/GroupNavController.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/UIViewController-cgp-YC-AX1.nib ... 
+2019-04-19 15:28:50 +0000  761 bytes for ./Base.lproj/Main.storyboardc/UIViewController-cgp-YC-AX1.nib
+copying file ./Base.lproj/Main.storyboardc/YM6-6z-nh5-view-XTv-dr-sKF.nib ... 
+2019-04-19 15:28:50 +0000  5269 bytes for ./Base.lproj/Main.storyboardc/YM6-6z-nh5-view-XTv-dr-sKF.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/Dh5-Dj-HVh-view-PBe-cO-uPh.nib ... 
+2019-04-19 15:28:50 +0000  10349 bytes for ./Base.lproj/Main.storyboardc/Dh5-Dj-HVh-view-PBe-cO-uPh.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/uLP-2d-zlx-view-DEM-al-nuj.nib ... 
+2019-04-19 15:28:50 +0000  4550 bytes for ./Base.lproj/Main.storyboardc/uLP-2d-zlx-view-DEM-al-nuj.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/UIViewController-uiF-ZB-D2L.nib ... 
+2019-04-19 15:28:50 +0000  1478 bytes for ./Base.lproj/Main.storyboardc/UIViewController-uiF-ZB-D2L.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/UIViewController-nSn-kU-O1J.nib ... 
+2019-04-19 15:28:50 +0000  1767 bytes for ./Base.lproj/Main.storyboardc/UIViewController-nSn-kU-O1J.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/uiF-ZB-D2L-view-Kxp-If-iZ7.nib ... 
+2019-04-19 15:28:50 +0000  10269 bytes for ./Base.lproj/Main.storyboardc/uiF-ZB-D2L-view-Kxp-If-iZ7.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/nSn-kU-O1J-view-Lsp-Br-vgu.nib ... 
+2019-04-19 15:28:50 +0000  4499 bytes for ./Base.lproj/Main.storyboardc/nSn-kU-O1J-view-Lsp-Br-vgu.nib
+copying file ./Base.lproj/Main.storyboardc/groupChatroom.nib ... 
+2019-04-19 15:28:50 +0000  2282 bytes for ./Base.lproj/Main.storyboardc/groupChatroom.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/TnA-A6-i80-view-g3g-E9-aqp.nib ... 
+2019-04-19 15:28:50 +0000  4040 bytes for ./Base.lproj/Main.storyboardc/TnA-A6-i80-view-g3g-E9-aqp.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/Info.plist ... 
+2019-04-19 15:28:50 +0000  1017 bytes for ./Base.lproj/Main.storyboardc/Info.plist
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/Main.storyboardc/GroupInvites.nib ... 
+2019-04-19 15:28:50 +0000  1251 bytes for ./Base.lproj/Main.storyboardc/GroupInvites.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2019-04-19 15:28:50 +0000  3881 bytes for ./Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2019-04-19 15:28:50 +0000  832 bytes for ./Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+2019-04-19 15:28:50 +0000  copying file ./Base.lproj/LaunchScreen.storyboardc/Info.plist ... 
+2019-04-19 15:28:50 +0000  258 bytes for ./Base.lproj/LaunchScreen.storyboardc/Info.plist
+2019-04-19 15:28:50 +0000  copying file ./incoming.wav ... 
+2019-04-19 15:28:50 +0000  371756 bytes for ./incoming.wav
+2019-04-19 15:28:50 +0000  copying file ./Assets.car ... 
+2019-04-19 15:28:50 +0000  7476328 bytes for ./Assets.car
+2019-04-19 15:28:50 +0000  copying file ./MultipeerVoiceChat.storyboardc/UINavigationController-aou-1F-xDq.nib ... 
+2019-04-19 15:28:50 +0000  1989 bytes for ./MultipeerVoiceChat.storyboardc/UINavigationController-aou-1F-xDq.nib
+copying file ./MultipeerVoiceChat.storyboardc/AddViewController.nib ... 
+2019-04-19 15:28:50 +0000  2083 bytes for ./MultipeerVoiceChat.storyboardc/AddViewController.nib
+2019-04-19 15:28:50 +0000  copying file ./MultipeerVoiceChat.storyboardc/wEV-9I-D7H-view-fl6-Dh-ysB.nib ... 
+2019-04-19 15:28:50 +0000  10177 bytes for ./MultipeerVoiceChat.storyboardc/wEV-9I-D7H-view-fl6-Dh-ysB.nib
+2019-04-19 15:28:50 +0000  copying file ./MultipeerVoiceChat.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib ... 
+2019-04-19 15:28:50 +0000  10910 bytes for ./MultipeerVoiceChat.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib
+2019-04-19 15:28:50 +0000  copying file ./MultipeerVoiceChat.storyboardc/TzR-PK-iv7-view-Sgh-Cg-IUf.nib ... 
+2019-04-19 15:28:50 +0000  4620 bytes for ./MultipeerVoiceChat.storyboardc/TzR-PK-iv7-view-Sgh-Cg-IUf.nib
+2019-04-19 15:28:50 +0000  copying file ./MultipeerVoiceChat.storyboardc/UIViewController-wEV-9I-D7H.nib ... 
+2019-04-19 15:28:50 +0000  1270 bytes for ./MultipeerVoiceChat.storyboardc/UIViewController-wEV-9I-D7H.nib
+2019-04-19 15:28:50 +0000  copying file ./MultipeerVoiceChat.storyboardc/Info.plist ... 
+2019-04-19 15:28:50 +0000  397 bytes for ./MultipeerVoiceChat.storyboardc/Info.plist
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/SimpleKeychain.framework/_CodeSignature/CodeResources ... 
+2019-04-19 15:28:50 +0000  1798 bytes for ./Frameworks/SimpleKeychain.framework/_CodeSignature/CodeResources
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/SimpleKeychain.framework/SimpleKeychain ... 
+2019-04-19 15:28:50 +0000  263808 bytes for ./Frameworks/SimpleKeychain.framework/SimpleKeychain
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/SimpleKeychain.framework/Info.plist ... 
+2019-04-19 15:28:50 +0000  752 bytes for ./Frameworks/SimpleKeychain.framework/Info.plist
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/libswiftCoreImage.dylib ... 
+2019-04-19 15:28:50 +0000  466576 bytes for ./Frameworks/libswiftCoreImage.dylib
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/libswiftObjectiveC.dylib ... 
+2019-04-19 15:28:50 +0000  679680 bytes for ./Frameworks/libswiftObjectiveC.dylib
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/SwiftKeychainWrapper.framework/_CodeSignature/CodeResources ... 
+2019-04-19 15:28:50 +0000  1798 bytes for ./Frameworks/SwiftKeychainWrapper.framework/_CodeSignature/CodeResources
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/SwiftKeychainWrapper.framework/SwiftKeychainWrapper ... 
+2019-04-19 15:28:50 +0000  444640 bytes for ./Frameworks/SwiftKeychainWrapper.framework/SwiftKeychainWrapper
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/SwiftKeychainWrapper.framework/Info.plist ... 
+2019-04-19 15:28:50 +0000  766 bytes for ./Frameworks/SwiftKeychainWrapper.framework/Info.plist
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/TwilioVoice.framework/_CodeSignature/CodeResources ... 
+2019-04-19 15:28:50 +0000  2088 bytes for ./Frameworks/TwilioVoice.framework/_CodeSignature/CodeResources
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/TwilioVoice.framework/TwilioVoice ... 
+2019-04-19 15:28:50 +0000  13134832 bytes for ./Frameworks/TwilioVoice.framework/TwilioVoice
+copying file ./Frameworks/TwilioVoice.framework/Info.plist ... 
+2019-04-19 15:28:50 +0000  744 bytes for ./Frameworks/TwilioVoice.framework/Info.plist
+copying file ./Frameworks/TwilioVoice.framework/remove_archs ... 
+529 bytes for ./Frameworks/TwilioVoice.framework/remove_archs
+copying file ./Frameworks/libswiftCore.dylib ... 
+2019-04-19 15:28:50 +0000  95497584 bytes for ./Frameworks/libswiftCore.dylib
+copying file ./Frameworks/libswiftCoreGraphics.dylib ... 
+2019-04-19 15:28:50 +0000  2041040 bytes for ./Frameworks/libswiftCoreGraphics.dylib
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/libswiftUIKit.dylib ... 
+2019-04-19 15:28:50 +0000  1608800 bytes for ./Frameworks/libswiftUIKit.dylib
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/libswiftMetal.dylib ... 
+2019-04-19 15:28:50 +0000  724416 bytes for ./Frameworks/libswiftMetal.dylib
+copying file ./Frameworks/libswiftDispatch.dylib ... 
+2019-04-19 15:28:50 +0000  4056912 bytes for ./Frameworks/libswiftDispatch.dylib
+copying file ./Frameworks/libswiftos.dylib ... 
+2019-04-19 15:28:50 +0000  857184 bytes for ./Frameworks/libswiftos.dylib
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/libswiftCoreFoundation.dylib ... 
+2019-04-19 15:28:50 +0000  450384 bytes for ./Frameworks/libswiftCoreFoundation.dylib
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/libswiftDarwin.dylib ... 
+2019-04-19 15:28:50 +0000  1091440 bytes for ./Frameworks/libswiftDarwin.dylib
+copying file ./Frameworks/libswiftQuartzCore.dylib ... 
+2019-04-19 15:28:50 +0000  486352 bytes for ./Frameworks/libswiftQuartzCore.dylib
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/Auth0.framework/_CodeSignature/CodeResources ... 
+2019-04-19 15:28:50 +0000  1798 bytes for ./Frameworks/Auth0.framework/_CodeSignature/CodeResources
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/Auth0.framework/Auth0 ... 
+2019-04-19 15:28:50 +0000  3077792 bytes for ./Frameworks/Auth0.framework/Auth0
+copying file ./Frameworks/Auth0.framework/Info.plist ... 
+2019-04-19 15:28:50 +0000  735 bytes for ./Frameworks/Auth0.framework/Info.plist
+copying file ./Frameworks/libswiftCoreAudio.dylib ... 
+2019-04-19 15:28:50 +0000  836048 bytes for ./Frameworks/libswiftCoreAudio.dylib
+copying file ./Frameworks/libswiftAVFoundation.dylib ... 
+2019-04-19 15:28:50 +0000  1652096 bytes for ./Frameworks/libswiftAVFoundation.dylib
+copying file ./Frameworks/libswiftFoundation.dylib ... 
+2019-04-19 15:28:50 +0000  43094320 bytes for ./Frameworks/libswiftFoundation.dylib
+2019-04-19 15:28:50 +0000  copying file ./Frameworks/libswiftCoreMedia.dylib ... 
+2019-04-19 15:28:50 +0000  794576 bytes for ./Frameworks/libswiftCoreMedia.dylib
+copying file ./Frameworks/libswiftsimd.dylib ... 
+2019-04-19 15:28:50 +0000  4134176 bytes for ./Frameworks/libswiftsimd.dylib
+2019-04-19 15:28:50 +0000  copying file ./embedded.mobileprovision ... 
+64937 bytes for ./embedded.mobileprovision
+copying file ./Info.plist ... 
+2019-04-19 15:28:50 +0000  1475 bytes for ./Info.plist
+2019-04-19 15:28:50 +0000  copying file ./PkgInfo ... 
+2019-04-19 15:28:50 +0000  8 bytes for ./PkgInfo
+2019-04-19 15:28:50 +0000  copying file ./outgoing.wav ... 
+2019-04-19 15:28:50 +0000  300764 bytes for ./outgoing.wav
+2019-04-19 15:28:50 +0000  /usr/bin/ditto exited with 0
+2019-04-19 15:28:50 +0000  Processing step: IDEDistributionEmbedProfileStep
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b53af9d0 'org.cocoapods.Auth0' '<DVTFilePath:0x7ff6b1fc7040:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/Auth0.framework'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b1da6240 'org.cocoapods.SimpleKeychain' '<DVTFilePath:0x7ff6cb1efd10:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/SimpleKeychain.framework'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b5528020 'org.cocoapods.SwiftKeychainWrapper' '<DVTFilePath:0x7ff6b53ce380:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b5b0e7c0 'com.twilio.TwilioVoiceClient' '<DVTFilePath:0x7ff6b5352bf0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/TwilioVoice.framework'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6d1919190 'com.apple.dt.runtime.swiftAVFoundation' '<DVTFilePath:0x7ff6b554f870:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftAVFoundation.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b5573580 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7ff6b1c88650:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCore.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6c8db11e0 'com.apple.dt.runtime.swiftCoreAudio' '<DVTFilePath:0x7ff6c8354120:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreAudio.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6cb0bd670 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7ff6b559afb0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b518eb00 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7ff6b55ad8c0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6c699c010 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7ff6c698d230:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreImage.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b5587310 'com.apple.dt.runtime.swiftCoreMedia' '<DVTFilePath:0x7ff6b554b4d0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreMedia.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b5563010 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7ff6b5555a00:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftDarwin.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6ca9db4e0 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7ff6b55d1cd0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftDispatch.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b55daf10 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7ff6c3a1a1e0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftFoundation.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b5e1c9c0 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7ff6d1bbfb90:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftMetal.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6c79ae1d0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7ff6b535e7b0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftObjectiveC.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6b5592dd0 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7ff6d1984ec0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftQuartzCore.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6d1918680 'com.apple.dt.runtime.swiftUIKit' '<DVTFilePath:0x7ff6c792a700:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftUIKit.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6ca9ee7b0 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7ff6b55aef90:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftos.dylib'>'>
+2019-04-19 15:28:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff6cb0b0840 'com.apple.dt.runtime.swiftsimd' '<DVTFilePath:0x7ff6b55753f0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftsimd.dylib'>'>
+2019-04-19 15:28:50 +0000  Processing step: IDEDistributionItemRemovalStep
+2019-04-19 15:28:50 +0000  Processing step: IDEDistributionAppThinningPlistStep
+2019-04-19 15:28:50 +0000  Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2019-04-19 15:28:50 +0000  Processing step: IDEDistributionCompileBitcodeStep
+2019-04-19 15:28:50 +0000  Skipping step: IDEDistributionCompileBitcodeStep because it said so
+2019-04-19 15:28:50 +0000  Processing step: IDEDistributionCodeSlimmingStep
+2019-04-19 15:28:50 +0000  Processing step: IDEDistributionCopyBCSymbolMapsStep
+2019-04-19 15:28:50 +0000  Running /usr/bin/ditto '-V' '/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/BCSymbolMaps/C561E024-6E9C-37BB-82FA-9E8571A92D83.bcsymbolmap' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/BCSymbolMaps/C561E024-6E9C-37BB-82FA-9E8571A92D83.bcsymbolmap'
+2019-04-19 15:28:50 +0000  >>> Copying /Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/BCSymbolMaps/C561E024-6E9C-37BB-82FA-9E8571A92D83.bcsymbolmap 
+2019-04-19 15:28:50 +0000  copying file ./C561E024-6E9C-37BB-82FA-9E8571A92D83.bcsymbolmap ... 
+2019-04-19 15:28:50 +0000  181164 bytes for ./C561E024-6E9C-37BB-82FA-9E8571A92D83.bcsymbolmap
+2019-04-19 15:28:50 +0000  /usr/bin/ditto exited with 0
+2019-04-19 15:28:50 +0000  Running /usr/bin/ditto '-V' '/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/BCSymbolMaps/AA201117-078B-315D-93F8-AA2354CD85A2.bcsymbolmap' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/BCSymbolMaps/AA201117-078B-315D-93F8-AA2354CD85A2.bcsymbolmap'
+2019-04-19 15:28:50 +0000  >>> Copying /Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/BCSymbolMaps/AA201117-078B-315D-93F8-AA2354CD85A2.bcsymbolmap 
+2019-04-19 15:28:50 +0000  copying file ./AA201117-078B-315D-93F8-AA2354CD85A2.bcsymbolmap ... 
+2019-04-19 15:28:50 +0000  11987 bytes for ./AA201117-078B-315D-93F8-AA2354CD85A2.bcsymbolmap
+2019-04-19 15:28:50 +0000  /usr/bin/ditto exited with 0
+2019-04-19 15:28:50 +0000  Running /usr/bin/ditto '-V' '/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/BCSymbolMaps/1D8CDE26-85FD-3FEF-9755-A0FF7F1D3BCB.bcsymbolmap' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/BCSymbolMaps/1D8CDE26-85FD-3FEF-9755-A0FF7F1D3BCB.bcsymbolmap'
+2019-04-19 15:28:50 +0000  >>> Copying /Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/BCSymbolMaps/1D8CDE26-85FD-3FEF-9755-A0FF7F1D3BCB.bcsymbolmap 
+2019-04-19 15:28:50 +0000  copying file ./1D8CDE26-85FD-3FEF-9755-A0FF7F1D3BCB.bcsymbolmap ... 
+2019-04-19 15:28:50 +0000  32853 bytes for ./1D8CDE26-85FD-3FEF-9755-A0FF7F1D3BCB.bcsymbolmap
+2019-04-19 15:28:50 +0000  /usr/bin/ditto exited with 0
+2019-04-19 15:28:50 +0000  The archive did not contain /Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/BCSymbolMaps/E2B20BA4-E900-3EEA-8B79-7B41D4F372BF.bcsymbolmap as expected.
+2019-04-19 15:28:51 +0000  Running /usr/bin/ditto '-V' '/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/BCSymbolMaps/BA4A0A57-D306-3A98-9C19-5A514BCC03FF.bcsymbolmap' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/BCSymbolMaps/BA4A0A57-D306-3A98-9C19-5A514BCC03FF.bcsymbolmap'
+2019-04-19 15:28:51 +0000  >>> Copying /Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/BCSymbolMaps/BA4A0A57-D306-3A98-9C19-5A514BCC03FF.bcsymbolmap 
+2019-04-19 15:28:51 +0000  copying file ./BA4A0A57-D306-3A98-9C19-5A514BCC03FF.bcsymbolmap ... 
+2019-04-19 15:28:51 +0000  214549 bytes for ./BA4A0A57-D306-3A98-9C19-5A514BCC03FF.bcsymbolmap
+2019-04-19 15:28:51 +0000  /usr/bin/ditto exited with 0
+2019-04-19 15:28:51 +0000  Processing step: IDEDistributionSymbolsStep
+2019-04-19 15:28:51 +0000  Excluding symbols for Auth0.framework
+2019-04-19 15:28:51 +0000  Excluding symbols for SimpleKeychain.framework
+2019-04-19 15:28:51 +0000  Excluding symbols for SwiftKeychainWrapper.framework
+2019-04-19 15:28:51 +0000  Excluding symbols for TwilioVoice.framework
+2019-04-19 15:28:51 +0000  Excluding symbols for libswiftAVFoundation.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftCore.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftCoreAudio.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftCoreFoundation.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftCoreGraphics.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftCoreImage.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftCoreMedia.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftDarwin.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftDispatch.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftFoundation.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftMetal.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftObjectiveC.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftQuartzCore.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftUIKit.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftos.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for libswiftsimd.dylib
+2019-04-19 15:28:52 +0000  Excluding symbols for Intercom App.app
+2019-04-19 15:28:52 +0000  Processing step: IDEDistributionCopyAppleProvidedContentStep
+2019-04-19 15:28:52 +0000  Running /usr/bin/ditto '-V' '/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/SwiftSupport' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/SwiftSupport'
+2019-04-19 15:28:52 +0000  >>> Copying /Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/SwiftSupport 
+2019-04-19 15:28:52 +0000  copying file ./iphoneos/libswiftCoreImage.dylib ... 
+2019-04-19 15:28:52 +0000  474638 bytes for ./iphoneos/libswiftCoreImage.dylib
+copying file ./iphoneos/libswiftObjectiveC.dylib ... 
+2019-04-19 15:28:52 +0000  795664 bytes for ./iphoneos/libswiftObjectiveC.dylib
+2019-04-19 15:28:52 +0000  copying file ./iphoneos/libswiftCore.dylib ... 
+2019-04-19 15:28:52 +0000  140418790 bytes for ./iphoneos/libswiftCore.dylib
+copying file ./iphoneos/libswiftCoreGraphics.dylib ... 
+2019-04-19 15:28:52 +0000  2688450 bytes for ./iphoneos/libswiftCoreGraphics.dylib
+copying file ./iphoneos/libswiftUIKit.dylib ... 
+2019-04-19 15:28:52 +0000  2149504 bytes for ./iphoneos/libswiftUIKit.dylib
+2019-04-19 15:28:52 +0000  copying file ./iphoneos/libswiftMetal.dylib ... 
+2019-04-19 15:28:52 +0000  838789 bytes for ./iphoneos/libswiftMetal.dylib
+2019-04-19 15:28:52 +0000  copying file ./iphoneos/libswiftDispatch.dylib ... 
+2019-04-19 15:28:52 +0000  5456696 bytes for ./iphoneos/libswiftDispatch.dylib
+copying file ./iphoneos/libswiftos.dylib ... 
+2019-04-19 15:28:52 +0000  1079649 bytes for ./iphoneos/libswiftos.dylib
+2019-04-19 15:28:52 +0000  copying file ./iphoneos/libswiftCoreFoundation.dylib ... 
+2019-04-19 15:28:52 +0000  445022 bytes for ./iphoneos/libswiftCoreFoundation.dylib
+copying file ./iphoneos/libswiftDarwin.dylib ... 
+2019-04-19 15:28:52 +0000  1369298 bytes for ./iphoneos/libswiftDarwin.dylib
+2019-04-19 15:28:52 +0000  copying file ./iphoneos/libswiftQuartzCore.dylib ... 
+2019-04-19 15:28:52 +0000  570749 bytes for ./iphoneos/libswiftQuartzCore.dylib
+2019-04-19 15:28:52 +0000  copying file ./iphoneos/libswiftCoreAudio.dylib ... 
+2019-04-19 15:28:52 +0000  1055571 bytes for ./iphoneos/libswiftCoreAudio.dylib
+copying file ./iphoneos/libswiftAVFoundation.dylib ... 
+2019-04-19 15:28:52 +0000  2218571 bytes for ./iphoneos/libswiftAVFoundation.dylib
+2019-04-19 15:28:52 +0000  copying file ./iphoneos/libswiftFoundation.dylib ... 
+2019-04-19 15:28:53 +0000  62245532 bytes for ./iphoneos/libswiftFoundation.dylib
+copying file ./iphoneos/libswiftCoreMedia.dylib ... 
+2019-04-19 15:28:53 +0000  945816 bytes for ./iphoneos/libswiftCoreMedia.dylib
+2019-04-19 15:28:53 +0000  copying file ./iphoneos/libswiftsimd.dylib ... 
+2019-04-19 15:28:53 +0000  5495292 bytes for ./iphoneos/libswiftsimd.dylib
+2019-04-19 15:28:53 +0000  /usr/bin/ditto exited with 0
+2019-04-19 15:28:53 +0000  Processing step: IDEDistributionAppThinningStep
+2019-04-19 15:28:53 +0000  Skipping step: IDEDistributionAppThinningStep because it said so
+2019-04-19 15:28:53 +0000  Processing step: IDEDistributionArchThinningStep
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/Auth0.framework/Auth0' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2019-04-19 15:28:53 +0000  Skipping architecture thinning for item "Auth0" because arch "arm64e" wasn't found
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/SimpleKeychain.framework/SimpleKeychain' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2019-04-19 15:28:53 +0000  Skipping architecture thinning for item "SimpleKeychain" because arch "arm64e" wasn't found
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework/SwiftKeychainWrapper' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2019-04-19 15:28:53 +0000  Skipping architecture thinning for item "SwiftKeychainWrapper" because arch "arm64e" wasn't found
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/TwilioVoice.framework/TwilioVoice' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2019-04-19 15:28:53 +0000  Skipping architecture thinning for item "TwilioVoice" because arch "arm64e" wasn't found
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftAVFoundation.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftAVFoundation.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftAVFoundation.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftAVFoundation.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCore.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCore.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCore.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftCore.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreAudio.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreAudio.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreAudio.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftCoreAudio.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftCoreFoundation.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftCoreGraphics.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreImage.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreImage.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreImage.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftCoreImage.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreMedia.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreMedia.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreMedia.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftCoreMedia.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDarwin.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDarwin.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDarwin.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftDarwin.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDispatch.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDispatch.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDispatch.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftDispatch.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftFoundation.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftFoundation.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftFoundation.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftFoundation.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftMetal.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftMetal.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftMetal.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftMetal.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftObjectiveC.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftObjectiveC.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftObjectiveC.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftObjectiveC.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftQuartzCore.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftQuartzCore.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftQuartzCore.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftQuartzCore.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftUIKit.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftUIKit.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftUIKit.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftUIKit.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftos.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftos.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftos.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftos.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftsimd.dylib' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftsimd.dylib' '-remove' 'arm64e' '-output' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftsimd.dylib'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 0
+2019-04-19 15:28:53 +0000  Successfully thinned item "libswiftsimd.dylib", arch "arm64e"
+2019-04-19 15:28:53 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Intercom App' '-verify_arch' 'arm64e'
+2019-04-19 15:28:53 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2019-04-19 15:28:53 +0000  Skipping architecture thinning for item "Intercom App" because arch "arm64e" wasn't found
+2019-04-19 15:28:53 +0000  Processing step: IDEDistributionODRStep
+2019-04-19 15:28:53 +0000  Processing step: IDEDistributionStripXattrsStep
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b53af9d0 'org.cocoapods.Auth0' '<DVTFilePath:0x7ff6b1fc7040:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/Auth0.framework'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b1da6240 'org.cocoapods.SimpleKeychain' '<DVTFilePath:0x7ff6cb1efd10:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/SimpleKeychain.framework'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b5528020 'org.cocoapods.SwiftKeychainWrapper' '<DVTFilePath:0x7ff6b53ce380:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b5b0e7c0 'com.twilio.TwilioVoiceClient' '<DVTFilePath:0x7ff6b5352bf0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/TwilioVoice.framework'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6d1919190 'com.apple.dt.runtime.swiftAVFoundation' '<DVTFilePath:0x7ff6b554f870:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftAVFoundation.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b5573580 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7ff6b1c88650:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCore.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6c8db11e0 'com.apple.dt.runtime.swiftCoreAudio' '<DVTFilePath:0x7ff6c8354120:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreAudio.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6cb0bd670 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7ff6b559afb0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b518eb00 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7ff6b55ad8c0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6c699c010 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7ff6c698d230:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreImage.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b5587310 'com.apple.dt.runtime.swiftCoreMedia' '<DVTFilePath:0x7ff6b554b4d0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreMedia.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b5563010 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7ff6b5555a00:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftDarwin.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6ca9db4e0 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7ff6b55d1cd0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftDispatch.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b55daf10 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7ff6c3a1a1e0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftFoundation.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b5e1c9c0 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7ff6d1bbfb90:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftMetal.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6c79ae1d0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7ff6b535e7b0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftObjectiveC.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6b5592dd0 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7ff6d1984ec0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftQuartzCore.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6d1918680 'com.apple.dt.runtime.swiftUIKit' '<DVTFilePath:0x7ff6c792a700:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftUIKit.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6ca9ee7b0 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7ff6b55aef90:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftos.dylib'>'>
+2019-04-19 15:28:53 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff6cb0b0840 'com.apple.dt.runtime.swiftsimd' '<DVTFilePath:0x7ff6b55753f0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftsimd.dylib'>'>
+2019-04-19 15:28:53 +0000  Running /usr/bin/xattr '-crs' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app'
+2019-04-19 15:28:54 +0000  /usr/bin/xattr exited with 0
+2019-04-19 15:28:54 +0000  Processing step: IDEDistributionCodesignStep
+2019-04-19 15:28:54 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b53af9d0 'org.cocoapods.Auth0' '<DVTFilePath:0x7ff6b1fc7040:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/Auth0.framework'>'>: {
+}
+2019-04-19 15:28:54 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b53af9d0 'org.cocoapods.Auth0' '<DVTFilePath:0x7ff6b1fc7040:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/Auth0.framework'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~jvqIt0
+2019-04-19 15:28:54 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~jvqIt0' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/Auth0.framework'
+2019-04-19 15:29:03 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/Auth0.framework: signed bundle with Mach-O universal (arm64) [org.cocoapods.Auth0]
+2019-04-19 15:29:03 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:03 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b1da6240 'org.cocoapods.SimpleKeychain' '<DVTFilePath:0x7ff6cb1efd10:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/SimpleKeychain.framework'>'>: {
+}
+2019-04-19 15:29:03 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b1da6240 'org.cocoapods.SimpleKeychain' '<DVTFilePath:0x7ff6cb1efd10:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/SimpleKeychain.framework'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~PZTQvT
+2019-04-19 15:29:03 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~PZTQvT' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/SimpleKeychain.framework'
+2019-04-19 15:29:11 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/SimpleKeychain.framework: signed bundle with Mach-O universal (arm64) [org.cocoapods.SimpleKeychain]
+2019-04-19 15:29:11 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:11 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b5528020 'org.cocoapods.SwiftKeychainWrapper' '<DVTFilePath:0x7ff6b53ce380:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework'>'>: {
+}
+2019-04-19 15:29:11 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b5528020 'org.cocoapods.SwiftKeychainWrapper' '<DVTFilePath:0x7ff6b53ce380:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~7oiAv9
+2019-04-19 15:29:11 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~7oiAv9' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework'
+2019-04-19 15:29:12 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework: signed bundle with Mach-O universal (arm64) [org.cocoapods.SwiftKeychainWrapper]
+2019-04-19 15:29:12 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:12 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b5b0e7c0 'com.twilio.TwilioVoiceClient' '<DVTFilePath:0x7ff6b5352bf0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/TwilioVoice.framework'>'>: {
+}
+2019-04-19 15:29:12 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b5b0e7c0 'com.twilio.TwilioVoiceClient' '<DVTFilePath:0x7ff6b5352bf0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/TwilioVoice.framework'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~eHVwx5
+2019-04-19 15:29:12 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~eHVwx5' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/TwilioVoice.framework'
+2019-04-19 15:29:12 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/TwilioVoice.framework: signed bundle with Mach-O universal (arm64) [com.twilio.TwilioVoiceClient]
+2019-04-19 15:29:12 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:12 +0000  Entitlements for <IDEDistributionItem: 0x7ff6d1919190 'com.apple.dt.runtime.swiftAVFoundation' '<DVTFilePath:0x7ff6b554f870:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftAVFoundation.dylib'>'>: {
+}
+2019-04-19 15:29:12 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6d1919190 'com.apple.dt.runtime.swiftAVFoundation' '<DVTFilePath:0x7ff6b554f870:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftAVFoundation.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~vfgi1r
+2019-04-19 15:29:12 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~vfgi1r' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftAVFoundation.dylib'
+2019-04-19 15:29:12 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftAVFoundation.dylib: replacing existing signature
+2019-04-19 15:29:12 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftAVFoundation.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftAVFoundation]
+2019-04-19 15:29:12 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:12 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b5573580 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7ff6b1c88650:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCore.dylib'>'>: {
+}
+2019-04-19 15:29:12 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b5573580 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7ff6b1c88650:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCore.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~VkP7ZS
+2019-04-19 15:29:12 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~VkP7ZS' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCore.dylib'
+2019-04-19 15:29:12 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCore.dylib: replacing existing signature
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCore.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCore]
+2019-04-19 15:29:13 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:13 +0000  Entitlements for <IDEDistributionItem: 0x7ff6c8db11e0 'com.apple.dt.runtime.swiftCoreAudio' '<DVTFilePath:0x7ff6c8354120:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreAudio.dylib'>'>: {
+}
+2019-04-19 15:29:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6c8db11e0 'com.apple.dt.runtime.swiftCoreAudio' '<DVTFilePath:0x7ff6c8354120:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreAudio.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~59tOT9
+2019-04-19 15:29:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~59tOT9' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreAudio.dylib'
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreAudio.dylib: replacing existing signature
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreAudio.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCoreAudio]
+2019-04-19 15:29:13 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:13 +0000  Entitlements for <IDEDistributionItem: 0x7ff6cb0bd670 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7ff6b559afb0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib'>'>: {
+}
+2019-04-19 15:29:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6cb0bd670 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7ff6b559afb0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~UXAMoc
+2019-04-19 15:29:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~UXAMoc' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib'
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib: replacing existing signature
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCoreFoundation]
+2019-04-19 15:29:13 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:13 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b518eb00 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7ff6b55ad8c0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib'>'>: {
+}
+2019-04-19 15:29:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b518eb00 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7ff6b55ad8c0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~3mIPsV
+2019-04-19 15:29:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~3mIPsV' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib'
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib: replacing existing signature
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCoreGraphics]
+2019-04-19 15:29:13 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:13 +0000  Entitlements for <IDEDistributionItem: 0x7ff6c699c010 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7ff6c698d230:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreImage.dylib'>'>: {
+}
+2019-04-19 15:29:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6c699c010 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7ff6c698d230:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreImage.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~9eLLyI
+2019-04-19 15:29:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~9eLLyI' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreImage.dylib'
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreImage.dylib: replacing existing signature
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreImage.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCoreImage]
+2019-04-19 15:29:13 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:13 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b5587310 'com.apple.dt.runtime.swiftCoreMedia' '<DVTFilePath:0x7ff6b554b4d0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreMedia.dylib'>'>: {
+}
+2019-04-19 15:29:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b5587310 'com.apple.dt.runtime.swiftCoreMedia' '<DVTFilePath:0x7ff6b554b4d0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftCoreMedia.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~4fyvYN
+2019-04-19 15:29:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~4fyvYN' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreMedia.dylib'
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreMedia.dylib: replacing existing signature
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftCoreMedia.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCoreMedia]
+2019-04-19 15:29:13 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:13 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b5563010 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7ff6b5555a00:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftDarwin.dylib'>'>: {
+}
+2019-04-19 15:29:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b5563010 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7ff6b5555a00:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftDarwin.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~w1GqA0
+2019-04-19 15:29:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~w1GqA0' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDarwin.dylib'
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDarwin.dylib: replacing existing signature
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDarwin.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftDarwin]
+2019-04-19 15:29:13 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:13 +0000  Entitlements for <IDEDistributionItem: 0x7ff6ca9db4e0 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7ff6b55d1cd0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftDispatch.dylib'>'>: {
+}
+2019-04-19 15:29:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6ca9db4e0 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7ff6b55d1cd0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftDispatch.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~dXVm4p
+2019-04-19 15:29:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~dXVm4p' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDispatch.dylib'
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDispatch.dylib: replacing existing signature
+2019-04-19 15:29:13 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftDispatch.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftDispatch]
+2019-04-19 15:29:13 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:13 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b55daf10 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7ff6c3a1a1e0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftFoundation.dylib'>'>: {
+}
+2019-04-19 15:29:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b55daf10 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7ff6c3a1a1e0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftFoundation.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~h70a9g
+2019-04-19 15:29:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~h70a9g' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftFoundation.dylib'
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftFoundation.dylib: replacing existing signature
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftFoundation.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftFoundation]
+2019-04-19 15:29:14 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:14 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b5e1c9c0 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7ff6d1bbfb90:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftMetal.dylib'>'>: {
+}
+2019-04-19 15:29:14 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b5e1c9c0 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7ff6d1bbfb90:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftMetal.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~UPXta5
+2019-04-19 15:29:14 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~UPXta5' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftMetal.dylib'
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftMetal.dylib: replacing existing signature
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftMetal.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftMetal]
+2019-04-19 15:29:14 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:14 +0000  Entitlements for <IDEDistributionItem: 0x7ff6c79ae1d0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7ff6b535e7b0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftObjectiveC.dylib'>'>: {
+}
+2019-04-19 15:29:14 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6c79ae1d0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7ff6b535e7b0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftObjectiveC.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~YCxAao
+2019-04-19 15:29:14 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~YCxAao' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftObjectiveC.dylib'
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftObjectiveC.dylib: replacing existing signature
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftObjectiveC.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftObjectiveC]
+2019-04-19 15:29:14 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:14 +0000  Entitlements for <IDEDistributionItem: 0x7ff6b5592dd0 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7ff6d1984ec0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftQuartzCore.dylib'>'>: {
+}
+2019-04-19 15:29:14 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6b5592dd0 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7ff6d1984ec0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftQuartzCore.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~Xerj79
+2019-04-19 15:29:14 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~Xerj79' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftQuartzCore.dylib'
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftQuartzCore.dylib: replacing existing signature
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftQuartzCore.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftQuartzCore]
+2019-04-19 15:29:14 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:14 +0000  Entitlements for <IDEDistributionItem: 0x7ff6d1918680 'com.apple.dt.runtime.swiftUIKit' '<DVTFilePath:0x7ff6c792a700:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftUIKit.dylib'>'>: {
+}
+2019-04-19 15:29:14 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6d1918680 'com.apple.dt.runtime.swiftUIKit' '<DVTFilePath:0x7ff6c792a700:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftUIKit.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~OeBfl8
+2019-04-19 15:29:14 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~OeBfl8' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftUIKit.dylib'
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftUIKit.dylib: replacing existing signature
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftUIKit.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftUIKit]
+2019-04-19 15:29:14 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:14 +0000  Entitlements for <IDEDistributionItem: 0x7ff6ca9ee7b0 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7ff6b55aef90:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftos.dylib'>'>: {
+}
+2019-04-19 15:29:14 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6ca9ee7b0 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7ff6b55aef90:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftos.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~mOwYSb
+2019-04-19 15:29:14 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~mOwYSb' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftos.dylib'
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftos.dylib: replacing existing signature
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftos.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftos]
+2019-04-19 15:29:14 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:14 +0000  Entitlements for <IDEDistributionItem: 0x7ff6cb0b0840 'com.apple.dt.runtime.swiftsimd' '<DVTFilePath:0x7ff6b55753f0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftsimd.dylib'>'>: {
+}
+2019-04-19 15:29:14 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6cb0b0840 'com.apple.dt.runtime.swiftsimd' '<DVTFilePath:0x7ff6b55753f0:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app/Frameworks/libswiftsimd.dylib'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~Kco46z
+2019-04-19 15:29:14 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~Kco46z' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftsimd.dylib'
+2019-04-19 15:29:14 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftsimd.dylib: replacing existing signature
+2019-04-19 15:29:15 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app/Frameworks/libswiftsimd.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftsimd]
+2019-04-19 15:29:15 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:15 +0000  Entitlements for <IDEDistributionItem: 0x7ff6c881e1d0 'com.lambdaschool.Sergey.Intercom-App' '<DVTFilePath:0x7ff6c1e1b170:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app'>'>: {
+    "application-identifier" = "VXUQXR6S56.com.lambdaschool.Sergey.Intercom-App";
+    "aps-environment" = production;
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = VXUQXR6S56;
+    "get-task-allow" = 0;
+}
+2019-04-19 15:29:15 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff6c881e1d0 'com.lambdaschool.Sergey.Intercom-App' '<DVTFilePath:0x7ff6c1e1b170:'/Users/sergey/Library/Developer/Xcode/Archives/2019-04-19/Intercom App 4-19-19, 8.24 AM.xcarchive/Products/Applications/Intercom App.app'>'> to: /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~VsSYBT
+2019-04-19 15:29:15 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5' '--entitlements' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/entitlements~~~VsSYBT' '--preserve-metadata=identifier,flags,runtime' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app'
+2019-04-19 15:29:15 +0000  /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root/Payload/Intercom App.app: signed app bundle with Mach-O thin (arm64) [com.lambdaschool.Sergey.Intercom-App]
+2019-04-19 15:29:15 +0000  /usr/bin/codesign exited with 0
+2019-04-19 15:29:15 +0000  Processing step: IDEDistributionZipODRItemStep
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2019-04-19 15:29:15 +0000  Processing step: IDEDistributionCreateIPAStep
+2019-04-19 15:29:15 +0000  Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root' '/var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Packages/Intercom App.ipa'
+2019-04-19 15:29:15 +0000  >>> Copying /var/folders/l9/cg0p5hnj00jcggwj2f9plm540000gn/T/XcodeDistPipeline.~~~9IAicK/Root 
+2019-04-19 15:29:15 +0000  copying file ./BCSymbolMaps/1D8CDE26-85FD-3FEF-9755-A0FF7F1D3BCB.bcsymbolmap ... 
+2019-04-19 15:29:15 +0000  32853 bytes for ./BCSymbolMaps/1D8CDE26-85FD-3FEF-9755-A0FF7F1D3BCB.bcsymbolmap
+2019-04-19 15:29:15 +0000  copying file ./BCSymbolMaps/C561E024-6E9C-37BB-82FA-9E8571A92D83.bcsymbolmap ... 
+2019-04-19 15:29:15 +0000  181164 bytes for ./BCSymbolMaps/C561E024-6E9C-37BB-82FA-9E8571A92D83.bcsymbolmap
+copying file ./BCSymbolMaps/AA201117-078B-315D-93F8-AA2354CD85A2.bcsymbolmap ... 
+2019-04-19 15:29:15 +0000  11987 bytes for ./BCSymbolMaps/AA201117-078B-315D-93F8-AA2354CD85A2.bcsymbolmap
+copying file ./BCSymbolMaps/BA4A0A57-D306-3A98-9C19-5A514BCC03FF.bcsymbolmap ... 
+2019-04-19 15:29:15 +0000  214549 bytes for ./BCSymbolMaps/BA4A0A57-D306-3A98-9C19-5A514BCC03FF.bcsymbolmap
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/_CodeSignature/CodeResources ... 
+2019-04-19 15:29:15 +0000  20225 bytes for ./Payload/Intercom App.app/_CodeSignature/CodeResources
+copying file ./Payload/Intercom App.app/disconnect.wav ... 
+2019-04-19 15:29:15 +0000  89516 bytes for ./Payload/Intercom App.app/disconnect.wav
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Intercom App ... 
+2019-04-19 15:29:15 +0000  2079888 bytes for ./Payload/Intercom App.app/Intercom App
+copying file ./Payload/Intercom App.app/Auth0.plist ... 
+2019-04-19 15:29:15 +0000  127 bytes for ./Payload/Intercom App.app/Auth0.plist
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UITableViewController-uLP-2d-zlx.nib ... 
+2019-04-19 15:29:15 +0000  1212 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UITableViewController-uLP-2d-zlx.nib
+copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/GroupListController.nib ... 
+2019-04-19 15:29:15 +0000  2543 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/GroupListController.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/Z5r-Nj-yxM-view-VYU-TN-WEs.nib ... 
+2019-04-19 15:29:15 +0000  6039 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/Z5r-Nj-yxM-view-VYU-TN-WEs.nib
+copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UIViewController-YM6-6z-nh5.nib ... 
+2019-04-19 15:29:15 +0000  989 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UIViewController-YM6-6z-nh5.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/YZi-Jv-pJV-view-oY4-LV-1Ra.nib ... 
+2019-04-19 15:29:15 +0000  7019 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/YZi-Jv-pJV-view-oY4-LV-1Ra.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UITableViewController-rT1-x1-2Uj.nib ... 
+2019-04-19 15:29:15 +0000  1208 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UITableViewController-rT1-x1-2Uj.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/rT1-x1-2Uj-view-wtK-fa-M0Q.nib ... 
+2019-04-19 15:29:15 +0000  6434 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/rT1-x1-2Uj-view-wtK-fa-M0Q.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UITableViewController-TnA-A6-i80.nib ... 
+2019-04-19 15:29:15 +0000  1916 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UITableViewController-TnA-A6-i80.nib
+copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/GroupNavController.nib ... 
+2019-04-19 15:29:15 +0000  3236 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/GroupNavController.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UIViewController-cgp-YC-AX1.nib ... 
+2019-04-19 15:29:15 +0000  761 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UIViewController-cgp-YC-AX1.nib
+copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/YM6-6z-nh5-view-XTv-dr-sKF.nib ... 
+2019-04-19 15:29:15 +0000  5269 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/YM6-6z-nh5-view-XTv-dr-sKF.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/Dh5-Dj-HVh-view-PBe-cO-uPh.nib ... 
+2019-04-19 15:29:15 +0000  10349 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/Dh5-Dj-HVh-view-PBe-cO-uPh.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/uLP-2d-zlx-view-DEM-al-nuj.nib ... 
+2019-04-19 15:29:15 +0000  4550 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/uLP-2d-zlx-view-DEM-al-nuj.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UIViewController-uiF-ZB-D2L.nib ... 
+2019-04-19 15:29:15 +0000  1478 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UIViewController-uiF-ZB-D2L.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UIViewController-nSn-kU-O1J.nib ... 
+2019-04-19 15:29:15 +0000  1767 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/UIViewController-nSn-kU-O1J.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/uiF-ZB-D2L-view-Kxp-If-iZ7.nib ... 
+2019-04-19 15:29:15 +0000  10269 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/uiF-ZB-D2L-view-Kxp-If-iZ7.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/nSn-kU-O1J-view-Lsp-Br-vgu.nib ... 
+2019-04-19 15:29:15 +0000  4499 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/nSn-kU-O1J-view-Lsp-Br-vgu.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/groupChatroom.nib ... 
+2019-04-19 15:29:15 +0000  2282 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/groupChatroom.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/TnA-A6-i80-view-g3g-E9-aqp.nib ... 
+2019-04-19 15:29:15 +0000  4040 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/TnA-A6-i80-view-g3g-E9-aqp.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/Info.plist ... 
+2019-04-19 15:29:15 +0000  1017 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/Info.plist
+copying file ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/GroupInvites.nib ... 
+2019-04-19 15:29:15 +0000  1251 bytes for ./Payload/Intercom App.app/Base.lproj/Main.storyboardc/GroupInvites.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2019-04-19 15:29:15 +0000  3881 bytes for ./Payload/Intercom App.app/Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2019-04-19 15:29:15 +0000  832 bytes for ./Payload/Intercom App.app/Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/Base.lproj/LaunchScreen.storyboardc/Info.plist ... 
+2019-04-19 15:29:15 +0000  258 bytes for ./Payload/Intercom App.app/Base.lproj/LaunchScreen.storyboardc/Info.plist
+2019-04-19 15:29:15 +0000  copying file ./Payload/Intercom App.app/incoming.wav ... 
+2019-04-19 15:29:15 +0000  371756 bytes for ./Payload/Intercom App.app/incoming.wav
+copying file ./Payload/Intercom App.app/Assets.car ... 
+2019-04-19 15:29:16 +0000  7476328 bytes for ./Payload/Intercom App.app/Assets.car
+2019-04-19 15:29:16 +0000  copying file ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/UINavigationController-aou-1F-xDq.nib ... 
+2019-04-19 15:29:16 +0000  1989 bytes for ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/UINavigationController-aou-1F-xDq.nib
+copying file ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/AddViewController.nib ... 
+2019-04-19 15:29:16 +0000  2083 bytes for ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/AddViewController.nib
+copying file ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/wEV-9I-D7H-view-fl6-Dh-ysB.nib ... 
+2019-04-19 15:29:16 +0000  10177 bytes for ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/wEV-9I-D7H-view-fl6-Dh-ysB.nib
+copying file ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib ... 
+2019-04-19 15:29:16 +0000  10910 bytes for ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib
+copying file ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/TzR-PK-iv7-view-Sgh-Cg-IUf.nib ... 
+2019-04-19 15:29:16 +0000  4620 bytes for ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/TzR-PK-iv7-view-Sgh-Cg-IUf.nib
+copying file ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/UIViewController-wEV-9I-D7H.nib ... 
+2019-04-19 15:29:16 +0000  1270 bytes for ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/UIViewController-wEV-9I-D7H.nib
+copying file ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/Info.plist ... 
+2019-04-19 15:29:16 +0000  397 bytes for ./Payload/Intercom App.app/MultipeerVoiceChat.storyboardc/Info.plist
+2019-04-19 15:29:16 +0000  copying file ./Payload/Intercom App.app/Frameworks/SimpleKeychain.framework/_CodeSignature/CodeResources ... 
+2019-04-19 15:29:16 +0000  1798 bytes for ./Payload/Intercom App.app/Frameworks/SimpleKeychain.framework/_CodeSignature/CodeResources
+2019-04-19 15:29:16 +0000  copying file ./Payload/Intercom App.app/Frameworks/SimpleKeychain.framework/SimpleKeychain ... 
+2019-04-19 15:29:16 +0000  196192 bytes for ./Payload/Intercom App.app/Frameworks/SimpleKeychain.framework/SimpleKeychain
+copying file ./Payload/Intercom App.app/Frameworks/SimpleKeychain.framework/Info.plist ... 
+2019-04-19 15:29:16 +0000  752 bytes for ./Payload/Intercom App.app/Frameworks/SimpleKeychain.framework/Info.plist
+copying file ./Payload/Intercom App.app/Frameworks/libswiftCoreImage.dylib ... 
+2019-04-19 15:29:16 +0000  352368 bytes for ./Payload/Intercom App.app/Frameworks/libswiftCoreImage.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftObjectiveC.dylib ... 
+2019-04-19 15:29:16 +0000  500080 bytes for ./Payload/Intercom App.app/Frameworks/libswiftObjectiveC.dylib
+2019-04-19 15:29:16 +0000  copying file ./Payload/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework/_CodeSignature/CodeResources ... 
+2019-04-19 15:29:16 +0000  1798 bytes for ./Payload/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework/_CodeSignature/CodeResources
+copying file ./Payload/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework/SwiftKeychainWrapper ... 
+2019-04-19 15:29:16 +0000  306672 bytes for ./Payload/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework/SwiftKeychainWrapper
+copying file ./Payload/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework/Info.plist ... 
+2019-04-19 15:29:16 +0000  766 bytes for ./Payload/Intercom App.app/Frameworks/SwiftKeychainWrapper.framework/Info.plist
+2019-04-19 15:29:16 +0000  copying file ./Payload/Intercom App.app/Frameworks/TwilioVoice.framework/_CodeSignature/CodeResources ... 
+2088 bytes for ./Payload/Intercom App.app/Frameworks/TwilioVoice.framework/_CodeSignature/CodeResources
+copying file ./Payload/Intercom App.app/Frameworks/TwilioVoice.framework/TwilioVoice ... 
+2019-04-19 15:29:16 +0000  10707808 bytes for ./Payload/Intercom App.app/Frameworks/TwilioVoice.framework/TwilioVoice
+copying file ./Payload/Intercom App.app/Frameworks/TwilioVoice.framework/Info.plist ... 
+2019-04-19 15:29:16 +0000  744 bytes for ./Payload/Intercom App.app/Frameworks/TwilioVoice.framework/Info.plist
+copying file ./Payload/Intercom App.app/Frameworks/TwilioVoice.framework/remove_archs ... 
+2019-04-19 15:29:16 +0000  529 bytes for ./Payload/Intercom App.app/Frameworks/TwilioVoice.framework/remove_archs
+2019-04-19 15:29:16 +0000  copying file ./Payload/Intercom App.app/Frameworks/libswiftCore.dylib ... 
+2019-04-19 15:29:19 +0000  69852784 bytes for ./Payload/Intercom App.app/Frameworks/libswiftCore.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib ... 
+2019-04-19 15:29:19 +0000  1535328 bytes for ./Payload/Intercom App.app/Frameworks/libswiftCoreGraphics.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftUIKit.dylib ... 
+2019-04-19 15:29:19 +0000  1200960 bytes for ./Payload/Intercom App.app/Frameworks/libswiftUIKit.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftMetal.dylib ... 
+2019-04-19 15:29:19 +0000  544896 bytes for ./Payload/Intercom App.app/Frameworks/libswiftMetal.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftDispatch.dylib ... 
+2019-04-19 15:29:19 +0000  2993312 bytes for ./Payload/Intercom App.app/Frameworks/libswiftDispatch.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftos.dylib ... 
+2019-04-19 15:29:19 +0000  644944 bytes for ./Payload/Intercom App.app/Frameworks/libswiftos.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib ... 
+2019-04-19 15:29:19 +0000  335920 bytes for ./Payload/Intercom App.app/Frameworks/libswiftCoreFoundation.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftDarwin.dylib ... 
+2019-04-19 15:29:19 +0000  813968 bytes for ./Payload/Intercom App.app/Frameworks/libswiftDarwin.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftQuartzCore.dylib ... 
+2019-04-19 15:29:19 +0000  355584 bytes for ./Payload/Intercom App.app/Frameworks/libswiftQuartzCore.dylib
+2019-04-19 15:29:19 +0000  copying file ./Payload/Intercom App.app/Frameworks/Auth0.framework/_CodeSignature/CodeResources ... 
+1798 bytes for ./Payload/Intercom App.app/Frameworks/Auth0.framework/_CodeSignature/CodeResources
+2019-04-19 15:29:19 +0000  copying file ./Payload/Intercom App.app/Frameworks/Auth0.framework/Auth0 ... 
+2019-04-19 15:29:19 +0000  2210752 bytes for ./Payload/Intercom App.app/Frameworks/Auth0.framework/Auth0
+copying file ./Payload/Intercom App.app/Frameworks/Auth0.framework/Info.plist ... 
+2019-04-19 15:29:19 +0000  735 bytes for ./Payload/Intercom App.app/Frameworks/Auth0.framework/Info.plist
+copying file ./Payload/Intercom App.app/Frameworks/libswiftCoreAudio.dylib ... 
+2019-04-19 15:29:19 +0000  607472 bytes for ./Payload/Intercom App.app/Frameworks/libswiftCoreAudio.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftAVFoundation.dylib ... 
+2019-04-19 15:29:19 +0000  1243856 bytes for ./Payload/Intercom App.app/Frameworks/libswiftAVFoundation.dylib
+2019-04-19 15:29:19 +0000  copying file ./Payload/Intercom App.app/Frameworks/libswiftFoundation.dylib ... 
+2019-04-19 15:29:20 +0000  31957072 bytes for ./Payload/Intercom App.app/Frameworks/libswiftFoundation.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftCoreMedia.dylib ... 
+2019-04-19 15:29:20 +0000  598816 bytes for ./Payload/Intercom App.app/Frameworks/libswiftCoreMedia.dylib
+copying file ./Payload/Intercom App.app/Frameworks/libswiftsimd.dylib ... 
+2019-04-19 15:29:20 +0000  3118768 bytes for ./Payload/Intercom App.app/Frameworks/libswiftsimd.dylib
+copying file ./Payload/Intercom App.app/embedded.mobileprovision ... 
+2019-04-19 15:29:20 +0000  11548 bytes for ./Payload/Intercom App.app/embedded.mobileprovision
+copying file ./Payload/Intercom App.app/Info.plist ... 
+2019-04-19 15:29:20 +0000  1475 bytes for ./Payload/Intercom App.app/Info.plist
+copying file ./Payload/Intercom App.app/PkgInfo ... 
+2019-04-19 15:29:20 +0000  8 bytes for ./Payload/Intercom App.app/PkgInfo
+copying file ./Payload/Intercom App.app/outgoing.wav ... 
+2019-04-19 15:29:20 +0000  300764 bytes for ./Payload/Intercom App.app/outgoing.wav
+2019-04-19 15:29:20 +0000  copying file ./SwiftSupport/iphoneos/libswiftCoreImage.dylib ... 
+2019-04-19 15:29:20 +0000  408288 bytes for ./SwiftSupport/iphoneos/libswiftCoreImage.dylib
+copying file ./SwiftSupport/iphoneos/libswiftObjectiveC.dylib ... 
+2019-04-19 15:29:20 +0000  621408 bytes for ./SwiftSupport/iphoneos/libswiftObjectiveC.dylib
+copying file ./SwiftSupport/iphoneos/libswiftCore.dylib ... 
+2019-04-19 15:29:24 +0000  95439296 bytes for ./SwiftSupport/iphoneos/libswiftCore.dylib
+copying file ./SwiftSupport/iphoneos/libswiftCoreGraphics.dylib ... 
+2019-04-19 15:29:24 +0000  1999136 bytes for ./SwiftSupport/iphoneos/libswiftCoreGraphics.dylib
+copying file ./SwiftSupport/iphoneos/libswiftUIKit.dylib ... 
+2019-04-19 15:29:25 +0000  1550528 bytes for ./SwiftSupport/iphoneos/libswiftUIKit.dylib
+copying file ./SwiftSupport/iphoneos/libswiftMetal.dylib ... 
+2019-04-19 15:29:25 +0000  666144 bytes for ./SwiftSupport/iphoneos/libswiftMetal.dylib
+copying file ./SwiftSupport/iphoneos/libswiftDispatch.dylib ... 
+2019-04-19 15:29:25 +0000  4015008 bytes for ./SwiftSupport/iphoneos/libswiftDispatch.dylib
+copying file ./SwiftSupport/iphoneos/libswiftos.dylib ... 
+2019-04-19 15:29:25 +0000  798896 bytes for ./SwiftSupport/iphoneos/libswiftos.dylib
+2019-04-19 15:29:25 +0000  copying file ./SwiftSupport/iphoneos/libswiftCoreFoundation.dylib ... 
+2019-04-19 15:29:25 +0000  392112 bytes for ./SwiftSupport/iphoneos/libswiftCoreFoundation.dylib
+copying file ./SwiftSupport/iphoneos/libswiftDarwin.dylib ... 
+2019-04-19 15:29:25 +0000  1049536 bytes for ./SwiftSupport/iphoneos/libswiftDarwin.dylib
+copying file ./SwiftSupport/iphoneos/libswiftQuartzCore.dylib ... 
+2019-04-19 15:29:25 +0000  477216 bytes for ./SwiftSupport/iphoneos/libswiftQuartzCore.dylib
+copying file ./SwiftSupport/iphoneos/libswiftCoreAudio.dylib ... 
+2019-04-19 15:29:25 +0000  810528 bytes for ./SwiftSupport/iphoneos/libswiftCoreAudio.dylib
+copying file ./SwiftSupport/iphoneos/libswiftAVFoundation.dylib ... 
+2019-04-19 15:29:25 +0000  1642960 bytes for ./SwiftSupport/iphoneos/libswiftAVFoundation.dylib
+copying file ./SwiftSupport/iphoneos/libswiftFoundation.dylib ... 
+2019-04-19 15:29:27 +0000  43068800 bytes for ./SwiftSupport/iphoneos/libswiftFoundation.dylib
+copying file ./SwiftSupport/iphoneos/libswiftCoreMedia.dylib ... 
+2019-04-19 15:29:27 +0000  736304 bytes for ./SwiftSupport/iphoneos/libswiftCoreMedia.dylib
+copying file ./SwiftSupport/iphoneos/libswiftsimd.dylib ... 
+2019-04-19 15:29:27 +0000  4075888 bytes for ./SwiftSupport/iphoneos/libswiftsimd.dylib
+2019-04-19 15:29:27 +0000  /usr/bin/ditto exited with 0
+2019-04-19 15:29:27 +0000  Processing step: IDEDistributionAppStoreInformationStep
+2019-04-19 15:29:27 +0000  Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2019-04-19 15:29:27 +0000  Processing step: IDEDistributionCreateManifestStep
+2019-04-19 15:29:27 +0000  Skipping step: IDEDistributionCreateManifestStep because it said so

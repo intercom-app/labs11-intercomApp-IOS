@@ -9,6 +9,7 @@
 import UIKit
 import TwilioVoice
 import UserNotifications
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NSLog("Twilio Voice Version: %@", TwilioVoice.version())
         self.configureUserNotifications()
-       
+        STPPaymentConfiguration.shared().appleMerchantIdentifier = "your apple merchant identifier"
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_TYooMQauvdEDq54NiTphI7jx"
         let settings = UIUserNotificationSettings(types: .alert, categories: nil)
         UIApplication.shared.registerUserNotificationSettings(settings)
         UIApplication.shared.registerForRemoteNotifications()
