@@ -43,7 +43,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBOutlet weak var speakerSwitch: UISwitch!
     
     //    var serverURL =  "https://intercom-be.herokuapp.com/api/voice"
-        var path = "/register-binding"
+    var path = "/register-binding"
     var identity: String?
     var deviceTokenString:String?
     var voipRegistry:PKPushRegistry
@@ -89,7 +89,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         guard let ownerName = group?.owners.first?.displayName else { return }
         groupOwner.text = "Group Owner: " + ownerName
         if TeamImporter.shared.userID == group?.owners.first?.id {
-            deleteGroupOutlet.title = "Delete Group"
+            deleteGroupOutlet.title = "Delete"
             groupNameTextField.isEnabled = true
             
         }
@@ -120,7 +120,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         deleteGroupOutlet.title = "Leave"
         groupNameTextField.isEnabled = false
         updateView()
-        
+        registerDeviceToken()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -165,7 +165,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         
         var params = ["identity": identity,
                       "BindingType" : "apn",
-                      "Address" : deviceToken]
+                      "Address" : deviceToken,
+                      "tags" : [""]] as [String : Any]
         
         //Check if we have an Endpoint identifier already for this app
         if let endpoint = try? KeychainAccess.readEndpoint(identity: identity){
@@ -236,7 +237,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
                 return
             }
             self.navigationController?.isNavigationBarHidden = true
-            registerDeviceToken()
+            
             viewActivityButton.isHidden = true
             viewGroupMembersButton.isHidden = true
             self.callStatus = true

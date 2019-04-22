@@ -485,7 +485,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="S7T-MF-o3c">
-                                <rect key="frame" x="60" y="243" width="255.5" height="24"/>
+                                <rect key="frame" x="60" y="258" width="255.5" height="24"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gdb-zp-lHw">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="24"/>
@@ -505,39 +505,58 @@
                                     <constraint firstAttribute="width" constant="255.5" id="NHi-1d-oOp"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-EL-vCR">
-                                <rect key="frame" x="100.5" y="318.5" width="174" height="30"/>
-                                <state key="normal" title="Change Payment Method"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-EL-vCR" customClass="CallButton" customModule="Intercom_App" customModuleProvider="target">
+                                <rect key="frame" x="140" y="372" width="95" height="35"/>
+                                <color key="backgroundColor" red="0.0087706133829999998" green="0.38729036579999998" blue="0.77549968270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Nwx-Oo-ErV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="yps-QY-FMr"/>
+                                </constraints>
+                                <state key="normal" title="Add Money">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="changePaymentMethod:" destination="uiF-ZB-D2L" eventType="touchUpInside" id="fE9-aJ-nKG"/>
+                                    <action selector="makePayment:" destination="uiF-ZB-D2L" eventType="touchUpInside" id="EBr-P1-Jju"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eV-pQ-xzr">
+                                <rect key="frame" x="147.5" y="312" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="7pt-3R-vX5"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="S7T-MF-o3c" firstAttribute="top" secondItem="rna-gP-MES" secondAttribute="bottom" constant="15" id="0es-Ji-GbQ"/>
+                            <constraint firstItem="S7T-MF-o3c" firstAttribute="top" secondItem="rna-gP-MES" secondAttribute="bottom" constant="30" id="0es-Ji-GbQ"/>
                             <constraint firstItem="lir-Du-7jZ" firstAttribute="trailing" secondItem="gk5-N9-UEw" secondAttribute="trailing" constant="208" id="2H3-ht-waK"/>
                             <constraint firstItem="JK2-4e-lQm" firstAttribute="top" secondItem="gk5-N9-UEw" secondAttribute="bottom" constant="30" id="2Jg-Ft-Jtd"/>
                             <constraint firstItem="lir-Du-7jZ" firstAttribute="trailing" secondItem="rna-gP-MES" secondAttribute="trailing" constant="197" id="9vM-Rk-Nam"/>
                             <constraint firstItem="S7T-MF-o3c" firstAttribute="centerX" secondItem="lir-Du-7jZ" secondAttribute="centerX" id="E6L-9a-OSu"/>
+                            <constraint firstItem="1eV-pQ-xzr" firstAttribute="top" secondItem="S7T-MF-o3c" secondAttribute="bottom" constant="30" id="QQG-Xd-nDU"/>
                             <constraint firstItem="JK2-4e-lQm" firstAttribute="centerX" secondItem="lir-Du-7jZ" secondAttribute="centerX" id="SRY-gF-Lbu"/>
                             <constraint firstItem="rna-gP-MES" firstAttribute="top" secondItem="JK2-4e-lQm" secondAttribute="bottom" constant="30" id="Tgd-nl-Esa"/>
                             <constraint firstItem="gk5-N9-UEw" firstAttribute="top" secondItem="lir-Du-7jZ" secondAttribute="top" constant="20" id="X9U-1Y-JAh"/>
                             <constraint firstItem="gk5-N9-UEw" firstAttribute="leading" secondItem="lir-Du-7jZ" secondAttribute="leading" constant="20" id="aQg-bA-hxU"/>
                             <constraint firstItem="Vne-EL-vCR" firstAttribute="centerX" secondItem="Kxp-If-iZ7" secondAttribute="centerX" id="gVC-Iz-DAe"/>
-                            <constraint firstItem="Vne-EL-vCR" firstAttribute="centerY" secondItem="Kxp-If-iZ7" secondAttribute="centerY" id="q4V-VN-A4p"/>
+                            <constraint firstItem="1eV-pQ-xzr" firstAttribute="centerX" secondItem="lir-Du-7jZ" secondAttribute="centerX" id="jH5-at-BoX"/>
+                            <constraint firstItem="Vne-EL-vCR" firstAttribute="top" secondItem="1eV-pQ-xzr" secondAttribute="bottom" constant="30" id="qHA-Oe-sUo"/>
                             <constraint firstItem="rna-gP-MES" firstAttribute="leading" secondItem="lir-Du-7jZ" secondAttribute="leading" constant="20" id="raj-fd-fUO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lir-Du-7jZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Billing Settings" id="HpP-ln-MWp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1Az-FF-HxE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="1Az-FF-HxE">
                             <connections>
-                                <action selector="saveClicked:" destination="uiF-ZB-D2L" id="s5v-NN-SxO"/>
+                                <action selector="editCardInfo:" destination="uiF-ZB-D2L" id="QNs-3m-nO3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="amountTextField" destination="1eV-pQ-xzr" id="z7Y-jS-uL3"/>
                         <outlet property="cardIconView" destination="gdb-zp-lHw" id="ict-WI-f5F"/>
                         <outlet property="cardInfoLabel" destination="ghR-kp-BAy" id="hKM-Zh-VPO"/>
                         <outlet property="creditLabel" destination="JK2-4e-lQm" id="gFl-w1-ej3"/>

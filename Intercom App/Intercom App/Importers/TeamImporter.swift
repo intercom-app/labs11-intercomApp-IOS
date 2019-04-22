@@ -2,7 +2,7 @@
 //  TeamImporter.swift
 //  Intercom App
 //
-//  Created by Lotanna Igwe-Odunze on 3/21/19.
+//  Created by Sergey Osipyan on 3/27/19.
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 

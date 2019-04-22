@@ -2,8 +2,8 @@
 //  CardFieldViewController.swift
 //  UI Examples
 //
-//  Created by Ben Guo on 7/19/17.
-//  Copyright © 2017 Stripe. All rights reserved.
+//  Created by Sergey Osipyan on 4/22/19.
+//  Copyright © 2019 Lambda School. All rights reserved.
 //
 
 import UIKit
@@ -33,6 +33,7 @@ class CardFieldViewController: UIViewController {
     }
 
     @objc func done() {
+        
         guard let cardNumber = cardField.cardNumber else { return }
         let last4 = String(cardNumber.suffix(4))
         TeamImporter.shared.putCardLast4(last4: last4)

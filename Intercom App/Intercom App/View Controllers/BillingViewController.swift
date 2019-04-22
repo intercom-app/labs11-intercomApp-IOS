@@ -2,7 +2,7 @@
 //  BillingViewController.swift
 //  Intercom App
 //
-//  Created by Lotanna Igwe-Odunze on 4/12/19.
+//  Created by Sergey Osipyan on 4/22/19.
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
@@ -24,7 +24,8 @@ class BillingViewController: UIViewController {
     @IBOutlet weak var creditLabel: UILabel!
     @IBOutlet weak var cardInfoLabel: UILabel!
     @IBOutlet weak var cardIconView: UIImageView!
-  
+    @IBOutlet weak var amountTextField: UITextField!
+    
     
     //Properties
     var cardFullInfo: STPPaymentCardTextField?
@@ -35,11 +36,13 @@ class BillingViewController: UIViewController {
     func updateViews(){
        // guard let cardNumber = cardFullInfo?.cardNumber else { return }
        // let cardLast4 = String(cardNumber.suffix(4))
+        guard let balance = TeamImporter.shared.teamMembers?.accountBalance else {
+          return creditLabel.text = "Balance: $0" }
+        creditLabel.text = "Balance: $\(balance)"
         TeamImporter.shared.fetchLast4 { (last4) in
             DispatchQueue.main.async {
                 guard let last4 = last4 else {
-                    return self.cardInfoLabel.text = "Need Enter Card Info"
-                }
+                    return self.cardInfoLabel.text = "Need Enter Card Info" }
                 self.cardInfoLabel.text = "\(last4)"
             }
         }
@@ -49,32 +52,32 @@ class BillingViewController: UIViewController {
 
     //Actions
 
-    @IBAction func changePaymentMethod(_ sender: UIButton) {
+    
+    @IBAction func editCardInfo(_ sender: UIBarButtonItem) {
         
+        let navigationController = UINavigationController(rootViewController: cardFieldViewController)
+        present(navigationController, animated: true, completion: nil)
         
-//        let navigationController = UINavigationController(rootViewController: cardFieldViewController)
-//        present(navigationController, animated: true, completion: nil)
+       
+//        let addCardViewController = STPAddCardViewController()
+//        addCardViewController.delegate = self
+//        navigationController?.pushViewController(addCardViewController, animated: true)
         
-        // 1
-//        guard CheckoutCart.shared.canPay else {
-//            let alertController = UIAlertController(title: "Warning", message: "Your cart is empty", preferredStyle: .alert)
-//            let alertAction = UIAlertAction(title: "OK", style: .default)
-//            alertController.addAction(alertAction)
-//            present(alertController, animated: true)
-//            return
-//        }
-        // 2
-        let addCardViewController = STPAddCardViewController()
-        addCardViewController.delegate = self
-        navigationController?.pushViewController(addCardViewController, animated: true)
     }
 
-
-
-    @IBAction func saveClicked(_ sender: UIBarButtonItem) { navigationController?.popViewController(animated: true)
+   @IBAction func makePayment(_ sender: UIButton) {
+    
+    
+            guard let amount = amountTextField.text else {
+                let alertController = UIAlertController(title: "Warning", message: "Please enter amount in the field", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "OK", style: .default)
+                alertController.addAction(alertAction)
+                present(alertController, animated: true)
+                return
+            }
+    
     }
-
-
+    
 }
 
 
@@ -83,9 +86,8 @@ extension BillingViewController: STPAddCardViewControllerDelegate {
     func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
         navigationController?.popViewController(animated: true)
     }
-    
-    func addCardViewController(_ addCardViewController: STPAddCardViewController, amount: Int, didCreateToken token: STPToken, completion: @escaping STPErrorBlock) {
-        StripeClient.shared.completeCharge(with: token, amount: amount) { result in
+    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreateToken token: STPToken, completion: @escaping STPErrorBlock) {
+        StripeClient.shared.completeCharge(with: token, amount: Int(self.amountTextField.text!)!) { result in
             switch result {
             // 1
             case .success:
@@ -103,4 +105,6 @@ extension BillingViewController: STPAddCardViewControllerDelegate {
             }
         }
     }
+    
+    
 }

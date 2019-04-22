@@ -9,8 +9,8 @@
 import Foundation
 
 enum Constants {
-    static let publishableKey = "YOUR_PUBLISHABLE_KEY_HERE"
-    static let baseURLString = "http://localhost:4567"
+    static let publishableKey = "pk_test_d9gnSo6oBQsV5VcRkLYVMGSd00CMY0K3Pu"
+    static let baseURLString = "https://intercom-be.herokuapp.com/api/billing"
     static let defaultCurrency = "usd"
     static let defaultDescription = "Purchase from Intercom App iOS"
 }
