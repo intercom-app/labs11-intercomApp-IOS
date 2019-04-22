@@ -186,6 +186,8 @@ extension CallData: MCSessionDelegate {
             DispatchQueue.main.async {
                 self.currentTableView?.reloadData()
             }
+        @unknown default:
+            fatalError("Swich error")
         }
         
         delegate?.numConnectedPeersChanged(in: self)

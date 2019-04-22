@@ -16,6 +16,9 @@
 		4C9DE48B224C43E9008E6265 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */; };
 		4CB6AA4C2264692100C88CE1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB6AA4B2264692100C88CE1 /* UserManager.swift */; };
 		4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC028DC224408610097A2FD /* TeamImporter.swift */; };
+		A52A3888226D177F00F57746 /* CardFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A3887226D177E00F57746 /* CardFieldViewController.swift */; };
+		A52A388B226DAF5300F57746 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A388A226DAF5300F57746 /* Constants.swift */; };
+		A52A388D226DAF6900F57746 /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A388C226DAF6900F57746 /* StripeClient.swift */; };
 		A52A8426224421C5009A6593 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A8425224421C5009A6593 /* LoginButton.swift */; };
 		A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843222458464009A6593 /* GroupViewTableViewCell.swift */; };
 		A52A843522459455009A6593 /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A843422459455009A6593 /* GroupListViewController.swift */; };
@@ -67,6 +70,9 @@
 		4CB6AA4B2264692100C88CE1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		4CC028DC224408610097A2FD /* TeamImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamImporter.swift; sourceTree = "<group>"; };
 		7092D35AAFA1476D27B66940 /* Pods-Intercom App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intercom App.release.xcconfig"; path = "Target Support Files/Pods-Intercom App/Pods-Intercom App.release.xcconfig"; sourceTree = "<group>"; };
+		A52A3887226D177E00F57746 /* CardFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFieldViewController.swift; sourceTree = "<group>"; };
+		A52A388A226DAF5300F57746 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A52A388C226DAF6900F57746 /* StripeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
 		A52A8425224421C5009A6593 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		A52A843222458464009A6593 /* GroupViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewTableViewCell.swift; sourceTree = "<group>"; };
 		A52A843422459455009A6593 /* GroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +93,7 @@
 		A532F9CA225E5314007EEC18 /* ChatroomActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomActivityTableViewController.swift; sourceTree = "<group>"; };
 		A533C66F22664BB200F165C6 /* GroupInvitesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInvitesTableViewController.swift; sourceTree = "<group>"; };
 		A533C67122664E1200F165C6 /* GroupInvitesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInvitesTableViewCell.swift; sourceTree = "<group>"; };
+		A533C674226953D000F165C6 /* Intercom App.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intercom App.profdata"; sourceTree = "<group>"; };
 		A56AFD27225FB684008C67E9 /* CallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallButton.swift; sourceTree = "<group>"; };
 		A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUserTableViewController.swift; sourceTree = "<group>"; };
 		A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InviteUserTableViewCell.swift; path = ../InviteUserTableViewCell.swift; sourceTree = "<group>"; };
@@ -148,13 +155,14 @@
 				A5DC52EA224AB32600A24589 /* Login */,
 				A52A842F224583A2009A6593 /* Cell View */,
 				A52A843422459455009A6593 /* GroupListViewController.swift */,
-				A533C66F22664BB200F165C6 /* GroupInvitesTableViewController.swift */,
 				A5DC52F3224ADC1A00A24589 /* ChatroomViewController.swift */,
+				A533C66F22664BB200F165C6 /* GroupInvitesTableViewController.swift */,
 				A532F9CA225E5314007EEC18 /* ChatroomActivityTableViewController.swift */,
 				A5845C5422652DF5007777DA /* UserListTableViewController.swift */,
 				A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */,
 				4C9DE48A224C43E9008E6265 /* ProfileViewController.swift */,
 				4C90249D2260DBEF00E9843F /* BillingViewController.swift */,
+				A52A3887226D177E00F57746 /* CardFieldViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 				4C69CE5A2243FF6B00FCC33A /* Products */,
 				4FD39646C8F780EFAB9C91F2 /* Pods */,
 				2548EE492E421CA7D5357C34 /* Frameworks */,
+				A533C673226953CF00F165C6 /* OptimizationProfiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +224,7 @@
 				4C108A6322454BB900D4926D /* View Controllers */,
 				A52A842222442116009A6593 /* UI Customisations */,
 				4C108A6522454C0A00D4926D /* Storyboards */,
+				A52A3889226DAF1600F57746 /* New Group */,
 				A5DC52E9224AB2FC00A24589 /* Helper */,
 				A5DC52F7224AEF8D00A24589 /* Ringtones */,
 				4C108A6622454C2900D4926D /* Resources */,
@@ -230,6 +240,16 @@
 				7092D35AAFA1476D27B66940 /* Pods-Intercom App.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A52A3889226DAF1600F57746 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				A52A388A226DAF5300F57746 /* Constants.swift */,
+				A52A388C226DAF6900F57746 /* StripeClient.swift */,
+			);
+			name = "New Group";
+			path = "Helper/New Group";
 			sourceTree = "<group>";
 		};
 		A52A842222442116009A6593 /* UI Customisations */ = {
@@ -270,6 +290,14 @@
 				A5323F7A2253C89F00B86706 /* UserData.swift */,
 			);
 			path = "Multipeer Voice Chat";
+			sourceTree = "<group>";
+		};
+		A533C673226953CF00F165C6 /* OptimizationProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				A533C674226953D000F165C6 /* Intercom App.profdata */,
+			);
+			path = OptimizationProfiles;
 			sourceTree = "<group>";
 		};
 		A5DC52E9224AB2FC00A24589 /* Helper */ = {
@@ -417,8 +445,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Intercom App/Pods-Intercom App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${PODS_ROOT}/TwilioVoice/TwilioVoice.framework",
 			);
@@ -426,8 +457,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVoice.framework",
 			);
@@ -446,6 +480,7 @@
 				A5845C4E2264F589007777DA /* ProvisioningProfileInspector.m in Sources */,
 				A52A8426224421C5009A6593 /* LoginButton.swift in Sources */,
 				A52A843322458464009A6593 /* GroupViewTableViewCell.swift in Sources */,
+				A52A388D226DAF6900F57746 /* StripeClient.swift in Sources */,
 				A5323F862253C89F00B86706 /* UserData.swift in Sources */,
 				A56AFD28225FB684008C67E9 /* CallButton.swift in Sources */,
 				A5DC52F4224ADC1A00A24589 /* ChatroomViewController.swift in Sources */,
@@ -454,6 +489,7 @@
 				4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */,
 				A5DC52FF224BE1A500A24589 /* GroupController.swift in Sources */,
 				A5323F7D2253C89F00B86706 /* NameViewController.swift in Sources */,
+				A52A3888226D177F00F57746 /* CardFieldViewController.swift in Sources */,
 				A533C67222664E1200F165C6 /* GroupInvitesTableViewCell.swift in Sources */,
 				A5845C4A2264F552007777DA /* KeychainAccess.swift in Sources */,
 				A5323F7F2253C89F00B86706 /* Peer.swift in Sources */,
@@ -462,6 +498,7 @@
 				A56AFD2C225FCD0F008C67E9 /* InviteUserTableViewCell.swift in Sources */,
 				A5323F842253C89F00B86706 /* CallData.swift in Sources */,
 				A533C67022664BB200F165C6 /* GroupInvitesTableViewController.swift in Sources */,
+				A52A388B226DAF5300F57746 /* Constants.swift in Sources */,
 				A5845C5522652DF5007777DA /* UserListTableViewController.swift in Sources */,
 				A5323F812253C89F00B86706 /* ThisUser.swift in Sources */,
 				A532F9C9225DC2A0007EEC18 /* AllUsers.swift in Sources */,
@@ -627,6 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_ENTITLEMENTS = "Intercom App/Intercom App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
@@ -651,6 +689,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_ENTITLEMENTS = "Intercom App/Intercom App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;

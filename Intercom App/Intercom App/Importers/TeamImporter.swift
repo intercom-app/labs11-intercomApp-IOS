@@ -2,7 +2,7 @@
 //  TeamImporter.swift
 //  Intercom App
 //
-//  Created by Lotanna Igwe-Odunze on 3/21/19.
+//  Created by Sergey Osipyan on 3/27/19.
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
@@ -188,6 +188,107 @@ class TeamImporter {
                 // Convert to a string and print
                 if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
                     print(JSONString)
+                }
+            }
+            catch { //In case Decoding doesn't work.
+                
+                NSLog("Error: \(error.localizedDescription)")
+                
+                return
+            }
+            
+            } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
+        
+    } //End of fetch team function.
+    
+    func putCardLast4(last4: String?, completion: @escaping (Users) -> Void = { _ in }) {
+        
+        var usersBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
+        
+        //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
+        guard let last4 = last4, let id = userID else { return }
+        let parameters = ["last4": last4]
+        
+        usersBaseURL.appendPathComponent("\(id)")
+        usersBaseURL.appendPathComponent("last4")
+        //create the session object
+        let session = URLSession.shared
+        
+        //now create the URLRequest object using the url object
+        
+        var request = URLRequest(url: usersBaseURL)
+        request.httpMethod = "PUT" //set http method as POST
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //create dataTask using the session object to send data to the server
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+            
+            guard error == nil else {
+                return
+            }
+            
+            guard let data = data else {
+                return
+            }
+            
+            if let JSONString = String(data: data, encoding: String.Encoding.utf8) {
+                print(JSONString)
+            }
+            
+           
+        })
+        task.resume()
+        
+    }
+    
+    func fetchLast4(completion: @escaping (Int?) -> Void = { _ in }) {
+        var usersURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
+        guard let id = userID else { return }
+        usersURL.appendPathComponent("\(id)")
+        usersURL.appendPathComponent("last4")
+        var request = URLRequest(url: usersURL)
+        
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            if let response = urlResponse {
+                print(response)
+            }
+            if let teamError = error {
+                print("Error getting team members from API: \(teamError)")
+                
+                return
+                
+            } //End of error handling.
+            
+            guard let teamData = data else {
+                
+                print("Data was not recieved.")
+                
+                return
+            }
+            
+            // Convert to a string and print
+            if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
+                print(JSONString)
+            }
+            
+            do {
+                let jsonDecoder = JSONDecoder()
+                
+                let cardLast4 = try jsonDecoder.decode([String: Int?].self, from: teamData)
+                
+                if let last4 = cardLast4["last4"] {
+                   
+                completion(last4)
                 }
             }
             catch { //In case Decoding doesn't work.

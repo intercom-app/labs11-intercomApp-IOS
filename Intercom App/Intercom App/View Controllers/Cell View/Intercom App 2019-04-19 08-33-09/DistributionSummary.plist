@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Intercom App.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>bitcode</key>
+			<true/>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5</string>
+				<key>dateExpires</key>
+				<string>4/18/20</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>bitcode</key>
+					<true/>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5</string>
+						<key>dateExpires</key>
+						<string>4/18/20</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>Auth0.framework</string>
+					<key>symbols</key>
+					<true/>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>VXUQXR6S56</string>
+						<key>name</key>
+						<string>Lambda, Inc</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>bitcode</key>
+					<true/>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5</string>
+						<key>dateExpires</key>
+						<string>4/18/20</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>SimpleKeychain.framework</string>
+					<key>symbols</key>
+					<true/>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>VXUQXR6S56</string>
+						<key>name</key>
+						<string>Lambda, Inc</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>bitcode</key>
+					<true/>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5</string>
+						<key>dateExpires</key>
+						<string>4/18/20</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>SwiftKeychainWrapper.framework</string>
+					<key>symbols</key>
+					<true/>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>VXUQXR6S56</string>
+						<key>name</key>
+						<string>Lambda, Inc</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>bitcode</key>
+					<true/>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>EB2571F86CBA5F3E658E25A20A9E88932B7CA6D5</string>
+						<key>dateExpires</key>
+						<string>4/18/20</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>TwilioVoice.framework</string>
+					<key>symbols</key>
+					<true/>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>VXUQXR6S56</string>
+						<key>name</key>
+						<string>Lambda, Inc</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>VXUQXR6S56.com.lambdaschool.Sergey.Intercom-App</string>
+				<key>aps-environment</key>
+				<string>production</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>VXUQXR6S56</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>Intercom App.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>bcc7f5ed-69c1-49d5-a278-c6e97fc61177</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: com.lambdaschool.Sergey.Intercom-App</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>VXUQXR6S56</string>
+				<key>name</key>
+				<string>Lambda, Inc</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

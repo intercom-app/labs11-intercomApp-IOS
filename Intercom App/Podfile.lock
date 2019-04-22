@@ -1,29 +1,42 @@
 PODS:
+  - Alamofire (4.8.2)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
   - Auth0 (1.14.2):
     - SimpleKeychain
   - SimpleKeychain (0.8.1)
+  - Stripe (15.0.1)
   - SwiftKeychainWrapper (3.2.0)
   - TwilioVoice (2.0.7)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - AlamofireImage (~> 3.0)
   - Auth0
   - SimpleKeychain
+  - Stripe
   - SwiftKeychainWrapper
   - TwilioVoice (~> 2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
     - Auth0
     - SimpleKeychain
+    - Stripe
     - SwiftKeychainWrapper
     - TwilioVoice
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   Auth0: df9ac013e7850052fea1dcd53fa09bb129121721
   SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
+  Stripe: 2c4d0a88817361a102886315ff452d90f65e898b
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
   TwilioVoice: c0eacff80ee4d9b1e5f8c789ce8c5747c09e6140
 
-PODFILE CHECKSUM: 43b89781f559419d15050b83f14ce0a7b56cf045
+PODFILE CHECKSUM: ae680946f12d4ba152578cbeb9fcda7e7730be87
 
 COCOAPODS: 1.6.0

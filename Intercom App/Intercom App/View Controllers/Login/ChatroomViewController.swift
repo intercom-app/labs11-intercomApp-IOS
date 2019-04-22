@@ -13,6 +13,7 @@ import UIKit
 import AVFoundation
 import PushKit
 import TwilioVoice
+import UserNotifications
 
 
 let baseURLString = "https://intercom-be-farste.herokuapp.com/api/voice/" // "https://intercom-be.herokuapp.com/api/voice/"
@@ -26,6 +27,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         if let name = groupNameTextField.text {
             GroupController.shared.editGroupName(groupID: group!.groupID, groupName: name)
             GroupController.shared.postActivity(groupID: group!.groupID, massage: "Changed Group Name")
+            
         }
     }
     
@@ -41,7 +43,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     @IBOutlet weak var speakerSwitch: UISwitch!
     
     //    var serverURL =  "https://intercom-be.herokuapp.com/api/voice"
-        var path = "/register-binding"
+    var path = "/register-binding"
     var identity: String?
     var deviceTokenString:String?
     var voipRegistry:PKPushRegistry
@@ -87,7 +89,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         guard let ownerName = group?.owners.first?.displayName else { return }
         groupOwner.text = "Group Owner: " + ownerName
         if TeamImporter.shared.userID == group?.owners.first?.id {
-            deleteGroupOutlet.title = "Delete Group"
+            deleteGroupOutlet.title = "Delete"
             groupNameTextField.isEnabled = true
             
         }
@@ -99,7 +101,10 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         super.init(coder: aDecoder)
         voipRegistry.delegate = self
         voipRegistry.desiredPushTypes = Set([PKPushType.voIP])
-        TwilioVoice.logLevel = .verbose
+        DispatchQueue.global().async {
+            
+            TwilioVoice.logLevel = .verbose
+        }
     }
     
     
@@ -112,10 +117,10 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         toggleUIState(isEnabled: true, showCallControl: false)
         outgoingValue.delegate = self
         groupNameTextField.delegate = self
-        deleteGroupOutlet.title = "Leave Group"
+        deleteGroupOutlet.title = "Leave"
         groupNameTextField.isEnabled = false
         updateView()
-        
+        registerDeviceToken()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -160,7 +165,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         
         var params = ["identity": identity,
                       "BindingType" : "apn",
-                      "Address" : deviceToken]
+                      "Address" : deviceToken,
+                      "tags" : [""]] as [String : Any]
         
         //Check if we have an Endpoint identifier already for this app
         if let endpoint = try? KeychainAccess.readEndpoint(identity: identity){
@@ -231,7 +237,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
                 return
             }
             self.navigationController?.isNavigationBarHidden = true
-            registerDeviceToken()
+            
             viewActivityButton.isHidden = true
             viewGroupMembersButton.isHidden = true
             self.callStatus = true

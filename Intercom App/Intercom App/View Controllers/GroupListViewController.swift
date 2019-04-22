@@ -12,6 +12,7 @@ class GroupListViewController: UITableViewController {
     
     var sectionHeaderInvitedTo: Bool?
     var group: Groups?
+    var groupsID: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -2,7 +2,7 @@
 //  UserManager.swift
 //  Intercom App
 //
-//  Created by Lotanna Igwe-Odunze on 4/15/19.
+//  Created by Sergey Osipyan on 4/9/19.
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
