@@ -1,60 +1,106 @@
-////
-////  BillingViewController.swift
-////  Intercom App
-////
-////  Created by Lotanna Igwe-Odunze on 4/12/19.
-////  Copyright © 2019 Lambda School. All rights reserved.
-////
 //
-//import UIKit
+//  BillingViewController.swift
+//  Intercom App
 //
-//class BillingViewController: UIViewController {
-//    
-//    override func viewDidLoad() {
-//        updateViews()
-//    }
-//    
-//    //Outlets
-//    @IBOutlet weak var creditLabel: UILabel!
-//    @IBOutlet weak var cardInfoLabel: UILabel!
-//    @IBOutlet weak var cardIconView: UIImageView!
-//    @IBOutlet weak var cardNameField: UITextField!
-//    @IBOutlet weak var cardNumberField: UITextField!
-//    @IBOutlet weak var cardDateField: UITextField!
-//    @IBOutlet weak var cardCVCField: UITextField!
-//    @IBOutlet weak var updatePaymentButton: UIButton!
-//    
-//    //Properties
-//    var pulledUser: Users?
-//    
-//    //Functions
-//    func updateViews(){
-//        
-////        switch pulledUser?.billingSubcription {
-////        case .premium?:
-////            creditLabel.text = String(describing: pulledUser?.accountBalance)
-////        default: creditLabel.text = "Free"
-////
-////
-//        
+//  Created by Lotanna Igwe-Odunze on 4/12/19.
+//  Copyright © 2019 Lambda School. All rights reserved.
+//
+
+import UIKit
+import Stripe
+
+class BillingViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViews()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
+        
+    }
+    //Outlets
+    @IBOutlet weak var creditLabel: UILabel!
+    @IBOutlet weak var cardInfoLabel: UILabel!
+    @IBOutlet weak var cardIconView: UIImageView!
+  
+    
+    //Properties
+    var cardFullInfo: STPPaymentCardTextField?
+    var pulledUser: Users?
+    let cardFieldViewController = CardFieldViewController()
+    
+    //Functions
+    func updateViews(){
+       // guard let cardNumber = cardFullInfo?.cardNumber else { return }
+       // let cardLast4 = String(cardNumber.suffix(4))
+        TeamImporter.shared.fetchLast4 { (last4) in
+            DispatchQueue.main.async {
+                guard let last4 = last4 else {
+                    return self.cardInfoLabel.text = "Need Enter Card Info"
+                }
+                self.cardInfoLabel.text = "\(last4)"
+            }
+        }
+        
+        }
+   
+
+    //Actions
+
+    @IBAction func changePaymentMethod(_ sender: UIButton) {
+        
+        
+//        let navigationController = UINavigationController(rootViewController: cardFieldViewController)
+//        present(navigationController, animated: true, completion: nil)
+        
+        // 1
+//        guard CheckoutCart.shared.canPay else {
+//            let alertController = UIAlertController(title: "Warning", message: "Your cart is empty", preferredStyle: .alert)
+//            let alertAction = UIAlertAction(title: "OK", style: .default)
+//            alertController.addAction(alertAction)
+//            present(alertController, animated: true)
+//            return
 //        }
-//        
-//        var lastDigits: String?
-//        
-//        cardInfoLabel.text = "···· ···· ···· \(lastDigits ?? "4242")"
-//        
-//    }
-//    
-//    //Actions
-//    
-//    @IBAction func updatePaymentClicked(_ sender: UIButton) {
-//        
-//    }
-//    
-//    @IBAction func saveClicked(_ sender: UIBarButtonItem) {
-//    }
-//    
-//    
-//    
-//    
-//}
+        // 2
+        let addCardViewController = STPAddCardViewController()
+        addCardViewController.delegate = self
+        navigationController?.pushViewController(addCardViewController, animated: true)
+    }
+
+
+
+    @IBAction func saveClicked(_ sender: UIBarButtonItem) { navigationController?.popViewController(animated: true)
+    }
+
+
+}
+
+
+extension BillingViewController: STPAddCardViewControllerDelegate {
+    
+    func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func addCardViewController(_ addCardViewController: STPAddCardViewController, amount: Int, didCreateToken token: STPToken, completion: @escaping STPErrorBlock) {
+        StripeClient.shared.completeCharge(with: token, amount: amount) { result in
+            switch result {
+            // 1
+            case .success:
+                completion(nil)
+                
+                let alertController = UIAlertController(title: "Congrats", message: "Your payment was successful!", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    self.navigationController?.popViewController(animated: true)
+                })
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true)
+            // 2
+            case .failure(let error):
+                completion(error)
+            }
+        }
+    }
+}

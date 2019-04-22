@@ -11,6 +11,7 @@ pod 'Auth0'
 pod 'SimpleKeychain'
 pod 'SwiftKeychainWrapper'
 pod 'TwilioVoice', '~> 2.0'
-pod 'Alamofire', '5.0.0-beta.5'
+pod 'Alamofire', '~> 4.5'
+pod 'AlamofireImage', '~> 3.0'
 pod 'Stripe'
 end
