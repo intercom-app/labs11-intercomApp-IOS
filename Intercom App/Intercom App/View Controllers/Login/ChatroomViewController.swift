@@ -33,7 +33,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     
     @IBOutlet weak var likeCellCheckmark1: UIButton!
-       @IBOutlet weak var likeCellCheckmark2: UIButton!
+    @IBOutlet weak var likeCellCheckmark2: UIButton!
     @IBOutlet weak var deleteGroupOutlet: UIBarButtonItem!
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var groupOwner: UILabel!
@@ -61,8 +61,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     
     func addAllGroupsOwnAndBelong() {
         guard let allGroups = TeamImporter.shared.allGroups else { return }
-      let myGroup = allGroups.first?.first
-      let idString =  "\(myGroup!.groupID)"
+        guard let myGroup = allGroups.first?.first else { return }
+      let idString =  "\(myGroup.groupID)"
         let groupBelongTo = allGroups[1]
         for index in 0..<groupBelongTo.count {
             let groupID = groupBelongTo[index].groupID
@@ -159,7 +159,9 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let deviceToken : String! = appDelegate.devToken
             let identity : String! = self.identity
-            registerDevice(identity: identity, deviceToken: deviceToken)
+            DispatchQueue.global().async {
+                self.registerDevice(identity: identity, deviceToken: deviceToken)
+            }
             resignFirstResponder()
         }
     
@@ -186,7 +188,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         var params = ["identity": identity,
                       "BindingType" : "apn",
                       "Address" : deviceToken,
-                      "tags" : "testFromXcode"]
+                      "tags" : groupsID] as [String : Any]
         
         //Check if we have an Endpoint identifier already for this app
         if let endpoint = try? KeychainAccess.readEndpoint(identity: identity){
@@ -529,9 +531,12 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         likeCellCheckmark2.isHidden = false
         self.navigationController?.isNavigationBarHidden = false
          guard let groupId = group?.groupID else { return }
-        GroupController.shared.changeCallStatus(groupID: groupId, callStatus: false)
         GroupController.shared.changeCallStatus(groupID: nil, callStatus: false)
-        GroupController.shared.deleteCallParticipants(groupID: groupId)
+        GroupController.shared.deleteCallParticipants(groupID: groupId) { (bool) in
+            if bool == true {
+                GroupController.shared.changeCallStatus(groupID: groupId, callStatus: false)
+            }
+        }
         GroupController.shared.postActivity(groupID: groupId, massage: "Ended Call")
     }
     

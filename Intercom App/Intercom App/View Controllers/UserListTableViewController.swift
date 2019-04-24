@@ -24,8 +24,16 @@ class UserListTableViewController: UITableViewController {
             
         }
         TeamImporter.shared.ulvc = self
-        DispatchQueue.global().async {
-            
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        GroupController.shared.fetchGroupMembers(gropeId: group!.groupID) { (group) in
+            self.group = group
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -63,7 +71,13 @@ class UserListTableViewController: UITableViewController {
         guard let user = group?.members[indexPath.row] else { return }
         GroupController.shared.deleteGroupMamber(groupID: group!.groupID, userID: user.id)
         GroupController.shared.postActivity(groupID: group!.groupID, massage: "Removed \(user.displayName) from group.")
-        TeamImporter.shared.getUserAndFetchAllDetails()
+        GroupController.shared.fetchGroupMembers(gropeId: group!.groupID) { (group) in
+            self.group = group
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

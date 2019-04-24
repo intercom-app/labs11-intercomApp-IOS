@@ -13,6 +13,7 @@ class InviteUserTableViewCell: UITableViewCell {
     var group: Groups?
     var userID: Int?
     var userName: String?
+    let kInviteButtonTextColor = UIColor(displayP3Red: 1/255, green: 178/255, blue: 1/255, alpha: 1)
     var invited: Bool = false
     var isOwner: Bool = false
     
@@ -35,7 +36,7 @@ class InviteUserTableViewCell: UITableViewCell {
                 inviteButtonOutlet.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
             } else {
                 inviteButtonOutlet.setTitle("Invite", for: .normal)
-                inviteButtonOutlet.setTitleColor(.green, for: .normal)
+                inviteButtonOutlet.setTitleColor(kInviteButtonTextColor, for: .normal)
                 inviteButtonOutlet.setTitleShadowColor(.black, for: .normal)
                 inviteButtonOutlet.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
             }
@@ -47,7 +48,7 @@ class InviteUserTableViewCell: UITableViewCell {
         guard let groupID = group?.groupID else { return }
         if invited {
             inviteButtonOutlet.setTitle("Invite", for: .normal)
-            inviteButtonOutlet.setTitleColor(.green, for: .normal)
+            inviteButtonOutlet.setTitleColor(kInviteButtonTextColor, for: .normal)
             inviteButtonOutlet.setTitleShadowColor(.black, for: .normal)
             invited = false
             GroupController.shared.deleteInvitation(groupID: groupID, userID: userID)

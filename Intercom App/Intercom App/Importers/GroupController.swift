@@ -321,7 +321,7 @@ class GroupController {
         task.resume()
     }
     
-    func deleteCallParticipants(groupID: Int) {
+    func deleteCallParticipants(groupID: Int, completion: @escaping (Bool) -> Void = { _ in }) {
         guard let id = TeamImporter.shared.userID else {
             fatalError("cant fetch user ID: \(String(describing: TeamImporter.shared.userID))")
         }
@@ -351,7 +351,13 @@ class GroupController {
             }
             if let JSONString = String(data: data, encoding: String.Encoding.utf8) {
                 print(JSONString)
+                if JSONString.count < 3 {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
             }
+            
             
             do {
                 //create json object from data
@@ -383,7 +389,7 @@ class GroupController {
             url = URL(string: "https://intercom-be.herokuapp.com/api/groups")?.appendingPathComponent("\(groupID)")
             
         } else {
-         url = URL(string: "https://intercom-be.herokuapp.com/api/users/")?.appendingPathComponent("\(userID)")
+            url = URL(string: "https://intercom-be.herokuapp.com/api/users/")?.appendingPathComponent("\(userID)")
         }
         var request = URLRequest(url: url!)
         request.httpMethod = "PUT" //set http method as PUT
@@ -451,7 +457,7 @@ class GroupController {
                 return
             }
             
-            TeamImporter.shared.fetchAllUsers()
+            
         })
         task.resume()
     }
@@ -542,6 +548,57 @@ class GroupController {
             
         })
         task.resume()
+    }
+    
+    func fetchGroupMembers(gropeId: Int, completion: @escaping (Groups) -> Void = { _ in }) {
+        var teamURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
+        teamURL.appendPathComponent("\(gropeId)")
+        teamURL.appendPathComponent("groupMembers/detailed")
+        var request = URLRequest(url: teamURL)
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            if let response = urlResponse {
+                print(response)
+            }
+            if let teamError = error {
+                print("Error getting team members from API: \(teamError)")
+                
+                return
+                
+            } //End of error handling.
+            
+            guard let teamData = data else {
+                
+                print("Data was not recieved.")
+                
+                return
+            }
+            if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
+                print(JSONString)
+            }
+            do {
+                //create json object from data
+                if let json = try JSONSerialization.jsonObject(with: teamData, options: .mutableContainers) as? [String: Any] {
+                    print(json)
+                    var membersName: [String] = []
+                    let groupMember = json["displayName"] as? String
+                    print(groupMember)
+                    
+                    
+                    // completion()
+                    
+                    
+                    
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+            } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
     }
     
 }
