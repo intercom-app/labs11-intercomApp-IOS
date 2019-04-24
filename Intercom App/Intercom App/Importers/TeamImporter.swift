@@ -82,12 +82,12 @@ class TeamImporter {
         
     }
     
-    func makePaymentSendAmount(amount: Double?) {
+    func makePaymentSendAmount(amount: String?, completion: @escaping (Double) -> Void = { _ in }) {
         
         let baseURL = URL(string: "https://intercom-be.herokuapp.com/api/billing")!.appendingPathComponent("addMoney")
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
         guard let userid = userID, let amount = amount else { return }
-        let parameters = ["userId": userid, "amountToAdd": amount] as [String : Any]
+        let parameters = ["userId": "\(userid)", "amountToAdd": amount] as [String : Any]
         
         //create the session object
         let session = URLSession.shared
@@ -112,6 +112,7 @@ class TeamImporter {
             guard error == nil else {
                 return
             }
+            print(response ?? "no responce")
             
             guard let data = data else {
                 return
@@ -127,8 +128,9 @@ class TeamImporter {
                     // handle json...
                     
                     
-                    //if let userID = json["id"] as? Int {
-                    
+                    if let updatedAccountBalance = json["updatedAccountBalance"] as? Double {
+                    completion(updatedAccountBalance)
+                    }
                 }
             } catch let error {
                 print(error.localizedDescription)
@@ -144,7 +146,7 @@ class TeamImporter {
         let baseURL = URL(string: "https://intercom-be.herokuapp.com/api/billing")!.appendingPathComponent("updateCreditCard")
         //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
         guard let userid = userID, let source = source else { return }
-        let parameters = ["userId": userid, "source": source] as [String : Any]
+        let parameters = ["userId": userid, "sourceId": source] as [String : Any]
         
         //create the session object
         let session = URLSession.shared
@@ -171,7 +173,7 @@ class TeamImporter {
             guard error == nil else {
                 return
             }
-            
+            print(response ?? "no responce")
             guard let data = data else {
                 return
             }
@@ -227,9 +229,9 @@ class TeamImporter {
             }
             do {
                 let jsonDecoder = JSONDecoder()
-                if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
-                    print(JSONString)
-                }
+//                if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
+//                    print(JSONString)
+//                }
                 let decodedTeam = try jsonDecoder.decode(Users.self, from: teamData)
                 
                 self.teamMembers = decodedTeam
@@ -300,10 +302,10 @@ class TeamImporter {
                     self.iuvc?.tableView.reloadData()
                 }
                 
-                // Convert to a string and print
-                if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
-                    print(JSONString)
-                }
+//                // Convert to a string and print
+//                if let JSONString = String(data: teamData, encoding: String.Encoding.utf8) {
+//                    print(JSONString)
+//                }
             }
             catch { //In case Decoding doesn't work.
                 
@@ -364,7 +366,7 @@ class TeamImporter {
         
     }
     
-    func fetchLast4(completion: @escaping (Int?) -> Void = { _ in }) {
+    func fetchLast4(completion: @escaping (String?) -> Void = { _ in }) {
         var usersURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
         guard let id = userID else { return }
         usersURL.appendPathComponent("\(id)")
@@ -399,7 +401,7 @@ class TeamImporter {
             do {
                 let jsonDecoder = JSONDecoder()
                 
-                let cardLast4 = try jsonDecoder.decode([String: Int?].self, from: teamData)
+                let cardLast4 = try jsonDecoder.decode([String: String?].self, from: teamData)
                 
                 if let last4 = cardLast4["last4"] {
                    

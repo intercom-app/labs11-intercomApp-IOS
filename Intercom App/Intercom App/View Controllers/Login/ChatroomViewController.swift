@@ -257,10 +257,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
                 return
             }
             self.navigationController?.isNavigationBarHidden = true
-            GroupController.shared.changeCallStatus(groupID: group?.groupID, callStatus: true)
-            GroupController.shared.changeCallStatus(groupID: nil, callStatus: true)
             
-            GroupController.shared.postActivity(groupID: group!.groupID, massage: "Started Call")
             viewActivityButton.isHidden = true
             viewGroupMembersButton.isHidden = true
             likeCellCheckmark1.isHidden = true
@@ -492,9 +489,12 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         likeCellCheckmark1.isHidden = true
         likeCellCheckmark2.isHidden = true
         self.call = call
-        
+        guard let groupId = group?.groupID else { return }
         self.placeCallButton.setTitle("Hang Up", for: .normal)
-        
+        GroupController.shared.changeCallStatus(groupID: groupId, callStatus: true)
+        GroupController.shared.changeCallStatus(groupID: nil, callStatus: true)
+        GroupController.shared.postCallParticipants(groupID: groupId)
+        GroupController.shared.postActivity(groupID: groupId, massage: "Started Call")
         toggleUIState(isEnabled: true, showCallControl: true)
         toggleAudioRoute(toSpeaker: true)
     }
@@ -528,6 +528,11 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         likeCellCheckmark1.isHidden = false
         likeCellCheckmark2.isHidden = false
         self.navigationController?.isNavigationBarHidden = false
+         guard let groupId = group?.groupID else { return }
+        GroupController.shared.changeCallStatus(groupID: groupId, callStatus: false)
+        GroupController.shared.changeCallStatus(groupID: nil, callStatus: false)
+        GroupController.shared.deleteCallParticipants(groupID: groupId)
+        GroupController.shared.postActivity(groupID: groupId, massage: "Ended Call")
     }
     
     

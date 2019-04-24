@@ -478,7 +478,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JK2-4e-lQm">
-                                <rect key="frame" x="143" y="138" width="89.5" height="36"/>
+                                <rect key="frame" x="70" y="138" width="235" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="89.5" id="3aD-9I-eTE"/>
                                 </constraints>
@@ -487,28 +487,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="S7T-MF-o3c">
-                                <rect key="frame" x="60" y="258" width="255.5" height="24"/>
+                                <rect key="frame" x="70" y="258" width="235" height="23"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gdb-zp-lHw">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="69y-Uy-LfN"/>
-                                            <constraint firstAttribute="width" constant="48" id="9lI-7b-ZnV"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card information here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghR-kp-BAy">
-                                        <rect key="frame" x="70" y="0.0" width="185.5" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="255.5" id="NHi-1d-oOp"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-EL-vCR" customClass="CallButton" customModule="Intercom_App" customModuleProvider="target">
-                                <rect key="frame" x="140" y="372" width="95" height="35"/>
+                                <rect key="frame" x="140" y="371" width="95" height="35"/>
                                 <color key="backgroundColor" red="0.0087706133829999998" green="0.38729036579999998" blue="0.77549968270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Nwx-Oo-ErV"/>
@@ -522,7 +512,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eV-pQ-xzr">
-                                <rect key="frame" x="147.5" y="312" width="80" height="30"/>
+                                <rect key="frame" x="147.5" y="311" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="7pt-3R-vX5"/>
                                 </constraints>
@@ -540,8 +530,10 @@
                             <constraint firstItem="S7T-MF-o3c" firstAttribute="centerX" secondItem="lir-Du-7jZ" secondAttribute="centerX" id="E6L-9a-OSu"/>
                             <constraint firstItem="1eV-pQ-xzr" firstAttribute="top" secondItem="S7T-MF-o3c" secondAttribute="bottom" constant="30" id="QQG-Xd-nDU"/>
                             <constraint firstItem="JK2-4e-lQm" firstAttribute="centerX" secondItem="lir-Du-7jZ" secondAttribute="centerX" id="SRY-gF-Lbu"/>
+                            <constraint firstItem="S7T-MF-o3c" firstAttribute="leading" secondItem="lir-Du-7jZ" secondAttribute="leading" constant="70" id="SsZ-NT-mD4"/>
                             <constraint firstItem="rna-gP-MES" firstAttribute="top" secondItem="JK2-4e-lQm" secondAttribute="bottom" constant="30" id="Tgd-nl-Esa"/>
                             <constraint firstItem="gk5-N9-UEw" firstAttribute="top" secondItem="lir-Du-7jZ" secondAttribute="top" constant="20" id="X9U-1Y-JAh"/>
+                            <constraint firstItem="JK2-4e-lQm" firstAttribute="leading" secondItem="lir-Du-7jZ" secondAttribute="leading" constant="70" id="XoZ-Qs-3a2"/>
                             <constraint firstItem="gk5-N9-UEw" firstAttribute="leading" secondItem="lir-Du-7jZ" secondAttribute="leading" constant="20" id="aQg-bA-hxU"/>
                             <constraint firstItem="Vne-EL-vCR" firstAttribute="centerX" secondItem="Kxp-If-iZ7" secondAttribute="centerX" id="gVC-Iz-DAe"/>
                             <constraint firstItem="1eV-pQ-xzr" firstAttribute="centerX" secondItem="lir-Du-7jZ" secondAttribute="centerX" id="jH5-at-BoX"/>
@@ -559,7 +551,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="amountTextField" destination="1eV-pQ-xzr" id="z7Y-jS-uL3"/>
-                        <outlet property="cardIconView" destination="gdb-zp-lHw" id="ict-WI-f5F"/>
                         <outlet property="cardInfoLabel" destination="ghR-kp-BAy" id="hKM-Zh-VPO"/>
                         <outlet property="creditLabel" destination="JK2-4e-lQm" id="gFl-w1-ej3"/>
                     </connections>
