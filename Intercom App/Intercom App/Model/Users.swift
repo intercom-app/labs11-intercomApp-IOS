@@ -19,7 +19,7 @@ struct Users: Codable {
    var callStatus: Bool
    var billingSubcription: String
    var accountBalance: Double?
-   var last4: Int?
+   var last4: String?
    var createdAt: String
    var groupsOwned, groupsBelongedTo: [Groups]?
    var groupsInvitedTo: [Groups]?

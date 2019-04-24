@@ -10,10 +10,10 @@ import UIKit
 import Stripe
 
 class CardFieldViewController: UIViewController {
-
+    
     let cardField = STPPaymentCardTextField()
     var theme = STPTheme.default()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Card Field"
@@ -36,32 +36,32 @@ class CardFieldViewController: UIViewController {
     @objc func cancel() {
         dismiss(animated: true, completion: nil)
     }
-
+    
     @objc func done() {
         if cardField.isValid {
-        let cardParams = STPCardParams()
-        //cardParams.name = "Jenny Rosen"
-        cardParams.number = cardField.cardNumber
-        cardParams.expMonth = cardField.expirationMonth
-        cardParams.expYear = cardField.expirationYear
-        cardParams.cvc = cardField.cvc
-        cardParams.address.postalCode = cardField.postalCode
-        
-        let sourceParams = STPSourceParams.cardParams(withCard: cardParams)
-        STPAPIClient.shared().createSource(with: sourceParams) { (source, error) in
-            if let s = source, s.flow == .none && s.status == .chargeable {
-                TeamImporter.shared.addCardChangeCard(source: source?.stripeID)
+            let cardParams = STPCardParams()
+            //cardParams.name = "Jenny Rosen"
+            cardParams.number = cardField.cardNumber
+            cardParams.expMonth = cardField.expirationMonth
+            cardParams.expYear = cardField.expirationYear
+            cardParams.cvc = cardField.cvc
+            cardParams.address.postalCode = cardField.postalCode
+            
+            let sourceParams = STPSourceParams.cardParams(withCard: cardParams)
+            STPAPIClient.shared().createSource(with: sourceParams) { (source, error) in
+                if let s = source, s.flow == .none && s.status == .chargeable {
+                    TeamImporter.shared.addCardChangeCard(source: source?.stripeID)
+                }
             }
+           dismiss(animated: true, completion: nil)
         }
-        dismiss(animated: true, completion: nil)
     }
-    }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         cardField.becomeFirstResponder()
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let padding: CGFloat = 15
@@ -70,5 +70,5 @@ class CardFieldViewController: UIViewController {
                                  width: view.bounds.width - (padding * 2),
                                  height: 50)
     }
-
+    
 }
