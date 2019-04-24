@@ -38,6 +38,11 @@ class InviteUserTableViewController: UITableViewController {
             let id = userOfGroup.id
             invitedUsersShouldBeInactive(userID: id)
         }
+        guard let groupMembers = group?.members else { return }
+        for userOfGroup in groupMembers {
+            let id = userOfGroup.id
+            invitedUsersShouldBeInactive(userID: id)
+        }
         
     }
     func invitedUsersShouldBeInactive(userID: Int)  {
@@ -49,7 +54,7 @@ class InviteUserTableViewController: UITableViewController {
             } else {
                 if userID == user.id {
                     self.invitedUserId.append(userID)
-                    return
+                   
                 }
             }
         }
@@ -81,15 +86,21 @@ class InviteUserTableViewController: UITableViewController {
                     cell.group = self.group
                     return cell
                 } else {
-                    if ownerId == user.id {
-                        cell.userID = ownerId
+                    if TeamImporter.shared.userID == user.id {
+                        cell.userID = TeamImporter.shared.userID
                         cell.isOwner = true
                     }
                     cell.userID = user.id
                 }
             }
         } else {
-            cell.userID = user.id
+            if TeamImporter.shared.userID == user.id {
+                cell.userID = TeamImporter.shared.userID
+                cell.isOwner = true
+            
+            }
+                cell.userID = user.id
+            
         }
         cell.userName = user.displayName
         if let imageURL = user.avatar {

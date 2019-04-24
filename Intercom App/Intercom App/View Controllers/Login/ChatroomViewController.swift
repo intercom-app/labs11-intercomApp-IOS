@@ -32,6 +32,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     }
     
     
+    @IBOutlet weak var likeCellCheckmark1: UIButton!
+       @IBOutlet weak var likeCellCheckmark2: UIButton!
     @IBOutlet weak var deleteGroupOutlet: UIBarButtonItem!
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var groupOwner: UILabel!
@@ -55,6 +57,23 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
     var ringtonePlaybackCallback: (() -> ())?
     var groupListVC = GroupListViewController()
     var callStatus: Bool = false
+    var groupsID: [String] = []
+    
+    func addAllGroupsOwnAndBelong() {
+        guard let allGroups = TeamImporter.shared.allGroups else { return }
+      let myGroup = allGroups.first?.first
+      let idString =  "\(myGroup!.groupID)"
+        let groupBelongTo = allGroups[1]
+        for index in 0..<groupBelongTo.count {
+            let groupID = groupBelongTo[index].groupID
+            let groupIdString =  "\(groupID)"
+            groupsID.append(groupIdString)
+        }
+        groupsID.append(idString)
+    }
+    
+    
+    
     var group: Groups? {
         didSet {
             if let group = group {
@@ -120,6 +139,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         deleteGroupOutlet.title = "Leave"
         groupNameTextField.isEnabled = false
         updateView()
+        addAllGroupsOwnAndBelong()
         registerDeviceToken()
     }
     
@@ -166,7 +186,7 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         var params = ["identity": identity,
                       "BindingType" : "apn",
                       "Address" : deviceToken,
-                      "tags" : [""]] as [String : Any]
+                      "tags" : "testFromXcode"]
         
         //Check if we have an Endpoint identifier already for this app
         if let endpoint = try? KeychainAccess.readEndpoint(identity: identity){
@@ -237,9 +257,14 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
                 return
             }
             self.navigationController?.isNavigationBarHidden = true
+            GroupController.shared.changeCallStatus(groupID: group?.groupID, callStatus: true)
+            GroupController.shared.changeCallStatus(groupID: nil, callStatus: true)
             
+            GroupController.shared.postActivity(groupID: group!.groupID, massage: "Started Call")
             viewActivityButton.isHidden = true
             viewGroupMembersButton.isHidden = true
+            likeCellCheckmark1.isHidden = true
+            likeCellCheckmark2.isHidden = true
             self.callStatus = true
             playOutgoingRingtone(completion: { [weak self] in
                 if let strongSelf = self {
@@ -464,6 +489,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         navigationController?.isNavigationBarHidden = true
         viewActivityButton.isHidden = true
         viewGroupMembersButton.isHidden = true
+        likeCellCheckmark1.isHidden = true
+        likeCellCheckmark2.isHidden = true
         self.call = call
         
         self.placeCallButton.setTitle("Hang Up", for: .normal)
@@ -498,6 +525,8 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         self.placeCallButton.setTitle("Call", for: .normal)
         viewActivityButton.isHidden = false
         viewGroupMembersButton.isHidden = false
+        likeCellCheckmark1.isHidden = false
+        likeCellCheckmark2.isHidden = false
         self.navigationController?.isNavigationBarHidden = false
     }
     

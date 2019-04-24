@@ -18,7 +18,7 @@ struct Users: Codable {
    var phoneNumber: JSONNull?
    var callStatus: Bool
    var billingSubcription: String
-   var accountBalance: Int?
+   var accountBalance: Double?
    var last4: Int?
    var createdAt: String
    var groupsOwned, groupsBelongedTo: [Groups]?
