@@ -24,8 +24,8 @@ class InviteButton: UIButton {
         self.layer.cornerRadius = kInviteButtonCornerRadius
         self.setTitleColor(.blue, for: .normal)
         self.tintColor = UIColor.blue
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.blue.cgColor
+//        self.layer.borderWidth = 1
+//        self.layer.borderColor = UIColor.blue.cgColor
         self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
     }
     

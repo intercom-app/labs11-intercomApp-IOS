@@ -32,13 +32,13 @@ final class StripeClient {
     
     func completeCharge(with token: STPToken, amount: Int, completion: @escaping (Result) -> Void) {
         // 1
-        let url = baseURL.appendingPathComponent("charge")
+        let url = baseURL.appendingPathComponent("addMoney")
         // 2
         let params: [String: Any] = [
             "token": token.tokenId,
             "amount": amount,
-            "currency": Constants.defaultCurrency,
-            "description": Constants.defaultDescription
+//            "currency": Constants.defaultCurrency,
+//            "description": Constants.defaultDescription
         ]
         // 3
         Alamofire.request(url, method: .post, parameters: params)

@@ -1,8 +1,8 @@
 //
 //  CardFieldViewController.swift
-//  UI Examples
+//  Intercom App
 //
-//  Created by Sergey Osipyan on 4/22/19.
+//  Created by Sergey Osipyan on 4/24/19.
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
@@ -28,16 +28,33 @@ class CardFieldViewController: UIViewController {
         cardField.borderWidth = 1.0
         cardField.textErrorColor = theme.errorColor
         cardField.postalCodeEntryEnabled = true
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         navigationController?.navigationBar.stp_theme = theme
+    }
+    
+    @objc func cancel() {
+        dismiss(animated: true, completion: nil)
     }
 
     @objc func done() {
+        if cardField.isValid {
+        let cardParams = STPCardParams()
+        //cardParams.name = "Jenny Rosen"
+        cardParams.number = cardField.cardNumber
+        cardParams.expMonth = cardField.expirationMonth
+        cardParams.expYear = cardField.expirationYear
+        cardParams.cvc = cardField.cvc
+        cardParams.address.postalCode = cardField.postalCode
         
-        guard let cardNumber = cardField.cardNumber else { return }
-        let last4 = String(cardNumber.suffix(4))
-        TeamImporter.shared.putCardLast4(last4: last4)
+        let sourceParams = STPSourceParams.cardParams(withCard: cardParams)
+        STPAPIClient.shared().createSource(with: sourceParams) { (source, error) in
+            if let s = source, s.flow == .none && s.status == .chargeable {
+                TeamImporter.shared.addCardChangeCard(source: source?.stripeID)
+            }
+        }
         dismiss(animated: true, completion: nil)
+    }
     }
 
     override func viewDidAppear(_ animated: Bool) {

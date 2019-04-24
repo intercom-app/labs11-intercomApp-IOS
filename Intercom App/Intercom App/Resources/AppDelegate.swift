@@ -10,6 +10,7 @@ import UIKit
 import TwilioVoice
 import UserNotifications
 import Stripe
+import Auth0
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,12 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NSLog("Twilio Voice Version: %@", TwilioVoice.version())
-        self.configureUserNotifications()	
+      
         STPPaymentConfiguration.shared().publishableKey = Constants.publishableKey
         chatroom?.registerDeviceToken()
-        let settings = UIUserNotificationSettings(types: .alert, categories: nil)
-        UIApplication.shared.registerUserNotificationSettings(settings)
-        UIApplication.shared.registerForRemoteNotifications()
 
         // Override point for customization after application launch.
         if #available(iOS 10, *) {
@@ -52,9 +50,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         print("APNS Environment detected as: \(envString) ");
+        
+//        window = UIWindow()
+//        window?.makeKeyAndVisible()
+//
+//        let loginVC = LoginViewController.instantiate()
+//        let mainVC = MainViewController.instantiate()
+//
+//        self.window?.rootViewController = SessionManager.tokens == nil ? loginVC : mainVC
+//
         return true
     }
     
+    //Auth0 requires this function in AppDelegate
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        return Auth0.resumeAuth(url, options: options)
+    }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
@@ -82,28 +94,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func configureUserNotifications() {
-        let rejectAction = UIMutableUserNotificationAction()
-        rejectAction.activationMode = .background
-        rejectAction.title = "Reject"
-        rejectAction.identifier = "reject"
-        rejectAction.isDestructive = true
-        rejectAction.isAuthenticationRequired = false
-        
-        let acceptAction = UIMutableUserNotificationAction()
-        acceptAction.activationMode = .background
-        acceptAction.title = "Accept"
-        acceptAction.identifier = "accept"
-        acceptAction.isDestructive = false
-        acceptAction.isAuthenticationRequired = false
-        
-        let actionCategory = UIMutableUserNotificationCategory()
-        actionCategory.identifier = "ACTIONABLE"
-        actionCategory.setActions([rejectAction, acceptAction], for: .default)
-        
-        let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: [actionCategory])
-        UIApplication.shared.registerUserNotificationSettings(settings)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler([.alert, .badge, .sound])
     }
+
 
 }
 

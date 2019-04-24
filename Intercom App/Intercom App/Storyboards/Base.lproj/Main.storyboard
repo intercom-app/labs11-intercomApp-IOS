@@ -176,7 +176,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIs-fr-WiX">
                                 <rect key="frame" x="346" y="516" width="13" height="13"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="13" id="6se-VU-E7o"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="13" id="6se-VU-E7o"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="13" id="fWt-dx-1E8"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="13" id="j7T-ka-Qfy"/>
                                     <constraint firstAttribute="height" constant="13" id="paG-Kw-mwl"/>
@@ -232,6 +232,8 @@
                         <outlet property="deleteGroupOutlet" destination="Fdd-XW-4Bc" id="2pv-ru-OEH"/>
                         <outlet property="groupNameTextField" destination="u3v-r6-hOQ" id="3n2-wg-Qni"/>
                         <outlet property="groupOwner" destination="niA-EN-zz9" id="jG1-OU-xcd"/>
+                        <outlet property="likeCellCheckmark1" destination="zhf-NA-rpN" id="8tt-bI-l8i"/>
+                        <outlet property="likeCellCheckmark2" destination="IIs-fr-WiX" id="K8U-vH-sGs"/>
                         <outlet property="muteSwitch" destination="G9E-E3-BOB" id="NNJ-hQ-23p"/>
                         <outlet property="outgoingValue" destination="ZIR-lD-HMN" id="v00-ga-W28"/>
                         <outlet property="placeCallButton" destination="E9g-cY-f1a" id="Vb4-lX-WSw"/>
@@ -395,7 +397,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lkh-wZ-FcG">
-                                <rect key="frame" x="78" y="264.5" width="219" height="138"/>
+                                <rect key="frame" x="78" y="204" width="219" height="138"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQv-s9-tkS">
                                         <rect key="frame" x="75.5" y="0.0" width="68.5" height="35"/>
@@ -429,7 +431,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Lkh-wZ-FcG" firstAttribute="centerX" secondItem="Lsp-Br-vgu" secondAttribute="centerX" id="2UR-JB-WxP"/>
-                            <constraint firstItem="Lkh-wZ-FcG" firstAttribute="centerY" secondItem="Lsp-Br-vgu" secondAttribute="centerY" id="VXA-Xh-RGJ"/>
+                            <constraint firstItem="Lkh-wZ-FcG" firstAttribute="top" secondItem="Mq1-Ue-BBE" secondAttribute="top" constant="140" id="tIS-eO-EWk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mq1-Ue-BBE"/>
                     </view>
@@ -519,14 +521,14 @@
                                     <action selector="makePayment:" destination="uiF-ZB-D2L" eventType="touchUpInside" id="EBr-P1-Jju"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eV-pQ-xzr">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eV-pQ-xzr">
                                 <rect key="frame" x="147.5" y="312" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="7pt-3R-vX5"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Stripe
 
 class TeamImporter {
     
@@ -81,6 +82,120 @@ class TeamImporter {
         
     }
     
+    func makePaymentSendAmount(amount: Double?) {
+        
+        let baseURL = URL(string: "https://intercom-be.herokuapp.com/api/billing")!.appendingPathComponent("addMoney")
+        //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
+        guard let userid = userID, let amount = amount else { return }
+        let parameters = ["userId": userid, "amountToAdd": amount] as [String : Any]
+        
+        //create the session object
+        let session = URLSession.shared
+        
+        //now create the URLRequest object using the url object
+        
+        var request = URLRequest(url: baseURL)
+        request.httpMethod = "POST" //set http method as POST
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+//        create dataTask using the session object to send data to the server
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+            
+            guard error == nil else {
+                return
+            }
+            
+            guard let data = data else {
+                return
+            }
+            if let JSONString = String(data: data, encoding: String.Encoding.utf8) {
+                print(JSONString)
+            }
+            
+            do {
+                //create json object from data
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    print(json)
+                    // handle json...
+                    
+                    
+                    //if let userID = json["id"] as? Int {
+                    
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        })
+        task.resume()
+        
+    }
+    
+    
+    func addCardChangeCard(source: String?) {
+        
+        let baseURL = URL(string: "https://intercom-be.herokuapp.com/api/billing")!.appendingPathComponent("updateCreditCard")
+        //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
+        guard let userid = userID, let source = source else { return }
+        let parameters = ["userId": userid, "source": source] as [String : Any]
+        
+        //create the session object
+        let session = URLSession.shared
+        
+        //now create the URLRequest object using the url object
+        
+        var request = URLRequest(url: baseURL)
+        request.httpMethod = "POST" //set http method as POST
+        print("test3")
+        do {
+             print("test1")
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
+            print("test")
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //        create dataTask using the session object to send data to the server
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+            
+            guard error == nil else {
+                return
+            }
+            
+            guard let data = data else {
+                return
+            }
+            if let JSONString = String(data: data, encoding: String.Encoding.utf8) {
+                print(JSONString)
+            }
+            
+            do {
+                //create json object from data
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    print(json)
+                    // handle json...
+                   
+                    
+                    //if let userID = json["id"] as? Int {
+                    
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        })
+        task.resume()
+        
+    }
     
     func fetchCurentUserDetails(userID: Int) {
         var teamURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
