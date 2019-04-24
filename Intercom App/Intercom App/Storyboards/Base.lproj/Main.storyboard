@@ -461,36 +461,27 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk5-N9-UEw">
                                 <rect key="frame" x="20" y="84" width="147" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="xec-Xa-OX6"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rna-gP-MES">
-                                <rect key="frame" x="20" y="204" width="158" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="N0o-0h-rUL"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="204" width="148" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JK2-4e-lQm">
-                                <rect key="frame" x="70" y="138" width="235" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="89.5" id="3aD-9I-eTE"/>
-                                </constraints>
+                                <rect key="frame" x="70" y="138" width="89.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="S7T-MF-o3c">
-                                <rect key="frame" x="70" y="258" width="235" height="23"/>
+                                <rect key="frame" x="70" y="258" width="185.5" height="23"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card information here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghR-kp-BAy">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="23"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="185.5" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -524,12 +515,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="S7T-MF-o3c" firstAttribute="top" secondItem="rna-gP-MES" secondAttribute="bottom" constant="30" id="0es-Ji-GbQ"/>
-                            <constraint firstItem="lir-Du-7jZ" firstAttribute="trailing" secondItem="gk5-N9-UEw" secondAttribute="trailing" constant="208" id="2H3-ht-waK"/>
                             <constraint firstItem="JK2-4e-lQm" firstAttribute="top" secondItem="gk5-N9-UEw" secondAttribute="bottom" constant="30" id="2Jg-Ft-Jtd"/>
-                            <constraint firstItem="lir-Du-7jZ" firstAttribute="trailing" secondItem="rna-gP-MES" secondAttribute="trailing" constant="197" id="9vM-Rk-Nam"/>
-                            <constraint firstItem="S7T-MF-o3c" firstAttribute="centerX" secondItem="lir-Du-7jZ" secondAttribute="centerX" id="E6L-9a-OSu"/>
-                            <constraint firstItem="1eV-pQ-xzr" firstAttribute="top" secondItem="S7T-MF-o3c" secondAttribute="bottom" constant="30" id="QQG-Xd-nDU"/>
-                            <constraint firstItem="JK2-4e-lQm" firstAttribute="centerX" secondItem="lir-Du-7jZ" secondAttribute="centerX" id="SRY-gF-Lbu"/>
+                            <constraint firstItem="lir-Du-7jZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gk5-N9-UEw" secondAttribute="trailing" constant="40" id="2iR-BG-1S4"/>
+                            <constraint firstItem="lir-Du-7jZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rna-gP-MES" secondAttribute="trailing" constant="40" id="9vM-Rk-Nam"/>
+                            <constraint firstItem="lir-Du-7jZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JK2-4e-lQm" secondAttribute="trailing" constant="20" id="BOR-aF-w6R"/>
+                            <constraint firstItem="1eV-pQ-xzr" firstAttribute="top" secondItem="S7T-MF-o3c" secondAttribute="bottom" constant="30" id="OjZ-t0-uet"/>
                             <constraint firstItem="S7T-MF-o3c" firstAttribute="leading" secondItem="lir-Du-7jZ" secondAttribute="leading" constant="70" id="SsZ-NT-mD4"/>
                             <constraint firstItem="rna-gP-MES" firstAttribute="top" secondItem="JK2-4e-lQm" secondAttribute="bottom" constant="30" id="Tgd-nl-Esa"/>
                             <constraint firstItem="gk5-N9-UEw" firstAttribute="top" secondItem="lir-Du-7jZ" secondAttribute="top" constant="20" id="X9U-1Y-JAh"/>
@@ -539,6 +529,7 @@
                             <constraint firstItem="1eV-pQ-xzr" firstAttribute="centerX" secondItem="lir-Du-7jZ" secondAttribute="centerX" id="jH5-at-BoX"/>
                             <constraint firstItem="Vne-EL-vCR" firstAttribute="top" secondItem="1eV-pQ-xzr" secondAttribute="bottom" constant="30" id="qHA-Oe-sUo"/>
                             <constraint firstItem="rna-gP-MES" firstAttribute="leading" secondItem="lir-Du-7jZ" secondAttribute="leading" constant="20" id="raj-fd-fUO"/>
+                            <constraint firstItem="lir-Du-7jZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="S7T-MF-o3c" secondAttribute="trailing" constant="20" id="rbg-4g-dSE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lir-Du-7jZ"/>
                     </view>
