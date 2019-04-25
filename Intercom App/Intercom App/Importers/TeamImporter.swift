@@ -18,6 +18,7 @@ class TeamImporter {
     var gtvc: GroupListViewController?
     var iuvc: InviteUserTableViewController?
     var ulvc: UserListTableViewController?
+    var bvc: BillingViewController?
     var teamMembers: Users?
     var userID: Int?
     var teamBaseURL = URL(string: "https://intercom-be.herokuapp.com/api/users")!
@@ -187,8 +188,9 @@ class TeamImporter {
                     print(json)
                     // handle json...
                    
-                    
-                    //if let userID = json["id"] as? Int {
+                    DispatchQueue.main.async {
+                        self.bvc?.viewDidLoad()
+                    }
                     
                 }
             } catch let error {

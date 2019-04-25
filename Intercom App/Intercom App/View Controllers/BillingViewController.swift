@@ -17,7 +17,7 @@ class BillingViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        
+        TeamImporter.shared.bvc = self
         amountTextField.delegate = self
     }
     
@@ -39,17 +39,23 @@ class BillingViewController: UIViewController, UITextFieldDelegate {
     
     
     //Properties
-    var currentPaymentMethod: STPPaymentMethod?
-    let cardField = STPPaymentCardTextField()
-    var theme = STPTheme.default()
     let cardFieldViewController = CardFieldViewController()
     
     //Functions
     func updateViews(){
-        // guard let cardNumber = cardFullInfo?.cardNumber else { return }
-        // let cardLast4 = String(cardNumber.suffix(4))
+//         guard let cardNumber = cardFullInfo?.cardNumber else { return }
+//         let cardLast4 = String(cardNumber.suffix(4))
         guard let balance = TeamImporter.shared.teamMembers?.accountBalance else {
-            return creditLabel.text = "Balance: $0" }
+             creditLabel.text = "Balance: $0"
+            TeamImporter.shared.fetchLast4 { (last4) in
+                DispatchQueue.main.async {
+                    guard let last4 = last4 else {
+                        return self.cardInfoLabel.text = "Need Enter Card Info" }
+                    self.cardInfoLabel.text = "Card **** **** **** " + last4
+                }
+            }
+            return
+        }
         creditLabel.text = "Balance: $\(balance)"
         TeamImporter.shared.fetchLast4 { (last4) in
             DispatchQueue.main.async {

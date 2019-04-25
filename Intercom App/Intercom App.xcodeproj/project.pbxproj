@@ -40,6 +40,7 @@
 		A533C67222664E1200F165C6 /* GroupInvitesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A533C67122664E1200F165C6 /* GroupInvitesTableViewCell.swift */; };
 		A53A5CAE226F89CC00BA9590 /* StripeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A5CAD226F89CC00BA9590 /* StripeTools.swift */; };
 		A53A5CE02270432300BA9590 /* CardFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A5CDF2270432300BA9590 /* CardFieldViewController.swift */; };
+		A544510622723CA20064DBFB /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544510522723CA20064DBFB /* HeaderLabel.swift */; };
 		A56AFD28225FB684008C67E9 /* CallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD27225FB684008C67E9 /* CallButton.swift */; };
 		A56AFD2A225FBBB4008C67E9 /* InviteUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */; };
 		A56AFD2C225FCD0F008C67E9 /* InviteUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */; };
@@ -95,8 +96,8 @@
 		A533C67122664E1200F165C6 /* GroupInvitesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInvitesTableViewCell.swift; sourceTree = "<group>"; };
 		A533C674226953D000F165C6 /* Intercom App.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Intercom App.profdata"; sourceTree = "<group>"; };
 		A53A5CAD226F89CC00BA9590 /* StripeTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeTools.swift; sourceTree = "<group>"; };
-		A53A5CD6226FA38D00BA9590 /* MyAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
 		A53A5CDF2270432300BA9590 /* CardFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFieldViewController.swift; sourceTree = "<group>"; };
+		A544510522723CA20064DBFB /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		A56AFD27225FB684008C67E9 /* CallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallButton.swift; sourceTree = "<group>"; };
 		A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUserTableViewController.swift; sourceTree = "<group>"; };
 		A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InviteUserTableViewCell.swift; path = ../InviteUserTableViewCell.swift; sourceTree = "<group>"; };
@@ -228,7 +229,6 @@
 				A52A842222442116009A6593 /* UI Customisations */,
 				4C108A6522454C0A00D4926D /* Storyboards */,
 				A52A3889226DAF1600F57746 /* New Group */,
-				A53A5CD5226FA36600BA9590 /* New Group */,
 				A5DC52E9224AB2FC00A24589 /* Helper */,
 				A5DC52F7224AEF8D00A24589 /* Ringtones */,
 				4C108A6622454C2900D4926D /* Resources */,
@@ -305,15 +305,6 @@
 			path = OptimizationProfiles;
 			sourceTree = "<group>";
 		};
-		A53A5CD5226FA36600BA9590 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				A53A5CD6226FA38D00BA9590 /* MyAPIClient.swift */,
-			);
-			name = "New Group";
-			path = "Helper/New Group/New Group";
-			sourceTree = "<group>";
-		};
 		A5DC52E9224AB2FC00A24589 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +312,7 @@
 				A5845C4D2264F589007777DA /* ProvisioningProfileInspector.m */,
 				A5845C492264F552007777DA /* KeychainAccess.swift */,
 				A5845C4B2264F588007777DA /* Intercom App-Bridging-Header.h */,
+				A544510522723CA20064DBFB /* HeaderLabel.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -498,6 +490,7 @@
 				A5323F862253C89F00B86706 /* UserData.swift in Sources */,
 				A56AFD28225FB684008C67E9 /* CallButton.swift in Sources */,
 				A5DC52F4224ADC1A00A24589 /* ChatroomViewController.swift in Sources */,
+				A544510622723CA20064DBFB /* HeaderLabel.swift in Sources */,
 				4C69CE5D2243FF6B00FCC33A /* AppDelegate.swift in Sources */,
 				4C90249E2260DBEF00E9843F /* BillingViewController.swift in Sources */,
 				4CC028DD224408610097A2FD /* TeamImporter.swift in Sources */,

@@ -11,6 +11,8 @@ import UIKit
 class UserListTableViewController: UITableViewController {
     
     var group: Groups?
+    var allUsers: [AllUsers]?
+    
     @IBOutlet weak var inviteButtonOutlet: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -29,8 +31,8 @@ class UserListTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        GroupController.shared.fetchGroupMembers(gropeId: group!.groupID) { (group) in
-            self.group = group
+        GroupController.shared.fetchGroupMembers(gropeId: group!.groupID) { (users) in
+            self.allUsers = users
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -41,14 +43,22 @@ class UserListTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if allUsers == nil {
         return group?.members.count ?? 0
+        } else {
+            return allUsers?.count ?? 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         guard let user = group?.members[indexPath.row] else { return cell }
-        cell.textLabel?.text = user.displayName.capitalized
+        if allUsers == nil {
+            cell.textLabel?.text = user.displayName.capitalized
+        } else {
+            cell.textLabel?.text = allUsers?[indexPath.row].displayName
+        }
+        
         
         if TeamImporter.shared.userID == group?.owners.first?.id {
         // declare the button
@@ -71,8 +81,8 @@ class UserListTableViewController: UITableViewController {
         guard let user = group?.members[indexPath.row] else { return }
         GroupController.shared.deleteGroupMamber(groupID: group!.groupID, userID: user.id)
         GroupController.shared.postActivity(groupID: group!.groupID, massage: "Removed \(user.displayName) from group.")
-        GroupController.shared.fetchGroupMembers(gropeId: group!.groupID) { (group) in
-            self.group = group
+        GroupController.shared.fetchGroupMembers(gropeId: group!.groupID) { (users) in
+            self.allUsers = users
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

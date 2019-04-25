@@ -535,9 +535,10 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         GroupController.shared.deleteCallParticipants(groupID: groupId) { (bool) in
             if bool == true {
                 GroupController.shared.changeCallStatus(groupID: groupId, callStatus: false)
+                GroupController.shared.postActivity(groupID: groupId, massage: "Ended Call")
             }
         }
-        GroupController.shared.postActivity(groupID: groupId, massage: "Ended Call")
+        
     }
     
     
