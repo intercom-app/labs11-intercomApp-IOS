@@ -431,7 +431,7 @@ class GroupController {
         task.resume()
     }
     
-    func deleteGroupMamber(groupID: Int, userID: Int?) {
+    func deleteGroupMamber(groupID: Int, userID: Int?, completion: @escaping (Bool) -> Void = { _ in }) {
         guard let id = userID else {
             fatalError("cant fetch user ID")
         }
@@ -456,8 +456,11 @@ class GroupController {
             guard error == nil else {
                 return
             }
-            
-            
+            completion(true)
+            DispatchQueue.main.async {
+                
+                self.ulvc?.tableView.reloadData()
+            }
         })
         task.resume()
     }
@@ -488,13 +491,7 @@ class GroupController {
                 return
             }
             //Reload the table with current data
-            DispatchQueue.main.async {
-                self.gtvc?.tableView.reloadData()
-                self.iuvc?.tableView.reloadData()
-                self.cavc?.tableView.reloadData()
-                self.ulvc?.tableView.reloadData()
-                
-            }
+            
         })
         task.resume()
     }

@@ -41,6 +41,7 @@
 		A53A5CAE226F89CC00BA9590 /* StripeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A5CAD226F89CC00BA9590 /* StripeTools.swift */; };
 		A53A5CE02270432300BA9590 /* CardFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53A5CDF2270432300BA9590 /* CardFieldViewController.swift */; };
 		A544510622723CA20064DBFB /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544510522723CA20064DBFB /* HeaderLabel.swift */; };
+		A544510822726B5D0064DBFB /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544510722726B5D0064DBFB /* MemberTableViewCell.swift */; };
 		A56AFD28225FB684008C67E9 /* CallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD27225FB684008C67E9 /* CallButton.swift */; };
 		A56AFD2A225FBBB4008C67E9 /* InviteUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */; };
 		A56AFD2C225FCD0F008C67E9 /* InviteUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */; };
@@ -98,6 +99,7 @@
 		A53A5CAD226F89CC00BA9590 /* StripeTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeTools.swift; sourceTree = "<group>"; };
 		A53A5CDF2270432300BA9590 /* CardFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFieldViewController.swift; sourceTree = "<group>"; };
 		A544510522723CA20064DBFB /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
+		A544510722726B5D0064DBFB /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		A56AFD27225FB684008C67E9 /* CallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallButton.swift; sourceTree = "<group>"; };
 		A56AFD29225FBBB4008C67E9 /* InviteUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUserTableViewController.swift; sourceTree = "<group>"; };
 		A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InviteUserTableViewCell.swift; path = ../InviteUserTableViewCell.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				A52A843222458464009A6593 /* GroupViewTableViewCell.swift */,
 				A56AFD2B225FCD0F008C67E9 /* InviteUserTableViewCell.swift */,
 				A533C67122664E1200F165C6 /* GroupInvitesTableViewCell.swift */,
+				A544510722726B5D0064DBFB /* MemberTableViewCell.swift */,
 			);
 			path = "Cell View";
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				A5323F832253C89F00B86706 /* InCallViewController.swift in Sources */,
 				A56AFD2C225FCD0F008C67E9 /* InviteUserTableViewCell.swift in Sources */,
 				A5323F842253C89F00B86706 /* CallData.swift in Sources */,
+				A544510822726B5D0064DBFB /* MemberTableViewCell.swift in Sources */,
 				A533C67022664BB200F165C6 /* GroupInvitesTableViewController.swift in Sources */,
 				A52A388B226DAF5300F57746 /* Constants.swift in Sources */,
 				A5845C5522652DF5007777DA /* UserListTableViewController.swift in Sources */,

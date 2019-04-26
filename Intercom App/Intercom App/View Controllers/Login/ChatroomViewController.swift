@@ -112,6 +112,12 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
             groupNameTextField.isEnabled = true
             
         }
+        guard let balance = TeamImporter.shared.teamMembers?.accountBalance else { return }
+        if Float(balance)! < 0.50 {
+            placeCallButton.isHidden = true
+        } else {
+            placeCallButton.isHidden = false
+        }
     }
     
     
