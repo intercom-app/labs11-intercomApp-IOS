@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
                     SessionManager.tokens = Tokens(accessToken: accessToken, idToken: idToken)
                     SessionManager.retrieveProfile({ (user, error) in
                      
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                         
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "GroupNavController") as! UINavigationController

@@ -112,6 +112,12 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
             groupNameTextField.isEnabled = true
             
         }
+        guard let balance = TeamImporter.shared.teamMembers?.accountBalance else { return }
+        if Float(balance)! < 0.50 {
+            placeCallButton.isHidden = true
+        } else {
+            placeCallButton.isHidden = false
+        }
     }
     
     
@@ -535,9 +541,10 @@ class ChatroomViewController: UIViewController, PKPushRegistryDelegate, TVONotif
         GroupController.shared.deleteCallParticipants(groupID: groupId) { (bool) in
             if bool == true {
                 GroupController.shared.changeCallStatus(groupID: groupId, callStatus: false)
+                GroupController.shared.postActivity(groupID: groupId, massage: "Ended Call")
             }
         }
-        GroupController.shared.postActivity(groupID: groupId, massage: "Ended Call")
+        
     }
     
     

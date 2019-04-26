@@ -431,7 +431,7 @@ class GroupController {
         task.resume()
     }
     
-    func deleteGroupMamber(groupID: Int, userID: Int?) {
+    func deleteGroupMamber(groupID: Int, userID: Int?, completion: @escaping (Bool) -> Void = { _ in }) {
         guard let id = userID else {
             fatalError("cant fetch user ID")
         }
@@ -456,8 +456,11 @@ class GroupController {
             guard error == nil else {
                 return
             }
-            
-            
+            completion(true)
+            DispatchQueue.main.async {
+                
+                self.ulvc?.tableView.reloadData()
+            }
         })
         task.resume()
     }
@@ -488,13 +491,7 @@ class GroupController {
                 return
             }
             //Reload the table with current data
-            DispatchQueue.main.async {
-                self.gtvc?.tableView.reloadData()
-                self.iuvc?.tableView.reloadData()
-                self.cavc?.tableView.reloadData()
-                self.ulvc?.tableView.reloadData()
-                
-            }
+            
         })
         task.resume()
     }
@@ -550,7 +547,7 @@ class GroupController {
         task.resume()
     }
     
-    func fetchGroupMembers(gropeId: Int, completion: @escaping (Groups) -> Void = { _ in }) {
+    func fetchGroupMembers(gropeId: Int, completion: @escaping ([AllUsers]) -> Void = { _ in }) {
         var teamURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
         teamURL.appendPathComponent("\(gropeId)")
         teamURL.appendPathComponent("groupMembers/detailed")
@@ -583,21 +580,64 @@ class GroupController {
             }
             do {
                 //create json object from data
-                if let json = try JSONSerialization.jsonObject(with: teamData, options: .mutableContainers) as? [String: Any] {
-                    print(json)
-                    var membersName: [String] = []
-                    let groupMember = json["displayName"] as? String
-                    print(groupMember)
+                let jsonDecoder = JSONDecoder()
+                
+                let decodedTeam = try jsonDecoder.decode([AllUsers].self, from: teamData)
+                
+                        completion(decodedTeam)
                     
-                    
-                    // completion()
-                    
-                    
-                    
-                }
+                
             } catch let error {
                 print(error.localizedDescription)
             }
+           // print(json)
+            } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
+    }
+    
+    func fetchGroupActiity(gropeId: Int, completion: @escaping ([Activity]) -> Void = { _ in }) {
+        var teamURL = URL(string: "https://intercom-be.herokuapp.com/api/groups")!
+        teamURL.appendPathComponent("\(gropeId)")
+        teamURL.appendPathComponent("activities")
+        var request = URLRequest(url: teamURL)
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            if let response = urlResponse {
+                print(response)
+            }
+            if let teamError = error {
+                print("Error getting team members from API: \(teamError)")
+                
+                return
+                
+            } //End of error handling.
+            
+            guard let teamData = data else {
+                
+                print("Data was not recieved.")
+                
+                return
+            }
+            if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
+                print(JSONString)
+            }
+            do {
+                //create json object from data
+                let jsonDecoder = JSONDecoder()
+                
+                let decodedTeam = try jsonDecoder.decode([Activity].self, from: teamData)
+                
+                completion(decodedTeam)
+                
+                
+            } catch let error {
+                print(error.localizedDescription)
+            }
+            // print(json)
             } .resume() //Resumes the fetch function if it's been suspended e.g. because of errors.
     }
     
