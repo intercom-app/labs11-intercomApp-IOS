@@ -679,14 +679,14 @@
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_ENTITLEMENTS = "Intercom App/Intercom App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KF4QEGAU36;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "$(SRCROOT)/Intercom App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.Intercom-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.Sergey.Intercom-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Intercom App/Helper/Intercom App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -704,14 +704,14 @@
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_ENTITLEMENTS = "Intercom App/Intercom App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KF4QEGAU36;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "$(SRCROOT)/Intercom App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.Intercom-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.Sergey.Intercom-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Intercom App/Helper/Intercom App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
