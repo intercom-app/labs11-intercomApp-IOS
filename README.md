@@ -16,8 +16,10 @@ Using your phone and headphones, you will have the ability to create voice chatr
 * Bridge header integration of Objective-C methods to Swift code.
 
 
-<img width="400" height="700" src="https://github.com/intercom-app/labs11-intercomApp-IOS/raw/master/labs11-intercomApp-IOS/Screenshot/IMG_3343.PNG" /> <img width="400" height="700" src="https://github.com/intercom-app/labs11-intercomApp-IOS/raw/master/labs11-intercomApp-IOS/Screenshot/IMG_3344.PNG" />
-<img width="400" height="700" src="https://github.com/intercom-app/labs11-intercomApp-IOS/raw/master/labs11-intercomApp-IOS/Screenshot/IMG_3345.PNG" /><img width="400" height="700" src="https://github.com/intercom-app/labs11-intercomApp-IOS/raw/master/labs11-intercomApp-IOS/Screenshot/IMG_3346.PNG" /> 
+<img width="400" height="700" src="https://github.com/intercom-app/labs11-intercomApp-IOS/blob/master/Intercom%20App/Screenshot/IMG_3343.PNG" /> <img width="400" height="700" src="https://github.com/intercom-app/labs11-intercomApp-IOS/blob/master/Intercom%20App/Screenshot/IMG_3344.PNG" />
+<img width="400" height="700" src="https://github.com/intercom-app/labs11-intercomApp-IOS/blob/master/Intercom%20App/Screenshot/IMG_3345.PNG" /><img width="400" height="700" src="https://github.com/intercom-app/labs11-intercomApp-IOS/blob/master/Intercom%20App/Screenshot/IMG_3346.PNG" /> 
+
+<img width="400" height="700" src="https://github.com/intercom-app/labs11-intercomApp-IOS/blob/master/Intercom%20App/Screenshot/IMG_3347.PNG" /><img width="400" height="700" src="https://github.com/intercom-app/labs11-intercomApp-IOS/blob/master/Intercom%20App/Screenshot/IMG_3348.PNG" /> 
 
 ## Mission Statement
 Our mission is to assist a wide variety of users ranging from those who may be hearing impaired or elderly to anyone who finds themselves as a group having difficulty conversing with others with overbearing background noise. We provide our users to opportunity to easily create and join personal groups and initiate voice chats within those groups to keep a clear communication link with their family and friends. Don't lose your voice, find your Voice Chatroom!
