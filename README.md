@@ -1,4 +1,4 @@
-# Voice chatroom ( iOS ) 
+# Voice Chatroom ( iOS ) 
 
 [![Swift Version][swift-image]][swift-url]
 [![License][license-image]](LICENSE)<br>
@@ -27,7 +27,7 @@ Our mission is to assist a wide variety of users ranging from those who may be h
 
 ## Requirements
 
-- iOS 12.1+
+- iOS 11.4+
 
 
 ## License
