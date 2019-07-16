@@ -6,7 +6,7 @@
 ## Introduction
 Using your phone and headphones, you will have the ability to create voice chatrooms groups, talk directly into your group’s ears, and hear others talk into your ears. You can manage the group, see who is in the group and start up a voice call.
 
-
+TestFlight: https://testflight.apple.com/join/XgOaK9Jx
 
 * Collaborated with a 5-person web(4) and iOS team to design an app architecture in 6 weeks.
 * Implemented: authentication using Auth0, billing using Stripe, internet conference call using Twilio.
